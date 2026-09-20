@@ -29,7 +29,7 @@ Admin/tim (web) --CRUD dataset + statistik--> Backend Web --> DB --train.py--> m
 3. `python web/app.py` (:8080) — CRUD data (opsional)
 4. Device fisik (USB): `adb reverse tcp:8081 tcp:8081` lalu `flutter run --dart-define=ML_URL=http://127.0.0.1:8081`
    - Emulator: `ML_URL` default `http://10.0.2.2:8081`.
-   - **Catatan: `adb` tidak ada di PATH mesin ini** → langkah on-device dilewati; verifikasi lewat curl `/health` & `/predict` + `flutter test`. Bila `adb` tersedia, reverse :8080 juga saat auth aktif (roadmap).
+   - `adb` ada di `D:\new\AndroidSDK\platform-tools` (sudah ditambahkan ke User PATH) — buka terminal baru agar aktif. Reverse :8080 juga saat auth aktif (roadmap). Tunnel hilang saat device dicabut/reboot → jalankan ulang.
 5. Ubah data via web → jalankan ulang `train.py`.
 
 ## Preprocessing (WAJIB konsisten di train & cloud)
