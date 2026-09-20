@@ -20,7 +20,7 @@ Admin/tim (web) --CRUD dataset + statistik--> Backend Web --> DB --train.py--> m
 - `database/seed.py` → baca CSV union → isi `properti.db`; kolom `sumber`, `luas_bangunan`; **kategori per-sentile per-kota** (≥ median kota → 'Mahal'). Run: `python database/seed.py`.
 - `ml/train.py` → baca DB (fallback CSV union) → **fitur** `luas_m2, luas_bangunan(imputasi median), jumlah_kamar, jumlah_kamar_mandi, usia_bangunan` + `lokasi` → `cloud_ml/model/*.joblib` + `metrics.json` (termasuk `regression_by_city`). Run: `python ml/train.py`.
 - `cloud_ml/app.py` :8081 — `GET /health`, `POST /predict` (muat model; imputasi `luas_bangunan` via `meta.json:median_luas_bangunan`; **CORS aktif**). Tidak sentuh DB.
-- `web/app.py` :8080 — CRUD `properti` (UI HTML + `GET /api/properti`, `POST /properti`, `PUT/DELETE /api/properti/<id>`); INSERT menyertakan `sumber='manual-web'`, kategori via median kota. Pemegang DB.
+- `web/app.py` :8080 — **landing publik `/`** + **CRUD `properti` dilindungi login admin** (`/admin/login`, password env `ADMIN_PASSWORD`, session cookie; default `rumahpoint-admin` untuk dev). INSERT menyertakan `sumber='manual-web'`, kategori via median kota. Pemegang DB. Deploy: VPS NAT + PM2 (lihat `docs/DEPLOY-VPS.md`), publik via Cloudflare Tunnel `rumahpoint.soraven.web.id` (web) & `ml.soraven.web.id` (cloud).
 - `mobile/` — Flutter: `flutter pub get/analyze/test/run`. `go_router`,`Riverpod`,`dio`,`shared_preferences`.
 
 ## Urutan menjalankan (demo)
