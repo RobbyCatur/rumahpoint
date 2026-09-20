@@ -1,0 +1,28 @@
+{
+  "num_features": [
+    "luas_m2",
+    "luas_bangunan",
+    "jumlah_kamar",
+    "jumlah_kamar_mandi",
+    "usia_bangunan"
+  ],
+  "cat_features": [
+    "lokasi"
+  ],
+  "target_reg": "harga (log10)",
+  "target_clf": "kategori_harga",
+  "cities": [
+    "Bekasi",
+    "Bogor",
+    "Depok",
+    "Jakarta Selatan",
+    "Jakarta Utara",
+    "Surabaya",
+    "Tangerang"
+  ],
+  "median_luas_m2": 118.0,
+  "median_luas_bangunan": 120.0,
+  "median_jumlah_kamar": 3.0,
+  "median_jumlah_kamar_mandi": 2.0,
+  "median_usia_bangunan": 32.0
+}

@@ -1,0 +1,182 @@
+"""
+Rumah Point - Pelatihan Model Machine Learning (A2: ML Engineer)
+- Regresi: prediksi harga (log10) -> baseline LinearRegression vs RandomForest
+- Klasifikasi: kategori_harga (Murah/Mahal) -> RandomForestClassifier
+Menyimpan pipeline model ke cloud_ml/model/ untuk dipakai endpoint /predict.
+"""
+import json
+import os
+
+import joblib
+import numpy as np
+import pandas as pd
+from sklearn.compose import ColumnTransformer
+from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import (accuracy_score, confusion_matrix, f1_score,
+                             mean_absolute_error, mean_squared_error,
+                             precision_score, recall_score, r2_score)
+from sklearn.model_selection import train_test_split
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import OneHotEncoder
+
+BASE = os.path.dirname(os.path.abspath(__file__))
+CSV = os.path.join(BASE, "..", "dataset", "properti_multi_kota.csv")
+DB = os.path.join(BASE, "..", "database", "properti.db")
+OUT_DIR = os.path.join(BASE, "..", "cloud_ml", "model")
+os.makedirs(OUT_DIR, exist_ok=True)
+
+NUM_FEATURES = ["luas_m2", "luas_bangunan", "jumlah_kamar", "jumlah_kamar_mandi", "usia_bangunan"]
+CAT_FEATURES = ["lokasi"]
+TARGET_REG = "log_harga"
+TARGET_CLF = "kategori_harga"
+
+
+def _first_number(s):
+    """Ambil angka pertama dari string, mis. '68.0 m2' -> 68.0 ; sudah numerik -> apa adanya."""
+    if pd.isna(s):
+        return np.nan
+    if isinstance(s, (int, float)):
+        return float(s)
+    import re
+    m = re.search(r"-?\d+(?:[.,]\d+)?", str(s))
+    return float(m.group(0).replace(",", ".")) if m else np.nan
+
+
+def load_and_clean():
+    """Kembalikan (df, medians). Sumber utama: DB; fallback: CSV union."""
+    if os.path.exists(DB):
+        import sqlite3
+        con = sqlite3.connect(DB)
+        df = pd.read_sql_query("SELECT * FROM properti", con)
+        con.close()
+        src = "database"
+    else:
+        df = pd.read_csv(CSV)
+        src = "csv"
+    df["lokasi"] = df["lokasi"].replace({"Jak. Utara": "Jakarta Utara"}).str.strip()
+    for col in NUM_FEATURES + ["harga"]:
+        if col in df.columns:
+            df[col] = df[col].map(_first_number)
+    # kolom wajib: lokasi, luas_m2, harga
+    df = df.dropna(subset=["harga", "lokasi"]).copy()
+    df = df[(df["harga"] > 0) & df["luas_m2"].notna()]
+    # imputasi median untuk numerik yang boleh kosong (mis. luas_bangunan/usia)
+    medians = {}
+    for col in NUM_FEATURES:
+        if col not in df.columns:
+            df[col] = np.nan
+        med = float(df[col].median()) if df[col].notna().any() else 0.0
+        medians["median_" + col] = med
+        df[col] = df[col].fillna(med)
+    # kategori (per-sentile per kota) bila belum ada (fallback CSV)
+    if "kategori_harga" not in df.columns or df["kategori_harga"].isna().any():
+        city_med = df.groupby("lokasi")["harga"].transform("median")
+        df["kategori_harga"] = np.where(df["harga"] >= city_med, "Mahal", "Murah")
+    df[TARGET_REG] = np.log10(df["harga"])
+    print(f"[data] sumber={src}, baris={len(df)}, kota={df['lokasi'].nunique()}")
+    return df.reset_index(drop=True), medians
+
+
+def make_preprocessor() -> ColumnTransformer:
+    return ColumnTransformer(
+        transformers=[
+            ("num", "passthrough", NUM_FEATURES),
+            ("cat", OneHotEncoder(handle_unknown="ignore"), CAT_FEATURES),
+        ]
+    )
+
+
+def evaluate_regression(model, X_test, y_test) -> dict:
+    pred = model.predict(X_test)
+    y_rupiah = 10 ** np.asarray(y_test)
+    p_rupiah = 10 ** np.asarray(pred)
+    return {
+        "rmse_log10": round(float(np.sqrt(mean_squared_error(y_test, pred))), 4),
+        "mae_log10": round(float(mean_absolute_error(y_test, pred)), 4),
+        "r2": round(float(r2_score(y_test, pred)), 4),
+        "mae_rupiah": int(mean_absolute_error(y_rupiah, p_rupiah)),
+        "rmse_rupiah": int(np.sqrt(mean_squared_error(y_rupiah, p_rupiah))),
+    }
+
+
+def evaluate_classifier(model, X_test, y_test) -> dict:
+    pred = model.predict(X_test)
+    return {
+        "accuracy": round(accuracy_score(y_test, pred), 4),
+        "precision": round(precision_score(y_test, pred, average="weighted"), 4),
+        "recall": round(recall_score(y_test, pred, average="weighted"), 4),
+        "f1": round(f1_score(y_test, pred, average="weighted"), 4),
+        "confusion_matrix": confusion_matrix(y_test, pred).tolist(),
+        "labels": sorted(pd.unique(y_test).tolist()),
+    }
+
+
+def evaluate_regression_by_city(model, X_test, y_test):
+    pred = model.predict(X_test)
+    y_idr = 10 ** np.asarray(y_test)
+    p_idr = 10 ** np.asarray(pred)
+    out = {}
+    tmp = X_test.copy()
+    tmp["_y"], tmp["_p"] = y_idr, p_idr
+    for city, g in tmp.groupby("lokasi"):
+        if len(g) < 5:
+            continue
+        out[city] = {
+            "n": int(len(g)),
+            "mae_rupiah": int(mean_absolute_error(g["_y"], g["_p"])),
+            "r2": round(float(r2_score(g["_y"], g["_p"])), 4) if len(g) > 1 else None,
+        }
+    return out
+
+
+def main():
+    df, medians = load_and_clean()
+    X = df[NUM_FEATURES + CAT_FEATURES]
+    y_reg = df[TARGET_REG]
+    y_clf = df[TARGET_CLF]
+
+    # Satu split yang sama dipakai untuk regresi & klasifikasi
+    X_train, X_test, ytr_reg, yte_reg, ytr_clf, yte_clf = train_test_split(
+        X, y_reg, y_clf, test_size=0.2, random_state=42
+    )
+
+    metrics = {}
+
+    lin = Pipeline([("prep", make_preprocessor()), ("model", LinearRegression())])
+    lin.fit(X_train, ytr_reg)
+    metrics["regression_baseline_linreg"] = evaluate_regression(lin, X_test, yte_reg)
+
+    rf = Pipeline([("prep", make_preprocessor()),
+                   ("model", RandomForestRegressor(n_estimators=300, random_state=42, n_jobs=-1))])
+    rf.fit(X_train, ytr_reg)
+    metrics["regression_randomforest"] = evaluate_regression(rf, X_test, yte_reg)
+    metrics["regression_by_city"] = evaluate_regression_by_city(rf, X_test, yte_reg)
+
+    clf = Pipeline([("prep", make_preprocessor()),
+                    ("model", RandomForestClassifier(n_estimators=300, random_state=42, n_jobs=-1))])
+    clf.fit(X_train, ytr_clf)
+    metrics["classification_kategori"] = evaluate_classifier(clf, X_test, yte_clf)
+
+    joblib.dump(rf, os.path.join(OUT_DIR, "price_regression.joblib"))
+    joblib.dump(clf, os.path.join(OUT_DIR, "kategori_classifier.joblib"))
+    meta = {
+        "num_features": NUM_FEATURES,
+        "cat_features": CAT_FEATURES,
+        "target_reg": "harga (log10)",
+        "target_clf": TARGET_CLF,
+        "cities": sorted(df["lokasi"].unique().tolist()),
+        **medians,  # memuat median_luas_bangunan (dipakai cloud utk imputasi) dll.
+    }
+    with open(os.path.join(OUT_DIR, "meta.json"), "w", encoding="utf-8") as f:
+        json.dump(meta, f, ensure_ascii=False, indent=2)
+    with open(os.path.join(BASE, "metrics.json"), "w", encoding="utf-8") as f:
+        json.dump(metrics, f, ensure_ascii=False, indent=2)
+
+    print("=== METRIK ===")
+    print(json.dumps(metrics, ensure_ascii=False, indent=2))
+    print("\nModel tersimpan di", OUT_DIR)
+
+
+if __name__ == "__main__":
+    main()
