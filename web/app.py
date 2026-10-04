@@ -10,8 +10,26 @@ from flask import (Flask, jsonify, redirect, render_template_string, request,
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 DB = os.path.join(BASE, "..", "database", "properti.db")
-CITIES = ["Bogor", "Bekasi", "Depok", "Tangerang", "Jakarta Utara",
-          "Jakarta Selatan", "Surabaya"]
+
+# Daftar kota dibaca dari tabel `cities` (sumber kebenaran tunggal).
+# Fallback ke DISTINCT lokasi bila DB belum dimigrasi (era string lama).
+def city_options(con):
+    try:
+        rows = con.execute(
+            "SELECT nama FROM cities WHERE status='aktif' ORDER BY nama").fetchall()
+        return [r["nama"] for r in rows]
+    except sqlite3.OperationalError:
+        return [r["lokasi"] for r in con.execute(
+            "SELECT DISTINCT lokasi FROM properti ORDER BY lokasi").fetchall()]
+
+
+def city_id_for(con, nama):
+    try:
+        r = con.execute(
+            "SELECT id FROM cities WHERE nama=? AND status='aktif'", (nama,)).fetchone()
+    except sqlite3.OperationalError:
+        return None
+    return r["id"] if r else None
 
 # Gerbang sementara sampai auth JWT penuh: satu password admin via env.
 ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "rumahpoint-admin")
@@ -250,8 +268,9 @@ def index():
     rows = con.execute(
         "SELECT * FROM properti ORDER BY id DESC LIMIT 100").fetchall()
     count = con.execute("SELECT COUNT(*) c FROM properti").fetchone()["c"]
+    cities = city_options(con)
     con.close()
-    return render_template_string(PAGE, rows=rows, cities=CITIES, count=count)
+    return render_template_string(PAGE, rows=rows, cities=cities, count=count)
 
 
 @app.post("/properti")
@@ -265,6 +284,11 @@ def create():
     lb = data.get("luas_bangunan")
     lb = float(lb) if lb not in (None, "") else None
     con = db()
+    cid = city_id_for(con, data["lokasi"])
+    if cid is None:
+        supported = ", ".join(city_options(con))
+        con.close()
+        return jsonify({"error": "kota tidak didukung", "didukung": supported}), 400
     # kategori per-sentile: bandingkan harga dengan median kota ini di DB
     med = con.execute(
         "SELECT harga FROM properti WHERE lokasi=?", (data["lokasi"],)).fetchall()
@@ -278,9 +302,9 @@ def create():
         else:
             kategori = None
     con.execute(
-        "INSERT INTO properti (sumber, lokasi, luas_m2, luas_bangunan, jumlah_kamar,"
-        " jumlah_kamar_mandi, usia_bangunan, harga, kategori_harga) VALUES (?,?,?,?,?,?,?,?,?)",
-        ("manual-web", data["lokasi"], float(data["luas_m2"]), lb,
+        "INSERT INTO properti (sumber, lokasi, city_id, luas_m2, luas_bangunan, jumlah_kamar,"
+        " jumlah_kamar_mandi, usia_bangunan, harga, kategori_harga) VALUES (?,?,?,?,?,?,?,?,?,?)",
+        ("manual-web", data["lokasi"], cid, float(data["luas_m2"]), lb,
          int(data["jumlah_kamar"]), int(data["jumlah_kamar_mandi"]),
          int(data["usia_bangunan"]), harga, kategori))
     con.commit()
@@ -296,6 +320,15 @@ def update(pid):
               "jumlah_kamar_mandi", "usia_bangunan", "harga", "kategori_harga") if k in data]
     if not fields:
         return jsonify({"error": "tidak ada field"}), 400
+    if "lokasi" in data:
+        con = db()
+        cid = city_id_for(con, data["lokasi"])
+        con.close()
+        if cid is None:
+            return jsonify({"error": "kota tidak didukung"}), 400
+        data["city_id"] = cid
+        if "city_id" not in fields:
+            fields.append("city_id")
     sets = ", ".join(f"{f}=?" for f in fields)
     vals = [data[f] for f in fields] + [pid]
     con = db()

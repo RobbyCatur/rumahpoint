@@ -52,7 +52,9 @@ pip install -r cloud_ml/requirements.txt   # seed, train, cloud (pandas, scikit-
 pip install -r web/requirements.txt        # web CRUD
 
 # 2. Siapkan database dari dataset union
+#    (seed.py membangun ulang DB lalu otomatis menerapkan migrasi skema — tabel `cities`, kolom `city_id`)
 python database/seed.py
+#    DB yang sudah ada tanpa seed: python database/migrate.py
 
 # 3. Latih model (tulis ulang cloud_ml/model/)
 python ml/train.py
@@ -110,7 +112,8 @@ curl -X POST http://127.0.0.1:8081/predict \
 - Preprocessing: harga `log10`, parsing angka dari teks ("68.0 m2"), normalisasi nama kota, imputasi median `luas_bangunan`
 - Sumber data & atribusi (wajib dikredit, RPP §10): `dataset/README.md`
 
-Alur retrain: ubah data via web/admin → `python database/seed.py` → `python ml/train.py` → restart cloud.
+Alur retrain: ubah data via web/admin → `python ml/train.py` → restart cloud.
+(JANGAN jalankan `seed.py` setelah ada entri manual di web — seed membangun ulang DB dari CSV dan menghapus entri `manual-web`.)
 
 ## Tech stack
 
@@ -123,5 +126,3 @@ cd mobile
 flutter analyze
 flutter test
 ```
-
-Rencana QA lengkap (≥15–20 test case: auth, riwayat, guard admin, perbandingan, non-fungsional) ada di dokumen internal `docs/`.

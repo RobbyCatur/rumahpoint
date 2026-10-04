@@ -160,12 +160,23 @@ def main():
 
     joblib.dump(rf, os.path.join(OUT_DIR, "price_regression.joblib"))
     joblib.dump(clf, os.path.join(OUT_DIR, "kategori_classifier.joblib"))
+    city_slugs = {}
+    if os.path.exists(DB):
+        import sqlite3
+        con = sqlite3.connect(DB)
+        try:
+            city_slugs = {r[0]: r[1] for r in con.execute(
+                "SELECT nama, slug FROM cities ORDER BY nama")}
+        except sqlite3.OperationalError:
+            pass
+        con.close()
     meta = {
         "num_features": NUM_FEATURES,
         "cat_features": CAT_FEATURES,
         "target_reg": "harga (log10)",
         "target_clf": TARGET_CLF,
         "cities": sorted(df["lokasi"].unique().tolist()),
+        "city_slugs": city_slugs,  # nama -> slug; dipakai fase model per-kota (003)
         **medians,  # memuat median_luas_bangunan (dipakai cloud utk imputasi) dll.
     }
     with open(os.path.join(OUT_DIR, "meta.json"), "w", encoding="utf-8") as f:

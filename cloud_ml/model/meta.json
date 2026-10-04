@@ -20,6 +20,15 @@
     "Surabaya",
     "Tangerang"
   ],
+  "city_slugs": {
+    "Bekasi": "bekasi",
+    "Bogor": "bogor",
+    "Depok": "depok",
+    "Jakarta Selatan": "jaksel",
+    "Jakarta Utara": "jakut",
+    "Surabaya": "surabaya",
+    "Tangerang": "tangerang"
+  },
   "median_luas_m2": 118.0,
   "median_luas_bangunan": 120.0,
   "median_jumlah_kamar": 3.0,

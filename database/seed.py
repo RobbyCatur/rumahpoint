@@ -3,7 +3,8 @@ Rumah Point - Seed Database (A4: Web/Backend)
 Membaca dataset UNION multi-kota (dataset/properti_multi_kota.csv) -> SQLite (database/properti.db).
 Tabel `properti` kini punya kolom `sumber` & `luas_bangunan`.
 Kategori `kategori_harga` dihitung PER-SENTILE PER-KOTA: harga >= median kotanya -> 'Mahal'.
-Jalankan:  python database/seed.py
+Setelah seed, migrasi skema (migrate.py) dijalankan: tabel `cities` + kolom `city_id`.
+Jalankan:  python database/seed.py   (env RP_DB untuk target DB lain)
 """
 import csv
 import os
@@ -11,9 +12,11 @@ import re
 import sqlite3
 import statistics
 
+from migrate import apply as apply_migrations
+
 BASE = os.path.dirname(os.path.abspath(__file__))
 CSV = os.path.join(BASE, "..", "dataset", "properti_multi_kota.csv")
-DB = os.path.join(BASE, "properti.db")
+DB = os.getenv("RP_DB", os.path.join(BASE, "properti.db"))
 
 TABLE_SQL = """
 CREATE TABLE IF NOT EXISTS properti (
@@ -84,6 +87,7 @@ def main():
     n = con.execute("SELECT COUNT(*) FROM properti").fetchone()[0]
     cities = con.execute("SELECT lokasi, COUNT(*) c FROM properti GROUP BY lokasi ORDER BY c DESC").fetchall()
     con.close()
+    apply_migrations(DB)
     print(f"Seeded {n} rows -> {DB}")
     for c, cnt in cities:
         print(f"  {c:18s} {cnt:4d}  (median Rp {median[c]:,.0f})")
