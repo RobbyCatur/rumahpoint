@@ -30,7 +30,10 @@ class _RumahPointAppState extends ConsumerState<RumahPointApp> {
       title: 'Rumah Point',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Color(0xFFFFB817),
+          brightness: Brightness.light,
+        ),
         useMaterial3: true,
       ),
       routerConfig: router,

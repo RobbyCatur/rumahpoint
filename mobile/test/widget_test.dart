@@ -4,10 +4,11 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:rumahpoint/main.dart';
 
 void main() {
-  testWidgets('Form screen renders title', (WidgetTester tester) async {
+  testWidgets('Login screen renders actions', (WidgetTester tester) async {
     await tester.pumpWidget(const ProviderScope(child: RumahPointApp()));
     await tester.pumpAndSettle();
-    expect(find.text('Rumah Point - Prediksi Harga'), findsOneWidget);
-    expect(find.text('Hitung Estimasi Harga'), findsOneWidget);
+    expect(find.text('Selamat Datang 👋'), findsOneWidget);
+    expect(find.text('Lupa password?'), findsOneWidget);
+    expect(find.text('Masuk Sekarang'), findsOneWidget);
   });
 }
