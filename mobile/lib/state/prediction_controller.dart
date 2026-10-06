@@ -26,6 +26,7 @@ class PredictionController extends StateNotifier<PredictionState> {
 
   Future<void> predict({
     required double luasM2,
+    required double luasBangunan,
     required int jumlahKamar,
     required int jumlahKamarMandi,
     required int usiaBangunan,
@@ -35,6 +36,7 @@ class PredictionController extends StateNotifier<PredictionState> {
     try {
       final data = await _api.predict(
         luasM2: luasM2,
+        luasBangunan: luasBangunan,
         jumlahKamar: jumlahKamar,
         jumlahKamarMandi: jumlahKamarMandi,
         usiaBangunan: usiaBangunan,
@@ -60,6 +62,11 @@ class PredictionController extends StateNotifier<PredictionState> {
       _keyHistory,
       history.map((p) => jsonEncode(p.toMap())).toList(),
     );
+  }
+
+  /// Pilih satu entri riwayat untuk ditampilkan ulang di halaman hasil.
+  void select(Prediction p) {
+    state = state.copyWith(current: p);
   }
 
   Future<void> clearHistory() async {
