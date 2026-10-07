@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'router.dart';
 import 'state/prediction_controller.dart';
+import 'theme.dart';
 
 void main() {
   runApp(const ProviderScope(child: RumahPointApp()));
@@ -27,15 +28,9 @@ class _RumahPointAppState extends ConsumerState<RumahPointApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'Rumah Point',
+      title: 'RumahPoint',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Color(0xFFFFB817),
-          brightness: Brightness.light,
-        ),
-        useMaterial3: true,
-      ),
+      theme: buildAppTheme(),
       routerConfig: router,
     );
   }

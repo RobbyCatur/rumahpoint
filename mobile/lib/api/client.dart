@@ -15,6 +15,7 @@ class ApiClient {
 
   Future<Map<String, dynamic>> predict({
     required double luasM2,
+    required double luasBangunan,
     required int jumlahKamar,
     required int jumlahKamarMandi,
     required int usiaBangunan,
@@ -22,6 +23,7 @@ class ApiClient {
   }) async {
     final resp = await _dio.post('/predict', data: {
       'luas_m2': luasM2,
+      'luas_bangunan': luasBangunan,
       'jumlah_kamar': jumlahKamar,
       'jumlah_kamar_mandi': jumlahKamarMandi,
       'usia_bangunan': usiaBangunan,

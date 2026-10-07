@@ -34,7 +34,7 @@ class RegisterScreen extends StatelessWidget {
             ),
             const SizedBox(height: 24),
             FilledButton(
-              onPressed: () => context.go('/home'),
+              onPressed: () => context.go('/beranda'),
               child: const Text('Buat Akun'),
             ),
           ],
