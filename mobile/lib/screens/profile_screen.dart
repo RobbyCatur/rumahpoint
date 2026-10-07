@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../providers/user_provider.dart';
-import 'settings_screen.dart'; 
+import 'settings_screen.dart';
+import 'personal_info_screen.dart';
+import 'region_preference_screen.dart';
+import 'help_regulation_screen.dart';
 
 class ProfileScreen extends ConsumerWidget {
   const ProfileScreen({super.key});
@@ -24,15 +27,16 @@ class ProfileScreen extends ConsumerWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        centerTitle: false, // Menjadikan teks ke kiri
+        centerTitle: false,
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 20.0),
             child: GestureDetector(
               onTap: () {
+                // Mengarah ke halaman Pengaturan Utama (Menu Roda Gigi)
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const SettingsScreen(title: 'Pengaturan Akun')),
+                  MaterialPageRoute(builder: (context) => const SettingsScreen()),
                 );
               },
               child: Container(
@@ -81,13 +85,13 @@ class ProfileScreen extends ConsumerWidget {
                               height: 64,
                               decoration: BoxDecoration(
                                 color: const Color(0xFFF59E0B), 
-                                borderRadius: BorderRadius.circular(16), // Kotak dengan sudut membulat
+                                borderRadius: BorderRadius.circular(16),
                               ),
                               child: Center(
                                 child: Text(
                                   _getInitials(user.nama), 
                                   style: const TextStyle(
-                                    color: Colors.black87, // Teks inisial warna hitam
+                                    color: Colors.black87,
                                     fontSize: 22, 
                                     fontWeight: FontWeight.bold,
                                   ),
@@ -173,7 +177,7 @@ class ProfileScreen extends ConsumerWidget {
                         ),
                         _buildMenuDivider(),
                         _buildMenuItem(
-                          icon: Icons.history, // Menggunakan icon riwayat/jam
+                          icon: Icons.history, 
                           iconColor: Colors.grey.shade600,
                           title: 'Bantuan & Regulasi',
                           onTap: () => _navigateToSettings(context, 'Bantuan & Regulasi'),
@@ -199,9 +203,9 @@ class ProfileScreen extends ConsumerWidget {
                       width: double.infinity,
                       padding: const EdgeInsets.symmetric(vertical: 16),
                       decoration: BoxDecoration(
-                        color: Colors.red.shade50, // Latar merah muda
+                        color: Colors.red.shade50,
                         borderRadius: BorderRadius.circular(16),
-                        border: Border.all(color: Colors.red.shade100), // Garis tepi merah tipis
+                        border: Border.all(color: Colors.red.shade100),
                       ),
                       child: const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -230,10 +234,21 @@ class ProfileScreen extends ConsumerWidget {
     );
   }
 
+  // Logika navigasi ke file yang telah dipecah
   void _navigateToSettings(BuildContext context, String title) {
+    Widget destination;
+    
+    if (title == 'Informasi Pribadi & Sandi') {
+      destination = const PersonalInfoScreen();
+    } else if (title == 'Preferensi Wilayah & NJOP') {
+      destination = const RegionPreferenceScreen();
+    } else {
+      destination = const HelpRegulationScreen();
+    }
+
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => SettingsScreen(title: title)),
+      MaterialPageRoute(builder: (context) => destination),
     );
   }
 
@@ -249,7 +264,6 @@ class ProfileScreen extends ConsumerWidget {
     return initials;
   }
 
-  // Widget baru untuk Card Statistik terpisah
   Widget _buildStatCard(String value, String label) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 16),
@@ -293,7 +307,7 @@ class ProfileScreen extends ConsumerWidget {
       leading: Container(
          padding: const EdgeInsets.all(8),
          decoration: BoxDecoration(
-           color: iconColor.withOpacity(0.08), // Latar bulat transparan sesuai warna ikon
+           color: iconColor.withOpacity(0.08),
            shape: BoxShape.circle,
          ),
          child: Icon(icon, color: iconColor, size: 22)
