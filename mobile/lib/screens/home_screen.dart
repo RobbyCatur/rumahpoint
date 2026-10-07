@@ -178,14 +178,19 @@ class _Header extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Container(
+        Image.asset(
+          'assets/rumahpoint.png',
           width: 44,
           height: 44,
-          decoration: BoxDecoration(
-            color: AppColors.amber,
-            borderRadius: BorderRadius.circular(14),
+          errorBuilder: (_, _, _) => Container(
+            width: 44,
+            height: 44,
+            decoration: BoxDecoration(
+              color: AppColors.amber,
+              borderRadius: BorderRadius.circular(14),
+            ),
+            child: const Icon(Icons.home_work_rounded, color: Colors.white),
           ),
-          child: const Icon(Icons.home_work_rounded, color: Colors.white),
         ),
         const SizedBox(width: 12),
         const Column(

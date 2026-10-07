@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import '../providers/user_provider.dart';
 import 'settings_screen.dart';
@@ -77,44 +78,23 @@ class ProfileScreen extends ConsumerWidget {
                     ),
                     child: Row(
                       children: [
-                        Stack(
-                          clipBehavior: Clip.none,
-                          children: [
-                            Container(
-                              width: 64,
-                              height: 64,
-                              decoration: BoxDecoration(
-                                color: const Color(0xFFF59E0B), 
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  _getInitials(user.nama), 
-                                  style: const TextStyle(
-                                    color: Colors.black87,
-                                    fontSize: 22, 
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
+                        Container(
+                          width: 64,
+                          height: 64,
+                          decoration: BoxDecoration(
+                            color: const Color(0xFFF59E0B), 
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: Center(
+                            child: Text(
+                              _getInitials(user.nama), 
+                              style: const TextStyle(
+                                color: Colors.black87,
+                                fontSize: 22, 
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
-                            Positioned(
-                              bottom: -4,
-                              right: -4,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  shape: BoxShape.circle,
-                                  border: Border.all(color: Colors.white, width: 2),
-                                ),
-                                child: const Icon(
-                                  Icons.check_circle, 
-                                  color: Colors.blue, 
-                                  size: 20,
-                                ),
-                              ),
-                            ),
-                          ],
+                          ),
                         ),
                         const SizedBox(width: 16),
                         Expanded(
@@ -135,20 +115,6 @@ class ProfileScreen extends ConsumerWidget {
                         ),
                       ],
                     ),
-                  ),
-                  
-                  const SizedBox(height: 24),
-                  
-                  // Baris Statistik
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Expanded(child: _buildStatCard(user.totalValuasi.toString(), 'Valuasi')),
-                      const SizedBox(width: 12),
-                      Expanded(child: _buildStatCard(user.totalDisimpan.toString(), 'Disimpan')),
-                      const SizedBox(width: 12),
-                      Expanded(child: _buildStatCard(user.totalPortofolio.toString(), 'Portofolio')),
-                    ],
                   ),
                   
                   const SizedBox(height: 24),
@@ -177,7 +143,7 @@ class ProfileScreen extends ConsumerWidget {
                         ),
                         _buildMenuDivider(),
                         _buildMenuItem(
-                          icon: Icons.history, 
+                          icon: Icons.help_outline, 
                           iconColor: Colors.grey.shade600,
                           title: 'Bantuan & Regulasi',
                           onTap: () => _navigateToSettings(context, 'Bantuan & Regulasi'),
@@ -188,15 +154,11 @@ class ProfileScreen extends ConsumerWidget {
                   
                   const SizedBox(height: 24),
 
-                  // Tombol Logout Tersendiri
+                  // Tombol Logout
                   InkWell(
                     onTap: () async {
-                       await ref.read(userProvider.notifier).logout();
-                       if (context.mounted) {
-                         ScaffoldMessenger.of(context).showSnackBar(
-                           const SnackBar(content: Text('Proses logout dieksekusi.')),
-                         );
-                       }
+                      await ref.read(userProvider.notifier).logout();
+                      if (context.mounted) context.go('/');
                     },
                     borderRadius: BorderRadius.circular(16),
                     child: Container(
@@ -262,38 +224,6 @@ class ProfileScreen extends ConsumerWidget {
       }
     }
     return initials;
-  }
-
-  Widget _buildStatCard(String value, String label) {
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 16),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.grey.shade200),
-      ),
-      child: Column(
-        children: [
-          Text(
-            value, 
-            style: const TextStyle(
-              fontSize: 20, 
-              fontWeight: FontWeight.bold, 
-              color: Color(0xFFF59E0B),
-            ),
-          ),
-          const SizedBox(height: 4),
-          Text(
-            label, 
-            style: const TextStyle(
-              fontSize: 12, 
-              color: Colors.grey, 
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-        ],
-      ),
-    );
   }
 
   Widget _buildMenuItem({
