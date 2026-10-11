@@ -18,13 +18,52 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
   String _query = '';
   String _filter = 'Semua';
 
+  /// Kunci bulan terpilih "tahun-bulan" (mis. 2025-9); null = semua bulan.
+  String? _bulan;
+
+  static String _monthKey(DateTime d) => '${d.year}-${d.month}';
+
+  /// Daftar bulan unik dari riwayat, terbaru dulu.
+  List<DateTime> _availableMonths(List<Prediction> history) {
+    final seen = <String>{};
+    final months = <DateTime>[];
+    for (final p in history.reversed) {
+      final key = _monthKey(p.createdAt);
+      if (seen.add(key)) {
+        months.add(DateTime(p.createdAt.year, p.createdAt.month));
+      }
+    }
+    return months;
+  }
+
   List<Prediction> _applyFilter(List<Prediction> history) {
     return history.reversed.where((p) {
       final matchFilter = _filter == 'Semua' || p.kategori == _filter;
       final matchQuery =
           p.lokasi.toLowerCase().contains(_query.toLowerCase());
-      return matchFilter && matchQuery;
+      final matchMonth = _bulan == null || _monthKey(p.createdAt) == _bulan;
+      return matchFilter && matchQuery && matchMonth;
     }).toList();
+  }
+
+  /// Kelompokkan item (sudah terurut terbaru) per bulan, terbaru dulu.
+  List<({String key, DateTime month, List<Prediction> items})> _groupByMonth(
+      List<Prediction> items) {
+    final groups =
+        <({String key, DateTime month, List<Prediction> items})>[];
+    for (final p in items) {
+      final key = _monthKey(p.createdAt);
+      if (groups.isEmpty || groups.last.key != key) {
+        groups.add((
+          key: key,
+          month: DateTime(p.createdAt.year, p.createdAt.month),
+          items: [p],
+        ));
+      } else {
+        groups.last.items.add(p);
+      }
+    }
+    return groups;
   }
 
   Future<void> _confirmClear() async {
@@ -53,7 +92,9 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
   @override
   Widget build(BuildContext context) {
     final history = ref.watch(predictionControllerProvider).history;
+    final months = _availableMonths(history);
     final items = _applyFilter(history);
+    final groups = _groupByMonth(items);
 
     return Scaffold(
       appBar: AppBar(
@@ -97,15 +138,102 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
               ],
             ),
           ),
+          if (months.length > 1)
+            SizedBox(
+              height: 48,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                padding: const EdgeInsets.fromLTRB(20, 4, 20, 0),
+                children: [
+                  ChoiceChip(
+                    label: const Text('Semua bulan'),
+                    selected: _bulan == null,
+                    onSelected: (_) => setState(() => _bulan = null),
+                  ),
+                  for (final m in months) ...[
+                    const SizedBox(width: 8),
+                    ChoiceChip(
+                      label: Text(formatBulanSingkat(m)),
+                      selected: _bulan == _monthKey(m),
+                      onSelected: (_) =>
+                          setState(() => _bulan = _monthKey(m)),
+                    ),
+                  ],
+                ],
+              ),
+            ),
           Expanded(
             child: items.isEmpty
                 ? const _EmptyState()
-                : ListView.separated(
+                : ListView.builder(
                     padding: const EdgeInsets.fromLTRB(20, 8, 20, 20),
-                    itemCount: items.length,
-                    separatorBuilder: (_, _) => const SizedBox(height: 10),
-                    itemBuilder: (context, i) => _HistoryCard(p: items[i]),
+                    itemCount: groups.length,
+                    itemBuilder: (context, gi) {
+                      final g = groups[gi];
+                      return Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(
+                                2, gi == 0 ? 8 : 20, 2, 8),
+                            child: Text(
+                              formatBulanPenuh(g.month),
+                              style: const TextStyle(
+                                fontSize: 12.5,
+                                fontWeight: FontWeight.w700,
+                                letterSpacing: 0.3,
+                                color: AppColors.muted,
+                              ),
+                            ),
+                          ),
+                          for (var i = 0; i < g.items.length; i++) ...[
+                            if (i > 0) const SizedBox(height: 10),
+                            _HistoryCard(p: g.items[i]),
+                          ],
+                        ],
+                      );
+                    },
                   ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// Badge kategori kecil: hijau + panah turun untuk Murah,
+/// merah + panah naik untuk Mahal.
+class _KategoriBadge extends StatelessWidget {
+  const _KategoriBadge({required this.kategori});
+
+  final String kategori;
+
+  @override
+  Widget build(BuildContext context) {
+    final isMurah = kategori.toLowerCase() == 'murah';
+    final fg = isMurah ? AppColors.success : AppColors.danger;
+    final bg = isMurah ? AppColors.successSoft : AppColors.dangerSoft;
+    final icon =
+        isMurah ? Icons.trending_down_rounded : Icons.trending_up_rounded;
+
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+      decoration: BoxDecoration(
+        color: bg,
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(icon, size: 13, color: fg),
+          const SizedBox(width: 4),
+          Text(
+            kategori,
+            style: TextStyle(
+              fontSize: 11,
+              fontWeight: FontWeight.w700,
+              color: fg,
+            ),
           ),
         ],
       ),
@@ -176,14 +304,7 @@ class _HistoryCard extends ConsumerWidget {
                         fontSize: 13.5, fontWeight: FontWeight.w800),
                   ),
                   const SizedBox(height: 4),
-                  Text(
-                    p.kategori,
-                    style: const TextStyle(
-                      fontSize: 11,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.amberDark,
-                    ),
-                  ),
+                  _KategoriBadge(kategori: p.kategori),
                 ],
               ),
             ],

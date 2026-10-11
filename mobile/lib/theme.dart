@@ -14,6 +14,12 @@ class AppColors {
   static const line = Color(0xFFE2E8F0);
   static const background = Color(0xFFF8FAFC);
   static const surface = Colors.white;
+
+  // Semantik kategori prediksi: Murah = emerald, Mahal = merah.
+  static const success = Color(0xFF047857);
+  static const successSoft = Color(0xFFECFDF5);
+  static const danger = Color(0xFFB91C1C);
+  static const dangerSoft = Color(0xFFFEF2F2);
 }
 
 ThemeData buildAppTheme() {

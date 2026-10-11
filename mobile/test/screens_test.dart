@@ -65,5 +65,58 @@ void main() {
     expect(find.text('Rp 1,52 Miliar'), findsOneWidget);
     expect(find.text('Semua (1)'), findsOneWidget);
     expect(find.text('12 Sep 2025'), findsOneWidget);
+    // Badge kategori & header bulan.
+    expect(find.byIcon(Icons.trending_up_rounded), findsOneWidget);
+    expect(find.text('September 2025'), findsOneWidget);
+  });
+
+  testWidgets('HistoryScreen mengelompokkan per bulan dan filter bulan',
+      (tester) async {
+    final murahLama = Prediction(
+      luasM2: 60,
+      luasBangunan: 45,
+      jumlahKamar: 2,
+      jumlahKamarMandi: 1,
+      usiaBangunan: 15,
+      lokasi: 'Bekasi',
+      estimasiHarga: 350000000,
+      estimasiString: 'Rp 350 Juta',
+      rentangBawah: '',
+      rentangAtas: '',
+      kategori: 'Murah',
+      confidence: 0.9,
+      createdAt: DateTime(2025, 8, 3),
+    );
+
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: [
+          predictionControllerProvider.overrideWith(
+            (ref) => _FakeController(
+              ApiClient(),
+              PredictionState(current: _fake, history: [murahLama, _fake]),
+            ),
+          ),
+        ],
+        child: const MaterialApp(home: HistoryScreen()),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    // Dua grup bulan + chip filter bulan tampil.
+    expect(find.text('September 2025'), findsOneWidget);
+    expect(find.text('Agustus 2025'), findsOneWidget);
+    expect(find.text('Semua bulan'), findsOneWidget);
+    expect(find.text('Sep 2025'), findsOneWidget);
+    // Badge Murah pakai ikon turun.
+    expect(find.byIcon(Icons.trending_down_rounded), findsOneWidget);
+
+    // Filter ke Agustus 2025: hanya item Bekasi yang tampil.
+    await tester.tap(find.text('Agu 2025'));
+    await tester.pumpAndSettle();
+    expect(find.text('Bekasi'), findsOneWidget);
+    expect(find.text('Jakarta Selatan'), findsNothing);
+    expect(find.text('September 2025'), findsNothing);
+    expect(find.text('Agustus 2025'), findsOneWidget);
   });
 }
