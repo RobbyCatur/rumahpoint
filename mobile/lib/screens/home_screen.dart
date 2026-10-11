@@ -1,9 +1,14 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../state/prediction_controller.dart';
 import '../theme.dart';
+import '../utils/format.dart';
 
 /// Kota yang didukung model (sesuai dataset union).
 const cities = [
@@ -24,12 +29,73 @@ class HomeScreen extends ConsumerStatefulWidget {
 }
 
 class _HomeScreenState extends ConsumerState<HomeScreen> {
+  /// Draft form otomatis tersimpan di SharedPreferences agar input tidak
+  /// hilang saat user keluar/pindah halaman sebelum memprediksi.
+  static const _keyDraft = 'rp_draft';
+
   String _city = 'Jakarta Selatan';
   double _luasTanah = 120;
   double _luasBangunan = 98;
   int _kamar = 3;
   int _kamarMandi = 2;
   int _usia = 10;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadDraft();
+  }
+
+  Future<void> _loadDraft() async {
+    final prefs = await SharedPreferences.getInstance();
+    final raw = prefs.getString(_keyDraft);
+    if (raw == null) return;
+    try {
+      final d = Map<String, dynamic>.from(jsonDecode(raw) as Map);
+      final city = d['city']?.toString();
+      setState(() {
+        if (city != null && cities.contains(city)) _city = city;
+        _luasTanah = _clampDouble(d['lt'], 20, 500, _luasTanah);
+        _luasBangunan = _clampDouble(d['lb'], 20, 500, _luasBangunan);
+        _kamar = _clampInt(d['kamar'], 1, 10, _kamar);
+        _kamarMandi = _clampInt(d['kamarMandi'], 1, 10, _kamarMandi);
+        _usia = _clampInt(d['usia'], 0, 50, _usia);
+      });
+    } catch (_) {
+      // Draft korup/tidak valid → abaikan, pakai default.
+    }
+  }
+
+  static double _clampDouble(dynamic v, double min, double max, double fb) {
+    final x = (v as num?)?.toDouble();
+    return x == null ? fb : x.clamp(min, max);
+  }
+
+  static int _clampInt(dynamic v, int min, int max, int fb) {
+    final x = (v as num?)?.toInt();
+    return x == null ? fb : x.clamp(min, max);
+  }
+
+  Future<void> _saveDraft() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(
+      _keyDraft,
+      jsonEncode({
+        'city': _city,
+        'lt': _luasTanah,
+        'lb': _luasBangunan,
+        'kamar': _kamar,
+        'kamarMandi': _kamarMandi,
+        'usia': _usia,
+      }),
+    );
+  }
+
+  /// Semua perubahan input lewat sini: setState + autosave draft.
+  void _update(void Function() fn) {
+    setState(fn);
+    _saveDraft();
+  }
 
   Future<void> _submit() async {
     final ctrl = ref.read(predictionControllerProvider.notifier);
@@ -76,7 +142,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                           .map((c) =>
                               DropdownMenuItem(value: c, child: Text(c)))
                           .toList(),
-                      onChanged: (v) => setState(() => _city = v!),
+                      onChanged: (v) => _update(() => _city = v!),
                     ),
                     const SizedBox(height: 20),
                     _SliderField(
@@ -84,7 +150,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                       value: _luasTanah,
                       min: 20,
                       max: 500,
-                      onChanged: (v) => setState(() => _luasTanah = v),
+                      onChanged: (v) => _update(() => _luasTanah = v),
                     ),
                     const SizedBox(height: 12),
                     _SliderField(
@@ -92,7 +158,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                       value: _luasBangunan,
                       min: 20,
                       max: 500,
-                      onChanged: (v) => setState(() => _luasBangunan = v),
+                      onChanged: (v) => _update(() => _luasBangunan = v),
                     ),
                     const SizedBox(height: 16),
                     LayoutBuilder(
@@ -103,21 +169,21 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                             value: _kamar,
                             min: 1,
                             max: 10,
-                            onChanged: (v) => setState(() => _kamar = v),
+                            onChanged: (v) => _update(() => _kamar = v),
                           ),
                           _StepperField(
                             label: 'Kamar Mandi',
                             value: _kamarMandi,
                             min: 1,
                             max: 10,
-                            onChanged: (v) => setState(() => _kamarMandi = v),
+                            onChanged: (v) => _update(() => _kamarMandi = v),
                           ),
                           _StepperField(
                             label: 'Usia (Thn)',
                             value: _usia,
                             min: 0,
                             max: 50,
-                            onChanged: (v) => setState(() => _usia = v),
+                            onChanged: (v) => _update(() => _usia = v),
                           ),
                         ];
                         // Layar sempit (dp kecil / font diperbesar): tumpuk
@@ -288,7 +354,9 @@ class _SectionLabel extends StatelessWidget {
   }
 }
 
-class _SliderField extends StatelessWidget {
+/// Slider + input angka manual. Slider = penyesuaian cepat (dibulatkan),
+/// keyboard = nilai presisi (mendukung float, mis. "120,5").
+class _SliderField extends StatefulWidget {
   const _SliderField({
     required this.label,
     required this.value,
@@ -304,6 +372,51 @@ class _SliderField extends StatelessWidget {
   final ValueChanged<double> onChanged;
 
   @override
+  State<_SliderField> createState() => _SliderFieldState();
+}
+
+class _SliderFieldState extends State<_SliderField> {
+  late final TextEditingController _ctrl;
+  late final FocusNode _focus;
+
+  @override
+  void initState() {
+    super.initState();
+    _ctrl = TextEditingController(text: formatLuas(widget.value));
+    _focus = FocusNode()
+      ..addListener(() {
+        // Saat selesai mengetik, rapikan teks ke nilai valid terakhir.
+        if (!_focus.hasFocus) _resetText();
+      });
+  }
+
+  @override
+  void didUpdateWidget(covariant _SliderField oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.value != widget.value && !_focus.hasFocus) _resetText();
+  }
+
+  @override
+  void dispose() {
+    _ctrl.dispose();
+    _focus.dispose();
+    super.dispose();
+  }
+
+  void _resetText() {
+    final s = formatLuas(widget.value);
+    if (_ctrl.text != s) _ctrl.text = s;
+  }
+
+  /// Terima koma maupun titik desimal; clamp ke rentang slider.
+  void _commit(String raw) {
+    final v = double.tryParse(raw.trim().replaceAll(',', '.'));
+    if (v == null) return; // ketikan sementara (""/"1,") → tunggu
+    final clamped = v.clamp(widget.min, widget.max);
+    if (clamped != widget.value) widget.onChanged(clamped);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Column(
       children: [
@@ -311,34 +424,69 @@ class _SliderField extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Flexible(
-              child: Text(label,
+              child: Text(widget.label,
                   style: const TextStyle(
                       fontSize: 13, fontWeight: FontWeight.w600)),
             ),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-              decoration: BoxDecoration(
-                color: AppColors.amberSoft,
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: Text(
-                '${value.round()} m²',
+            SizedBox(
+              width: 104,
+              child: TextField(
+                controller: _ctrl,
+                focusNode: _focus,
+                keyboardType:
+                    const TextInputType.numberWithOptions(decimal: true),
+                textAlign: TextAlign.center,
                 style: const TextStyle(
                   fontSize: 12,
                   fontWeight: FontWeight.w700,
                   color: AppColors.amberDark,
                 ),
+                onChanged: _commit,
+                onSubmitted: (raw) {
+                  _commit(raw);
+                  _focus.unfocus();
+                },
+                decoration: InputDecoration(
+                  isDense: true,
+                  filled: true,
+                  fillColor: AppColors.amberSoft,
+                  suffixText: 'm²',
+                  suffixStyle:
+                      const TextStyle(fontSize: 11, color: AppColors.amberDark),
+                  contentPadding:
+                      const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    borderSide: BorderSide.none,
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    borderSide: BorderSide.none,
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    borderSide:
+                        const BorderSide(color: AppColors.amber, width: 1.4),
+                  ),
+                ),
               ),
             ),
           ],
         ),
-        Slider(value: value, min: min, max: max, onChanged: onChanged),
+        Slider(
+          value: widget.value,
+          min: widget.min,
+          max: widget.max,
+          onChanged: (v) => widget.onChanged(v.roundToDouble()),
+        ),
       ],
     );
   }
 }
 
-class _StepperField extends StatelessWidget {
+/// Stepper −/+ dengan angka yang juga bisa diketik manual.
+/// Nilai tetap bilangan bulat dan di-clamp ke [min, max].
+class _StepperField extends StatefulWidget {
   const _StepperField({
     required this.label,
     required this.value,
@@ -354,11 +502,54 @@ class _StepperField extends StatelessWidget {
   final ValueChanged<int> onChanged;
 
   @override
+  State<_StepperField> createState() => _StepperFieldState();
+}
+
+class _StepperFieldState extends State<_StepperField> {
+  late final TextEditingController _ctrl;
+  late final FocusNode _focus;
+
+  @override
+  void initState() {
+    super.initState();
+    _ctrl = TextEditingController(text: '${widget.value}');
+    _focus = FocusNode()
+      ..addListener(() {
+        if (!_focus.hasFocus) _resetText();
+      });
+  }
+
+  @override
+  void didUpdateWidget(covariant _StepperField oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.value != widget.value && !_focus.hasFocus) _resetText();
+  }
+
+  @override
+  void dispose() {
+    _ctrl.dispose();
+    _focus.dispose();
+    super.dispose();
+  }
+
+  void _resetText() {
+    final s = '${widget.value}';
+    if (_ctrl.text != s) _ctrl.text = s;
+  }
+
+  void _commit(String raw) {
+    final v = int.tryParse(raw.trim());
+    if (v == null) return;
+    final clamped = v.clamp(widget.min, widget.max);
+    if (clamped != widget.value) widget.onChanged(clamped);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(label,
+        Text(widget.label,
             style: const TextStyle(fontSize: 12, color: AppColors.muted)),
         const SizedBox(height: 6),
         Container(
@@ -372,20 +563,39 @@ class _StepperField extends StatelessWidget {
             children: [
               _StepButton(
                 icon: Icons.remove,
-                onPressed: value > min ? () => onChanged(value - 1) : null,
+                onPressed: widget.value > widget.min
+                    ? () => widget.onChanged(widget.value - 1)
+                    : null,
               ),
               Expanded(
-                child: Text(
-                  '$value',
+                child: TextField(
+                  controller: _ctrl,
+                  focusNode: _focus,
+                  keyboardType: TextInputType.number,
+                  inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                   textAlign: TextAlign.center,
-                  overflow: TextOverflow.ellipsis,
                   style: const TextStyle(
                       fontSize: 15, fontWeight: FontWeight.w700),
+                  onChanged: _commit,
+                  onSubmitted: (raw) {
+                    _commit(raw);
+                    _focus.unfocus();
+                  },
+                  decoration: const InputDecoration(
+                    isDense: true,
+                    filled: false,
+                    border: InputBorder.none,
+                    enabledBorder: InputBorder.none,
+                    focusedBorder: InputBorder.none,
+                    contentPadding: EdgeInsets.symmetric(vertical: 10),
+                  ),
                 ),
               ),
               _StepButton(
                 icon: Icons.add,
-                onPressed: value < max ? () => onChanged(value + 1) : null,
+                onPressed: widget.value < widget.max
+                    ? () => widget.onChanged(widget.value + 1)
+                    : null,
               ),
             ],
           ),

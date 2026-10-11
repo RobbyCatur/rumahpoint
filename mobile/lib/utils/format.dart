@@ -24,3 +24,14 @@ String formatTanggal(DateTime d) => '${d.day} ${_bulan[d.month - 1]} ${d.year}';
 /// 0.952 -> "95,2%"
 String formatPersen(double value) =>
     '${(value * 100).toStringAsFixed(1).replaceAll('.', ',')}%';
+
+/// 120.0 -> "120", 120.5 -> "120,5" (maks 2 desimal, koma gaya Indonesia).
+/// Dipakai untuk luas tanah/bangunan yang kini mendukung nilai float.
+String formatLuas(num value) {
+  var s = value.toStringAsFixed(2);
+  if (s.contains('.')) {
+    s = s.replaceAll(RegExp(r'0+$'), '');
+    if (s.endsWith('.')) s = s.substring(0, s.length - 1);
+  }
+  return s.replaceAll('.', ',');
+}
