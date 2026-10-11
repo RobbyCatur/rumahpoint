@@ -10,21 +10,49 @@ import 'package:rumahpoint/main.dart';
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  testWidgets('Beranda renders banner, form, and bottom nav',
+  /// Surface tinggi agar seluruh konten ListView beranda ter-build.
+  void useTallSurface(WidgetTester tester) {
+    tester.view.physicalSize = const Size(1080, 1920);
+    tester.view.devicePixelRatio = 1.0;
+    addTearDown(tester.view.reset);
+  }
+
+  testWidgets('Beranda renders sapaan, banner, form, and bottom nav',
       (WidgetTester tester) async {
     SharedPreferences.setMockInitialValues({});
+    useTallSurface(tester);
     await tester.pumpWidget(const ProviderScope(child: RumahPointApp()));
     await tester.pumpAndSettle();
 
+    expect(find.text('Berapa harga wajar rumah impianmu?'), findsOneWidget);
+    expect(find.text('Mulai Hitung Valuasi'), findsOneWidget);
     expect(find.text('Kalkulasi Nilai Pasar Properti'), findsOneWidget);
     expect(find.text('Hitung Valuasi Sekarang'), findsOneWidget);
     expect(find.text('Beranda'), findsOneWidget);
     expect(find.text('Riwayat'), findsOneWidget);
   });
 
+  testWidgets('CTA sapaan menggulir ke fitur utama',
+      (WidgetTester tester) async {
+    SharedPreferences.setMockInitialValues({});
+    await tester.pumpWidget(const ProviderScope(child: RumahPointApp()));
+    await tester.pumpAndSettle();
+
+    final before = tester.getTopLeft(find.text('Kalkulasi Nilai Pasar Properti'));
+
+    await tester.tap(find.text('Mulai Hitung Valuasi'));
+    await tester.pumpAndSettle();
+
+    // Banner bergeser ke atas dan tombol prediksi kini terlihat.
+    final after = tester.getTopLeft(find.text('Kalkulasi Nilai Pasar Properti'));
+    expect(after.dy, lessThan(before.dy));
+    expect(find.text('Hitung Valuasi Sekarang'), findsOneWidget);
+  });
+
   testWidgets('Draft tersimpan otomatis dan dimuat kembali saat restart',
       (WidgetTester tester) async {
     SharedPreferences.setMockInitialValues({});
+    useTallSurface(tester);
     await tester.pumpWidget(const ProviderScope(child: RumahPointApp()));
     await tester.pumpAndSettle();
 
@@ -51,6 +79,7 @@ void main() {
   testWidgets('Input manual di-clamp ke rentang yang valid',
       (WidgetTester tester) async {
     SharedPreferences.setMockInitialValues({});
+    useTallSurface(tester);
     await tester.pumpWidget(const ProviderScope(child: RumahPointApp()));
     await tester.pumpAndSettle();
 

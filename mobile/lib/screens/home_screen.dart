@@ -97,6 +97,20 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     _saveDraft();
   }
 
+  /// Jangkar fitur utama (banner + form) untuk digulir dari tombol CTA.
+  final _formKey = GlobalKey();
+
+  void _scrollToForm() {
+    final ctx = _formKey.currentContext;
+    if (ctx == null) return;
+    Scrollable.ensureVisible(
+      ctx,
+      duration: const Duration(milliseconds: 450),
+      curve: Curves.easeInOut,
+      alignment: 0.02,
+    );
+  }
+
   Future<void> _submit() async {
     final ctrl = ref.read(predictionControllerProvider.notifier);
     await ctrl.predict(
@@ -122,8 +136,10 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           padding: const EdgeInsets.fromLTRB(20, 16, 20, 24),
           children: [
             const _Header(),
-            const SizedBox(height: 20),
-            const _Banner(),
+            const SizedBox(height: 28),
+            _Greeting(onStart: _scrollToForm),
+            const SizedBox(height: 32),
+            Container(key: _formKey, child: const _Banner()),
             const SizedBox(height: 20),
             Card(
               child: Padding(
@@ -139,8 +155,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                         prefixIcon: Icon(Icons.location_on_outlined, size: 20),
                       ),
                       items: cities
-                          .map((c) =>
-                              DropdownMenuItem(value: c, child: Text(c)))
+                          .map(
+                            (c) => DropdownMenuItem(value: c, child: Text(c)),
+                          )
                           .toList(),
                       onChanged: (v) => _update(() => _city = v!),
                     ),
@@ -233,9 +250,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                               ),
                             )
                           : const Icon(Icons.calculate_outlined, size: 20),
-                      label: Text(state.loading
-                          ? 'Menghitung...'
-                          : 'Hitung Valuasi Sekarang'),
+                      label: Text(
+                        state.loading
+                            ? 'Menghitung...'
+                            : 'Hitung Valuasi Sekarang',
+                      ),
                     ),
                   ],
                 ),
@@ -284,6 +303,69 @@ class _Header extends StatelessWidget {
                 style: TextStyle(fontSize: 12, color: AppColors.muted),
               ),
             ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+/// Sapaan + penjelasan singkat di bagian atas beranda.
+/// CTA hanya menggulir ke fitur utama di halaman yang sama.
+class _Greeting extends StatelessWidget {
+  const _Greeting({required this.onStart});
+
+  final VoidCallback onStart;
+
+  static String _sapaan() {
+    final h = DateTime.now().hour;
+    if (h >= 4 && h < 11) return 'Selamat pagi';
+    if (h >= 11 && h < 15) return 'Selamat siang';
+    if (h >= 15 && h < 19) return 'Selamat sore';
+    return 'Selamat malam';
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          '${_sapaan()},',
+          style: const TextStyle(fontSize: 13, color: AppColors.muted),
+        ),
+        const SizedBox(height: 6),
+        const Text(
+          'Berapa harga wajar rumah impianmu?',
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.w800,
+            height: 1.2,
+          ),
+        ),
+        const SizedBox(height: 10),
+        const Text(
+          'Isi kriteria rumah di bawah dan model machine learning kami '
+          'mengestimasi nilai pasarnya dalam hitungan detik, lengkap '
+          'dengan kategori Murah/Mahal.',
+          style: TextStyle(fontSize: 13.5, color: AppColors.muted, height: 1.5),
+        ),
+        const SizedBox(height: 18),
+        OutlinedButton.icon(
+          onPressed: onStart,
+          icon: const Icon(Icons.keyboard_arrow_down_rounded, size: 20),
+          label: const Text('Mulai Hitung Valuasi'),
+          style: OutlinedButton.styleFrom(
+            foregroundColor: AppColors.amberDark,
+            side: const BorderSide(color: AppColors.amber),
+            textStyle: const TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w700,
+            ),
+            padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 12),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+            ),
           ),
         ),
       ],
@@ -424,17 +506,22 @@ class _SliderFieldState extends State<_SliderField> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Flexible(
-              child: Text(widget.label,
-                  style: const TextStyle(
-                      fontSize: 13, fontWeight: FontWeight.w600)),
+              child: Text(
+                widget.label,
+                style: const TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
             ),
             SizedBox(
               width: 104,
               child: TextField(
                 controller: _ctrl,
                 focusNode: _focus,
-                keyboardType:
-                    const TextInputType.numberWithOptions(decimal: true),
+                keyboardType: const TextInputType.numberWithOptions(
+                  decimal: true,
+                ),
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   fontSize: 12,
@@ -451,10 +538,14 @@ class _SliderFieldState extends State<_SliderField> {
                   filled: true,
                   fillColor: AppColors.amberSoft,
                   suffixText: 'm²',
-                  suffixStyle:
-                      const TextStyle(fontSize: 11, color: AppColors.amberDark),
-                  contentPadding:
-                      const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                  suffixStyle: const TextStyle(
+                    fontSize: 11,
+                    color: AppColors.amberDark,
+                  ),
+                  contentPadding: const EdgeInsets.symmetric(
+                    horizontal: 8,
+                    vertical: 8,
+                  ),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
                     borderSide: BorderSide.none,
@@ -465,8 +556,10 @@ class _SliderFieldState extends State<_SliderField> {
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
-                    borderSide:
-                        const BorderSide(color: AppColors.amber, width: 1.4),
+                    borderSide: const BorderSide(
+                      color: AppColors.amber,
+                      width: 1.4,
+                    ),
                   ),
                 ),
               ),
@@ -549,8 +642,10 @@ class _StepperFieldState extends State<_StepperField> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(widget.label,
-            style: const TextStyle(fontSize: 12, color: AppColors.muted)),
+        Text(
+          widget.label,
+          style: const TextStyle(fontSize: 12, color: AppColors.muted),
+        ),
         const SizedBox(height: 6),
         Container(
           decoration: BoxDecoration(
@@ -575,7 +670,9 @@ class _StepperFieldState extends State<_StepperField> {
                   inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                   textAlign: TextAlign.center,
                   style: const TextStyle(
-                      fontSize: 15, fontWeight: FontWeight.w700),
+                    fontSize: 15,
+                    fontWeight: FontWeight.w700,
+                  ),
                   onChanged: _commit,
                   onSubmitted: (raw) {
                     _commit(raw);
