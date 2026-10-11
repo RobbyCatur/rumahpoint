@@ -68,6 +68,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                     const _SectionLabel('WILAYAH PROPERTI'),
                     DropdownButtonFormField<String>(
                       initialValue: _city,
+                      isExpanded: true,
                       decoration: const InputDecoration(
                         prefixIcon: Icon(Icons.location_on_outlined, size: 20),
                       ),
@@ -94,38 +95,54 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                       onChanged: (v) => setState(() => _luasBangunan = v),
                     ),
                     const SizedBox(height: 16),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: _StepperField(
+                    LayoutBuilder(
+                      builder: (context, constraints) {
+                        final steppers = [
+                          _StepperField(
                             label: 'Kamar Tidur',
                             value: _kamar,
                             min: 1,
                             max: 10,
                             onChanged: (v) => setState(() => _kamar = v),
                           ),
-                        ),
-                        const SizedBox(width: 10),
-                        Expanded(
-                          child: _StepperField(
+                          _StepperField(
                             label: 'Kamar Mandi',
                             value: _kamarMandi,
                             min: 1,
                             max: 10,
                             onChanged: (v) => setState(() => _kamarMandi = v),
                           ),
-                        ),
-                        const SizedBox(width: 10),
-                        Expanded(
-                          child: _StepperField(
+                          _StepperField(
                             label: 'Usia (Thn)',
                             value: _usia,
                             min: 0,
                             max: 50,
                             onChanged: (v) => setState(() => _usia = v),
                           ),
-                        ),
-                      ],
+                        ];
+                        // Layar sempit (dp kecil / font diperbesar): tumpuk
+                        // vertikal agar isi stepper tidak overflow.
+                        if (constraints.maxWidth < 340) {
+                          return Column(
+                            children: [
+                              steppers[0],
+                              const SizedBox(height: 12),
+                              steppers[1],
+                              const SizedBox(height: 12),
+                              steppers[2],
+                            ],
+                          );
+                        }
+                        return Row(
+                          children: [
+                            Expanded(child: steppers[0]),
+                            const SizedBox(width: 10),
+                            Expanded(child: steppers[1]),
+                            const SizedBox(width: 10),
+                            Expanded(child: steppers[2]),
+                          ],
+                        );
+                      },
                     ),
                     if (state.error != null) ...[
                       const SizedBox(height: 16),
@@ -188,18 +205,20 @@ class _Header extends StatelessWidget {
           child: const Icon(Icons.home_work_rounded, color: Colors.white),
         ),
         const SizedBox(width: 12),
-        const Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'RumahPoint',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
-            ),
-            Text(
-              'Valuasi Properti Berbasis AI',
-              style: TextStyle(fontSize: 12, color: AppColors.muted),
-            ),
-          ],
+        const Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'RumahPoint',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
+              ),
+              Text(
+                'Valuasi Properti Berbasis AI',
+                style: TextStyle(fontSize: 12, color: AppColors.muted),
+              ),
+            ],
+          ),
         ),
       ],
     );
@@ -291,9 +310,11 @@ class _SliderField extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(label,
-                style:
-                    const TextStyle(fontSize: 13, fontWeight: FontWeight.w600)),
+            Flexible(
+              child: Text(label,
+                  style: const TextStyle(
+                      fontSize: 13, fontWeight: FontWeight.w600)),
+            ),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
               decoration: BoxDecoration(
@@ -353,10 +374,14 @@ class _StepperField extends StatelessWidget {
                 icon: Icons.remove,
                 onPressed: value > min ? () => onChanged(value - 1) : null,
               ),
-              Text(
-                '$value',
-                style:
-                    const TextStyle(fontSize: 15, fontWeight: FontWeight.w700),
+              Expanded(
+                child: Text(
+                  '$value',
+                  textAlign: TextAlign.center,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(
+                      fontSize: 15, fontWeight: FontWeight.w700),
+                ),
               ),
               _StepButton(
                 icon: Icons.add,
