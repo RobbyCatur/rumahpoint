@@ -56,17 +56,24 @@ def next_data(html):
         return None
 
 
+SUBLOC_PREFIX = ("kecamatan di", "area di", "kelurahan di", "lokasi di")
+
+
 def kecamatan_links(data, city_slug):
-    for grp in data.get("internalLinks", []):
+    """Kumpulkan semua halaman sub-lokasi (kecamatan/area/kelurahan), dedup URL."""
+    best = {}
+    for grp in (data.get("internalLinks") or []):
         title = (grp.get("title") or "").lower()
-        if title.startswith("kecamatan di"):
-            out = []
-            for it in grp.get("data", []):
-                url = it.get("url") or ""
-                if "/jual/rumah/" in url and "/sewa/" not in url:
-                    out.append((url, int(it.get("count") or 0)))
-            return sorted(out, key=lambda x: -x[1])
-    return []
+        if not any(title.startswith(p) for p in SUBLOC_PREFIX):
+            continue
+        for it in grp.get("data", []):
+            url = it.get("url") or ""
+            if "/jual/rumah/" not in url or "/sewa/" in url:
+                continue
+            cnt = int(it.get("count") or 0)
+            if url not in best or cnt > best[url]:
+                best[url] = cnt
+    return sorted(best.items(), key=lambda x: -x[1])
 
 
 def _area(attr):
@@ -121,7 +128,7 @@ def scrape_city(city_slug, display_name, target, max_districts, delay):
         if not data:
             return 0
         added = 0
-        for grp in data.get("listings", []):
+        for grp in (data.get("listings") or []):
             for item in (grp.get("data") or []):
                 r = extract_listing(item, display_name)
                 if r and r["id"] not in seen:
@@ -139,7 +146,7 @@ def scrape_city(city_slug, display_name, target, max_districts, delay):
     if not data:
         print("NEXT_DATA tidak ditemukan")
         return rows
-    for grp in data.get("listings", []):
+    for grp in (data.get("listings") or []):
         for item in (grp.get("data") or []):
             r = extract_listing(item, display_name)
             if r and r["id"] not in seen:
@@ -157,18 +164,8 @@ def scrape_city(city_slug, display_name, target, max_districts, delay):
     return rows[:target]
 
 
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("city", help="slug kota di 99.co, mis. surabaya")
-    ap.add_argument("--name", help="nama kota tampil, default title-case slug")
-    ap.add_argument("--target", type=int, default=250)
-    ap.add_argument("--max-districts", type=int, default=15)
-    ap.add_argument("--delay", type=float, default=2.5)
-    a = ap.parse_args()
-    display = a.name or a.city.replace("-", " ").title()
-
-    rows = scrape_city(a.city, display, a.target, a.max_districts, a.delay)
-    out = os.path.join(HERE, f"99co_{a.city}.csv")
+def save_csv(rows, city_slug, display):
+    out = os.path.join(HERE, f"99co_{city_slug}.csv")
     with open(out, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=OUTCOLS)
         w.writeheader()
@@ -183,6 +180,21 @@ def main():
                 "usia_bangunan": r["usia_bangunan"] if r["usia_bangunan"] is not None else "",
                 "harga": r["harga"],
             })
+    return out
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("city", help="slug kota di 99.co, mis. surabaya")
+    ap.add_argument("--name", help="nama kota tampil, default title-case slug")
+    ap.add_argument("--target", type=int, default=250)
+    ap.add_argument("--max-districts", type=int, default=15)
+    ap.add_argument("--delay", type=float, default=2.5)
+    a = ap.parse_args()
+    display = a.name or a.city.replace("-", " ").title()
+
+    rows = scrape_city(a.city, display, a.target, a.max_districts, a.delay)
+    out = save_csv(rows, a.city, display)
     n = len(rows)
     miss = lambda k: sum(1 for r in rows if r[k] in (None, 0))
     print(f"Simpan {n} baris -> {out}")
