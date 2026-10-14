@@ -1,0 +1,1286 @@
+[
+ {
+  "slug": "bandung",
+  "nama": "Bandung",
+  "provinsi": "Jawa Barat",
+  "count": 96446
+ },
+ {
+  "slug": "tangerang",
+  "nama": "Tangerang",
+  "provinsi": "Banten",
+  "count": 90926
+ },
+ {
+  "slug": "jakarta-selatan",
+  "nama": "Jakarta Selatan",
+  "provinsi": "Jakarta",
+  "count": 88741
+ },
+ {
+  "slug": "tangerang-selatan",
+  "nama": "Tangerang Selatan",
+  "provinsi": "Banten",
+  "count": 57840
+ },
+ {
+  "slug": "surabaya",
+  "nama": "Surabaya",
+  "provinsi": "Jawa Timur",
+  "count": 52693
+ },
+ {
+  "slug": "jakarta-barat",
+  "nama": "Jakarta Barat",
+  "provinsi": "Jakarta",
+  "count": 48053
+ },
+ {
+  "slug": "bekasi",
+  "nama": "Bekasi",
+  "provinsi": "Jawa Barat",
+  "count": 45805
+ },
+ {
+  "slug": "jakarta-utara",
+  "nama": "Jakarta Utara",
+  "provinsi": "Jakarta",
+  "count": 42214
+ },
+ {
+  "slug": "jakarta-timur",
+  "nama": "Jakarta Timur",
+  "provinsi": "Jakarta",
+  "count": 39682
+ },
+ {
+  "slug": "bogor",
+  "nama": "Bogor",
+  "provinsi": "Jawa Barat",
+  "count": 31429
+ },
+ {
+  "slug": "semarang",
+  "nama": "Semarang",
+  "provinsi": "Jawa Tengah",
+  "count": 23079
+ },
+ {
+  "slug": "malang",
+  "nama": "Malang",
+  "provinsi": "Jawa Timur",
+  "count": 20511
+ },
+ {
+  "slug": "depok",
+  "nama": "Depok",
+  "provinsi": "Jawa Barat",
+  "count": 20180
+ },
+ {
+  "slug": "jakarta-pusat",
+  "nama": "Jakarta Pusat",
+  "provinsi": "Jakarta",
+  "count": 14017
+ },
+ {
+  "slug": "badung",
+  "nama": "Badung",
+  "provinsi": "Bali",
+  "count": 8452
+ },
+ {
+  "slug": "denpasar",
+  "nama": "Denpasar",
+  "provinsi": "Bali",
+  "count": 6107
+ },
+ {
+  "slug": "sidoarjo",
+  "nama": "Sidoarjo",
+  "provinsi": "Jawa Timur",
+  "count": 6028
+ },
+ {
+  "slug": "batam",
+  "nama": "Batam",
+  "provinsi": "Kepulauan Riau",
+  "count": 4902
+ },
+ {
+  "slug": "bandar-lampung",
+  "nama": "Bandar Lampung",
+  "provinsi": "Lampung",
+  "count": 2796
+ },
+ {
+  "slug": "medan",
+  "nama": "Medan",
+  "provinsi": "Sumatera Utara",
+  "count": 2545
+ },
+ {
+  "slug": "cimahi",
+  "nama": "Cimahi",
+  "provinsi": "Jawa Barat",
+  "count": 2403
+ },
+ {
+  "slug": "serang",
+  "nama": "Serang",
+  "provinsi": "Banten",
+  "count": 2132
+ },
+ {
+  "slug": "makassar",
+  "nama": "Makassar",
+  "provinsi": "Sulawesi Selatan",
+  "count": 2054
+ },
+ {
+  "slug": "cirebon",
+  "nama": "Cirebon",
+  "provinsi": "Jawa Barat",
+  "count": 1946
+ },
+ {
+  "slug": "bandung-barat",
+  "nama": "Bandung Barat",
+  "provinsi": "Jawa Barat",
+  "count": 1874
+ },
+ {
+  "slug": "sukoharjo",
+  "nama": "Sukoharjo",
+  "provinsi": "Jawa Tengah",
+  "count": 1694
+ },
+ {
+  "slug": "gresik",
+  "nama": "Gresik",
+  "provinsi": "Jawa Timur",
+  "count": 1527
+ },
+ {
+  "slug": "sukabumi",
+  "nama": "Sukabumi",
+  "provinsi": "Jawa Barat",
+  "count": 1192
+ },
+ {
+  "slug": "surakarta",
+  "nama": "Surakarta",
+  "provinsi": "Jawa Tengah",
+  "count": 1181
+ },
+ {
+  "slug": "klaten",
+  "nama": "Klaten",
+  "provinsi": "Jawa Tengah",
+  "count": 1063
+ },
+ {
+  "slug": "cilegon",
+  "nama": "Cilegon",
+  "provinsi": "Banten",
+  "count": 817
+ },
+ {
+  "slug": "pekanbaru",
+  "nama": "Pekanbaru",
+  "provinsi": "Riau",
+  "count": 803
+ },
+ {
+  "slug": "balikpapan",
+  "nama": "Balikpapan",
+  "provinsi": "Kalimantan Timur",
+  "count": 740
+ },
+ {
+  "slug": "tabanan",
+  "nama": "Tabanan",
+  "provinsi": "Bali",
+  "count": 732
+ },
+ {
+  "slug": "karawang",
+  "nama": "Karawang",
+  "provinsi": "Jawa Barat",
+  "count": 708
+ },
+ {
+  "slug": "batu",
+  "nama": "Batu",
+  "provinsi": "Jawa Timur",
+  "count": 690
+ },
+ {
+  "slug": "palembang",
+  "nama": "Palembang",
+  "provinsi": "Sumatera Selatan",
+  "count": 690
+ },
+ {
+  "slug": "kediri",
+  "nama": "Kediri",
+  "provinsi": "Jawa Timur",
+  "count": 476
+ },
+ {
+  "slug": "pontianak",
+  "nama": "Pontianak",
+  "provinsi": "Kalimantan Barat",
+  "count": 471
+ },
+ {
+  "slug": "deli-serdang",
+  "nama": "Deli Serdang",
+  "provinsi": "Sumatera Utara",
+  "count": 467
+ },
+ {
+  "slug": "salatiga",
+  "nama": "Salatiga",
+  "provinsi": "Jawa Tengah",
+  "count": 449
+ },
+ {
+  "slug": "boyolali",
+  "nama": "Boyolali",
+  "provinsi": "Jawa Tengah",
+  "count": 429
+ },
+ {
+  "slug": "cianjur",
+  "nama": "Cianjur",
+  "provinsi": "Jawa Barat",
+  "count": 423
+ },
+ {
+  "slug": "tegal",
+  "nama": "Tegal",
+  "provinsi": "Jawa Tengah",
+  "count": 421
+ },
+ {
+  "slug": "sumedang",
+  "nama": "Sumedang",
+  "provinsi": "Jawa Barat",
+  "count": 367
+ },
+ {
+  "slug": "pati",
+  "nama": "Pati",
+  "provinsi": "Jawa Tengah",
+  "count": 360
+ },
+ {
+  "slug": "gowa",
+  "nama": "Gowa",
+  "provinsi": "Sulawesi Selatan",
+  "count": 324
+ },
+ {
+  "slug": "pasuruan",
+  "nama": "Pasuruan",
+  "provinsi": "Jawa Timur",
+  "count": 296
+ },
+ {
+  "slug": "magelang",
+  "nama": "Magelang",
+  "provinsi": "Jawa Tengah",
+  "count": 294
+ },
+ {
+  "slug": "buleleng",
+  "nama": "Buleleng",
+  "provinsi": "Bali",
+  "count": 245
+ },
+ {
+  "slug": "jember",
+  "nama": "Jember",
+  "provinsi": "Jawa Timur",
+  "count": 222
+ },
+ {
+  "slug": "garut",
+  "nama": "Garut",
+  "provinsi": "Jawa Barat",
+  "count": 211
+ },
+ {
+  "slug": "manado",
+  "nama": "Manado",
+  "provinsi": "Sulawesi Utara",
+  "count": 210
+ },
+ {
+  "slug": "jombang",
+  "nama": "Jombang",
+  "provinsi": "Jawa Timur",
+  "count": 205
+ },
+ {
+  "slug": "mojokerto",
+  "nama": "Mojokerto",
+  "provinsi": "Jawa Timur",
+  "count": 198
+ },
+ {
+  "slug": "kendal",
+  "nama": "Kendal",
+  "provinsi": "Jawa Tengah",
+  "count": 188
+ },
+ {
+  "slug": "samarinda",
+  "nama": "Samarinda",
+  "provinsi": "Kalimantan Timur",
+  "count": 180
+ },
+ {
+  "slug": "lampung-selatan",
+  "nama": "Lampung Selatan",
+  "provinsi": "Lampung",
+  "count": 167
+ },
+ {
+  "slug": "lebak",
+  "nama": "Lebak",
+  "provinsi": "Banten",
+  "count": 147
+ },
+ {
+  "slug": "purwakarta",
+  "nama": "Purwakarta",
+  "provinsi": "Jawa Barat",
+  "count": 147
+ },
+ {
+  "slug": "madiun",
+  "nama": "Madiun",
+  "provinsi": "Jawa Timur",
+  "count": 142
+ },
+ {
+  "slug": "maros",
+  "nama": "Maros",
+  "provinsi": "Sulawesi Selatan",
+  "count": 141
+ },
+ {
+  "slug": "kupang",
+  "nama": "Kupang",
+  "provinsi": "Nusa Tenggara Timur",
+  "count": 137
+ },
+ {
+  "slug": "tasikmalaya",
+  "nama": "Tasikmalaya",
+  "provinsi": "Jawa Barat",
+  "count": 134
+ },
+ {
+  "slug": "kubu-raya",
+  "nama": "Kubu Raya",
+  "provinsi": "Kalimantan Barat",
+  "count": 133
+ },
+ {
+  "slug": "demak",
+  "nama": "Demak",
+  "provinsi": "Jawa Tengah",
+  "count": 127
+ },
+ {
+  "slug": "subang",
+  "nama": "Subang",
+  "provinsi": "Jawa Barat",
+  "count": 118
+ },
+ {
+  "slug": "mataram",
+  "nama": "Mataram",
+  "provinsi": "Nusa Tenggara Barat",
+  "count": 115
+ },
+ {
+  "slug": "tanjung-pinang",
+  "nama": "Tanjung Pinang",
+  "provinsi": "Kepulauan Riau",
+  "count": 108
+ },
+ {
+  "slug": "kuningan",
+  "nama": "Kuningan",
+  "provinsi": "Jawa Barat",
+  "count": 102
+ },
+ {
+  "slug": "sragen",
+  "nama": "Sragen",
+  "provinsi": "Jawa Tengah",
+  "count": 102
+ },
+ {
+  "slug": "majalengka",
+  "nama": "Majalengka",
+  "provinsi": "Jawa Barat",
+  "count": 93
+ },
+ {
+  "slug": "brebes",
+  "nama": "Brebes",
+  "provinsi": "Jawa Tengah",
+  "count": 85
+ },
+ {
+  "slug": "padang",
+  "nama": "Padang",
+  "provinsi": "Sumatera Barat",
+  "count": 78
+ },
+ {
+  "slug": "banjar",
+  "nama": "Banjar",
+  "provinsi": "Jawa Barat",
+  "count": 73
+ },
+ {
+  "slug": "pekalongan",
+  "nama": "Pekalongan",
+  "provinsi": "Jawa Tengah",
+  "count": 72
+ },
+ {
+  "slug": "tulungagung",
+  "nama": "Tulungagung",
+  "provinsi": "Jawa Timur",
+  "count": 70
+ },
+ {
+  "slug": "blitar",
+  "nama": "Blitar",
+  "provinsi": "Jawa Timur",
+  "count": 67
+ },
+ {
+  "slug": "lombok-barat",
+  "nama": "Lombok Barat",
+  "provinsi": "Nusa Tenggara Barat",
+  "count": 65
+ },
+ {
+  "slug": "magetan",
+  "nama": "Magetan",
+  "provinsi": "Jawa Timur",
+  "count": 64
+ },
+ {
+  "slug": "nganjuk",
+  "nama": "Nganjuk",
+  "provinsi": "Jawa Timur",
+  "count": 64
+ },
+ {
+  "slug": "pangkal-pinang",
+  "nama": "Pangkal Pinang",
+  "provinsi": "Kepulauan Bangka Belitung",
+  "count": 59
+ },
+ {
+  "slug": "ciamis",
+  "nama": "Ciamis",
+  "provinsi": "Jawa Barat",
+  "count": 50
+ },
+ {
+  "slug": "purbalingga",
+  "nama": "Purbalingga",
+  "provinsi": "Jawa Tengah",
+  "count": 49
+ },
+ {
+  "slug": "temanggung",
+  "nama": "Temanggung",
+  "provinsi": "Jawa Tengah",
+  "count": 43
+ },
+ {
+  "slug": "bondowoso",
+  "nama": "Bondowoso",
+  "provinsi": "Jawa Timur",
+  "count": 43
+ },
+ {
+  "slug": "probolinggo",
+  "nama": "Probolinggo",
+  "provinsi": "Jawa Timur",
+  "count": 42
+ },
+ {
+  "slug": "purworejo",
+  "nama": "Purworejo",
+  "provinsi": "Jawa Tengah",
+  "count": 40
+ },
+ {
+  "slug": "pandeglang",
+  "nama": "Pandeglang",
+  "provinsi": "Banten",
+  "count": 34
+ },
+ {
+  "slug": "jepara",
+  "nama": "Jepara",
+  "provinsi": "Jawa Tengah",
+  "count": 34
+ },
+ {
+  "slug": "metro",
+  "nama": "Metro",
+  "provinsi": "Lampung",
+  "count": 33
+ },
+ {
+  "slug": "indramayu",
+  "nama": "Indramayu",
+  "provinsi": "Jawa Barat",
+  "count": 32
+ },
+ {
+  "slug": "wonogiri",
+  "nama": "Wonogiri",
+  "provinsi": "Jawa Tengah",
+  "count": 31
+ },
+ {
+  "slug": "cilacap",
+  "nama": "Cilacap",
+  "provinsi": "Jawa Tengah",
+  "count": 30
+ },
+ {
+  "slug": "banjarmasin",
+  "nama": "Banjarmasin",
+  "provinsi": "Kalimantan Selatan",
+  "count": 29
+ },
+ {
+  "slug": "pemalang",
+  "nama": "Pemalang",
+  "provinsi": "Jawa Tengah",
+  "count": 28
+ },
+ {
+  "slug": "tuban",
+  "nama": "Tuban",
+  "provinsi": "Jawa Timur",
+  "count": 28
+ },
+ {
+  "slug": "batang",
+  "nama": "Batang",
+  "provinsi": "Jawa Tengah",
+  "count": 27
+ },
+ {
+  "slug": "grobogan",
+  "nama": "Grobogan",
+  "provinsi": "Jawa Tengah",
+  "count": 26
+ },
+ {
+  "slug": "pesawaran",
+  "nama": "Pesawaran",
+  "provinsi": "Lampung",
+  "count": 24
+ },
+ {
+  "slug": "bojonegoro",
+  "nama": "Bojonegoro",
+  "provinsi": "Jawa Timur",
+  "count": 23
+ },
+ {
+  "slug": "singkawang",
+  "nama": "Singkawang",
+  "provinsi": "Kalimantan Barat",
+  "count": 23
+ },
+ {
+  "slug": "bangkalan",
+  "nama": "Bangkalan",
+  "provinsi": "Jawa Timur",
+  "count": 22
+ },
+ {
+  "slug": "blora",
+  "nama": "Blora",
+  "provinsi": "Jawa Tengah",
+  "count": 21
+ },
+ {
+  "slug": "ponorogo",
+  "nama": "Ponorogo",
+  "provinsi": "Jawa Timur",
+  "count": 21
+ },
+ {
+  "slug": "lampung-timur",
+  "nama": "Lampung Timur",
+  "provinsi": "Lampung",
+  "count": 20
+ },
+ {
+  "slug": "kampar",
+  "nama": "Kampar",
+  "provinsi": "Riau",
+  "count": 20
+ },
+ {
+  "slug": "banjar-baru",
+  "nama": "Banjar Baru",
+  "provinsi": "Kalimantan Selatan",
+  "count": 19
+ },
+ {
+  "slug": "lampung-tengah",
+  "nama": "Lampung Tengah",
+  "provinsi": "Lampung",
+  "count": 19
+ },
+ {
+  "slug": "lamongan",
+  "nama": "Lamongan",
+  "provinsi": "Jawa Timur",
+  "count": 18
+ },
+ {
+  "slug": "jembrana",
+  "nama": "Jembrana",
+  "provinsi": "Bali",
+  "count": 17
+ },
+ {
+  "slug": "minahasa-utara",
+  "nama": "Minahasa Utara",
+  "provinsi": "Sulawesi Utara",
+  "count": 17
+ },
+ {
+  "slug": "pematang-siantar",
+  "nama": "Pematang Siantar",
+  "provinsi": "Sumatera Utara",
+  "count": 15
+ },
+ {
+  "slug": "tanggamus",
+  "nama": "Tanggamus",
+  "provinsi": "Lampung",
+  "count": 14
+ },
+ {
+  "slug": "biak-numfor",
+  "nama": "Biak Numfor",
+  "provinsi": "Papua",
+  "count": 14
+ },
+ {
+  "slug": "kebumen",
+  "nama": "Kebumen",
+  "provinsi": "Jawa Tengah",
+  "count": 13
+ },
+ {
+  "slug": "situbondo",
+  "nama": "Situbondo",
+  "provinsi": "Jawa Timur",
+  "count": 13
+ },
+ {
+  "slug": "binjai",
+  "nama": "Binjai",
+  "provinsi": "Sumatera Utara",
+  "count": 13
+ },
+ {
+  "slug": "bangli",
+  "nama": "Bangli",
+  "provinsi": "Bali",
+  "count": 12
+ },
+ {
+  "slug": "klungkung",
+  "nama": "Klungkung",
+  "provinsi": "Bali",
+  "count": 12
+ },
+ {
+  "slug": "rembang",
+  "nama": "Rembang",
+  "provinsi": "Jawa Tengah",
+  "count": 12
+ },
+ {
+  "slug": "wonosobo",
+  "nama": "Wonosobo",
+  "provinsi": "Jawa Tengah",
+  "count": 12
+ },
+ {
+  "slug": "bangka-tengah",
+  "nama": "Bangka Tengah",
+  "provinsi": "Kepulauan Bangka Belitung",
+  "count": 12
+ },
+ {
+  "slug": "jayapura",
+  "nama": "Jayapura",
+  "provinsi": "Papua",
+  "count": 12
+ },
+ {
+  "slug": "tomohon",
+  "nama": "Tomohon",
+  "provinsi": "Sulawesi Utara",
+  "count": 12
+ },
+ {
+  "slug": "ngawi",
+  "nama": "Ngawi",
+  "provinsi": "Jawa Timur",
+  "count": 11
+ },
+ {
+  "slug": "palopo",
+  "nama": "Palopo",
+  "provinsi": "Sulawesi Selatan",
+  "count": 11
+ },
+ {
+  "slug": "bitung",
+  "nama": "Bitung",
+  "provinsi": "Sulawesi Utara",
+  "count": 11
+ },
+ {
+  "slug": "minahasa",
+  "nama": "Minahasa",
+  "provinsi": "Sulawesi Utara",
+  "count": 11
+ },
+ {
+  "slug": "bangka",
+  "nama": "Bangka",
+  "provinsi": "Kepulauan Bangka Belitung",
+  "count": 10
+ },
+ {
+  "slug": "belitung",
+  "nama": "Belitung",
+  "provinsi": "Kepulauan Bangka Belitung",
+  "count": 10
+ },
+ {
+  "slug": "palu",
+  "nama": "Palu",
+  "provinsi": "Sulawesi Tengah",
+  "count": 10
+ },
+ {
+  "slug": "bintan",
+  "nama": "Bintan",
+  "provinsi": "Kepulauan Riau",
+  "count": 9
+ },
+ {
+  "slug": "lombok-tengah",
+  "nama": "Lombok Tengah",
+  "provinsi": "Nusa Tenggara Barat",
+  "count": 9
+ },
+ {
+  "slug": "manggarai-barat",
+  "nama": "Manggarai Barat",
+  "provinsi": "Nusa Tenggara Timur",
+  "count": 9
+ },
+ {
+  "slug": "kendari",
+  "nama": "Kendari",
+  "provinsi": "Sulawesi Tenggara",
+  "count": 9
+ },
+ {
+  "slug": "lumajang",
+  "nama": "Lumajang",
+  "provinsi": "Jawa Timur",
+  "count": 8
+ },
+ {
+  "slug": "pamekasan",
+  "nama": "Pamekasan",
+  "provinsi": "Jawa Timur",
+  "count": 8
+ },
+ {
+  "slug": "lampung-utara",
+  "nama": "Lampung Utara",
+  "provinsi": "Lampung",
+  "count": 8
+ },
+ {
+  "slug": "pringsewu",
+  "nama": "Pringsewu",
+  "provinsi": "Lampung",
+  "count": 8
+ },
+ {
+  "slug": "lombok-utara",
+  "nama": "Lombok Utara",
+  "provinsi": "Nusa Tenggara Barat",
+  "count": 8
+ },
+ {
+  "slug": "takalar",
+  "nama": "Takalar",
+  "provinsi": "Sulawesi Selatan",
+  "count": 7
+ },
+ {
+  "slug": "lampung-barat",
+  "nama": "Lampung Barat",
+  "provinsi": "Lampung",
+  "count": 6
+ },
+ {
+  "slug": "aceh-besar",
+  "nama": "Aceh Besar",
+  "provinsi": "Aceh",
+  "count": 5
+ },
+ {
+  "slug": "pangandaran",
+  "nama": "Pangandaran",
+  "provinsi": "Jawa Barat",
+  "count": 5
+ },
+ {
+  "slug": "trenggalek",
+  "nama": "Trenggalek",
+  "provinsi": "Jawa Timur",
+  "count": 5
+ },
+ {
+  "slug": "sambas",
+  "nama": "Sambas",
+  "provinsi": "Kalimantan Barat",
+  "count": 5
+ },
+ {
+  "slug": "solok",
+  "nama": "Solok",
+  "provinsi": "Sumatera Barat",
+  "count": 5
+ },
+ {
+  "slug": "banjarnegara",
+  "nama": "Banjarnegara",
+  "provinsi": "Jawa Tengah",
+  "count": 4
+ },
+ {
+  "slug": "tarakan",
+  "nama": "Tarakan",
+  "provinsi": "Kalimantan Utara",
+  "count": 4
+ },
+ {
+  "slug": "muna",
+  "nama": "Muna",
+  "provinsi": "Sulawesi Tenggara",
+  "count": 4
+ },
+ {
+  "slug": "ogan-ilir",
+  "nama": "Ogan Ilir",
+  "provinsi": "Sumatera Selatan",
+  "count": 4
+ },
+ {
+  "slug": "serdang-bedagai",
+  "nama": "Serdang Bedagai",
+  "provinsi": "Sumatera Utara",
+  "count": 4
+ },
+ {
+  "slug": "tebing-tinggi",
+  "nama": "Tebing Tinggi",
+  "provinsi": "Sumatera Utara",
+  "count": 4
+ },
+ {
+  "slug": "langsa",
+  "nama": "Langsa",
+  "provinsi": "Aceh",
+  "count": 3
+ },
+ {
+  "slug": "kutai-kartanegara",
+  "nama": "Kutai Kartanegara",
+  "provinsi": "Kalimantan Timur",
+  "count": 3
+ },
+ {
+  "slug": "ambon",
+  "nama": "Ambon",
+  "provinsi": "Maluku",
+  "count": 3
+ },
+ {
+  "slug": "barru",
+  "nama": "Barru",
+  "provinsi": "Sulawesi Selatan",
+  "count": 3
+ },
+ {
+  "slug": "bulukumba",
+  "nama": "Bulukumba",
+  "provinsi": "Sulawesi Selatan",
+  "count": 3
+ },
+ {
+  "slug": "luwu",
+  "nama": "Luwu",
+  "provinsi": "Sulawesi Selatan",
+  "count": 3
+ },
+ {
+  "slug": "pinrang",
+  "nama": "Pinrang",
+  "provinsi": "Sulawesi Selatan",
+  "count": 3
+ },
+ {
+  "slug": "bukittinggi",
+  "nama": "Bukittinggi",
+  "provinsi": "Sumatera Barat",
+  "count": 3
+ },
+ {
+  "slug": "muara-enim",
+  "nama": "Muara Enim",
+  "provinsi": "Sumatera Selatan",
+  "count": 3
+ },
+ {
+  "slug": "ogan-komering-ulu",
+  "nama": "Ogan Komering Ulu",
+  "provinsi": "Sumatera Selatan",
+  "count": 3
+ },
+ {
+  "slug": "prabumulih",
+  "nama": "Prabumulih",
+  "provinsi": "Sumatera Selatan",
+  "count": 3
+ },
+ {
+  "slug": "langkat",
+  "nama": "Langkat",
+  "provinsi": "Sumatera Utara",
+  "count": 3
+ },
+ {
+  "slug": "simalungun",
+  "nama": "Simalungun",
+  "provinsi": "Sumatera Utara",
+  "count": 3
+ },
+ {
+  "slug": "kapuas-hulu",
+  "nama": "Kapuas Hulu",
+  "provinsi": "Kalimantan Barat",
+  "count": 2
+ },
+ {
+  "slug": "mempawah",
+  "nama": "Mempawah",
+  "provinsi": "Kalimantan Barat",
+  "count": 2
+ },
+ {
+  "slug": "berau",
+  "nama": "Berau",
+  "provinsi": "Kalimantan Timur",
+  "count": 2
+ },
+ {
+  "slug": "kutai-barat",
+  "nama": "Kutai Barat",
+  "provinsi": "Kalimantan Timur",
+  "count": 2
+ },
+ {
+  "slug": "lombok-timur",
+  "nama": "Lombok Timur",
+  "provinsi": "Nusa Tenggara Barat",
+  "count": 2
+ },
+ {
+  "slug": "belu",
+  "nama": "Belu",
+  "provinsi": "Nusa Tenggara Timur",
+  "count": 2
+ },
+ {
+  "slug": "dumai",
+  "nama": "Dumai",
+  "provinsi": "Riau",
+  "count": 2
+ },
+ {
+  "slug": "mamuju",
+  "nama": "Mamuju",
+  "provinsi": "Sulawesi Barat",
+  "count": 2
+ },
+ {
+  "slug": "enrekang",
+  "nama": "Enrekang",
+  "provinsi": "Sulawesi Selatan",
+  "count": 2
+ },
+ {
+  "slug": "bolaang-mongondow",
+  "nama": "Bolaang Mongondow",
+  "provinsi": "Sulawesi Utara",
+  "count": 2
+ },
+ {
+  "slug": "tanah-datar",
+  "nama": "Tanah Datar",
+  "provinsi": "Sumatera Barat",
+  "count": 2
+ },
+ {
+  "slug": "asahan",
+  "nama": "Asahan",
+  "provinsi": "Sumatera Utara",
+  "count": 2
+ },
+ {
+  "slug": "tapanuli-tengah",
+  "nama": "Tapanuli Tengah",
+  "provinsi": "Sumatera Utara",
+  "count": 2
+ },
+ {
+  "slug": "aceh-barat",
+  "nama": "Aceh Barat",
+  "provinsi": "Aceh",
+  "count": 1
+ },
+ {
+  "slug": "banda-aceh",
+  "nama": "Banda Aceh",
+  "provinsi": "Aceh",
+  "count": 1
+ },
+ {
+  "slug": "lhokseumawe",
+  "nama": "Lhokseumawe",
+  "provinsi": "Aceh",
+  "count": 1
+ },
+ {
+  "slug": "sabang",
+  "nama": "Sabang",
+  "provinsi": "Aceh",
+  "count": 1
+ },
+ {
+  "slug": "pacitan",
+  "nama": "Pacitan",
+  "provinsi": "Jawa Timur",
+  "count": 1
+ },
+ {
+  "slug": "ketapang",
+  "nama": "Ketapang",
+  "provinsi": "Kalimantan Barat",
+  "count": 1
+ },
+ {
+  "slug": "sanggau",
+  "nama": "Sanggau",
+  "provinsi": "Kalimantan Barat",
+  "count": 1
+ },
+ {
+  "slug": "sintang",
+  "nama": "Sintang",
+  "provinsi": "Kalimantan Barat",
+  "count": 1
+ },
+ {
+  "slug": "hulu-sungai-utara",
+  "nama": "Hulu Sungai Utara",
+  "provinsi": "Kalimantan Selatan",
+  "count": 1
+ },
+ {
+  "slug": "kota-baru",
+  "nama": "Kota Baru",
+  "provinsi": "Kalimantan Selatan",
+  "count": 1
+ },
+ {
+  "slug": "tanah-bumbu",
+  "nama": "Tanah Bumbu",
+  "provinsi": "Kalimantan Selatan",
+  "count": 1
+ },
+ {
+  "slug": "kutai-timur",
+  "nama": "Kutai Timur",
+  "provinsi": "Kalimantan Timur",
+  "count": 1
+ },
+ {
+  "slug": "penajam-paser-utara",
+  "nama": "Penajam Paser Utara",
+  "provinsi": "Kalimantan Timur",
+  "count": 1
+ },
+ {
+  "slug": "bangka-selatan",
+  "nama": "Bangka Selatan",
+  "provinsi": "Kepulauan Bangka Belitung",
+  "count": 1
+ },
+ {
+  "slug": "karimun",
+  "nama": "Karimun",
+  "provinsi": "Kepulauan Riau",
+  "count": 1
+ },
+ {
+  "slug": "way-kanan",
+  "nama": "Way Kanan",
+  "provinsi": "Lampung",
+  "count": 1
+ },
+ {
+  "slug": "sikka",
+  "nama": "Sikka",
+  "provinsi": "Nusa Tenggara Timur",
+  "count": 1
+ },
+ {
+  "slug": "sumba-barat-daya",
+  "nama": "Sumba Barat Daya",
+  "provinsi": "Nusa Tenggara Timur",
+  "count": 1
+ },
+ {
+  "slug": "sumba-timur",
+  "nama": "Sumba Timur",
+  "provinsi": "Nusa Tenggara Timur",
+  "count": 1
+ },
+ {
+  "slug": "merauke",
+  "nama": "Merauke",
+  "provinsi": "Papua",
+  "count": 1
+ },
+ {
+  "slug": "pelalawan",
+  "nama": "Pelalawan",
+  "provinsi": "Riau",
+  "count": 1
+ },
+ {
+  "slug": "rokan-hulu",
+  "nama": "Rokan Hulu",
+  "provinsi": "Riau",
+  "count": 1
+ },
+ {
+  "slug": "tana-toraja",
+  "nama": "Tana Toraja",
+  "provinsi": "Sulawesi Selatan",
+  "count": 1
+ },
+ {
+  "slug": "konawe",
+  "nama": "Konawe",
+  "provinsi": "Sulawesi Tenggara",
+  "count": 1
+ },
+ {
+  "slug": "konawe-selatan",
+  "nama": "Konawe Selatan",
+  "provinsi": "Sulawesi Tenggara",
+  "count": 1
+ },
+ {
+  "slug": "minahasa-selatan",
+  "nama": "Minahasa Selatan",
+  "provinsi": "Sulawesi Utara",
+  "count": 1
+ },
+ {
+  "slug": "minahasa-tenggara",
+  "nama": "Minahasa Tenggara",
+  "provinsi": "Sulawesi Utara",
+  "count": 1
+ },
+ {
+  "slug": "agam",
+  "nama": "Agam",
+  "provinsi": "Sumatera Barat",
+  "count": 1
+ },
+ {
+  "slug": "padang-pariaman",
+  "nama": "Padang Pariaman",
+  "provinsi": "Sumatera Barat",
+  "count": 1
+ },
+ {
+  "slug": "pagar-alam",
+  "nama": "Pagar Alam",
+  "provinsi": "Sumatera Selatan",
+  "count": 1
+ },
+ {
+  "slug": "karo",
+  "nama": "Karo",
+  "provinsi": "Sumatera Utara",
+  "count": 1
+ },
+ {
+  "slug": "labuhan-batu",
+  "nama": "Labuhan Batu",
+  "provinsi": "Sumatera Utara",
+  "count": 1
+ },
+ {
+  "slug": "tapanuli-utara",
+  "nama": "Tapanuli Utara",
+  "provinsi": "Sumatera Utara",
+  "count": 1
+ },
+ {
+  "slug": "kudus",
+  "nama": "Kudus",
+  "provinsi": "Jawa Tengah",
+  "count": 0
+ }
+]

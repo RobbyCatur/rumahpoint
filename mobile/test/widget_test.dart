@@ -6,6 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:rumahpoint/main.dart';
+import 'package:rumahpoint/router.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -24,6 +25,10 @@ void main() {
     await tester.pumpWidget(const ProviderScope(child: RumahPointApp()));
     await tester.pumpAndSettle();
 
+    // App kini mendarat di LoginScreen ('/') — navigasi dulu ke beranda.
+    router.go('/beranda');
+    await tester.pumpAndSettle();
+
     expect(find.text('Berapa harga wajar rumah impianmu?'), findsOneWidget);
     expect(find.text('Mulai Hitung Valuasi'), findsOneWidget);
     expect(find.text('Kalkulasi Nilai Pasar Properti'), findsOneWidget);
@@ -36,6 +41,9 @@ void main() {
       (WidgetTester tester) async {
     SharedPreferences.setMockInitialValues({});
     await tester.pumpWidget(const ProviderScope(child: RumahPointApp()));
+    await tester.pumpAndSettle();
+
+    router.go('/beranda');
     await tester.pumpAndSettle();
 
     final before = tester.getTopLeft(find.text('Kalkulasi Nilai Pasar Properti'));
@@ -54,6 +62,9 @@ void main() {
     SharedPreferences.setMockInitialValues({});
     useTallSurface(tester);
     await tester.pumpWidget(const ProviderScope(child: RumahPointApp()));
+    await tester.pumpAndSettle();
+
+    router.go('/beranda');
     await tester.pumpAndSettle();
 
     // Ubah input: ketik luas float (koma) & stepper manual.
@@ -81,6 +92,9 @@ void main() {
     SharedPreferences.setMockInitialValues({});
     useTallSurface(tester);
     await tester.pumpWidget(const ProviderScope(child: RumahPointApp()));
+    await tester.pumpAndSettle();
+
+    router.go('/beranda');
     await tester.pumpAndSettle();
 
     // Luas di atas maksimum → clamp 500. Stepper di atas maksimum → clamp 10.
