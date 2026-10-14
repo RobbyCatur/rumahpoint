@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../models/prediction.dart';
-import '../state/prediction_controller.dart';
+import '../core/format.dart';
+import '../features/prediction/domain/entities/prediction.dart';
+import '../features/prediction/presentation/providers/prediction_providers.dart';
 import '../theme.dart';
-import '../utils/format.dart';
 
 class HistoryScreen extends ConsumerStatefulWidget {
   const HistoryScreen({super.key});

@@ -2,11 +2,44 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:rumahpoint/api/client.dart';
-import 'package:rumahpoint/models/prediction.dart';
+import 'package:rumahpoint/core/failures.dart';
+import 'package:rumahpoint/features/prediction/domain/entities/prediction.dart';
+import 'package:rumahpoint/features/prediction/domain/repositories/prediction_repository.dart';
+import 'package:rumahpoint/features/prediction/domain/usecases/get_prediction_history.dart';
+import 'package:rumahpoint/features/prediction/presentation/controllers/prediction_controller.dart';
+import 'package:rumahpoint/features/prediction/presentation/providers/prediction_providers.dart';
 import 'package:rumahpoint/screens/history_screen.dart';
 import 'package:rumahpoint/screens/result_screen.dart';
-import 'package:rumahpoint/state/prediction_controller.dart';
+
+/// Repository palsu: tidak menyentuh Dio/SharedPreferences.
+class _FakeRepository implements PredictionRepository {
+  @override
+  Future<({Prediction? prediction, Failure? failure})> predict({
+    required double luasM2,
+    required double luasBangunan,
+    required int jumlahKamar,
+    required int jumlahKamarMandi,
+    required int usiaBangunan,
+    required String lokasi,
+  }) async =>
+      (prediction: null, failure: null);
+
+  @override
+  Future<({List<Prediction> history, Failure? failure})> getHistory() async =>
+      (history: const <Prediction>[], failure: null);
+
+  @override
+  Future<Failure?> saveHistory(List<Prediction> history) async => null;
+
+  @override
+  Future<Failure?> clearHistory() async => null;
+
+  @override
+  Future<Map<String, dynamic>?> loadDraft() async => null;
+
+  @override
+  Future<void> saveDraft(Map<String, dynamic> draft) async {}
+}
 
 final _fake = Prediction(
   luasM2: 120,
@@ -25,7 +58,8 @@ final _fake = Prediction(
 );
 
 class _FakeController extends PredictionController {
-  _FakeController(super.api, PredictionState seed) {
+  _FakeController(PredictionState seed)
+      : super(_FakeRepository(), GetPredictionHistory(_FakeRepository())) {
     state = seed;
   }
 }
@@ -34,10 +68,7 @@ Widget _wrap(Widget child) {
   return ProviderScope(
     overrides: [
       predictionControllerProvider.overrideWith(
-        (ref) => _FakeController(
-          ApiClient(),
-          PredictionState(current: _fake, history: [_fake]),
-        ),
+        (ref) => _FakeController(PredictionState(current: _fake, history: [_fake])),
       ),
     ],
     child: MaterialApp(home: child),
@@ -93,7 +124,6 @@ void main() {
         overrides: [
           predictionControllerProvider.overrideWith(
             (ref) => _FakeController(
-              ApiClient(),
               PredictionState(current: _fake, history: [murahLama, _fake]),
             ),
           ),

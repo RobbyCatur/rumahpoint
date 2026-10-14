@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'features/prediction/presentation/providers/prediction_providers.dart';
 import 'router.dart';
-import 'state/prediction_controller.dart';
 import 'theme.dart';
 
 void main() {

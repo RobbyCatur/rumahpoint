@@ -1,14 +1,11 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-import '../state/prediction_controller.dart';
+import '../core/format.dart';
+import '../features/prediction/presentation/providers/prediction_providers.dart';
 import '../theme.dart';
-import '../utils/format.dart';
 
 /// Kota yang didukung model (sesuai dataset union).
 const cities = [
@@ -29,10 +26,6 @@ class HomeScreen extends ConsumerStatefulWidget {
 }
 
 class _HomeScreenState extends ConsumerState<HomeScreen> {
-  /// Draft form otomatis tersimpan di SharedPreferences agar input tidak
-  /// hilang saat user keluar/pindah halaman sebelum memprediksi.
-  static const _keyDraft = 'rp_draft';
-
   String _city = 'Jakarta Selatan';
   double _luasTanah = 120;
   double _luasBangunan = 98;
@@ -47,23 +40,17 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   }
 
   Future<void> _loadDraft() async {
-    final prefs = await SharedPreferences.getInstance();
-    final raw = prefs.getString(_keyDraft);
-    if (raw == null) return;
-    try {
-      final d = Map<String, dynamic>.from(jsonDecode(raw) as Map);
-      final city = d['city']?.toString();
-      setState(() {
-        if (city != null && cities.contains(city)) _city = city;
-        _luasTanah = _clampDouble(d['lt'], 20, 500, _luasTanah);
-        _luasBangunan = _clampDouble(d['lb'], 20, 500, _luasBangunan);
-        _kamar = _clampInt(d['kamar'], 1, 10, _kamar);
-        _kamarMandi = _clampInt(d['kamarMandi'], 1, 10, _kamarMandi);
-        _usia = _clampInt(d['usia'], 0, 50, _usia);
-      });
-    } catch (_) {
-      // Draft korup/tidak valid → abaikan, pakai default.
-    }
+    final d = await ref.read(predictionControllerProvider.notifier).loadDraft();
+    if (d == null) return;
+    final city = d['city']?.toString();
+    setState(() {
+      if (city != null && cities.contains(city)) _city = city;
+      _luasTanah = _clampDouble(d['lt'], 20, 500, _luasTanah);
+      _luasBangunan = _clampDouble(d['lb'], 20, 500, _luasBangunan);
+      _kamar = _clampInt(d['kamar'], 1, 10, _kamar);
+      _kamarMandi = _clampInt(d['kamarMandi'], 1, 10, _kamarMandi);
+      _usia = _clampInt(d['usia'], 0, 50, _usia);
+    });
   }
 
   static double _clampDouble(dynamic v, double min, double max, double fb) {
@@ -77,18 +64,14 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   }
 
   Future<void> _saveDraft() async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setString(
-      _keyDraft,
-      jsonEncode({
-        'city': _city,
-        'lt': _luasTanah,
-        'lb': _luasBangunan,
-        'kamar': _kamar,
-        'kamarMandi': _kamarMandi,
-        'usia': _usia,
-      }),
-    );
+    await ref.read(predictionControllerProvider.notifier).saveDraft({
+      'city': _city,
+      'lt': _luasTanah,
+      'lb': _luasBangunan,
+      'kamar': _kamar,
+      'kamarMandi': _kamarMandi,
+      'usia': _usia,
+    });
   }
 
   /// Semua perubahan input lewat sini: setState + autosave draft.
