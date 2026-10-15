@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'features/prediction/presentation/providers/prediction_providers.dart';
+import 'providers/theme_provider.dart';
 import 'router.dart';
 import 'theme.dart';
 
@@ -27,11 +28,16 @@ class _RumahPointAppState extends ConsumerState<RumahPointApp> {
 
   @override
   Widget build(BuildContext context) {
+    final themeMode = ref.watch(themeModeProvider);
+
     return MaterialApp.router(
       title: 'RumahPoint',
       debugShowCheckedModeBanner: false,
       theme: buildAppTheme(),
+      darkTheme: buildDarkTheme(),
+      themeMode: themeMode,
       routerConfig: router,
     );
   }
 }
+
