@@ -68,57 +68,64 @@ class ProfileScreen extends ConsumerWidget {
                 children: [
                   const SizedBox(height: 16),
                   
-                  // Card Profil
-                  Container(
-                    padding: const EdgeInsets.all(20),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: const Color(0xFFF59E0B).withOpacity(0.4)),
+                  // Card Profil — bisa diklik untuk ke Informasi Pribadi
+                  GestureDetector(
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const PersonalInfoScreen()),
                     ),
-                    child: Row(
-                      children: [
-                        Container(
-                          width: 64,
-                          height: 64,
-                          decoration: BoxDecoration(
-                            color: const Color(0xFFF59E0B), 
-                            borderRadius: BorderRadius.circular(16),
-                          ),
-                          child: Center(
-                            child: Text(
-                              _getInitials(user.nama), 
-                              style: const TextStyle(
-                                color: Colors.black87,
-                                fontSize: 22, 
-                                fontWeight: FontWeight.bold,
+                    child: Container(
+                      padding: const EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(color: const Color(0xFFF59E0B).withOpacity(0.4)),
+                      ),
+                      child: Row(
+                        children: [
+                          Container(
+                            width: 64,
+                            height: 64,
+                            decoration: BoxDecoration(
+                              color: const Color(0xFFF59E0B),
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            child: Center(
+                              child: Text(
+                                _getInitials(user.nama),
+                                style: const TextStyle(
+                                  color: Colors.black87,
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                        const SizedBox(width: 16),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                user.nama,
-                                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black87),
-                              ),
-                              const SizedBox(height: 4),
-                              Text(
-                                user.email,
-                                style: const TextStyle(fontSize: 13, color: Colors.grey),
-                              ),
-                            ],
+                          const SizedBox(width: 16),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  user.nama,
+                                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black87),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  user.email,
+                                  style: const TextStyle(fontSize: 13, color: Colors.grey),
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
+                          const Icon(Icons.chevron_right, color: Colors.grey, size: 22),
+                        ],
+                      ),
                     ),
                   ),
-                  
+
                   const SizedBox(height: 24),
-                  
+
                   // Daftar Menu
                   Container(
                     decoration: BoxDecoration(
@@ -138,12 +145,12 @@ class ProfileScreen extends ConsumerWidget {
                         _buildMenuItem(
                           icon: Icons.location_on_outlined,
                           iconColor: Colors.blue,
-                          title: 'Preferensi Wilayah & NJOP',
-                          onTap: () => _navigateToSettings(context, 'Preferensi Wilayah & NJOP'),
+                          title: 'Preferensi Wilayah',
+                          onTap: () => _navigateToSettings(context, 'Preferensi Wilayah'),
                         ),
                         _buildMenuDivider(),
                         _buildMenuItem(
-                          icon: Icons.help_outline, 
+                          icon: Icons.help_outline,
                           iconColor: Colors.grey.shade600,
                           title: 'Bantuan & Regulasi',
                           onTap: () => _navigateToSettings(context, 'Bantuan & Regulasi'),
@@ -202,7 +209,7 @@ class ProfileScreen extends ConsumerWidget {
     
     if (title == 'Informasi Pribadi & Sandi') {
       destination = const PersonalInfoScreen();
-    } else if (title == 'Preferensi Wilayah & NJOP') {
+    } else if (title == 'Preferensi Wilayah') {
       destination = const RegionPreferenceScreen();
     } else {
       destination = const HelpRegulationScreen();

@@ -12,7 +12,7 @@ class RegionPreferenceScreen extends StatelessWidget {
         elevation: 0,
         iconTheme: const IconThemeData(color: Colors.black87),
         title: const Text(
-          'Preferensi Wilayah & NJOP',
+          'Preferensi Wilayah',
           style: TextStyle(color: Colors.black87, fontSize: 18, fontWeight: FontWeight.w600),
         ),
         centerTitle: true,
