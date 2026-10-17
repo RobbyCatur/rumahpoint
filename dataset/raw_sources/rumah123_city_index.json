@@ -1,0 +1,5729 @@
+[
+ {
+  "slug": "aceh",
+  "nama": "Aceh",
+  "kecamatan": []
+ },
+ {
+  "slug": "aceh-besar",
+  "nama": "Aceh Besar",
+  "kecamatan": [
+   "darul-imarah",
+   "montasik",
+   "pulo-aceh"
+  ]
+ },
+ {
+  "slug": "agam",
+  "nama": "Agam",
+  "kecamatan": [
+   "lubuk-basung"
+  ]
+ },
+ {
+  "slug": "ambarawa",
+  "nama": "Ambarawa",
+  "kecamatan": [
+   "ambarawa"
+  ]
+ },
+ {
+  "slug": "ambon",
+  "nama": "Ambon",
+  "kecamatan": [
+   "sirimau"
+  ]
+ },
+ {
+  "slug": "anambas",
+  "nama": "Anambas",
+  "kecamatan": [
+   "siantan"
+  ]
+ },
+ {
+  "slug": "anyer",
+  "nama": "Anyer",
+  "kecamatan": [
+   "anyer"
+  ]
+ },
+ {
+  "slug": "asahan",
+  "nama": "Asahan",
+  "kecamatan": [
+   "aek-kuasan",
+   "air-batu",
+   "air-putih"
+  ]
+ },
+ {
+  "slug": "australia",
+  "nama": "Australia",
+  "kecamatan": [
+   "brisbane",
+   "melbourne",
+   "sydney"
+  ]
+ },
+ {
+  "slug": "badung",
+  "nama": "Badung",
+  "kecamatan": [
+   "abiansemal",
+   "angantaka",
+   "balangan",
+   "batu-belig",
+   "benoa",
+   "bongkasa",
+   "bukit",
+   "canggu",
+   "cemagi",
+   "dalung",
+   "darmasaba",
+   "dewi-sri",
+   "goa-gong",
+   "gulingan",
+   "gunung-salak",
+   "jimbaran",
+   "kapal",
+   "kedonganan",
+   "kerobokan",
+   "kerobokan-kaja",
+   "kerobokan-kelod",
+   "klungkung",
+   "kuta",
+   "kuta-selatan",
+   "kuta-utara",
+   "kutuh",
+   "legian",
+   "lombok",
+   "lukluk",
+   "mambal",
+   "mengwi",
+   "mengwitani",
+   "mumbul",
+   "munggu",
+   "ngurah-rai",
+   "nusa-dua",
+   "nyanyi",
+   "pecatu",
+   "penarungan",
+   "pererenan",
+   "pesanggaran",
+   "petang",
+   "petitenget",
+   "puri-gading",
+   "sading",
+   "sangeh",
+   "sedang",
+   "semer",
+   "seminyak",
+   "sempidi",
+   "seseh",
+   "sibang-gede",
+   "sibang-kaja",
+   "sunset-road",
+   "taman",
+   "taman-griya",
+   "tanjung-benoa",
+   "tibubeneng",
+   "tuban",
+   "tumbak-bayuh",
+   "tundun-penyu",
+   "uluwatu",
+   "umalas",
+   "ungasan"
+  ]
+ },
+ {
+  "slug": "bali",
+  "nama": "Bali",
+  "kecamatan": []
+ },
+ {
+  "slug": "balikpapan",
+  "nama": "Balikpapan",
+  "kecamatan": [
+   "balikpapan-barat",
+   "balikpapan-baru",
+   "balikpapan-kota",
+   "balikpapan-selatan",
+   "balikpapan-tengah",
+   "balikpapan-timur",
+   "balikpapan-utara",
+   "batakan",
+   "batu-ampar",
+   "damai",
+   "gunung-bahagia",
+   "karang-jati",
+   "karang-joang",
+   "karang-rejo",
+   "kariangau",
+   "klandasan-ilir",
+   "klandasan-ulu",
+   "manggar",
+   "manggar-baru",
+   "muara-rapak",
+   "prapatan",
+   "sepinggan",
+   "sumber-rejo",
+   "telaga-sari"
+  ]
+ },
+ {
+  "slug": "banda-aceh",
+  "nama": "Banda Aceh",
+  "kecamatan": [
+   "baiturrahman",
+   "kuta-alam",
+   "syiah-kuala",
+   "ulee-kareng"
+  ]
+ },
+ {
+  "slug": "bandar-lampung",
+  "nama": "Bandar Lampung",
+  "kecamatan": [
+   "bumi-waras",
+   "enggal",
+   "kedamaian",
+   "kedaton",
+   "kemiling",
+   "kota-sepang",
+   "labuhan-ratu",
+   "langkapura",
+   "panjang",
+   "rajabasa",
+   "sukabumi",
+   "sukarame",
+   "tanjung",
+   "tanjung-karang-barat",
+   "tanjung-karang-pusat",
+   "tanjung-karang-timur",
+   "tanjung-senang",
+   "teluk-betung",
+   "teluk-betung-barat",
+   "teluk-betung-selatan",
+   "teluk-betung-timur",
+   "teluk-betung-utara",
+   "way-halim",
+   "way-kandis"
+  ]
+ },
+ {
+  "slug": "bandung",
+  "nama": "Bandung",
+  "kecamatan": [
+   "andir",
+   "antapani",
+   "arcamanik",
+   "arjasari",
+   "asia-afrika",
+   "astanaanyar",
+   "awiligar",
+   "babakan-ciparay",
+   "babakanciparay",
+   "baleendah",
+   "bandung-barat",
+   "bandung-kidul",
+   "bandung-kota",
+   "bandung-kulon",
+   "bandung-selatan",
+   "bandung-timur",
+   "bandung-utara",
+   "bandung-wetan",
+   "banjaran",
+   "batujajar",
+   "batununggal",
+   "baturaden",
+   "bkr",
+   "bojongloa",
+   "bojongloa-kaler",
+   "bojongloa-kidul",
+   "bojongsoang",
+   "braga",
+   "buah-batu",
+   "burangrang",
+   "cangkuang",
+   "caringin",
+   "ciateul",
+   "cibaduyut",
+   "cibeunying",
+   "cibeunying-kidul",
+   "cibeureum",
+   "cibiru",
+   "cibogo",
+   "cicadas",
+   "cicaheum",
+   "cicalengka",
+   "cicendo",
+   "cidadap",
+   "cigadung",
+   "cigondewah",
+   "cihampelas",
+   "cihanjuang",
+   "cijagra",
+   "cijerah",
+   "cikalong-wetan",
+   "cikancung",
+   "cikutra",
+   "cilengkrang",
+   "cileunyi",
+   "cililin",
+   "cimahi",
+   "cimaung",
+   "cimenyan",
+   "cimindi",
+   "cinambo",
+   "cipaganti",
+   "cipaku",
+   "ciparay",
+   "cipatat",
+   "cipedes",
+   "cipeundeuy",
+   "cipongkor",
+   "cisaranten",
+   "cisarua",
+   "ciumbuleuit",
+   "ciwaruga",
+   "ciwastra",
+   "ciwidey",
+   "coblong",
+   "dadali",
+   "dago",
+   "dago-pakar",
+   "dayeuhkolot",
+   "derwati",
+   "diponegoro",
+   "gardu-jati",
+   "garuda",
+   "gatot-subroto",
+   "gede-bage",
+   "geger-kalong",
+   "gunung-batu",
+   "gununghalu",
+   "hegarmanah",
+   "holis-cigondewah",
+   "jatinangor",
+   "katapang",
+   "kebon-kawung",
+   "kebonjati",
+   "kertasari",
+   "kiaracondong",
+   "kopo",
+   "kopo-permai",
+   "kosambi",
+   "kota-baru-parahyangan",
+   "kutawaringin",
+   "laswi",
+   "lembang",
+   "lengkong",
+   "leuwi-panjang",
+   "lombok",
+   "majalaya",
+   "mandalajati",
+   "margaasih",
+   "margacinta",
+   "margahayu",
+   "mekar-wangi",
+   "merdeka",
+   "moch-toha",
+   "muara",
+   "nagreg",
+   "ngamprah",
+   "otista",
+   "pacet",
+   "padalarang",
+   "padasuka",
+   "pajajaran",
+   "pameungpeuk",
+   "pangalengan",
+   "panyileukan",
+   "parongpong",
+   "paseh",
+   "pasir-kaliki",
+   "pasir-koja",
+   "pasir-luyu",
+   "pasirjambu",
+   "pasteur",
+   "pelajar-pejuang",
+   "peta",
+   "pinus",
+   "podomoro-park-bandung",
+   "pondok-hijau",
+   "pungkur",
+   "rancabali",
+   "rancaekek",
+   "rancamanyar",
+   "rancasari",
+   "regol",
+   "resor-dago-pakar",
+   "riau",
+   "salatiga",
+   "sarijadi",
+   "sariwangi",
+   "sayap-dago",
+   "setiabudi",
+   "setra-duta",
+   "setra-indah",
+   "setra-murni",
+   "setra-sari",
+   "sindangkerta",
+   "singgasana",
+   "soekarno-hatta",
+   "solokan-jeruk",
+   "soreang",
+   "suci",
+   "sudirman",
+   "sukahaji",
+   "sukajadi",
+   "sukaluyu",
+   "sukasari",
+   "summarecon-bandung",
+   "sumurbandung",
+   "suniaraja",
+   "supratman",
+   "surapati",
+   "surya-sumantri",
+   "talaga-bodas",
+   "taman-holis-indah",
+   "taman-kopo-indah",
+   "tegalega",
+   "terusan-buah-batu",
+   "tubagus-ismail",
+   "turangga",
+   "ujungberung",
+   "veteran",
+   "wastukencana"
+  ]
+ },
+ {
+  "slug": "bandung-barat",
+  "nama": "Bandung Barat",
+  "kecamatan": [
+   "batujajar",
+   "cihampelas",
+   "cikalongwetan",
+   "cililin",
+   "cipatat",
+   "cipongkor",
+   "cisarua",
+   "lembang",
+   "ngamprah",
+   "padalarang",
+   "parongpong",
+   "rongga",
+   "saguling"
+  ]
+ },
+ {
+  "slug": "bangka",
+  "nama": "Bangka",
+  "kecamatan": [
+   "belinyu",
+   "mendo-barat",
+   "pemali",
+   "sungailiat"
+  ]
+ },
+ {
+  "slug": "bangka-selatan",
+  "nama": "Bangka Selatan",
+  "kecamatan": [
+   "toboali"
+  ]
+ },
+ {
+  "slug": "bangka-tengah",
+  "nama": "Bangka Tengah",
+  "kecamatan": [
+   "namang",
+   "pangkalan-baru",
+   "simpang-katis"
+  ]
+ },
+ {
+  "slug": "bangkalan",
+  "nama": "Bangkalan",
+  "kecamatan": [
+   "arosbaya",
+   "bangkalan",
+   "geger",
+   "kamal",
+   "kemayoran",
+   "klampis",
+   "kwanyar",
+   "labang"
+  ]
+ },
+ {
+  "slug": "bangli",
+  "nama": "Bangli",
+  "kecamatan": [
+   "bebalang",
+   "kintamani",
+   "mangguh"
+  ]
+ },
+ {
+  "slug": "banjar",
+  "nama": "Banjar",
+  "kecamatan": [
+   "banjar",
+   "gambut",
+   "karang-intan",
+   "kertak-hanyar",
+   "martapura",
+   "pataruman",
+   "purwaharja",
+   "sungai-pinang",
+   "sungai-tabuk",
+   "tanggerang"
+  ]
+ },
+ {
+  "slug": "banjar-baru",
+  "nama": "Banjar Baru",
+  "kecamatan": [
+   "banjar-baru",
+   "banjarbaru-selatan",
+   "banjarbaru-utara",
+   "cempaka",
+   "landasan-ulin",
+   "liang-anggang"
+  ]
+ },
+ {
+  "slug": "banjarmasin",
+  "nama": "Banjarmasin",
+  "kecamatan": [
+   "banjarmasin",
+   "banjarmasin-barat",
+   "banjarmasin-selatan-",
+   "banjarmasin-tengah",
+   "banjarmasin-timur",
+   "banjarmasin-utara"
+  ]
+ },
+ {
+  "slug": "banjarnegara",
+  "nama": "Banjarnegara",
+  "kecamatan": [
+   "banjarmangu",
+   "banjarnegara",
+   "batur",
+   "bawang",
+   "madukara",
+   "mandiraja",
+   "purworejo-klampok",
+   "wanadadi"
+  ]
+ },
+ {
+  "slug": "banten",
+  "nama": "Banten",
+  "kecamatan": []
+ },
+ {
+  "slug": "bantul",
+  "nama": "Bantul",
+  "kecamatan": [
+   "bambanglipuro",
+   "banguntapan",
+   "bantul",
+   "imogiri--------------",
+   "jetis",
+   "kasihan",
+   "kretek",
+   "pajangan",
+   "pandak",
+   "piyungan",
+   "plered",
+   "pundong",
+   "sanden",
+   "sedayu",
+   "sewon"
+  ]
+ },
+ {
+  "slug": "banyuasin",
+  "nama": "Banyuasin",
+  "kecamatan": [
+   "banyuasin-i",
+   "rambutan",
+   "sembawa",
+   "talang-kelapa"
+  ]
+ },
+ {
+  "slug": "banyumas",
+  "nama": "Banyumas",
+  "kecamatan": [
+   "ajibarang",
+   "banyumas",
+   "baturaden",
+   "baturraden",
+   "cilongok",
+   "jatilawang",
+   "kalibagor",
+   "karanglewas",
+   "kebasen",
+   "kedungbanteng",
+   "kembaran",
+   "patikraja",
+   "purwokerto",
+   "purwokerto-selatan",
+   "purwokerto-timur",
+   "purwokerto-utara",
+   "rawalo",
+   "sokaraja",
+   "somagede",
+   "sumbang",
+   "tambak",
+   "wangon"
+  ]
+ },
+ {
+  "slug": "banyuwangi",
+  "nama": "Banyuwangi",
+  "kecamatan": [
+   "bangorejo",
+   "banyuwangi",
+   "cluring",
+   "gambiran",
+   "genteng",
+   "giri",
+   "glagah",
+   "kabat",
+   "kalipuro",
+   "licin",
+   "muncar",
+   "purwoharjo",
+   "rogojampi",
+   "srono",
+   "tegalsari",
+   "wongsorejo"
+  ]
+ },
+ {
+  "slug": "barito-kuala",
+  "nama": "Barito Kuala",
+  "kecamatan": [
+   "alalak"
+  ]
+ },
+ {
+  "slug": "barru",
+  "nama": "Barru",
+  "kecamatan": [
+   "tanete-rilau"
+  ]
+ },
+ {
+  "slug": "batam",
+  "nama": "Batam",
+  "kecamatan": [
+   "batam-centre",
+   "batam-kota",
+   "batu-aji",
+   "batu-ampar",
+   "batu-besar",
+   "belakang-padang",
+   "bengkong",
+   "kabil",
+   "lubuk-baja",
+   "muka-kuning",
+   "nagoya",
+   "nongsa",
+   "pelita",
+   "punggur",
+   "sagulung",
+   "sei-panas",
+   "sekupang",
+   "sungai-beduk",
+   "tanjung-uncang",
+   "tiban"
+  ]
+ },
+ {
+  "slug": "batang",
+  "nama": "Batang",
+  "kecamatan": [
+   "bandar",
+   "batang",
+   "bawang",
+   "gringsing",
+   "kalisalak",
+   "kauman",
+   "limpung",
+   "tulis",
+   "warungasem",
+   "wonotunggal"
+  ]
+ },
+ {
+  "slug": "batu",
+  "nama": "Batu",
+  "kecamatan": [
+   "batu",
+   "bumiaji",
+   "desa-tulungrejo",
+   "junrejo"
+  ]
+ },
+ {
+  "slug": "bekasi",
+  "nama": "Bekasi",
+  "kecamatan": [
+   "arjuna",
+   "babelan",
+   "bantar-gebang",
+   "bekasi",
+   "bekasi-barat",
+   "bekasi-kota",
+   "bekasi-selatan",
+   "bekasi-timur",
+   "bekasi-utara",
+   "bintara",
+   "bojongmanggu",
+   "bumi-pala",
+   "cabang-bungin",
+   "caman",
+   "cibarusa",
+   "cibarusah",
+   "cibitung",
+   "cibubur",
+   "cikarang",
+   "cikarang-barat",
+   "cikarang-pusat",
+   "cikarang-selatan",
+   "cikarang-timur",
+   "cikarang-utara",
+   "cikiwul",
+   "cikokol",
+   "cikunir",
+   "cimuning",
+   "cut-mutia",
+   "delta-mas",
+   "duren-jaya",
+   "duta-harapan",
+   "galaxy",
+   "golden-city",
+   "grand-wisata",
+   "harapan-baru",
+   "harapan-indah",
+   "harapan-jaya",
+   "harapan-mulya",
+   "jababeka",
+   "jaka-kencana",
+   "jaka-mulya",
+   "jaka-permai",
+   "jaka-sampurna",
+   "jaka-setia",
+   "jati-agung",
+   "jati-asih",
+   "jati-cempaka",
+   "jati-luhur",
+   "jati-mekar",
+   "jati-rahayu",
+   "jati-rasa",
+   "jati-sari",
+   "jatibening",
+   "jatikarya",
+   "jatikramat",
+   "jatimakmur",
+   "jatimelati",
+   "jatimulya",
+   "jatimurni",
+   "jatiraden",
+   "jatirangga",
+   "jatiranggon",
+   "jatisampurna",
+   "jatiwaringin",
+   "jatiwarna",
+   "kaliabang",
+   "kalimalang",
+   "karang-satria",
+   "karangbahagia",
+   "kartini",
+   "kayuringin-jaya",
+   "kebalen",
+   "kemang-pratama",
+   "komsen",
+   "kota-legenda",
+   "kranji",
+   "lemah-abang",
+   "margahayu",
+   "medan-satria",
+   "mekar-jaya",
+   "muara-gembong",
+   "mustikajaya",
+   "mustikasari",
+   "mutiara-baru",
+   "narogong",
+   "niaga-kalimas",
+   "nusa-loka",
+   "padurenan",
+   "pebayuran",
+   "pedurenan",
+   "pejuang",
+   "pekayon",
+   "perwira",
+   "pondok-gede",
+   "pondok-ungu",
+   "pondokmelati",
+   "prima-harapan",
+   "pulo-permata-sari",
+   "rawa-panjang",
+   "rawalumbu",
+   "satriajaya",
+   "sepanjang-jaya",
+   "serang-baru",
+   "serang-cibarusah",
+   "setiamekar",
+   "setu",
+   "sukakarya",
+   "sukapura",
+   "sukatani",
+   "sukawangi",
+   "summarecon-bekasi",
+   "summarecon-crown-gading",
+   "taman-galaxy",
+   "tambelang",
+   "tambun-selatan",
+   "tambun-utara",
+   "tanah-tinggi",
+   "tarumajaya",
+   "telukpucung"
+  ]
+ },
+ {
+  "slug": "belitung",
+  "nama": "Belitung",
+  "kecamatan": [
+   "gantung",
+   "kelapa-kampit",
+   "manggar",
+   "membalong",
+   "sijuk",
+   "tanjung-pandan",
+   "tanjung-tinggi"
+  ]
+ },
+ {
+  "slug": "belu",
+  "nama": "Belu",
+  "kecamatan": [
+   "atambua",
+   "tasifeto-timur"
+  ]
+ },
+ {
+  "slug": "bengkalis",
+  "nama": "Bengkalis",
+  "kecamatan": [
+   "mandau"
+  ]
+ },
+ {
+  "slug": "bengkulu",
+  "nama": "Bengkulu",
+  "kecamatan": [
+   "gading-cempaka",
+   "kampung-melayu",
+   "muara-bangkahulu",
+   "muara-bengkulu-hulu",
+   "ratu-agung",
+   "selebar",
+   "sungai-serut"
+  ]
+ },
+ {
+  "slug": "bengkulu-selatan",
+  "nama": "Bengkulu Selatan",
+  "kecamatan": [
+   "kota-manna"
+  ]
+ },
+ {
+  "slug": "bengkulu-tengah",
+  "nama": "Bengkulu Tengah",
+  "kecamatan": [
+   "pondok-kelapa"
+  ]
+ },
+ {
+  "slug": "bengkulu-utara",
+  "nama": "Bengkulu Utara",
+  "kecamatan": [
+   "pondok-kelapa"
+  ]
+ },
+ {
+  "slug": "berau",
+  "nama": "Berau",
+  "kecamatan": [
+   "sambaliung"
+  ]
+ },
+ {
+  "slug": "biak-numfor",
+  "nama": "Biak Numfor",
+  "kecamatan": [
+   "biak-barat",
+   "biak-timur"
+  ]
+ },
+ {
+  "slug": "bima",
+  "nama": "Bima",
+  "kecamatan": [
+   "sape",
+   "tambora"
+  ]
+ },
+ {
+  "slug": "binjai",
+  "nama": "Binjai",
+  "kecamatan": [
+   "binjai-barat",
+   "binjai-kota",
+   "binjai-selatan",
+   "binjai-timur",
+   "binjai-utara"
+  ]
+ },
+ {
+  "slug": "bintan",
+  "nama": "Bintan",
+  "kecamatan": [
+   "bintan-timur",
+   "toapaya"
+  ]
+ },
+ {
+  "slug": "bireun",
+  "nama": "Bireun",
+  "kecamatan": [
+   "kuta-blang"
+  ]
+ },
+ {
+  "slug": "bitung",
+  "nama": "Bitung",
+  "kecamatan": [
+   "bitung-selatan",
+   "bitung-tengah",
+   "bitung-utara",
+   "girian",
+   "madidir",
+   "maesa"
+  ]
+ },
+ {
+  "slug": "blitar",
+  "nama": "Blitar",
+  "kecamatan": [
+   "garum",
+   "kanigoro",
+   "kepanjenkidul",
+   "panggungrejo",
+   "ponggok",
+   "sanankulon",
+   "sananwetan",
+   "selopuro",
+   "srengat",
+   "sukorejo",
+   "sutojayan",
+   "talun",
+   "udanawu",
+   "wlingi"
+  ]
+ },
+ {
+  "slug": "blora",
+  "nama": "Blora",
+  "kecamatan": [
+   "blora-kota",
+   "cepu",
+   "jepon",
+   "ngawen"
+  ]
+ },
+ {
+  "slug": "boalema",
+  "nama": "Boalema",
+  "kecamatan": [
+   "paguyaman"
+  ]
+ },
+ {
+  "slug": "bogor",
+  "nama": "Bogor",
+  "kecamatan": [
+   "ahmadyani",
+   "ardio",
+   "babakan",
+   "babakan-madang",
+   "babakan-pasar",
+   "balumbang-jaya",
+   "bantar-jati",
+   "baranangsiang",
+   "batutulis",
+   "bogor-barat",
+   "bogor-nirwana-residence",
+   "bogor-selatan",
+   "bogor-tengah",
+   "bogor-timur",
+   "bogor-utara",
+   "bojong",
+   "bojong-gede",
+   "bojong-kerta",
+   "bojong-kulur",
+   "bojongsari",
+   "bondongan",
+   "bubulak",
+   "bukit-sentul",
+   "caringin",
+   "cariu",
+   "ciakret",
+   "ciampea",
+   "ciangsana",
+   "ciapus",
+   "ciawi",
+   "cibinong",
+   "cibodas",
+   "cibogor",
+   "cibubur",
+   "cibulan",
+   "cibuluh",
+   "cibungbulang",
+   "cigombong",
+   "cigudeg",
+   "cijayanti",
+   "cijeruk",
+   "cikaret",
+   "cikeas",
+   "cilebut",
+   "cilendek",
+   "cilendek-barat",
+   "cilendek-timur",
+   "cileungsi",
+   "ciluar",
+   "cimacan",
+   "cimahpar",
+   "cimande",
+   "cimanggu",
+   "ciomas",
+   "cipaku",
+   "cipanas",
+   "ciparigi",
+   "cipayung",
+   "cisarua",
+   "ciseeng",
+   "citaringgul",
+   "citeureup",
+   "ciwaringin",
+   "curug",
+   "curug-mekar",
+   "dramaga",
+   "duta-pakuan",
+   "empang",
+   "gadog",
+   "genteng",
+   "gudang",
+   "gunung-batu",
+   "gunung-putri",
+   "gunung-sindur",
+   "harjamukti",
+   "harjasari",
+   "indraprasta",
+   "jasinga",
+   "jl-a-yani",
+   "jl-dr-semeru",
+   "jonggol",
+   "karang-tengah",
+   "katulampa",
+   "kebon-kelapa",
+   "kedung-halang",
+   "kedungbadak",
+   "kedungwaringin",
+   "kemang",
+   "kertamaya",
+   "klapanunggal",
+   "kota-wisata",
+   "kranggan",
+   "laladon",
+   "lawanggintung",
+   "legenda-wisata",
+   "leuwiliang",
+   "leuwinanggung",
+   "leuwisadeng",
+   "limusnunggal",
+   "loji",
+   "margajaya",
+   "megamendung",
+   "mekarsari",
+   "muara-sari",
+   "mulyaharja",
+   "nanggung",
+   "pabaton",
+   "pajajaran",
+   "pakuan",
+   "paledang",
+   "pamijahan",
+   "pamoyanan",
+   "panaragan",
+   "parung",
+   "parung-panjang",
+   "pasir-jaya",
+   "pasir-kuda",
+   "pasir-muncang",
+   "pasirlaja",
+   "pasirmulya",
+   "puncak",
+   "ranca-bungur",
+   "rancamaya",
+   "rangga-mekar",
+   "rumpin",
+   "semplak",
+   "sempur",
+   "sentul",
+   "sentul-city",
+   "sinang-barang",
+   "sindang-barang",
+   "sindang-sari",
+   "situ-gede",
+   "sukajaya",
+   "sukamaju",
+   "sukamakmur",
+   "sukaraja",
+   "sukasari",
+   "sukatani",
+   "summarecon-bogor",
+   "tajur",
+   "tajur-halang",
+   "taman-kencana",
+   "taman-yasmin",
+   "tamansari",
+   "tanah-baru",
+   "tanah-sareal",
+   "tanjungsari",
+   "tapos",
+   "tegal-gundi",
+   "tegal-gundil",
+   "tegallega",
+   "tenjo",
+   "tenjolaya",
+   "veteran",
+   "wanaherang"
+  ]
+ },
+ {
+  "slug": "bojonegoro",
+  "nama": "Bojonegoro",
+  "kecamatan": [
+   "bojonegoro",
+   "bojonegoro-kota",
+   "kalitidu",
+   "kapas",
+   "ngasem",
+   "sukosewu",
+   "sumberejo",
+   "trucuk"
+  ]
+ },
+ {
+  "slug": "bolaang-mongondow",
+  "nama": "Bolaang Mongondow",
+  "kecamatan": [
+   "bolaang"
+  ]
+ },
+ {
+  "slug": "bondowoso",
+  "nama": "Bondowoso",
+  "kecamatan": [
+   "bondowoso-kota",
+   "cermee",
+   "curahdami",
+   "grujugan",
+   "tenggarang"
+  ]
+ },
+ {
+  "slug": "bone",
+  "nama": "Bone",
+  "kecamatan": [
+   "tanete-riattang",
+   "tanete-riattang-barat"
+  ]
+ },
+ {
+  "slug": "bone-bolango",
+  "nama": "Bone Bolango",
+  "kecamatan": [
+   "bone-pantai"
+  ]
+ },
+ {
+  "slug": "bontang",
+  "nama": "Bontang",
+  "kecamatan": [
+   "bontang-selatan",
+   "bontang-utara"
+  ]
+ },
+ {
+  "slug": "boven-digoel",
+  "nama": "Boven Digoel",
+  "kecamatan": [
+   "arimop"
+  ]
+ },
+ {
+  "slug": "boyolali",
+  "nama": "Boyolali",
+  "kecamatan": [
+   "ampel",
+   "banyudono",
+   "boyolali-kota",
+   "cepogo",
+   "gladagsari",
+   "karanggede",
+   "klego",
+   "mojosongo",
+   "musuk",
+   "ngemplak",
+   "nogosari",
+   "pulisen",
+   "sambi",
+   "sawit",
+   "simo",
+   "teras",
+   "winong",
+   "wonosegoro"
+  ]
+ },
+ {
+  "slug": "brebes",
+  "nama": "Brebes",
+  "kecamatan": [
+   "brebes",
+   "bulakamba",
+   "bumiayu",
+   "jatibarang",
+   "kersana",
+   "ketanggungan",
+   "larangan",
+   "losari",
+   "sirampog",
+   "wanasari"
+  ]
+ },
+ {
+  "slug": "bukittinggi",
+  "nama": "Bukittinggi",
+  "kecamatan": [
+   "bukittinggi",
+   "bukittinggi-kota",
+   "guguk-panjang"
+  ]
+ },
+ {
+  "slug": "buleleng",
+  "nama": "Buleleng",
+  "kecamatan": [
+   "alasangker",
+   "ambengan",
+   "anturan",
+   "baktiseraga",
+   "banjar",
+   "banjarbali",
+   "banjartegal",
+   "banyuasri",
+   "banyuning",
+   "bondalem",
+   "bukti",
+   "buleleng",
+   "bungkulan",
+   "busungbiu",
+   "dencarik",
+   "gerokgak",
+   "gitgit",
+   "kaliasem",
+   "kalibubuk",
+   "kalisada",
+   "kayuputih",
+   "kendran-penataran",
+   "kubutambahan",
+   "liligundi",
+   "lovina",
+   "munduk",
+   "pacung",
+   "pancasari",
+   "panji",
+   "pemaron",
+   "pemuteran",
+   "penarukan",
+   "sambangan",
+   "sangsit",
+   "seririt",
+   "singaraja",
+   "sukasada",
+   "sumberkimia",
+   "tejakula",
+   "temukus",
+   "tukadmungga",
+   "umeanyar",
+   "wanagiri"
+  ]
+ },
+ {
+  "slug": "bulukumba",
+  "nama": "Bulukumba",
+  "kecamatan": [
+   "bonto-bahari",
+   "bulukumpa",
+   "ujung-bulu"
+  ]
+ },
+ {
+  "slug": "bulungan",
+  "nama": "Bulungan",
+  "kecamatan": [
+   "tanjung-selor"
+  ]
+ },
+ {
+  "slug": "ciamis",
+  "nama": "Ciamis",
+  "kecamatan": [
+   "banjarsari",
+   "ciamis",
+   "ciamis-kota",
+   "cijeungjing",
+   "cikoneng",
+   "cipaku",
+   "cisaga",
+   "kawali",
+   "padaherang",
+   "pamarican",
+   "pangandaran",
+   "sindangkasih",
+   "tambaksari"
+  ]
+ },
+ {
+  "slug": "cianjur",
+  "nama": "Cianjur",
+  "kecamatan": [
+   "cianjur",
+   "cianjur-kota",
+   "cibeber",
+   "cidaun",
+   "ciherang",
+   "cikalongkulon",
+   "cilaku",
+   "cipanas",
+   "cipendawa",
+   "ciranjang",
+   "cugenang",
+   "gekbrong",
+   "karangtengah",
+   "mande",
+   "pacet",
+   "pagelaran",
+   "sukaluyu",
+   "sukanagara",
+   "sukaresmi",
+   "warungkondang"
+  ]
+ },
+ {
+  "slug": "cikampek",
+  "nama": "Cikampek",
+  "kecamatan": [
+   "cikampek"
+  ]
+ },
+ {
+  "slug": "cikarang",
+  "nama": "Cikarang",
+  "kecamatan": [
+   "cikarang-utara",
+   "lippo-cikarang",
+   "serang-cibarusah"
+  ]
+ },
+ {
+  "slug": "cilacap",
+  "nama": "Cilacap",
+  "kecamatan": [
+   "adipala",
+   "binangun",
+   "cilacap",
+   "cilacap-selatan",
+   "cilacap-tengah",
+   "cilacap-utara",
+   "jeruklegi",
+   "kawunganten",
+   "kesugihan",
+   "kroya",
+   "majenang",
+   "maos",
+   "nusawungu",
+   "sampang",
+   "wanareja"
+  ]
+ },
+ {
+  "slug": "cilegon",
+  "nama": "Cilegon",
+  "kecamatan": [
+   "cibeber",
+   "cilegon",
+   "cilegon-indah",
+   "citangkil",
+   "ciwandan",
+   "gerogol",
+   "jombang",
+   "jombang-wetan",
+   "pulo-merak",
+   "purwakarta"
+  ]
+ },
+ {
+  "slug": "cimahi",
+  "nama": "Cimahi",
+  "kecamatan": [
+   "cimahi-selatan",
+   "cimahi-tengah",
+   "cimahi-utara",
+   "leuwi-gajah"
+  ]
+ },
+ {
+  "slug": "cirebon",
+  "nama": "Cirebon",
+  "kecamatan": [
+   "argasunya",
+   "arjawinangun",
+   "babakan",
+   "beber",
+   "ciledug",
+   "cirebon-barat",
+   "cirebon-kota",
+   "cirebon-selatan",
+   "cirebon-timur",
+   "cirebon-utara",
+   "depok",
+   "drajat",
+   "dukupuntang",
+   "gebang",
+   "gegesik",
+   "gempol",
+   "gunungjati",
+   "harjamukti",
+   "jagasatru",
+   "kalijaga",
+   "kaliwedi",
+   "kanci",
+   "karangsembung",
+   "karyamulya",
+   "kebonbaru",
+   "kecapi",
+   "kedawung",
+   "kejaksan",
+   "kertawinangun",
+   "kesambi",
+   "kesenden",
+   "klangenan",
+   "larangan",
+   "lemahabang",
+   "lemahwungkuk",
+   "losari",
+   "mundu",
+   "pabuaran",
+   "palimanan",
+   "pekalangan",
+   "pekalipan",
+   "pengambiran",
+   "perumnas",
+   "plered",
+   "plumbon",
+   "pulasaren",
+   "sukapura",
+   "sumber",
+   "sutawinangun",
+   "talun",
+   "tengah-tani",
+   "tuk",
+   "tuparev",
+   "weru"
+  ]
+ },
+ {
+  "slug": "daerah-istimewa-yogyakarta",
+  "nama": "Daerah Istimewa Yogyakarta",
+  "kecamatan": []
+ },
+ {
+  "slug": "deli-serdang",
+  "nama": "Deli Serdang",
+  "kecamatan": [
+   "bangun-purba",
+   "batang-kuis",
+   "biru-biru",
+   "deli-tua",
+   "diski",
+   "galang",
+   "hamparan-perak",
+   "kutalimbaru",
+   "labuhan-deli",
+   "lubuk-pakam",
+   "namo-rambe",
+   "pancur-batu",
+   "pantai-labu",
+   "patumbak",
+   "percut-sei-tuan",
+   "sibolangit",
+   "sunggal",
+   "tanjung-morawa"
+  ]
+ },
+ {
+  "slug": "demak",
+  "nama": "Demak",
+  "kecamatan": [
+   "bintoro",
+   "bonang",
+   "demak",
+   "gajah",
+   "guntur",
+   "karanganyar",
+   "karangawen",
+   "karangtengah",
+   "kebonagung",
+   "mijen",
+   "mranggen",
+   "sayung",
+   "wonosalam"
+  ]
+ },
+ {
+  "slug": "denpasar",
+  "nama": "Denpasar",
+  "kecamatan": [
+   "dalung-permai",
+   "danginpuri",
+   "danginpuri-kaja",
+   "danginpuri-kangin",
+   "danginpuri-kauh",
+   "danginpuri-kelod",
+   "dauhpuri",
+   "dauhpuri-kaja",
+   "dauhpuri-kangin",
+   "dauhpuri-kauh",
+   "dauhpuri-kelod",
+   "denpasar-barat",
+   "denpasar-selatan",
+   "denpasar-timur",
+   "denpasar-utara",
+   "gatot-subroto",
+   "gelogor-carik",
+   "gunung-soputan",
+   "kesiman",
+   "mahendradata",
+   "padanggalak",
+   "padangsambian-",
+   "padangsambian-kaja",
+   "padangsambian-kelod",
+   "panjer",
+   "pedungan",
+   "peguyangan",
+   "peguyangan-kaja",
+   "peguyangan-kangin",
+   "pemecutan",
+   "pemecutan-kaja",
+   "pemecutan-kelod",
+   "pemogan",
+   "penatih",
+   "penatihdanginpuri",
+   "pesanggaran",
+   "renon",
+   "sanur",
+   "sanur-kaja",
+   "sanur-kauh",
+   "serangan",
+   "sesetan",
+   "sidakarya",
+   "sumerta",
+   "sumerta-kauh",
+   "sumerta-kelod",
+   "suwung",
+   "tegalkertha",
+   "tonja",
+   "ubung",
+   "ubung-kaja"
+  ]
+ },
+ {
+  "slug": "depok",
+  "nama": "Depok",
+  "kecamatan": [
+   "babadan",
+   "beji",
+   "bojong-sari",
+   "ciangsana",
+   "cibubur",
+   "cilangkap",
+   "cilodong",
+   "cimanggis",
+   "cinangka",
+   "cinere",
+   "cipayung",
+   "cisalak",
+   "citayam",
+   "depok-i",
+   "depok-ii",
+   "gandul",
+   "grand-depok-city",
+   "harjamukti",
+   "kalimanggis",
+   "kelapa-dua",
+   "krukut",
+   "kukusan",
+   "limo",
+   "margonda",
+   "mekarsari",
+   "pancoran-mas",
+   "pangkalan-jati",
+   "pasir-putih",
+   "rangkapanjaya",
+   "sawangan",
+   "studio-alam",
+   "sukatani",
+   "sukmajaya",
+   "tanah-baru",
+   "tapos",
+   "tirtajaya",
+   "tugu"
+  ]
+ },
+ {
+  "slug": "dharmasraya",
+  "nama": "Dharmasraya",
+  "kecamatan": [
+   "sembilan-koto"
+  ]
+ },
+ {
+  "slug": "dki-jakarta",
+  "nama": "Dki Jakarta",
+  "kecamatan": []
+ },
+ {
+  "slug": "dompu",
+  "nama": "Dompu",
+  "kecamatan": [
+   "manggelewa",
+   "woja"
+  ]
+ },
+ {
+  "slug": "dumai",
+  "nama": "Dumai",
+  "kecamatan": [
+   "dumai-barat",
+   "dumai-kota",
+   "dumai-timur"
+  ]
+ },
+ {
+  "slug": "garut",
+  "nama": "Garut",
+  "kecamatan": [
+   "balubur-limbangan",
+   "banyuresmi",
+   "bayongbong",
+   "cibatu",
+   "cilawu",
+   "cisurupan",
+   "garut-kota",
+   "kadungora",
+   "karangpawitan",
+   "leuwigoong",
+   "malangbong",
+   "pamulihan",
+   "samarang",
+   "tarogong-kaler",
+   "tarogong-kidul",
+   "wanaraja"
+  ]
+ },
+ {
+  "slug": "gianyar",
+  "nama": "Gianyar",
+  "kecamatan": [
+   "abianbase",
+   "batuan",
+   "batuan-kaler",
+   "batubulan",
+   "batubulan-kangin",
+   "belege",
+   "beng",
+   "bitera",
+   "blahbatuh",
+   "buahan",
+   "buruan",
+   "celuk",
+   "gianyar",
+   "guwang",
+   "kedewatan",
+   "keliki",
+   "kelusa",
+   "kemenuh",
+   "kenderan",
+   "keramas",
+   "ketewel",
+   "lebih",
+   "lodtunduh",
+   "mas",
+   "medahan",
+   "melinggih",
+   "pantai-lebih",
+   "payangan",
+   "pejeng",
+   "pejeng-kaja",
+   "pejeng-kangin",
+   "pejengkawan",
+   "peliatan",
+   "pering",
+   "petak",
+   "petulu",
+   "saba",
+   "samplangan",
+   "sanding",
+   "sanggingan",
+   "sayan",
+   "sebatu",
+   "serongga",
+   "singapadu",
+   "singapadu-kaler",
+   "singapadu-tengah",
+   "singekerta",
+   "sukawati",
+   "tampaksiring",
+   "taro",
+   "tegallalang",
+   "temesi",
+   "tulikup",
+   "ubud"
+  ]
+ },
+ {
+  "slug": "gorontalo",
+  "nama": "Gorontalo",
+  "kecamatan": [
+   "kota-tengah",
+   "limboto",
+   "telaga-biru",
+   "tilango"
+  ]
+ },
+ {
+  "slug": "gorontalo-utara",
+  "nama": "Gorontalo Utara",
+  "kecamatan": [
+   "sumalata"
+  ]
+ },
+ {
+  "slug": "gowa",
+  "nama": "Gowa",
+  "kecamatan": [
+   "bajeng",
+   "bajeng-barat",
+   "barombong",
+   "bontomarannu",
+   "bontonompo",
+   "bontonompo-selatan",
+   "pallangga",
+   "parangloe",
+   "pattalassang",
+   "pattallassang",
+   "somba-opu",
+   "tinggimoncong",
+   "tombolo-pao"
+  ]
+ },
+ {
+  "slug": "gresik",
+  "nama": "Gresik",
+  "kecamatan": [
+   "balongpanggang",
+   "benjeng",
+   "bungah",
+   "cerme",
+   "driyorejo",
+   "duduk-sampeyan",
+   "gresik",
+   "gresik-kota",
+   "kebomas",
+   "kedamean",
+   "manyar",
+   "menganti",
+   "panceng",
+   "sidayu",
+   "tambak",
+   "ujung-pangkah",
+   "wringinanom"
+  ]
+ },
+ {
+  "slug": "grobogan",
+  "nama": "Grobogan",
+  "kecamatan": [
+   "godong",
+   "grobogan",
+   "gubug",
+   "karangrayung",
+   "klambu",
+   "penawangan",
+   "purwodadi",
+   "tanggungharjo",
+   "tawangharjo",
+   "tegowanu",
+   "toroh",
+   "wirosari"
+  ]
+ },
+ {
+  "slug": "gunung-kidul",
+  "nama": "Gunung Kidul",
+  "kecamatan": [
+   "karangmojo",
+   "nglipar",
+   "patuk",
+   "playen",
+   "purwosari",
+   "semanu",
+   "semin",
+   "tepus",
+   "wonosari"
+  ]
+ },
+ {
+  "slug": "gunung-sitoli",
+  "nama": "Gunung Sitoli",
+  "kecamatan": [
+   "gunung-sitoli-alooa"
+  ]
+ },
+ {
+  "slug": "halmahera-selatan",
+  "nama": "Halmahera Selatan",
+  "kecamatan": [
+   "bacan"
+  ]
+ },
+ {
+  "slug": "halmahera-utara",
+  "nama": "Halmahera Utara",
+  "kecamatan": [
+   "tobelo"
+  ]
+ },
+ {
+  "slug": "hulu-sungai-utara",
+  "nama": "Hulu Sungai Utara",
+  "kecamatan": [
+   "amuntai-tengah"
+  ]
+ },
+ {
+  "slug": "indragiri-hilir",
+  "nama": "Indragiri Hilir",
+  "kecamatan": [
+   "kemuning"
+  ]
+ },
+ {
+  "slug": "indramayu",
+  "nama": "Indramayu",
+  "kecamatan": [
+   "balongan",
+   "gabuswetan",
+   "gantar",
+   "haurgeulis",
+   "indramayu",
+   "indramayu-kota",
+   "jatibarang",
+   "lohbener",
+   "patrol",
+   "sukra"
+  ]
+ },
+ {
+  "slug": "jakarta-barat",
+  "nama": "Jakarta Barat",
+  "kecamatan": [
+   "alfa-indah",
+   "angke",
+   "arjuna-selatan",
+   "arjuna-utara",
+   "asemka",
+   "bandara",
+   "bojong-indah",
+   "cengkareng",
+   "cengkareng-barat",
+   "central-park",
+   "citra-garden",
+   "daan-mogot",
+   "duri-kepa",
+   "duri-kosambi",
+   "duri-pulo",
+   "duta-garden",
+   "gelong",
+   "gelong-baru",
+   "green-garden",
+   "green-lake-city",
+   "green-mansion",
+   "green-ville",
+   "grogol",
+   "grogol-petamburan",
+   "intercon",
+   "jalan-panjang",
+   "jelambar",
+   "jembatan-besi",
+   "jembatan-dua",
+   "jembatan-lima",
+   "jembatan-tiga",
+   "joglo",
+   "kalideres",
+   "kamal",
+   "kapuk-kamal",
+   "karang-mulia",
+   "kav-dki",
+   "kebon-jeruk",
+   "kedoya",
+   "kedoya-baru",
+   "kedoya-garden",
+   "kedoya-selatan",
+   "kedoya-utara",
+   "kelapa-dua",
+   "kemanggisan",
+   "kembangan",
+   "kembangan-baru",
+   "kembangan-selatan",
+   "kepa-duri",
+   "kota",
+   "kota-bambu-selatan",
+   "kota-bambu-utara",
+   "mangga-besar",
+   "mangga-dua",
+   "meruya",
+   "metland-puri",
+   "metro-permata",
+   "mutiara-kedoya",
+   "palmerah",
+   "pegadungan",
+   "permata-buana",
+   "pesanggrahan",
+   "pinangsia",
+   "pos-pengumben",
+   "prima-kedoya",
+   "puri-indah",
+   "puri-mansion",
+   "puri-media",
+   "rawa-belong",
+   "rawa-buaya",
+   "ring-road",
+   "roa-malaka",
+   "s-parman",
+   "semanan",
+   "slipi",
+   "srengseng",
+   "sunrise-garden",
+   "taman-anggrek",
+   "taman-cosmos",
+   "taman-kencana",
+   "taman-kota",
+   "taman-meruya",
+   "taman-palem",
+   "taman-ratu",
+   "taman-surya",
+   "tamansari",
+   "tambora",
+   "tanjung-duren",
+   "tanjung-duren-selatan",
+   "tanjung-duren-utara",
+   "tanjung-gedong",
+   "tawakal",
+   "tomang",
+   "tubagus-angke",
+   "villa-meruya"
+  ]
+ },
+ {
+  "slug": "jakarta-pusat",
+  "nama": "Jakarta Pusat",
+  "kecamatan": [
+   "batu-ceper",
+   "batutulis",
+   "bedungan-jatiluhur",
+   "bendungan-hilir",
+   "bungur",
+   "cbd-area",
+   "cempaka-mas",
+   "cempaka-putih",
+   "cideng",
+   "cikini",
+   "gajah-mada",
+   "gambir",
+   "glodok",
+   "gondangdia",
+   "gunung-sahari",
+   "harmoni",
+   "hasyim-ashari",
+   "hayam-wuruk",
+   "johar-baru",
+   "karang-anyar",
+   "karet-tengsin",
+   "kartini",
+   "kebon-kacang",
+   "kebon-melati",
+   "kebon-sirih",
+   "kemayoran",
+   "kh-mas-mansyur",
+   "kramat",
+   "menteng",
+   "menteng-atas",
+   "pangeran-jayakarta",
+   "pasar-baru",
+   "pegangsaan",
+   "pejompongan",
+   "percetakan-negara",
+   "petojo",
+   "pinangsia",
+   "roxy",
+   "salemba",
+   "samanhudi",
+   "sawah-besar",
+   "senayan",
+   "senen",
+   "sumur-batu",
+   "tambak-pegangsaan",
+   "tanah-abang",
+   "thamrin",
+   "wahid-hasyim"
+  ]
+ },
+ {
+  "slug": "jakarta-selatan",
+  "nama": "Jakarta Selatan",
+  "kecamatan": [
+   "ampera",
+   "antasari",
+   "bangka",
+   "bintaro",
+   "blok-m",
+   "blok-s",
+   "bukit-duri",
+   "casablanca",
+   "cbd",
+   "ciganjur",
+   "cikoko",
+   "cilandak",
+   "cinere",
+   "cipedak",
+   "cipete",
+   "cipulir",
+   "cirendeu",
+   "duren-tiga",
+   "fatmawati",
+   "gandaria",
+   "gatot-subroto",
+   "graha-bintaro",
+   "gudang-peluru",
+   "guntur",
+   "jagakarsa",
+   "jati-padang",
+   "jeruk-purut",
+   "kalibata",
+   "kapten-tendean",
+   "karet",
+   "kebagusan",
+   "kebayoran-baru",
+   "kebayoran-lama",
+   "kemandoran",
+   "kemang",
+   "kuningan",
+   "lebak-bulus",
+   "lenteng-agung",
+   "mampang",
+   "mampang-prapatan",
+   "manggarai",
+   "mega-kuningan",
+   "menteng-dalam",
+   "mt-haryono",
+   "pakubuwono",
+   "pancoran",
+   "panglima-polim",
+   "pasar-minggu",
+   "patal-senayan",
+   "patra-kuningan",
+   "pejaten",
+   "pejaten-timur",
+   "pengadegan",
+   "permata-hijau",
+   "pesanggrahan",
+   "petukangan",
+   "pondok-indah",
+   "pondok-jaya",
+   "pondok-karya",
+   "pondok-labu",
+   "pondok-pinang",
+   "praja-dalam",
+   "prapanca",
+   "radio-dalam",
+   "ragunan",
+   "rawajati",
+   "rempoa-ciputat-timur",
+   "saharjo",
+   "scbd",
+   "sektor-1---bintaro",
+   "sektor-2---bintaro",
+   "sektor-3---bintaro",
+   "sektor-3a-bintaro",
+   "sektor-4---bintaro",
+   "sektor-5-bintaro",
+   "sektor-6-bintaro",
+   "sektor-8-bintaro",
+   "senayan",
+   "senopati",
+   "setiabudi",
+   "simprug",
+   "simprug-garden",
+   "sinabung",
+   "sudirman",
+   "sultan-agung",
+   "supomo",
+   "tanah-kusir",
+   "tanjung-barat",
+   "tb-simatupang",
+   "tebet",
+   "terogong",
+   "ulujami",
+   "veteran",
+   "warung-buncit",
+   "wijaya"
+  ]
+ },
+ {
+  "slug": "jakarta-timur",
+  "nama": "Jakarta Timur",
+  "kecamatan": [
+   "bambu-apus",
+   "buaran",
+   "cakung",
+   "cawang",
+   "cibubur",
+   "cijantung",
+   "cilangkap",
+   "cililitan",
+   "cipayung",
+   "cipinang",
+   "cipinang-melayu",
+   "ciracas",
+   "citra-grand",
+   "condet",
+   "dewi-sartika",
+   "duren-sawit",
+   "halim-perdana-kusuma",
+   "jakarta-garden-city",
+   "jati-cempaka",
+   "jatinegara",
+   "jatiwaringin",
+   "kalimalang",
+   "kalisari",
+   "kampung-ambon",
+   "kampung-rambutan",
+   "kayu-jati",
+   "kayu-putih",
+   "kayuringin-jaya",
+   "klender",
+   "kota-wisata",
+   "kramat-jati",
+   "legenda-wisata",
+   "lubang-buaya",
+   "makasar",
+   "matraman",
+   "metland-menteng",
+   "otista",
+   "pasar-rebo",
+   "penggilingan",
+   "pinang-ranti",
+   "pisangan-lama",
+   "pondok-bambu",
+   "pondok-gede",
+   "pondok-kelapa",
+   "pondok-kopi",
+   "pondok-ranggon",
+   "pulo-asem",
+   "pulo-gadung",
+   "pulogebang",
+   "pulomas",
+   "raffles-hills",
+   "rawajati",
+   "rawamangun",
+   "ruko-rawa-lumbu",
+   "setu",
+   "taman-mini",
+   "utan-kayu"
+  ]
+ },
+ {
+  "slug": "jakarta-utara",
+  "nama": "Jakarta Utara",
+  "kecamatan": [
+   "ancol",
+   "bandengan",
+   "cilincing",
+   "dadap",
+   "ebony-island",
+   "golf-island",
+   "jembatan-tiga",
+   "kamal",
+   "kapuk",
+   "kapuk-muara",
+   "kelapa-gading",
+   "koja",
+   "kopi-tiang-bendera-roa-malaka",
+   "marunda",
+   "muara-baru",
+   "muara-karang",
+   "pademangan",
+   "pantai-indah-kapuk",
+   "pantai-indah-kapuk-2",
+   "pantai-mutiara",
+   "pegangsaan",
+   "penjaringan",
+   "pluit",
+   "plumpang",
+   "rawa-badak",
+   "rorotan",
+   "semper",
+   "sunter",
+   "taman-grisenda",
+   "tanjung-priok",
+   "teluk-gong"
+  ]
+ },
+ {
+  "slug": "jambi",
+  "nama": "Jambi",
+  "kecamatan": [
+   "alam-barajo",
+   "danau-sipin",
+   "jambi-selatan",
+   "jambi-timur",
+   "jelutung",
+   "kota-baru",
+   "mayang-mangurai",
+   "paal-merah",
+   "pasar-jambi",
+   "telanaipura"
+  ]
+ },
+ {
+  "slug": "jawa-barat",
+  "nama": "Jawa Barat",
+  "kecamatan": []
+ },
+ {
+  "slug": "jawa-tengah",
+  "nama": "Jawa Tengah",
+  "kecamatan": []
+ },
+ {
+  "slug": "jawa-timur",
+  "nama": "Jawa Timur",
+  "kecamatan": []
+ },
+ {
+  "slug": "jayapura",
+  "nama": "Jayapura",
+  "kecamatan": [
+   "angkasa-pura",
+   "jayapura-selatan",
+   "jayapura-utara",
+   "muara-tami",
+   "sentani"
+  ]
+ },
+ {
+  "slug": "jember",
+  "nama": "Jember",
+  "kecamatan": [
+   "ajung",
+   "ambulu",
+   "balung",
+   "bangsalsari",
+   "gumukmas",
+   "jelbuk",
+   "jenggawah",
+   "jombang",
+   "kalisat",
+   "kaliwates",
+   "kencong",
+   "pakusari",
+   "patrang",
+   "puger",
+   "rambipuji",
+   "semboro",
+   "silo",
+   "sukorambi",
+   "sukowono",
+   "sumberjambe",
+   "sumbersari",
+   "tanggul",
+   "tempurejo",
+   "wuluhan"
+  ]
+ },
+ {
+  "slug": "jembrana",
+  "nama": "Jembrana",
+  "kecamatan": [
+   "airkuning",
+   "batuagung",
+   "dauhwaru",
+   "kaliakah",
+   "lelateng",
+   "medewi",
+   "melaya",
+   "negara",
+   "pekutatan",
+   "pendem",
+   "perancak",
+   "pulukan",
+   "sangkaragung",
+   "yehkuning"
+  ]
+ },
+ {
+  "slug": "jepara",
+  "nama": "Jepara",
+  "kecamatan": [
+   "bangsri",
+   "batealit",
+   "jepara",
+   "kalinyamatan",
+   "karimunjawa",
+   "kedung",
+   "keling",
+   "kembang",
+   "mayong",
+   "mlonggo",
+   "nalumsari",
+   "pecangaan",
+   "tahunan",
+   "welahan"
+  ]
+ },
+ {
+  "slug": "jombang",
+  "nama": "Jombang",
+  "kecamatan": [
+   "bandar-kedungmulyo",
+   "bandarkedungmulyo",
+   "bareng",
+   "diwek",
+   "gudo",
+   "jogoroto",
+   "jombang",
+   "jombang-kota",
+   "kabuh",
+   "kesamben",
+   "kudu",
+   "megaluh",
+   "mojoagung",
+   "mojowarno",
+   "ngoro",
+   "ngusikan",
+   "perak",
+   "peterongan",
+   "plandaan",
+   "ploso",
+   "tembelang",
+   "wonosalam"
+  ]
+ },
+ {
+  "slug": "kabupaten-bandung",
+  "nama": "Kabupaten Bandung",
+  "kecamatan": [
+   "pacet"
+  ]
+ },
+ {
+  "slug": "kabupaten-kudus",
+  "nama": "Kabupaten Kudus",
+  "kecamatan": [
+   "bae",
+   "gebog",
+   "jati",
+   "kaliwungu",
+   "kota-kudus",
+   "kudus",
+   "mejobo"
+  ]
+ },
+ {
+  "slug": "kalimantan-barat",
+  "nama": "Kalimantan Barat",
+  "kecamatan": []
+ },
+ {
+  "slug": "kalimantan-selatan",
+  "nama": "Kalimantan Selatan",
+  "kecamatan": []
+ },
+ {
+  "slug": "kalimantan-tengah",
+  "nama": "Kalimantan Tengah",
+  "kecamatan": []
+ },
+ {
+  "slug": "kalimantan-timur",
+  "nama": "Kalimantan Timur",
+  "kecamatan": []
+ },
+ {
+  "slug": "kalimantan-utara",
+  "nama": "Kalimantan Utara",
+  "kecamatan": []
+ },
+ {
+  "slug": "kampar",
+  "nama": "Kampar",
+  "kecamatan": [
+   "kampar-kiri",
+   "kampar-kota",
+   "siak-hulu",
+   "tambang",
+   "tapung"
+  ]
+ },
+ {
+  "slug": "kapuas",
+  "nama": "Kapuas",
+  "kecamatan": [
+   "kapuas-barat"
+  ]
+ },
+ {
+  "slug": "kapuas-hulu",
+  "nama": "Kapuas Hulu",
+  "kecamatan": [
+   "puring-kencana",
+   "putussibau"
+  ]
+ },
+ {
+  "slug": "karanganyar",
+  "nama": "Karanganyar",
+  "kecamatan": [
+   "colomadu",
+   "gondangrejo",
+   "jaten",
+   "jenawi",
+   "jumantono",
+   "karanganyar",
+   "karangpandan",
+   "kebakkramat",
+   "kerjo",
+   "klodran",
+   "matesih",
+   "mojogedang",
+   "ngargoyoso",
+   "tasikmadu",
+   "tawangmangu"
+  ]
+ },
+ {
+  "slug": "karangasem",
+  "nama": "Karangasem",
+  "kecamatan": [
+   "abang",
+   "amed",
+   "bebandem",
+   "besakih",
+   "bugbug",
+   "bunutan",
+   "candi-dasa",
+   "culik",
+   "dukuh",
+   "karangasem",
+   "kubu",
+   "manggis",
+   "nyuhtebel",
+   "padangbai",
+   "padangkerta",
+   "pertima",
+   "seraya",
+   "seraya-barat",
+   "sidemen",
+   "subagan",
+   "tulamben"
+  ]
+ },
+ {
+  "slug": "karawang",
+  "nama": "Karawang",
+  "kecamatan": [
+   "ciampel",
+   "cikampek",
+   "cilamaya-kulon",
+   "jatisari",
+   "karawang-barat",
+   "karawang-timur",
+   "klari",
+   "kota-baru",
+   "kotabaru",
+   "majalaya",
+   "purwasari",
+   "rawamerta",
+   "rengasdengklok",
+   "summarecon-karawang",
+   "talagasari",
+   "telukjambe",
+   "telukjambe-barat",
+   "telukjambe-timur",
+   "tirtajaya",
+   "tirtamulya"
+  ]
+ },
+ {
+  "slug": "karimun",
+  "nama": "Karimun",
+  "kecamatan": [
+   "karimun-kota"
+  ]
+ },
+ {
+  "slug": "katingan",
+  "nama": "Katingan",
+  "kecamatan": [
+   "bukit-raya"
+  ]
+ },
+ {
+  "slug": "kebumen",
+  "nama": "Kebumen",
+  "kecamatan": [
+   "bonorowo",
+   "buaran",
+   "bulupesantren",
+   "gombong",
+   "karanganyar",
+   "kebumen",
+   "klirong",
+   "pejagoan"
+  ]
+ },
+ {
+  "slug": "kediri",
+  "nama": "Kediri",
+  "kecamatan": [
+   "bangsal",
+   "banyakan",
+   "gampengrejo",
+   "gurah",
+   "kandat",
+   "kediri",
+   "kepung",
+   "kota",
+   "kras",
+   "kunjang",
+   "mojo",
+   "mojoroto",
+   "ngadiluwih",
+   "ngasem",
+   "pagu",
+   "papar",
+   "pare",
+   "pesantren",
+   "plemahan",
+   "puncu",
+   "purwoasri",
+   "ringinrejo",
+   "semen",
+   "tarokan",
+   "wates"
+  ]
+ },
+ {
+  "slug": "kendal",
+  "nama": "Kendal",
+  "kecamatan": [
+   "boja",
+   "brangsong",
+   "cepiring",
+   "gemuh",
+   "kaliwungu",
+   "kaliwungu-selatan",
+   "kendal",
+   "limbangan",
+   "patean",
+   "patebon",
+   "pegandon",
+   "rowosari",
+   "singorojo",
+   "weleri"
+  ]
+ },
+ {
+  "slug": "kendari",
+  "nama": "Kendari",
+  "kecamatan": [
+   "baruga",
+   "kendari-barat",
+   "mandonga",
+   "poasia",
+   "puuwatu",
+   "wua-wua"
+  ]
+ },
+ {
+  "slug": "kepulauan-bangka-belitung",
+  "nama": "Kepulauan Bangka Belitung",
+  "kecamatan": []
+ },
+ {
+  "slug": "kepulauan-riau",
+  "nama": "Kepulauan Riau",
+  "kecamatan": []
+ },
+ {
+  "slug": "ketapang",
+  "nama": "Ketapang",
+  "kecamatan": [
+   "delta-pawan"
+  ]
+ },
+ {
+  "slug": "klaten",
+  "nama": "Klaten",
+  "kecamatan": [
+   "bayat",
+   "cawas",
+   "ceper",
+   "delanggu",
+   "gantiwarno",
+   "jatinom",
+   "jogonalan",
+   "juwiring",
+   "kalikotes",
+   "karanganom",
+   "kebonarum",
+   "klaten-selatan",
+   "klaten-tengah",
+   "klaten-utara",
+   "manisrenggo",
+   "ngawen",
+   "pedan",
+   "polanharjo",
+   "prambanan",
+   "trucuk",
+   "wedi",
+   "wonosari"
+  ]
+ },
+ {
+  "slug": "klungkung",
+  "nama": "Klungkung",
+  "kecamatan": [
+   "banjarankan",
+   "dawan",
+   "klungkung-kota",
+   "nusa-penida"
+  ]
+ },
+ {
+  "slug": "konawe-selatan",
+  "nama": "Konawe Selatan",
+  "kecamatan": [
+   "ranomeeto"
+  ]
+ },
+ {
+  "slug": "kota-baru",
+  "nama": "Kota Baru",
+  "kecamatan": [
+   "kelumpang-selatan",
+   "pamukan-selatan"
+  ]
+ },
+ {
+  "slug": "kota-waringin-barat",
+  "nama": "Kota Waringin Barat",
+  "kecamatan": [
+   "arut-selatan",
+   "cempaga",
+   "kumai"
+  ]
+ },
+ {
+  "slug": "kota-waringin-timur",
+  "nama": "Kota Waringin Timur",
+  "kecamatan": [
+   "baamang",
+   "ketapang",
+   "mentawa-baru-ketapang"
+  ]
+ },
+ {
+  "slug": "kotamobagu",
+  "nama": "Kotamobagu",
+  "kecamatan": [
+   "kotamobagu-selatan"
+  ]
+ },
+ {
+  "slug": "kubu-raya",
+  "nama": "Kubu Raya",
+  "kecamatan": [
+   "kuala-mandor-b",
+   "kubu",
+   "sungai-ambawang",
+   "sungai-kakap",
+   "sungai-raya"
+  ]
+ },
+ {
+  "slug": "kulon-progo",
+  "nama": "Kulon Progo",
+  "kecamatan": [
+   "galur",
+   "kalibawang",
+   "kulonprogo",
+   "lendah",
+   "nanggulan",
+   "panjatan",
+   "pengasih",
+   "samigaluh",
+   "sentolo",
+   "temon",
+   "wates"
+  ]
+ },
+ {
+  "slug": "kuningan",
+  "nama": "Kuningan",
+  "kecamatan": [
+   "cibeureum",
+   "cibingbin",
+   "cidahu",
+   "cigandamekar",
+   "cigugur",
+   "cilimus",
+   "cimahi",
+   "cipicung",
+   "garawangi",
+   "jalaksana",
+   "kadugede",
+   "karangkancana",
+   "kramatmulya",
+   "kuningan",
+   "lebakwangi",
+   "mandirancan",
+   "pasawahan",
+   "purwawinangun",
+   "sindangagung",
+   "subang"
+  ]
+ },
+ {
+  "slug": "kupang",
+  "nama": "Kupang",
+  "kecamatan": [
+   "alak",
+   "kelapa-lima",
+   "kota-lama",
+   "kota-raja",
+   "kupang-tengah",
+   "kupang-timur",
+   "maulafa",
+   "oebobo"
+  ]
+ },
+ {
+  "slug": "kutai-barat",
+  "nama": "Kutai Barat",
+  "kecamatan": [
+   "barong-tongkok",
+   "damai"
+  ]
+ },
+ {
+  "slug": "kutai-kartanegara",
+  "nama": "Kutai Kartanegara",
+  "kecamatan": [
+   "muara-badak",
+   "samboja",
+   "tanah-kukar",
+   "tenggarong"
+  ]
+ },
+ {
+  "slug": "kutai-timur",
+  "nama": "Kutai Timur",
+  "kecamatan": [
+   "sangatta-utara"
+  ]
+ },
+ {
+  "slug": "lahat",
+  "nama": "Lahat",
+  "kecamatan": [
+   "pseksu"
+  ]
+ },
+ {
+  "slug": "lamongan",
+  "nama": "Lamongan",
+  "kecamatan": [
+   "babat",
+   "deket",
+   "kalitengah",
+   "karanggeneng",
+   "kedungpring",
+   "lamongan",
+   "lamongan-kota",
+   "paciran",
+   "sarirejo",
+   "sugio",
+   "sukodadi",
+   "tikung"
+  ]
+ },
+ {
+  "slug": "lampung",
+  "nama": "Lampung",
+  "kecamatan": []
+ },
+ {
+  "slug": "lampung-barat",
+  "nama": "Lampung Barat",
+  "kecamatan": [
+   "batu-brak",
+   "pesisir-selatan"
+  ]
+ },
+ {
+  "slug": "lampung-selatan",
+  "nama": "Lampung Selatan",
+  "kecamatan": [
+   "bakauheni",
+   "jati-agung",
+   "kalianda",
+   "katibung",
+   "ketapang",
+   "natar",
+   "rajabasa",
+   "sidomulyo",
+   "sragi",
+   "tanjung-bintang",
+   "way-panji"
+  ]
+ },
+ {
+  "slug": "lampung-tengah",
+  "nama": "Lampung Tengah",
+  "kecamatan": [
+   "bangun-rejo",
+   "bekri",
+   "bumi-ratu-nuban",
+   "gunung-sugih",
+   "kota-gajah",
+   "punggur",
+   "rumbia",
+   "seputih-mataram",
+   "terbanggi-besar",
+   "terusan-nunyai",
+   "trimurjo"
+  ]
+ },
+ {
+  "slug": "lampung-timur",
+  "nama": "Lampung Timur",
+  "kecamatan": [
+   "bandar-sribawono",
+   "batanghari",
+   "batanghari-nuban",
+   "bumi-agung",
+   "labuhan-maringgai",
+   "labuhan-ratu",
+   "metro-kibang",
+   "pekalongan",
+   "purbolinggo",
+   "raman-utara",
+   "sukadana"
+  ]
+ },
+ {
+  "slug": "lampung-utara",
+  "nama": "Lampung Utara",
+  "kecamatan": [
+   "abung-selatan",
+   "bukit-kemuning",
+   "kotabumi",
+   "kotabumi-selatan"
+  ]
+ },
+ {
+  "slug": "langkat",
+  "nama": "Langkat",
+  "kecamatan": [
+   "binjai",
+   "kuala",
+   "pangkalan-susu",
+   "stabat"
+  ]
+ },
+ {
+  "slug": "langsa",
+  "nama": "Langsa",
+  "kecamatan": [
+   "langsa-barat",
+   "langsa-kota",
+   "langsa-timur"
+  ]
+ },
+ {
+  "slug": "lebak",
+  "nama": "Lebak",
+  "kecamatan": [
+   "banjarsari",
+   "cibadak",
+   "cipanas",
+   "curugbitung",
+   "maja",
+   "malingping",
+   "rangkasbitung",
+   "sajira",
+   "warunggunung"
+  ]
+ },
+ {
+  "slug": "lhokseumawe",
+  "nama": "Lhokseumawe",
+  "kecamatan": [
+   "banda-sakti"
+  ]
+ },
+ {
+  "slug": "limapuluh-kota",
+  "nama": "Limapuluh Kota",
+  "kecamatan": [
+   "harau"
+  ]
+ },
+ {
+  "slug": "lombok-barat",
+  "nama": "Lombok Barat",
+  "kecamatan": [
+   "batu-layar",
+   "cakranegara",
+   "gerung",
+   "gunung-sari",
+   "kediri",
+   "labu-api",
+   "lembar",
+   "lingsar",
+   "narmada",
+   "pemenang",
+   "sekotong-tengah",
+   "selong-belanak",
+   "senggigi"
+  ]
+ },
+ {
+  "slug": "lombok-tengah",
+  "nama": "Lombok Tengah",
+  "kecamatan": [
+   "batukliang",
+   "kopang",
+   "praya",
+   "praya-barat",
+   "praya-barat-daya",
+   "praya-tengah",
+   "praya-timur",
+   "pringgarata",
+   "pujut"
+  ]
+ },
+ {
+  "slug": "lombok-timur",
+  "nama": "Lombok Timur",
+  "kecamatan": [
+   "aikmel",
+   "jerowaru",
+   "keruak",
+   "labuhan-haji",
+   "masbagik",
+   "pringgabaya",
+   "pringgasela",
+   "sakra-barat",
+   "sambelia",
+   "selong",
+   "suela",
+   "sukamulia",
+   "terara",
+   "wanasaba"
+  ]
+ },
+ {
+  "slug": "lombok-utara",
+  "nama": "Lombok Utara",
+  "kecamatan": [
+   "gangga",
+   "gili-air",
+   "gili-meno",
+   "gili-trawangan",
+   "tanjung"
+  ]
+ },
+ {
+  "slug": "lubuk-linggau",
+  "nama": "Lubuk Linggau",
+  "kecamatan": [
+   "lubuklinggau-barat-i",
+   "lubuklinggau-selatan-ii",
+   "lubuklinggau-timur-i",
+   "lubuklinggau-utara-ii"
+  ]
+ },
+ {
+  "slug": "lumajang",
+  "nama": "Lumajang",
+  "kecamatan": [
+   "candipuro",
+   "jatiroto",
+   "kedungjajang",
+   "klakah",
+   "kunir",
+   "lumajang",
+   "rowokangkung",
+   "senduro",
+   "sukodono",
+   "sumbersoko",
+   "sumbersuko",
+   "tekung",
+   "tempeh",
+   "yosowilangun"
+  ]
+ },
+ {
+  "slug": "luwu",
+  "nama": "Luwu",
+  "kecamatan": [
+   "belopa"
+  ]
+ },
+ {
+  "slug": "madiun",
+  "nama": "Madiun",
+  "kecamatan": [
+   "balerejo",
+   "dagangan",
+   "dolopo",
+   "jiwan",
+   "kare",
+   "kartoharjo",
+   "kebonsari",
+   "madiun",
+   "manguharjo",
+   "mejayan",
+   "saradan",
+   "sawahan",
+   "taman",
+   "wungu"
+  ]
+ },
+ {
+  "slug": "madura",
+  "nama": "Madura",
+  "kecamatan": [
+   "pamekasan"
+  ]
+ },
+ {
+  "slug": "magelang",
+  "nama": "Magelang",
+  "kecamatan": [
+   "bandongan",
+   "borobudur",
+   "dukun",
+   "magelang-selatan",
+   "magelang-tengah",
+   "magelang-utara",
+   "martoyudan",
+   "mertoyudan",
+   "mungkit",
+   "muntilan",
+   "ngluwar",
+   "pakis",
+   "salam",
+   "salaman",
+   "sawangan",
+   "secang",
+   "srumbung",
+   "tegalrejo",
+   "tempuran",
+   "windusari"
+  ]
+ },
+ {
+  "slug": "magetan",
+  "nama": "Magetan",
+  "kecamatan": [
+   "barat",
+   "karangrejo",
+   "magetan",
+   "maospati",
+   "panekan",
+   "plaosan",
+   "sukomoro"
+  ]
+ },
+ {
+  "slug": "majalengka",
+  "nama": "Majalengka",
+  "kecamatan": [
+   "banjaran",
+   "cigasong",
+   "cikijing",
+   "dawuan",
+   "jatiwangi",
+   "kadipaten",
+   "maja",
+   "majalengka-kota",
+   "panyingkiran",
+   "rajagaluh",
+   "sukahaji",
+   "sumberjaya",
+   "talaga"
+  ]
+ },
+ {
+  "slug": "majene",
+  "nama": "Majene",
+  "kecamatan": [
+   "banggae",
+   "banggae-timur"
+  ]
+ },
+ {
+  "slug": "makassar",
+  "nama": "Makassar",
+  "kecamatan": [
+   "abdullah-daeng-sirua",
+   "alauddin",
+   "antang",
+   "ap-pettarani",
+   "baji-mappakasunggu",
+   "balang-baru",
+   "ballaparang",
+   "bangkala",
+   "banta-bantaeng",
+   "bara-baraya",
+   "barana",
+   "barombong",
+   "batua",
+   "bira",
+   "biring-kanaya",
+   "bongaya",
+   "bonto-makkio",
+   "bontoala",
+   "bontorannu",
+   "borong",
+   "buakana",
+   "bulogading",
+   "buluroken",
+   "camba",
+   "citraland",
+   "daya",
+   "dr-ratulangi",
+   "ende",
+   "gunung-sari",
+   "hertasning",
+   "jongaya",
+   "kaluku-bodoa",
+   "kalukuang",
+   "kapasa",
+   "karebosi",
+   "karunrung",
+   "kassi-kassi",
+   "kunjung-mae",
+   "la-latang",
+   "labuang-baji",
+   "landak",
+   "lariang-bangi",
+   "lembo",
+   "lette",
+   "losari",
+   "maccini",
+   "maccini-sombala",
+   "makassar",
+   "malengkeri",
+   "maloku",
+   "mamajang",
+   "mamajang-luar",
+   "mandai",
+   "mangasa",
+   "manggala",
+   "mangkura",
+   "mannuruki",
+   "maradekaya",
+   "maradekaya-utara",
+   "maricaya",
+   "maricaya-baru",
+   "mario",
+   "mariso",
+   "maros",
+   "masale",
+   "mattoangin",
+   "melayu",
+   "minasa-upa",
+   "pa-baeng-baeng",
+   "paccerakang",
+   "pai",
+   "pampang",
+   "panaikang",
+   "panakkukang",
+   "panakukkang",
+   "panambungan",
+   "pandang",
+   "parang-loe",
+   "parang-tambung",
+   "paropo",
+   "pattunuang",
+   "pettarani",
+   "pisang-selatan",
+   "rappocini",
+   "sawerigading",
+   "sombaopu",
+   "sudiang",
+   "sudiang-raya",
+   "sungguminasa",
+   "talasalapang",
+   "tallo",
+   "tamalanrea",
+   "tamalanrea-indah",
+   "tamalanrea-jaya",
+   "tamalate",
+   "tamamaung",
+   "tamangapa",
+   "tamanlarea",
+   "tanjung-bunga",
+   "tanjung-merdeka",
+   "tanralili",
+   "tidung",
+   "timungan-lompoa",
+   "todopuli",
+   "ujung-pandang",
+   "ujung-pandang-baru",
+   "ujung-tanah",
+   "urip-sumoharjo",
+   "wajo"
+  ]
+ },
+ {
+  "slug": "malang",
+  "nama": "Malang",
+  "kecamatan": [
+   "ampelgading",
+   "araya",
+   "arjosari",
+   "arjowinangun",
+   "bakalan-krajan",
+   "balearjosari",
+   "bandulan",
+   "bandungrejosari",
+   "bantaran",
+   "bareng",
+   "batu",
+   "blimbing",
+   "buah-buahan",
+   "bululawang",
+   "bumiayu",
+   "bunulrejo",
+   "buring",
+   "cemorokandang",
+   "ciptomulyo",
+   "dampit",
+   "dau",
+   "dieng",
+   "dieng-tidar",
+   "dinoyo",
+   "donomulyo",
+   "gadang",
+   "gading-kasari",
+   "gedangan",
+   "gondanglegi",
+   "griya-shanta",
+   "gunung-gunung",
+   "jabung",
+   "jatimulyo",
+   "jodipan",
+   "kalipare",
+   "karang-besuki",
+   "karangploso",
+   "kasin",
+   "kauman",
+   "kebonsari",
+   "kedungkandang",
+   "kepanjen",
+   "ketawanggede",
+   "klojen",
+   "kotalama",
+   "lawang",
+   "lesanpuro",
+   "lowokwaru",
+   "madyopuro",
+   "malang-kota",
+   "mergosono",
+   "merjosari",
+   "mojolangu",
+   "mulyorejo",
+   "ngajum",
+   "ngantang",
+   "oro-oro-dowo",
+   "pakis",
+   "pakisaji",
+   "pandanwangi",
+   "penanggungan",
+   "permata-jingga",
+   "pisang-candi",
+   "polehan",
+   "polowijen",
+   "poncokusumo",
+   "pujon",
+   "pulau-pulau",
+   "purwantoro",
+   "purwodadi",
+   "rampal-celaket",
+   "samaan",
+   "sawojajar",
+   "sengkaling",
+   "singosari",
+   "soekarno-hatta",
+   "sukoharjo-kota",
+   "sukun",
+   "sulfat",
+   "sumbermanjing-wetan",
+   "sumberpucung",
+   "sumbersari",
+   "tajinan",
+   "tanjungrejo",
+   "tasikmadu",
+   "tidar",
+   "tlogomas",
+   "tlogowaru",
+   "tulusrejo",
+   "tumpang",
+   "tunggulwulung",
+   "tunjungsekar",
+   "turen",
+   "villa-puncak-tidar",
+   "wagir",
+   "wajak",
+   "wonokoyo",
+   "wonosari"
+  ]
+ },
+ {
+  "slug": "malaysia",
+  "nama": "Malaysia",
+  "kecamatan": [
+   "kuala-lumpur"
+  ]
+ },
+ {
+  "slug": "maluku",
+  "nama": "Maluku",
+  "kecamatan": []
+ },
+ {
+  "slug": "maluku-utara",
+  "nama": "Maluku Utara",
+  "kecamatan": []
+ },
+ {
+  "slug": "mamuju",
+  "nama": "Mamuju",
+  "kecamatan": [
+   "kecamatan-mamuju"
+  ]
+ },
+ {
+  "slug": "manado",
+  "nama": "Manado",
+  "kecamatan": [
+   "bunaken",
+   "malalayang",
+   "mapanget",
+   "minut",
+   "paal-dua",
+   "perkamil",
+   "sario",
+   "tikala",
+   "tuminting",
+   "wanea",
+   "wenang"
+  ]
+ },
+ {
+  "slug": "manggarai-barat",
+  "nama": "Manggarai Barat",
+  "kecamatan": [
+   "komodo",
+   "labuan-bajo"
+  ]
+ },
+ {
+  "slug": "manokwari",
+  "nama": "Manokwari",
+  "kecamatan": [
+   "manokwari-barat"
+  ]
+ },
+ {
+  "slug": "maros",
+  "nama": "Maros",
+  "kecamatan": [
+   "bontoa",
+   "mandai",
+   "maros-baru",
+   "maros-utara",
+   "marusu",
+   "moncongloe",
+   "tanralili",
+   "turikale"
+  ]
+ },
+ {
+  "slug": "mataram",
+  "nama": "Mataram",
+  "kecamatan": [
+   "ampenan",
+   "cakranegara",
+   "mataram",
+   "mataram-kota",
+   "pagutan-barat",
+   "sandubaya",
+   "sekarbela"
+  ]
+ },
+ {
+  "slug": "medan",
+  "nama": "Medan",
+  "kecamatan": [
+   "brastagi",
+   "johor",
+   "lubuk-pakam",
+   "marelan",
+   "mariendal",
+   "medan-amplas",
+   "medan-area",
+   "medan-barat",
+   "medan-baru",
+   "medan-belawan",
+   "medan-deli",
+   "medan-denai",
+   "medan-helvetia",
+   "medan-johor",
+   "medan-kota",
+   "medan-labuhan",
+   "medan-maimun",
+   "medan-marelan",
+   "medan-perjuangan",
+   "medan-petisah",
+   "medan-polonia",
+   "medan-selayang",
+   "medan-sunggal",
+   "medan-tembung",
+   "medan-timur",
+   "medan-tuntungan",
+   "padang-bulan",
+   "tanjung-morawa"
+  ]
+ },
+ {
+  "slug": "melawi",
+  "nama": "Melawi",
+  "kecamatan": [
+   "nanga-pinoh"
+  ]
+ },
+ {
+  "slug": "mempawah",
+  "nama": "Mempawah",
+  "kecamatan": [
+   "mempawah-timur",
+   "sungai-pinyuh"
+  ]
+ },
+ {
+  "slug": "merauke",
+  "nama": "Merauke",
+  "kecamatan": [
+   "merauke"
+  ]
+ },
+ {
+  "slug": "metro",
+  "nama": "Metro",
+  "kecamatan": [
+   "banjar-sari",
+   "ganjar-agung",
+   "hadimulyo-barat",
+   "metro-barat",
+   "metro-pusat",
+   "metro-timur",
+   "metro-utara",
+   "mulyojati"
+  ]
+ },
+ {
+  "slug": "mimika",
+  "nama": "Mimika",
+  "kecamatan": [
+   "kuala-kencana",
+   "mimika-baru",
+   "wania"
+  ]
+ },
+ {
+  "slug": "minahasa",
+  "nama": "Minahasa",
+  "kecamatan": [
+   "kakas",
+   "mandolang",
+   "pineleng",
+   "tombulu",
+   "tondano-barat",
+   "tondano-selatan"
+  ]
+ },
+ {
+  "slug": "minahasa-selatan",
+  "nama": "Minahasa Selatan",
+  "kecamatan": [
+   "tumpaan"
+  ]
+ },
+ {
+  "slug": "minahasa-tenggara",
+  "nama": "Minahasa Tenggara",
+  "kecamatan": [
+   "touluaan"
+  ]
+ },
+ {
+  "slug": "minahasa-utara",
+  "nama": "Minahasa Utara",
+  "kecamatan": [
+   "airmadidi",
+   "dimembe",
+   "kalawat",
+   "kauditan",
+   "kema",
+   "talawaan"
+  ]
+ },
+ {
+  "slug": "mojokerto",
+  "nama": "Mojokerto",
+  "kecamatan": [
+   "bangsal",
+   "dawarblandong",
+   "dlanggu",
+   "gedeg",
+   "gondang",
+   "jetis",
+   "kemlagi",
+   "kranggan",
+   "kutorejo",
+   "magersari",
+   "mojoanyar",
+   "mojokerto",
+   "mojosari",
+   "ngoro",
+   "pacet",
+   "prajurit-kulon",
+   "pungging",
+   "puri",
+   "sooko",
+   "trawas",
+   "trowulan"
+  ]
+ },
+ {
+  "slug": "morowali",
+  "nama": "Morowali",
+  "kecamatan": [
+   "bahodopi"
+  ]
+ },
+ {
+  "slug": "muara-enim",
+  "nama": "Muara Enim",
+  "kecamatan": [
+   "belida-darat",
+   "muara-enim",
+   "tanah-abang"
+  ]
+ },
+ {
+  "slug": "muaro-jambi",
+  "nama": "Muaro Jambi",
+  "kecamatan": [
+   "jambi-luar-kota",
+   "kumpeh-ulu",
+   "mestong",
+   "sungai-bahar"
+  ]
+ },
+ {
+  "slug": "muna",
+  "nama": "Muna",
+  "kecamatan": [
+   "gorontalo",
+   "katobu"
+  ]
+ },
+ {
+  "slug": "nabire",
+  "nama": "Nabire",
+  "kecamatan": [
+   "nabire"
+  ]
+ },
+ {
+  "slug": "ngada",
+  "nama": "Ngada",
+  "kecamatan": [
+   "riung-barat"
+  ]
+ },
+ {
+  "slug": "nganjuk",
+  "nama": "Nganjuk",
+  "kecamatan": [
+   "bagor",
+   "berbek",
+   "gondang",
+   "kertosono",
+   "loceret",
+   "nganjuk",
+   "ngronggot",
+   "patianrowo",
+   "prambon",
+   "rejoso",
+   "sawahan",
+   "sukomoro",
+   "tanjunganom"
+  ]
+ },
+ {
+  "slug": "ngawi",
+  "nama": "Ngawi",
+  "kecamatan": [
+   "jogorogo",
+   "kwadungan",
+   "ngawi"
+  ]
+ },
+ {
+  "slug": "nusa-lembongan",
+  "nama": "Nusa Lembongan",
+  "kecamatan": [
+   "klungkung"
+  ]
+ },
+ {
+  "slug": "nusa-tenggara-barat",
+  "nama": "Nusa Tenggara Barat",
+  "kecamatan": []
+ },
+ {
+  "slug": "nusa-tenggara-timur",
+  "nama": "Nusa Tenggara Timur",
+  "kecamatan": []
+ },
+ {
+  "slug": "ogan-ilir",
+  "nama": "Ogan Ilir",
+  "kecamatan": [
+   "indralaya",
+   "tanjung-raja"
+  ]
+ },
+ {
+  "slug": "ogan-komering-ulu",
+  "nama": "Ogan Komering Ulu",
+  "kecamatan": [
+   "baturaja-timur"
+  ]
+ },
+ {
+  "slug": "others",
+  "nama": "Others",
+  "kecamatan": []
+ },
+ {
+  "slug": "pacitan",
+  "nama": "Pacitan",
+  "kecamatan": [
+   "arjosari",
+   "kota-pacitan",
+   "pacitan",
+   "punung"
+  ]
+ },
+ {
+  "slug": "padang",
+  "nama": "Padang",
+  "kecamatan": [
+   "koto-tangah",
+   "kuranji",
+   "lubuk-begalung",
+   "nanggalo",
+   "padang-kota",
+   "padang-selatan",
+   "padang-timur",
+   "padang-utara",
+   "pauh"
+  ]
+ },
+ {
+  "slug": "padang-pariaman",
+  "nama": "Padang Pariaman",
+  "kecamatan": [
+   "batang-anai"
+  ]
+ },
+ {
+  "slug": "pagar-alam",
+  "nama": "Pagar Alam",
+  "kecamatan": [
+   "pagar-alam-utara"
+  ]
+ },
+ {
+  "slug": "pahuwato",
+  "nama": "Pahuwato",
+  "kecamatan": [
+   "marisa"
+  ]
+ },
+ {
+  "slug": "palangkaraya",
+  "nama": "Palangkaraya",
+  "kecamatan": [
+   "jekan-raya",
+   "pahandut",
+   "sabangau",
+   "sebangau"
+  ]
+ },
+ {
+  "slug": "palembang",
+  "nama": "Palembang",
+  "kecamatan": [
+   "alang-alang-lebar",
+   "bukit-kecil",
+   "gandus",
+   "ilir-barat-i",
+   "ilir-barat-ii",
+   "ilir-timur-i",
+   "ilir-timur-ii",
+   "ilir-timur-iii",
+   "jakabaring",
+   "kalidoni",
+   "kemuning",
+   "kertapati",
+   "plaju",
+   "sako",
+   "seberang-ulu-i",
+   "seberang-ulu-ii",
+   "sematang-borang",
+   "sukarame",
+   "sukarami",
+   "talang-semut",
+   "tanjung-siapiapi"
+  ]
+ },
+ {
+  "slug": "palopo",
+  "nama": "Palopo",
+  "kecamatan": [
+   "mungkajang"
+  ]
+ },
+ {
+  "slug": "palu",
+  "nama": "Palu",
+  "kecamatan": [
+   "mantikulore",
+   "palu-barat",
+   "palu-selatan",
+   "palu-timur",
+   "ulujadi"
+  ]
+ },
+ {
+  "slug": "pamekasan",
+  "nama": "Pamekasan",
+  "kecamatan": [
+   "bangkalan",
+   "sampang",
+   "sumenep",
+   "waru"
+  ]
+ },
+ {
+  "slug": "pandeglang",
+  "nama": "Pandeglang",
+  "kecamatan": [
+   "banjar",
+   "bojong",
+   "cadas-sari",
+   "carita",
+   "cibaliung",
+   "cibitung",
+   "cipeucang",
+   "jiput",
+   "kaduhejo",
+   "karangtanjung",
+   "labuan",
+   "majasari",
+   "menes",
+   "pandeglang",
+   "panimbang",
+   "picung",
+   "saketi",
+   "sukaresmi"
+  ]
+ },
+ {
+  "slug": "pangandaran",
+  "nama": "Pangandaran",
+  "kecamatan": [
+   "cigugur",
+   "cijulang",
+   "cimerak"
+  ]
+ },
+ {
+  "slug": "pangkajene",
+  "nama": "Pangkajene",
+  "kecamatan": [
+   "pangkajene"
+  ]
+ },
+ {
+  "slug": "pangkal-pinang",
+  "nama": "Pangkal Pinang",
+  "kecamatan": [
+   "bukit-intan",
+   "gabek",
+   "gerunggang",
+   "jend-sudirman",
+   "pangkal-balam",
+   "rangkui",
+   "taman-sari"
+  ]
+ },
+ {
+  "slug": "papua",
+  "nama": "Papua",
+  "kecamatan": []
+ },
+ {
+  "slug": "papua-barat",
+  "nama": "Papua Barat",
+  "kecamatan": []
+ },
+ {
+  "slug": "papua-selatan",
+  "nama": "Papua Selatan",
+  "kecamatan": []
+ },
+ {
+  "slug": "pare-pare",
+  "nama": "Pare Pare",
+  "kecamatan": [
+   "bacukiki",
+   "soreang"
+  ]
+ },
+ {
+  "slug": "pasaman",
+  "nama": "Pasaman",
+  "kecamatan": [
+   "luhak-nan-duo",
+   "tigo-nagari"
+  ]
+ },
+ {
+  "slug": "pasaman-barat",
+  "nama": "Pasaman Barat",
+  "kecamatan": [
+   "kinali"
+  ]
+ },
+ {
+  "slug": "paser",
+  "nama": "Paser",
+  "kecamatan": [
+   "paser-belengkong"
+  ]
+ },
+ {
+  "slug": "pasir",
+  "nama": "Pasir",
+  "kecamatan": [
+   "tanah-grogot"
+  ]
+ },
+ {
+  "slug": "pasuruan",
+  "nama": "Pasuruan",
+  "kecamatan": [
+   "bangil",
+   "beji",
+   "bugulkidul",
+   "gadingrejo",
+   "gempol",
+   "gondang-wetan",
+   "grati",
+   "kejayan",
+   "kraton",
+   "lekok",
+   "lumbang",
+   "nguling",
+   "pandaan",
+   "panggungrejo",
+   "pasrepan",
+   "pohjentrek",
+   "prigen",
+   "purwodadi",
+   "purworejo",
+   "purwosari",
+   "puspo",
+   "rejoso",
+   "rembang",
+   "sukorejo",
+   "tosari",
+   "tutur",
+   "winongan",
+   "wonorejo"
+  ]
+ },
+ {
+  "slug": "pati",
+  "nama": "Pati",
+  "kecamatan": [
+   "juwana",
+   "kartini",
+   "margorejo",
+   "margoyoso",
+   "pati",
+   "pati-kota",
+   "sukolilo",
+   "tayu",
+   "trangkil"
+  ]
+ },
+ {
+  "slug": "pekalongan",
+  "nama": "Pekalongan",
+  "kecamatan": [
+   "bojong",
+   "buaran",
+   "kajen",
+   "kedungwuni",
+   "pekalongan-barat",
+   "pekalongan-selatan",
+   "pekalongan-timur",
+   "pekalongan-utara",
+   "sragi",
+   "tirto",
+   "wiradesa",
+   "wonokerto",
+   "wonopringgo"
+  ]
+ },
+ {
+  "slug": "pekanbaru",
+  "nama": "Pekanbaru",
+  "kecamatan": [
+   "arengka",
+   "arifin-ahmad",
+   "binawidya",
+   "bukit-raya",
+   "garuda-sakti",
+   "hangtuah",
+   "harapan-raya",
+   "kubang",
+   "lima-puluh",
+   "limapuluh",
+   "marpoyan-damai",
+   "panam",
+   "payung-sekaki",
+   "pekanbaru-kota",
+   "rumbai",
+   "rumbai-pesisir",
+   "rumbai-timur",
+   "sail",
+   "senapelan",
+   "sidomulyo",
+   "simpang-tiga",
+   "sukajadi",
+   "tampan",
+   "tangkerang",
+   "tenayan-raya",
+   "tuah-madani"
+  ]
+ },
+ {
+  "slug": "pemalang",
+  "nama": "Pemalang",
+  "kecamatan": [
+   "ampelgading",
+   "bantarbolang",
+   "belik",
+   "comal",
+   "pemalang",
+   "petarukan",
+   "taman",
+   "ulujami"
+  ]
+ },
+ {
+  "slug": "pematang-siantar",
+  "nama": "Pematang Siantar",
+  "kecamatan": [
+   "siantar-barat",
+   "siantar-marihat",
+   "siantar-martoba",
+   "siantar-sitalasari",
+   "siantar-timur",
+   "siantar-utara"
+  ]
+ },
+ {
+  "slug": "penajam-paser-utara",
+  "nama": "Penajam Paser Utara",
+  "kecamatan": [
+   "penajam"
+  ]
+ },
+ {
+  "slug": "pesawaran",
+  "nama": "Pesawaran",
+  "kecamatan": [
+   "gedong-tataan",
+   "punduh-pidada",
+   "tegineneng",
+   "way-khilau"
+  ]
+ },
+ {
+  "slug": "pinrang",
+  "nama": "Pinrang",
+  "kecamatan": [
+   "lembang",
+   "watang-sawitto"
+  ]
+ },
+ {
+  "slug": "ponorogo",
+  "nama": "Ponorogo",
+  "kecamatan": [
+   "babadan",
+   "balong",
+   "jambon",
+   "ponorogo",
+   "pulung"
+  ]
+ },
+ {
+  "slug": "pontianak",
+  "nama": "Pontianak",
+  "kecamatan": [
+   "kubu",
+   "pontianak-barat",
+   "pontianak-kota",
+   "pontianak-selatan",
+   "pontianak-tenggara",
+   "pontianak-timur",
+   "pontianak-utara",
+   "siantan",
+   "sungai-ambawang",
+   "sungai-kakap",
+   "sungai-raya"
+  ]
+ },
+ {
+  "slug": "prabumulih",
+  "nama": "Prabumulih",
+  "kecamatan": [
+   "prabumulih-barat"
+  ]
+ },
+ {
+  "slug": "pringsewu",
+  "nama": "Pringsewu",
+  "kecamatan": [
+   "banyumas",
+   "gading-rejo",
+   "pagelaran",
+   "pardasuka",
+   "pringsewu"
+  ]
+ },
+ {
+  "slug": "probolinggo",
+  "nama": "Probolinggo",
+  "kecamatan": [
+   "banyuanyar",
+   "dringu",
+   "gading",
+   "kademangan",
+   "kanigaran",
+   "kedopok",
+   "kotaanyar",
+   "kraksaan",
+   "leces",
+   "lumbang",
+   "mayangan",
+   "pajarakan",
+   "probolinggo",
+   "tongas",
+   "wonoasih"
+  ]
+ },
+ {
+  "slug": "pulau-pisau",
+  "nama": "Pulau Pisau",
+  "kecamatan": [
+   "kahayan-hilir"
+  ]
+ },
+ {
+  "slug": "purbalingga",
+  "nama": "Purbalingga",
+  "kecamatan": [
+   "bobotsari",
+   "bojongsari",
+   "kalimanah",
+   "karangmoncol",
+   "karangreja",
+   "kemangkon",
+   "kutasari",
+   "mrebet",
+   "padamara",
+   "purbalingga"
+  ]
+ },
+ {
+  "slug": "purwakarta",
+  "nama": "Purwakarta",
+  "kecamatan": [
+   "babakancikao",
+   "bojong",
+   "bungursari",
+   "campaka",
+   "cibatu",
+   "cikampek",
+   "darangdan",
+   "jatiluhur",
+   "kiarapedes",
+   "pasawahan",
+   "plered",
+   "pondoksalam",
+   "purwakarta",
+   "purwakarta-kota",
+   "sadang",
+   "sukatani",
+   "wanayasa"
+  ]
+ },
+ {
+  "slug": "purwodadi",
+  "nama": "Purwodadi",
+  "kecamatan": [
+   "purwodadi"
+  ]
+ },
+ {
+  "slug": "purwokerto",
+  "nama": "Purwokerto",
+  "kecamatan": [
+   "purwokerto",
+   "purwokerto-barat",
+   "purwokerto-selatan",
+   "purwokerto-timur",
+   "purwokerto-utara"
+  ]
+ },
+ {
+  "slug": "purworejo",
+  "nama": "Purworejo",
+  "kecamatan": [
+   "bagelen",
+   "banyuurip",
+   "bener",
+   "grabag",
+   "kutoarjo",
+   "ngombol",
+   "purwodadi",
+   "purworejo"
+  ]
+ },
+ {
+  "slug": "rejang-lebong",
+  "nama": "Rejang Lebong",
+  "kecamatan": [
+   "curup-selatan",
+   "kota-padang"
+  ]
+ },
+ {
+  "slug": "rembang",
+  "nama": "Rembang",
+  "kecamatan": [
+   "bulu",
+   "kaliori",
+   "lasem",
+   "sulang"
+  ]
+ },
+ {
+  "slug": "riau",
+  "nama": "Riau",
+  "kecamatan": []
+ },
+ {
+  "slug": "rokan-hilir",
+  "nama": "Rokan Hilir",
+  "kecamatan": [
+   "tanah-putih-tanjung-melawan"
+  ]
+ },
+ {
+  "slug": "rokan-hulu",
+  "nama": "Rokan Hulu",
+  "kecamatan": [
+   "bonai-darussalam",
+   "rambah"
+  ]
+ },
+ {
+  "slug": "rote-ndao",
+  "nama": "Rote Ndao",
+  "kecamatan": [
+   "rote-barat-daya",
+   "rote-barat-laut"
+  ]
+ },
+ {
+  "slug": "sabang",
+  "nama": "Sabang",
+  "kecamatan": [
+   "sukajaya"
+  ]
+ },
+ {
+  "slug": "salatiga",
+  "nama": "Salatiga",
+  "kecamatan": [
+   "argomulyo",
+   "kopeng",
+   "salatiga",
+   "sidomukti",
+   "sidorejo",
+   "taman-sari",
+   "tingkir"
+  ]
+ },
+ {
+  "slug": "samarinda",
+  "nama": "Samarinda",
+  "kecamatan": [
+   "loa-janan-ilir",
+   "palaran",
+   "samarinda-ilir",
+   "samarinda-kota",
+   "samarinda-kunjang",
+   "samarinda-seberang",
+   "samarinda-ulu",
+   "samarinda-utara",
+   "sambutan",
+   "sungai-kunjang",
+   "sungai-pinang"
+  ]
+ },
+ {
+  "slug": "sambas",
+  "nama": "Sambas",
+  "kecamatan": [
+   "pemangkat"
+  ]
+ },
+ {
+  "slug": "sampang",
+  "nama": "Sampang",
+  "kecamatan": [
+   "sampang"
+  ]
+ },
+ {
+  "slug": "sarolangun",
+  "nama": "Sarolangun",
+  "kecamatan": [
+   "sarolangun"
+  ]
+ },
+ {
+  "slug": "selayar",
+  "nama": "Selayar",
+  "kecamatan": [
+   "bontomanai",
+   "bontosikuyu"
+  ]
+ },
+ {
+  "slug": "semarang",
+  "nama": "Semarang",
+  "kecamatan": [
+   "atmodirono",
+   "banbankerep",
+   "bandungan",
+   "bangetayu-wetan",
+   "banjardowo",
+   "banyubiru",
+   "banyumanik",
+   "barusari",
+   "bawen",
+   "bergas",
+   "boja",
+   "bringin",
+   "brumbungan",
+   "bsb-city",
+   "bubakan",
+   "bugangan",
+   "bukit-sari",
+   "bulustalan",
+   "cabean",
+   "candi-golf",
+   "candisari",
+   "citarum",
+   "citragrand",
+   "dadapsari",
+   "dempel",
+   "dr-cipto-mangunkusomo",
+   "gabahan",
+   "gajah",
+   "gajah-mungkur",
+   "gajahmada",
+   "gayamsari",
+   "gedung-batu",
+   "gedung-songo",
+   "gemah",
+   "genuk",
+   "genuksari",
+   "getasan",
+   "graha-padma",
+   "greenwood",
+   "gunung-pati",
+   "halmahera",
+   "hawa",
+   "indraprasta",
+   "jagalan",
+   "jambu",
+   "jangli",
+   "jatingaleh",
+   "jerakah",
+   "jomblang",
+   "kalibanteng",
+   "kalibanteng-kidul",
+   "kalibanteng-kulon",
+   "kalicari",
+   "kaligawe",
+   "kaliwungu",
+   "kampung-kali",
+   "karang-anyar",
+   "karang-kebon",
+   "karang-kidul",
+   "karang-rejo",
+   "karang-tempel",
+   "karang-turi",
+   "karangayu",
+   "kartini",
+   "kauman",
+   "kawi",
+   "kedung-pane",
+   "kedungmundu",
+   "kembang-arum",
+   "kenconowungu",
+   "ketileng",
+   "krakatau",
+   "kranggan",
+   "krapyak",
+   "kuningan",
+   "labuhan",
+   "lamper",
+   "majapahit",
+   "mangunsari",
+   "manyaran",
+   "mataram",
+   "meteseh",
+   "mijen",
+   "miroto",
+   "mlatiharjo",
+   "mranggen",
+   "mugosari",
+   "muktiharjo",
+   "ngaliyan",
+   "ngesrep",
+   "nias",
+   "pabelan",
+   "pamularsih",
+   "pandansari",
+   "panggung",
+   "papandayan",
+   "pedurungan",
+   "pekunden",
+   "pemuda",
+   "pendirikan",
+   "penggaron",
+   "petempon",
+   "peterongan",
+   "pindrikan",
+   "plamongan",
+   "pleburan",
+   "plombokan",
+   "polaman",
+   "pringapus",
+   "pudak-payung",
+   "puri-anjasmoro",
+   "purwodinatan",
+   "purwosari",
+   "puspogiwang",
+   "pusponjolo",
+   "puspowarno",
+   "rejosari",
+   "sambiroto",
+   "sampangan",
+   "sarirejo",
+   "sayung",
+   "sekayu",
+   "semarang-barat",
+   "semarang-selatan",
+   "semarang-tengah",
+   "semarang-timur",
+   "semarang-utara",
+   "semeru",
+   "sendangmulyo",
+   "sidodadi-timur",
+   "simongan",
+   "simpang-lima",
+   "siranda",
+   "sompok",
+   "sri-rejeki",
+   "srondol",
+   "sultan-agung",
+   "sumowono",
+   "suruh",
+   "susukan",
+   "tanah-mas",
+   "tanjung-mas",
+   "tawangmas",
+   "tembalang",
+   "tengaran",
+   "tengger",
+   "terboyo",
+   "tlaga-bodas",
+   "tlogosari",
+   "tugu",
+   "tugurejo",
+   "tuntang",
+   "ungaran",
+   "ungaran-barat",
+   "ungaran-timur",
+   "wonodri",
+   "wonosari"
+  ]
+ },
+ {
+  "slug": "semarapura",
+  "nama": "Semarapura",
+  "kecamatan": [
+   "banjarangkan",
+   "jungutbatu",
+   "kusamba",
+   "lembongan",
+   "nusa-penida",
+   "paksebali",
+   "semarapura-kangin"
+  ]
+ },
+ {
+  "slug": "serang",
+  "nama": "Serang",
+  "kecamatan": [
+   "anyar",
+   "bandung",
+   "baros",
+   "bojonegara",
+   "cikande",
+   "cikeusal",
+   "cimuncang",
+   "cinangka",
+   "ciomas",
+   "cipare",
+   "cipocok-jaya",
+   "ciracas",
+   "ciruas",
+   "curug",
+   "jawilan",
+   "kagungan",
+   "kaligandu",
+   "kasemen",
+   "kibin",
+   "kidang-cipare",
+   "kopo",
+   "kotabaru",
+   "kragilan",
+   "kramatwatu",
+   "lontarbaru",
+   "lopang",
+   "pabuaran",
+   "padarincang",
+   "pamarayan",
+   "petir",
+   "pontang",
+   "serang",
+   "serang-timur",
+   "sukawana",
+   "sumurpecung",
+   "taktakan",
+   "tanara",
+   "terondol",
+   "tunjung-teja",
+   "unyur",
+   "walantaka",
+   "waringinkurung"
+  ]
+ },
+ {
+  "slug": "serdang-bedagai",
+  "nama": "Serdang Bedagai",
+  "kecamatan": [
+   "pegajahan",
+   "perbaungan",
+   "sipispis",
+   "tanjung-beringin"
+  ]
+ },
+ {
+  "slug": "siak",
+  "nama": "Siak",
+  "kecamatan": [
+   "tualang"
+  ]
+ },
+ {
+  "slug": "sidenreng-rappang",
+  "nama": "Sidenreng Rappang",
+  "kecamatan": [
+   "maritengngae",
+   "watang-pulu"
+  ]
+ },
+ {
+  "slug": "sidoarjo",
+  "nama": "Sidoarjo",
+  "kecamatan": [
+   "balongbendo",
+   "bendungan-bening",
+   "buduran",
+   "candi",
+   "gedangan",
+   "jabon",
+   "jenggolo",
+   "krembung",
+   "krian",
+   "larangan",
+   "pondok-tjandra",
+   "porong",
+   "prambon",
+   "sedati",
+   "sidoarjo",
+   "sidokerto",
+   "sukodono",
+   "taman",
+   "tanggulangin",
+   "tarik",
+   "tulangan",
+   "unimas-garden-waru-",
+   "wadungasri",
+   "waru",
+   "wonoayu"
+  ]
+ },
+ {
+  "slug": "sigi",
+  "nama": "Sigi",
+  "kecamatan": [
+   "sigi-biromaru"
+  ]
+ },
+ {
+  "slug": "sikka",
+  "nama": "Sikka",
+  "kecamatan": [
+   "alok-timur"
+  ]
+ },
+ {
+  "slug": "simalungun",
+  "nama": "Simalungun",
+  "kecamatan": [
+   "pematang-bandar",
+   "siantar"
+  ]
+ },
+ {
+  "slug": "singapore",
+  "nama": "Singapore",
+  "kecamatan": []
+ },
+ {
+  "slug": "singkawang",
+  "nama": "Singkawang",
+  "kecamatan": [
+   "singkawang-barat",
+   "singkawang-selatan",
+   "singkawang-tengah",
+   "singkawang-timur",
+   "singkawang-utara"
+  ]
+ },
+ {
+  "slug": "sintang",
+  "nama": "Sintang",
+  "kecamatan": [
+   "sintang-kota"
+  ]
+ },
+ {
+  "slug": "situbondo",
+  "nama": "Situbondo",
+  "kecamatan": [
+   "arjasa",
+   "asembagus",
+   "banyuputih",
+   "besuki",
+   "jangkar",
+   "mangaran",
+   "panji",
+   "situbondo"
+  ]
+ },
+ {
+  "slug": "sleman",
+  "nama": "Sleman",
+  "kecamatan": [
+   "berbah",
+   "cangkringan",
+   "caturtunggal",
+   "cebongan",
+   "condong-catur",
+   "depok",
+   "gamping",
+   "godean",
+   "jombor",
+   "kalasan",
+   "kaliurang",
+   "kebonagung",
+   "minggir",
+   "minomartani-----",
+   "mlati",
+   "moyudan",
+   "ngaglik",
+   "ngemplak",
+   "pakem",
+   "plosokuning-----",
+   "prambanan",
+   "purwomartani---",
+   "sekip--------------",
+   "seyegan",
+   "sidoarum---------",
+   "sleman",
+   "tempel",
+   "turi"
+  ]
+ },
+ {
+  "slug": "solo",
+  "nama": "Solo",
+  "kecamatan": [
+   "banaran",
+   "banjarsari",
+   "banyuanyar",
+   "cemani",
+   "colomadu",
+   "gentan",
+   "gilingan",
+   "grogol",
+   "jajar",
+   "jaten",
+   "jebres",
+   "karanganyar",
+   "kartosuro",
+   "ketelan",
+   "kratonan",
+   "laweyan",
+   "manahan",
+   "mangkubumen",
+   "mojosongo",
+   "ngemplak",
+   "nusukan",
+   "pabelan",
+   "pajang",
+   "pasar-kliwon",
+   "penularan",
+   "pucang-sawit",
+   "purwosari",
+   "sangkrah",
+   "semanggi",
+   "serengan",
+   "slamet-riyadi",
+   "solo-baru",
+   "sondakan",
+   "sranggrahan",
+   "tawangmangu"
+  ]
+ },
+ {
+  "slug": "solok",
+  "nama": "Solok",
+  "kecamatan": [
+   "danau-kembar",
+   "gunung-talang",
+   "kubung",
+   "solok-kota"
+  ]
+ },
+ {
+  "slug": "sorong",
+  "nama": "Sorong",
+  "kecamatan": [
+   "aimas",
+   "klaurung",
+   "sorong",
+   "sorong-barat",
+   "sorong-kota",
+   "sorong-timur",
+   "sorong-utara"
+  ]
+ },
+ {
+  "slug": "sragen",
+  "nama": "Sragen",
+  "kecamatan": [
+   "gemolong",
+   "gondang",
+   "kalijambe",
+   "karangmalang",
+   "kedawung",
+   "masaran",
+   "ngrampal",
+   "sambirejo",
+   "sambungmacan",
+   "sidoharjo",
+   "sragen",
+   "sukodono",
+   "sumberlawang"
+  ]
+ },
+ {
+  "slug": "subang",
+  "nama": "Subang",
+  "kecamatan": [
+   "binong",
+   "ciasem",
+   "ciater",
+   "cibogo",
+   "cijambe",
+   "jalan-cagak",
+   "kalijati",
+   "pagaden",
+   "pamanukan",
+   "patok-beusi",
+   "purwadadi",
+   "pusakanagara",
+   "sagalaherang",
+   "subang",
+   "subang-kota"
+  ]
+ },
+ {
+  "slug": "sukabumi",
+  "nama": "Sukabumi",
+  "kecamatan": [
+   "baros",
+   "bojong-genteng",
+   "caringin",
+   "ciaul-pasir",
+   "cibadak",
+   "cibeureum",
+   "cibitung",
+   "cicantayan",
+   "cicurug",
+   "cidahu",
+   "cikembar",
+   "cikole",
+   "cipanas",
+   "ciracap",
+   "cireunghas",
+   "cisaat",
+   "cisolok",
+   "citamiang",
+   "gunung-puyuh",
+   "kabandungan",
+   "kadudampit",
+   "kalapa-nunggal",
+   "kota-sukabumi",
+   "lembursitu",
+   "lengkong",
+   "nagrak",
+   "pabuaran",
+   "parakan-salak",
+   "parung-kuda",
+   "pelabuhan-ratu",
+   "salabintana",
+   "sukalarang",
+   "sukaraja",
+   "surade",
+   "suryakencana",
+   "warudoyong",
+   "warung-kiara"
+  ]
+ },
+ {
+  "slug": "sukoharjo",
+  "nama": "Sukoharjo",
+  "kecamatan": [
+   "baki",
+   "bendosari",
+   "gatak",
+   "gentan",
+   "grogol",
+   "kartasura",
+   "kartosuro",
+   "mojolaban",
+   "nguter",
+   "polokarto",
+   "sukoharjo",
+   "tawangsari",
+   "weru"
+  ]
+ },
+ {
+  "slug": "sulawesi-barat",
+  "nama": "Sulawesi Barat",
+  "kecamatan": []
+ },
+ {
+  "slug": "sulawesi-selatan",
+  "nama": "Sulawesi Selatan",
+  "kecamatan": []
+ },
+ {
+  "slug": "sulawesi-tengah",
+  "nama": "Sulawesi Tengah",
+  "kecamatan": []
+ },
+ {
+  "slug": "sulawesi-tenggara",
+  "nama": "Sulawesi Tenggara",
+  "kecamatan": []
+ },
+ {
+  "slug": "sulawesi-utara",
+  "nama": "Sulawesi Utara",
+  "kecamatan": []
+ },
+ {
+  "slug": "sumatera-barat",
+  "nama": "Sumatera Barat",
+  "kecamatan": []
+ },
+ {
+  "slug": "sumatera-selatan",
+  "nama": "Sumatera Selatan",
+  "kecamatan": []
+ },
+ {
+  "slug": "sumatera-utara",
+  "nama": "Sumatera Utara",
+  "kecamatan": []
+ },
+ {
+  "slug": "sumba-barat",
+  "nama": "Sumba Barat",
+  "kecamatan": [
+   "kodi"
+  ]
+ },
+ {
+  "slug": "sumba-barat-daya",
+  "nama": "Sumba Barat Daya",
+  "kecamatan": [
+   "kodi",
+   "kota-tambolaka"
+  ]
+ },
+ {
+  "slug": "sumba-timur",
+  "nama": "Sumba Timur",
+  "kecamatan": [
+   "kanatang",
+   "pandawai"
+  ]
+ },
+ {
+  "slug": "sumbawa",
+  "nama": "Sumbawa",
+  "kecamatan": [
+   "alas-barat",
+   "labuhan-badas",
+   "seketeng",
+   "sumbawa"
+  ]
+ },
+ {
+  "slug": "sumbawa-barat-",
+  "nama": "Sumbawa Barat ",
+  "kecamatan": [
+   "taliwang"
+  ]
+ },
+ {
+  "slug": "sumedang",
+  "nama": "Sumedang",
+  "kecamatan": [
+   "buahdua",
+   "cibugel",
+   "cimalaka",
+   "cimanggu",
+   "cimanggung",
+   "cisarua",
+   "cisitu",
+   "darmaraja",
+   "jatinangor",
+   "pamulihan",
+   "paseh",
+   "rancakalong",
+   "sukasari",
+   "sumedang-selatan",
+   "sumedang-utara",
+   "tanjungkerta",
+   "tanjungsari",
+   "tomo"
+  ]
+ },
+ {
+  "slug": "sumenep",
+  "nama": "Sumenep",
+  "kecamatan": [
+   "ambunten",
+   "kota-sumenep"
+  ]
+ },
+ {
+  "slug": "surabaya",
+  "nama": "Surabaya",
+  "kecamatan": [
+   "alun-alun-contong",
+   "ambengan",
+   "asemrowo",
+   "babatan",
+   "balong-sari",
+   "banyu-urip",
+   "basuki-rachmat",
+   "benowo",
+   "bubutan",
+   "bulak",
+   "buntaran",
+   "citraland",
+   "darmo-permai",
+   "dharma-husada",
+   "diponegoro",
+   "dr-sutomo",
+   "dukuh-kupang",
+   "dukuh-pakis",
+   "embong-kali",
+   "galaxy",
+   "gayungan",
+   "genteng",
+   "graha",
+   "gubeng",
+   "gundih",
+   "gununganyar",
+   "hr-muhammad",
+   "jagir",
+   "jambangan",
+   "jemursari",
+   "kalianak",
+   "kalisari",
+   "kapasan",
+   "karang-poh",
+   "karangpilang",
+   "kebonsari",
+   "kebraon",
+   "kedung-baruk",
+   "kedung-doro",
+   "kembang-jepun",
+   "kendangsari",
+   "kenjeran",
+   "keputih",
+   "keputran",
+   "kertajaya",
+   "ketintang",
+   "krembangan",
+   "kupang",
+   "kupang-krajan",
+   "kureksari",
+   "kutisari",
+   "laguna",
+   "lakarsantri",
+   "lidah-kulon",
+   "lidah-wetan",
+   "manukan",
+   "manyar",
+   "margomulyo",
+   "margorejo",
+   "mayjen-sungkono",
+   "medokan-ayu",
+   "menganti",
+   "middle-east-ring-road",
+   "mojoarum",
+   "mulyorejo",
+   "mulyosari",
+   "ngagel",
+   "nginden",
+   "pabean-cantikan",
+   "pakal",
+   "pakis",
+   "pakuwon",
+   "pakuwon-city",
+   "pakuwon-indah",
+   "paneleh",
+   "panjang-jiwo",
+   "pemuda",
+   "perak",
+   "petemon",
+   "putat-gede",
+   "putat-jaya",
+   "raya-a-yani",
+   "raya-darmo",
+   "raya-margorejo",
+   "rungkut",
+   "rungkut-industri",
+   "sambikerep",
+   "sawahan",
+   "semampir",
+   "semolowaru",
+   "sidoarjo",
+   "simokerto",
+   "simomulyo",
+   "sukolilo",
+   "sukomanunggal",
+   "surabaya-kota",
+   "sutorejo",
+   "tambaksari",
+   "tandes",
+   "tegalsari",
+   "tembok-dukuh",
+   "tenggilis-mejoyo",
+   "tidar",
+   "tubanan",
+   "tunjungan",
+   "undaan",
+   "veteran",
+   "waru",
+   "wisata-bukit-mas",
+   "wiyung",
+   "wonocolo",
+   "wonokromo",
+   "wonorejo"
+  ]
+ },
+ {
+  "slug": "surakarta",
+  "nama": "Surakarta",
+  "kecamatan": [
+   "badran",
+   "banjarsari",
+   "jagalan",
+   "jebres",
+   "kampung-baru",
+   "karang-anyar",
+   "karanganyar",
+   "kebakkramat",
+   "keprabon",
+   "kepunton",
+   "laweyan",
+   "loji-wetan",
+   "mayang",
+   "mojosongo",
+   "pasar-kliwon",
+   "penumping",
+   "pucang-sawit",
+   "serengan",
+   "slamet-riyadi",
+   "solo-baru",
+   "sukoharjo"
+  ]
+ },
+ {
+  "slug": "tabalong",
+  "nama": "Tabalong",
+  "kecamatan": [
+   "murung-pudak"
+  ]
+ },
+ {
+  "slug": "tabanan",
+  "nama": "Tabanan",
+  "kecamatan": [
+   "abiantuwung",
+   "antap",
+   "antapan",
+   "apuan",
+   "bajera",
+   "bangli",
+   "banjaranyar",
+   "bantas",
+   "bantiran",
+   "batannyuh",
+   "batuaji",
+   "baturiti",
+   "bedugul",
+   "belalang",
+   "beraban",
+   "beringkit",
+   "biaung",
+   "bongan",
+   "buwit",
+   "candikuning-",
+   "cepaka",
+   "dajanpeken",
+   "dauhpeken",
+   "delodpeken",
+   "denbantas",
+   "gubug",
+   "jatiluwih",
+   "kaba-kaba",
+   "kediri",
+   "kedungu",
+   "kelating",
+   "kerambitan",
+   "klecung",
+   "kukuh",
+   "kuwum",
+   "lalanglinggah",
+   "mambang",
+   "marga",
+   "meliling",
+   "munduktemu",
+   "nyambung",
+   "nyitdah",
+   "pandakgede",
+   "pangkungkarung",
+   "pangkutibah",
+   "payangan",
+   "penatahan",
+   "penebel",
+   "pujungan",
+   "samsam",
+   "selemadeg",
+   "subamia",
+   "tabanan",
+   "tanah-lot",
+   "tangguntiti",
+   "tegaljadi",
+   "tegalmengkeb",
+   "tibubiyu",
+   "tunjuk",
+   "wanasari",
+   "yeh-leh"
+  ]
+ },
+ {
+  "slug": "takalar",
+  "nama": "Takalar",
+  "kecamatan": [
+   "galesong-utara",
+   "mangara-bombang",
+   "patallassang",
+   "polobangkeng-selatan"
+  ]
+ },
+ {
+  "slug": "tanah-bumbu",
+  "nama": "Tanah Bumbu",
+  "kecamatan": [
+   "simpang-empat"
+  ]
+ },
+ {
+  "slug": "tanah-datar",
+  "nama": "Tanah Datar",
+  "kecamatan": [
+   "batipuh",
+   "tanjung-emas"
+  ]
+ },
+ {
+  "slug": "tanah-laut",
+  "nama": "Tanah Laut",
+  "kecamatan": [
+   "bati-bati"
+  ]
+ },
+ {
+  "slug": "tangerang",
+  "nama": "Tangerang",
+  "kecamatan": [
+   "a-yani",
+   "alam-sutera",
+   "alam-sutera-2",
+   "babakan",
+   "bakti-jaya",
+   "balaraja",
+   "banjar-wijaya",
+   "batu-ceper",
+   "batu-sari",
+   "benda",
+   "bitung",
+   "bojong-nangka",
+   "bsd",
+   "bsd-alegria",
+   "bsd-anggrek-loka",
+   "bsd-avani",
+   "bsd-banjar-wijaya",
+   "bsd-bukit-golf",
+   "bsd-castilla",
+   "bsd-city",
+   "bsd-de-park",
+   "bsd-delatinos",
+   "bsd-duta-bintaro",
+   "bsd-eminent",
+   "bsd-foresta",
+   "bsd-giri-loka",
+   "bsd-golden-viena",
+   "bsd-graha-raya",
+   "bsd-green-cove",
+   "bsd-green-wich",
+   "bsd-griya-loka",
+   "bsd-ingenia",
+   "bsd-kencana-loka",
+   "bsd-komersial-area",
+   "bsd-natura",
+   "bsd-neo-catalonia",
+   "bsd-nusaloka",
+   "bsd-pavillion-residence",
+   "bsd-provance-parkland",
+   "bsd-puspita-loka",
+   "bsd-residence-one",
+   "bsd-sevilla",
+   "bsd-taman-crysant",
+   "bsd-taman-edelweis",
+   "bsd-taman-fortuna",
+   "bsd-taman-giri-loka",
+   "bsd-taman-provence",
+   "bsd-taman-royal",
+   "bsd-telaga-golf",
+   "bsd-the-green",
+   "bsd-the-icon",
+   "bsd-the-savia",
+   "bsd-vanya-park",
+   "bsd-vermont",
+   "bsd-victoria-park-lane",
+   "bsd-virginia-lagoon",
+   "ciater",
+   "cibodas",
+   "cibogo",
+   "cihuni",
+   "cikokol",
+   "cikupa",
+   "cikupa-citra-raya",
+   "ciledug",
+   "cimone",
+   "cipadu",
+   "cipondoh",
+   "cirarab",
+   "cireundeu",
+   "cisauk",
+   "cisoka",
+   "citra-maja-raya",
+   "cukang-galih",
+   "curug",
+   "daan-mogot",
+   "dadap",
+   "duta-garden",
+   "gading-serpong",
+   "gading-serpong-andalucia",
+   "gading-serpong-cluster-bohemia",
+   "gading-serpong-cluster-il-rosa",
+   "gading-serpong-cluster-lavender",
+   "gading-serpong-cluster-michelia",
+   "gading-serpong-cluster-oleaster",
+   "gading-serpong-elista-village",
+   "gading-serpong-il-lago",
+   "gading-serpong-karelia-village",
+   "gading-serpong-l-agricola",
+   "gading-serpong-la-bella-village",
+   "gading-serpong-montana-village",
+   "gading-serpong-omaha-village",
+   "gading-serpong-pondok-hijau-golf",
+   "gading-serpong-samara-village",
+   "gading-serpong-scientia-garden",
+   "gading-serpong-serenade-lake",
+   "gading-serpong-the-spring",
+   "gading-serpong-virginia-village",
+   "gatot-subroto",
+   "graha-raya",
+   "jambe",
+   "jatake",
+   "jati-uwung",
+   "jayanti",
+   "jelupang",
+   "jombang",
+   "jurangmangu",
+   "jurumudi",
+   "kademangan",
+   "kadu",
+   "kampung-utan",
+   "karang-tengah",
+   "karawaci",
+   "kedaung",
+   "kel-gerendeng",
+   "kelapa-dua",
+   "kemiri",
+   "kosambi",
+   "kotabumi",
+   "kreo",
+   "kresek",
+   "kronjo",
+   "kunciran",
+   "larangan",
+   "legok",
+   "lengkong-kulon",
+   "lippo-karawaci",
+   "mabad",
+   "malabar",
+   "mauk",
+   "mekar-baru",
+   "metro-permata",
+   "modernland",
+   "neglasari",
+   "pagedangan",
+   "pakuhaji",
+   "pakujaya",
+   "panongan",
+   "parigi",
+   "pasar-kemis",
+   "pengasinan",
+   "periuk",
+   "permata-medang",
+   "pesanggrahan",
+   "petir",
+   "pinang",
+   "pondok-benda",
+   "pondok-betung",
+   "pondok-cabe",
+   "pondok-jagung",
+   "pondok-karya",
+   "pondok-pucung",
+   "pondok-ranji",
+   "poris",
+   "rajeg",
+   "rawakalong",
+   "raya-serang",
+   "rempoa",
+   "royal-serpong-village",
+   "sangiang-jaya",
+   "sektor-1a-gading-serpong",
+   "sektor-1b-gading-serpong",
+   "sektor-1c-gading-serpong",
+   "sektor-1d-gading-serpong",
+   "sektor-1e-gading-serpong",
+   "sektor-1g-gading-serpong",
+   "sektor-6-gading-serpong",
+   "sektor-7c-gading-serpong",
+   "sektor-8-gading-serpong",
+   "sepatan",
+   "sepatan-timur",
+   "serua",
+   "sindang-jaya",
+   "solear",
+   "sudimara",
+   "sukabakti",
+   "sukadiri",
+   "sukamulya",
+   "summarecon-serpong",
+   "summarecon-tangerang",
+   "suradita",
+   "sutera-buana-alam-sutera",
+   "sutera-jingga-alam-sutera",
+   "sutera-onix-alam-sutera",
+   "sutera-sitara-alam-sutera",
+   "suvarna-sutera",
+   "tajur",
+   "taman-elok-lippo",
+   "taman-royal",
+   "tanah-tinggi",
+   "tangerang",
+   "tangerang-kota",
+   "teluk-naga",
+   "tigaraksa"
+  ]
+ },
+ {
+  "slug": "tangerang-selatan",
+  "nama": "Tangerang Selatan",
+  "kecamatan": [
+   "bintaro",
+   "bsd",
+   "ciputat",
+   "ciputat-timur",
+   "graha-raya",
+   "graha-raya-bintaro",
+   "pamulang",
+   "pondok-aren",
+   "pondok-ranji",
+   "rempoa",
+   "sektor-3---bintaro",
+   "sektor-3a---bintaro",
+   "sektor-5---bintaro",
+   "sektor-6---bintaro",
+   "sektor-7-bintaro",
+   "sektor-8---bintaro",
+   "sektor-9-bintaro",
+   "serpong",
+   "serpong-regency-melati-mas",
+   "serpong-regency-melati-mas-2",
+   "serpong-utara",
+   "serpong-villa-melati-mas",
+   "setu",
+   "villa-melati-mas"
+  ]
+ },
+ {
+  "slug": "tanggamus",
+  "nama": "Tanggamus",
+  "kecamatan": [
+   "gading-rejo",
+   "pringsewu"
+  ]
+ },
+ {
+  "slug": "tanjung-pinang",
+  "nama": "Tanjung Pinang",
+  "kecamatan": [
+   "bukit-bestari",
+   "tanjung-pinang-barat",
+   "tanjung-pinang-kota",
+   "tanjung-pinang-timur"
+  ]
+ },
+ {
+  "slug": "tapanuli-selatan",
+  "nama": "Tapanuli Selatan",
+  "kecamatan": [
+   "batang-toru",
+   "padang-bolak-julu"
+  ]
+ },
+ {
+  "slug": "tarakan",
+  "nama": "Tarakan",
+  "kecamatan": [
+   "tarakan-tengah"
+  ]
+ },
+ {
+  "slug": "tasikmalaya",
+  "nama": "Tasikmalaya",
+  "kecamatan": [
+   "bungursari",
+   "ciawi",
+   "cibeureum",
+   "cihideung",
+   "cipedes",
+   "cisayong",
+   "gunungtanjung",
+   "indihiang",
+   "kadipaten",
+   "karangnunggal",
+   "kawalu",
+   "mangkubumi",
+   "manonjaya",
+   "pagerageung",
+   "purbaratu",
+   "rajapolah",
+   "singaparna",
+   "sukalaya",
+   "sukaraja",
+   "sukarame",
+   "sukaratu",
+   "tamansari",
+   "tawang"
+  ]
+ },
+ {
+  "slug": "tebing-tinggi",
+  "nama": "Tebing Tinggi",
+  "kecamatan": [
+   "padang-hilir",
+   "padang-hulu",
+   "rambutan",
+   "tebing-tinggi-kota"
+  ]
+ },
+ {
+  "slug": "tegal",
+  "nama": "Tegal",
+  "kecamatan": [
+   "adiwerna",
+   "balapulang",
+   "bojong",
+   "bumijawa",
+   "dukuhturi",
+   "dukuhwaru",
+   "kedungbanteng",
+   "kramat",
+   "lebaksiu",
+   "margadana",
+   "margasari",
+   "pangkah",
+   "randu-gunting",
+   "slawi",
+   "suradadi",
+   "talang",
+   "tegal-barat",
+   "tegal-selatan",
+   "tegal-timur",
+   "warureja"
+  ]
+ },
+ {
+  "slug": "temanggung",
+  "nama": "Temanggung",
+  "kecamatan": [
+   "bansari",
+   "kaloran",
+   "kedu",
+   "kledung",
+   "kranggan",
+   "parakan",
+   "pringsurat",
+   "selopampang",
+   "temanggung",
+   "tembarak",
+   "tlogomulyo"
+  ]
+ },
+ {
+  "slug": "ternate",
+  "nama": "Ternate",
+  "kecamatan": [
+   "pulau-ternate",
+   "ternate-selatan"
+  ]
+ },
+ {
+  "slug": "toba-samosir",
+  "nama": "Toba Samosir",
+  "kecamatan": [
+   "balige"
+  ]
+ },
+ {
+  "slug": "tomohon",
+  "nama": "Tomohon",
+  "kecamatan": [
+   "tomohon-selatan",
+   "tomohon-tengah",
+   "tomohon-utara"
+  ]
+ },
+ {
+  "slug": "trenggalek",
+  "nama": "Trenggalek",
+  "kecamatan": [
+   "durenan",
+   "karangan",
+   "trenggalek",
+   "tugu"
+  ]
+ },
+ {
+  "slug": "tuban",
+  "nama": "Tuban",
+  "kecamatan": [
+   "jenu",
+   "merakurak",
+   "palang",
+   "plumbang",
+   "plumpang",
+   "rengel",
+   "semanding",
+   "singgahan",
+   "tambakboyo",
+   "tuban",
+   "widang"
+  ]
+ },
+ {
+  "slug": "tulang-bawang",
+  "nama": "Tulang Bawang",
+  "kecamatan": [
+   "banjar-agung",
+   "banjar-margo",
+   "gunung-agung",
+   "gunung-terang",
+   "tulang-bawang-tengah",
+   "tulang-bawang-udik"
+  ]
+ },
+ {
+  "slug": "tulungagung",
+  "nama": "Tulungagung",
+  "kecamatan": [
+   "bago",
+   "bandung",
+   "besuki",
+   "boyolangu",
+   "campurdarat",
+   "gondang",
+   "kalidawir",
+   "karangrejo",
+   "kauman",
+   "kedungwaru",
+   "ngantru",
+   "ngunut",
+   "pagerwojo",
+   "pakel",
+   "rejotangan",
+   "sumbergempol",
+   "tulungagung"
+  ]
+ },
+ {
+  "slug": "united-arab-emirates",
+  "nama": "United Arab Emirates",
+  "kecamatan": [
+   "dubai"
+  ]
+ },
+ {
+  "slug": "way-kanan",
+  "nama": "Way Kanan",
+  "kecamatan": [
+   "blambangan-umpu"
+  ]
+ },
+ {
+  "slug": "wonogiri",
+  "nama": "Wonogiri",
+  "kecamatan": [
+   "baturetno",
+   "bulukerto",
+   "giriwoyo",
+   "manyaran",
+   "ngadirojo",
+   "paranggupito",
+   "selogiri",
+   "wonogiri"
+  ]
+ },
+ {
+  "slug": "wonosobo",
+  "nama": "Wonosobo",
+  "kecamatan": [
+   "garung",
+   "kalikajar",
+   "kepil",
+   "kertek",
+   "mojotengah",
+   "sapuran",
+   "watumalang",
+   "wonosobo-kota"
+  ]
+ },
+ {
+  "slug": "yogyakarta",
+  "nama": "Yogyakarta",
+  "kecamatan": [
+   "bantul",
+   "caturtunggal",
+   "cebongan",
+   "danurejan",
+   "demangan",
+   "gedong-tengen",
+   "gondokusuman",
+   "gondomanan",
+   "imogiri",
+   "jetis",
+   "jombor",
+   "kaliurang",
+   "kota-baru",
+   "kotagede",
+   "kraton",
+   "kulonprogo",
+   "maguwoharjo",
+   "mantrijeron",
+   "mergangsan",
+   "minomartani",
+   "ngampilan",
+   "nologaten",
+   "pakualaman",
+   "plosokuning",
+   "pogung",
+   "purwomartani",
+   "sekip",
+   "seturan",
+   "sidoarum",
+   "sleman",
+   "tegalrejo",
+   "terban",
+   "umbulharjo",
+   "wirobrajan"
+  ]
+ }
+]

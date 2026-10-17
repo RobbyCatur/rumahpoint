@@ -1,0 +1,516 @@
+inti,tipe,provinsi,jumlah_baris,sumber,status,tier
+Sidoarjo,kabupaten,Jawa-timur,2320,99.co;FLUS;rumah123,berdata,1
+Bekasi,kota,Jawa-barat,2000,99.co;ColectDataRumah;FLUS;rumah123;uas-properti,berdata,1
+Bekasi,kabupaten,Jawa-barat,2000,FLUS;rumah123,berdata,1
+Bogor,kabupaten,Jawa-barat,2000,FLUS,berdata,1
+Surabaya,kota,Jawa-timur,2000,rumah123,berdata,1
+Tangerang,kabupaten,Banten,2000,FLUS,berdata,1
+Bandung,kabupaten,Jawa-barat,1956,FLUS,berdata,1
+Tangerang Selatan,kota,Banten,1800,99.co;FLUS;rumah123,berdata,1
+Depok,kota,Jawa-barat,1622,99.co;FLUS;rumah123;uas-properti,berdata,1
+Semarang,kota,Jawa-tengah,1611,99.co;FLUS;rumah123,berdata,1
+Tangerang,kota,Banten,1400,99.co;FLUS;rumah123;uas-properti,berdata,1
+Gresik,kabupaten,Jawa-timur,1359,99.co;FLUS;rumah123,berdata,1
+Serang,kota,Banten,1346,99.co;FLUS;rumah123,berdata,1
+Bogor,kota,Jawa-barat,1302,99.co;FLUS;rumah123;uas-properti,berdata,1
+Bandung Barat,kabupaten,Jawa-barat,1227,99.co;FLUS;rumah123,berdata,1
+Makassar,kota,Sulawesi-selatan,1191,99.co;FLUS;rumah123,berdata,1
+Karawang,kabupaten,Jawa-barat,1057,99.co;FLUS;rumah123,berdata,1
+Palembang,kota,Sumatera-selatan,1048,99.co;FLUS;rumah123,berdata,1
+Malang,kota,Jawa-timur,1044,99.co;FLUS;rumah123,berdata,1
+Bandung,kota,Jawa-barat,984,99.co;FLUS;rumah123,berdata,1
+Malang,kabupaten,Jawa-timur,804,FLUS,berdata,1
+Lebak,kabupaten,Banten,699,99.co;FLUS;rumah123,berdata,1
+Jakarta Selatan,kota adm,Dki-jakarta,645,99.co;FLUS;rumah123;uas-properti,berdata,1
+Jakarta Utara,kota adm,Dki-jakarta,644,99.co;FLUS;rumah123;uas-properti,berdata,1
+Medan,kota,Sumatera-utara,637,99.co;FLUS;rumah123,berdata,1
+Deli Serdang,kabupaten,Sumatera-utara,615,99.co;FLUS;rumah123,berdata,1
+Jakarta Pusat,?,Dki-jakarta,600,99.co;rumah123,berdata,1
+Sukoharjo,kabupaten,Jawa-tengah,572,99.co;FLUS;rumah123,berdata,1
+Bandar Lampung,kota,Lampung,565,99.co;FLUS;rumah123,berdata,1
+Banyumas,kabupaten,Jawa-tengah,552,FLUS;rumah123,berdata,1
+Jakarta Timur,kota adm,Dki-jakarta,545,99.co;FLUS;rumah123,berdata,1
+Surakarta,?,Jawa-tengah,536,99.co;rumah123,berdata,1
+Cilegon,kota,Banten,525,99.co;FLUS;rumah123,berdata,1
+Jakarta Barat,kota adm,Dki-jakarta,508,99.co;FLUS;rumah123,berdata,1
+Batam,kota,Kepulauan-riau,502,99.co;FLUS;rumah123,berdata,1
+Jember,kabupaten,Jawa-timur,500,99.co;FLUS,berdata,1
+Serang,kabupaten,Banten,477,FLUS;rumah123,berdata,1
+Balikpapan,kota,Kalimantan-timur,453,99.co;FLUS;rumah123,berdata,1
+Cirebon,kota,Jawa-barat,422,99.co;FLUS;rumah123,berdata,1
+Pekanbaru,kota,Riau,396,99.co;FLUS;rumah123,berdata,1
+Kubu Raya,kabupaten,Kalimantan-barat,390,99.co;FLUS;rumah123,berdata,1
+Banjar Baru,?,Kalimantan-selatan,384,99.co;FLUS;rumah123,berdata,1
+Gowa,kabupaten,Sulawesi-selatan,382,99.co;FLUS;rumah123,berdata,1
+Tasikmalaya,kota,Jawa-barat,377,99.co;FLUS;rumah123,berdata,1
+Klaten,kabupaten,Jawa-tengah,351,99.co;FLUS;rumah123,berdata,1
+Maros,kabupaten,Sulawesi-selatan,348,99.co;FLUS;rumah123,berdata,1
+Garut,kabupaten,Jawa-barat,344,99.co;FLUS;rumah123,berdata,1
+Tabanan,kabupaten,Bali,330,99.co;FLUS;rumah123,berdata,1
+Bojonegoro,kabupaten,Jawa-timur,329,99.co;FLUS;rumah123,berdata,1
+Yogyakarta,kota,Daerah-istimewa-yogyakarta,324,99.co;FLUS;rumah123,berdata,1
+Kediri,kabupaten,Jawa-timur,319,FLUS,berdata,1
+Badung,kabupaten,Bali,312,99.co;FLUS;rumah123,berdata,1
+Sukabumi,kota,Jawa-barat,304,99.co;FLUS;rumah123,berdata,1
+Sumedang,kabupaten,Jawa-barat,304,99.co;FLUS;rumah123,berdata,1
+Cirebon,kabupaten,Jawa-barat,298,FLUS,berdata,1
+Denpasar,kota,Bali,297,99.co;FLUS;rumah123,berdata,1
+Samarinda,kota,Kalimantan-timur,296,99.co;FLUS;rumah123,berdata,1
+Manado,kota,Sulawesi-utara,295,99.co;FLUS;rumah123,berdata,1
+Sleman,kabupaten,Daerah-istimewa-yogyakarta,293,FLUS;rumah123,berdata,1
+Cianjur,kabupaten,Jawa-barat,278,99.co;FLUS;rumah123,berdata,1
+Jambi,kota,Jambi,267,FLUS;rumah123,berdata,1
+Purwakarta,kabupaten,Jawa-barat,265,99.co;FLUS;rumah123,berdata,1
+Pasuruan,kota,Jawa-timur,262,99.co;FLUS;rumah123,berdata,1
+Karanganyar,kabupaten,Jawa-tengah,258,FLUS;rumah123,berdata,1
+Boyolali,kabupaten,Jawa-tengah,256,99.co;FLUS;rumah123,berdata,1
+Tegal,kota,Jawa-tengah,253,99.co;FLUS;rumah123,berdata,1
+Buleleng,kabupaten,Bali,248,99.co;FLUS;rumah123,berdata,1
+Sragen,kabupaten,Jawa-tengah,237,99.co;FLUS;rumah123,berdata,1
+Salatiga,kota,Jawa-tengah,234,99.co;FLUS;rumah123,berdata,1
+Lombok Barat,kabupaten,Nusa-tenggara-barat,233,99.co;FLUS;rumah123,berdata,1
+Magelang,kabupaten,Jawa-tengah,227,FLUS,berdata,1
+Jombang,kabupaten,Jawa-timur,224,99.co;FLUS,berdata,1
+Demak,kabupaten,Jawa-tengah,220,99.co;FLUS;rumah123,berdata,1
+Pontianak,kota,Kalimantan-barat,220,99.co;FLUS;rumah123,berdata,1
+Tanjung Pinang,kota,Kepulauan-riau,217,99.co;FLUS;rumah123,berdata,1
+Kediri,kota,Jawa-timur,215,99.co;FLUS;rumah123,berdata,1
+Majalengka,kabupaten,Jawa-barat,211,99.co;FLUS;rumah123,berdata,1
+Pekalongan,kota,Jawa-tengah,209,99.co;FLUS;rumah123,berdata,1
+Bantul,kabupaten,Daerah-istimewa-yogyakarta,206,FLUS;rumah123,berdata,1
+Kendal,kabupaten,Jawa-tengah,203,99.co;FLUS,berdata,1
+Kupang,kota,Nusa-tenggara-timur,201,99.co;FLUS;rumah123,berdata,1
+Magelang,kota,Jawa-tengah,199,99.co;FLUS;rumah123,berdata,1
+Padang,kota,Sumatera-barat,197,99.co;FLUS;rumah123,berdata,1
+Mojokerto,kota,Jawa-timur,189,99.co;FLUS;rumah123,berdata,1
+Pasuruan,kabupaten,Jawa-timur,187,FLUS,berdata,1
+Subang,kabupaten,Jawa-barat,184,99.co;FLUS;rumah123,berdata,1
+Pati,kabupaten,Jawa-tengah,180,99.co;FLUS;rumah123,berdata,1
+Cimahi,kota,Jawa-barat,178,99.co;FLUS;rumah123,berdata,1
+Batu,kota,Jawa-timur,177,99.co;FLUS;rumah123,berdata,1
+Tulungagung,kabupaten,Jawa-timur,173,99.co;FLUS;rumah123,berdata,1
+Madiun,kota,Jawa-timur,172,99.co;FLUS;rumah123,berdata,1
+Lampung Selatan,kabupaten,Lampung,167,99.co;FLUS;rumah123,berdata,1
+Nganjuk,kabupaten,Jawa-timur,147,99.co;FLUS;rumah123,berdata,2
+Cilacap,kabupaten,Jawa-tengah,146,99.co;FLUS;rumah123,berdata,2
+Blitar,kota,Jawa-timur,141,99.co;FLUS;rumah123,berdata,2
+Brebes,kabupaten,Jawa-tengah,141,99.co;FLUS;rumah123,berdata,2
+Kuningan,kabupaten,Jawa-barat,141,99.co;FLUS;rumah123,berdata,2
+Magetan,kabupaten,Jawa-timur,139,99.co;FLUS;rumah123,berdata,2
+Mojokerto,kabupaten,Jawa-timur,137,FLUS,berdata,2
+Banyuwangi,kabupaten,Jawa-timur,136,FLUS;rumah123,berdata,2
+Ciamis,kabupaten,Jawa-barat,135,99.co;FLUS;rumah123,berdata,2
+Muaro Jambi,kabupaten,Jambi,131,FLUS;rumah123,berdata,2
+Bangkalan,kabupaten,Jawa-timur,130,99.co;FLUS;rumah123,berdata,2
+Mataram,kota,Nusa-tenggara-barat,129,99.co;FLUS;rumah123,berdata,2
+Pangkal Pinang,kota,Kepulauan-bangka-belitung,128,99.co;FLUS;rumah123,berdata,2
+Ponorogo,kabupaten,Jawa-timur,127,99.co;FLUS;rumah123,berdata,2
+Palangka Raya,?,Kalimantan-tengah,126,FLUS;rumah123,berdata,2
+Lamongan,kabupaten,Jawa-timur,123,99.co;FLUS;rumah123,berdata,2
+Purbalingga,kabupaten,Jawa-tengah,122,99.co;FLUS;rumah123,berdata,2
+Semarang,kabupaten,Jawa-tengah,122,FLUS;rumah123,berdata,2
+Banjarmasin,kota,Kalimantan-selatan,119,99.co;FLUS;rumah123,berdata,2
+Batang,kabupaten,Jawa-tengah,116,99.co;FLUS;rumah123,berdata,2
+Probolinggo,kota,Jawa-timur,115,99.co;FLUS;rumah123,berdata,2
+Lumajang,kabupaten,Jawa-timur,112,99.co;FLUS;rumah123,berdata,2
+Pemalang,kabupaten,Jawa-tengah,112,99.co;FLUS;rumah123,berdata,2
+Sukabumi,kabupaten,Jawa-barat,110,FLUS,berdata,2
+Minahasa,kabupaten,Sulawesi-utara,104,99.co;FLUS;rumah123,berdata,2
+Temanggung,kabupaten,Jawa-tengah,103,99.co;FLUS;rumah123,berdata,2
+Indramayu,kabupaten,Jawa-barat,99,99.co;FLUS;rumah123,berdata,3
+Kendari,kota,Sulawesi-tenggara,98,99.co;FLUS;rumah123,berdata,3
+Pandeglang,kabupaten,Banten,96,99.co;FLUS;rumah123,berdata,3
+Jepara,kabupaten,Jawa-tengah,94,99.co;FLUS,berdata,3
+Gunungkidul,kabupaten,Daerah-istimewa-yogyakarta,93,FLUS;rumah123,berdata,3
+Solo,?,Jawa-tengah,92,rumah123,berdata,3
+Tuban,kabupaten,Jawa-timur,90,99.co;FLUS;rumah123,berdata,3
+Wonogiri,kabupaten,Jawa-tengah,87,99.co;FLUS;rumah123,berdata,3
+Karimun,kabupaten,Kepulauan-riau,86,99.co;FLUS,berdata,3
+Wonosobo,kabupaten,Jawa-tengah,85,99.co;FLUS;rumah123,berdata,3
+Singkawang,kota,Kalimantan-barat,81,99.co;FLUS;rumah123,berdata,3
+Bondowoso,kabupaten,Jawa-timur,79,99.co;FLUS;rumah123,berdata,3
+Banyu Asin,?,Sumatera-selatan,78,rumah123,berdata,3
+Tegal,kabupaten,Jawa-tengah,78,FLUS,berdata,3
+Banjar,kabupaten,Jawa-barat,75,FLUS,berdata,3
+Ngawi,kabupaten,Jawa-timur,74,99.co;FLUS;rumah123,berdata,3
+Pekalongan,kabupaten,Jawa-tengah,73,FLUS,berdata,3
+Kudus,kabupaten,Jawa-tengah,69,FLUS,berdata,3
+Lampung Timur,?,Lampung,68,99.co;rumah123,berdata,3
+Grobogan,kabupaten,Jawa-tengah,66,99.co;FLUS;rumah123,berdata,3
+Madiun,kabupaten,Jawa-timur,65,FLUS,berdata,3
+Palu,kota,Sulawesi-tengah,63,99.co;FLUS;rumah123,berdata,3
+Jayapura,kota,Papua,62,99.co;FLUS;rumah123,berdata,3
+Minahasa Utara,kabupaten,Sulawesi-utara,61,99.co;FLUS;rumah123,berdata,3
+Metro,kota,Lampung,60,99.co;FLUS;rumah123,berdata,3
+Bangka Tengah,kabupaten,Kepulauan-bangka-belitung,59,99.co;FLUS;rumah123,berdata,3
+Bengkulu,kota,Bengkulu,59,FLUS;rumah123,berdata,3
+Blora,kabupaten,Jawa-tengah,58,99.co;FLUS;rumah123,berdata,3
+Probolinggo,kabupaten,Jawa-timur,58,FLUS,berdata,3
+Tasikmalaya,kabupaten,Jawa-barat,58,FLUS,berdata,3
+Pematang Siantar,?,Sumatera-utara,56,99.co;FLUS;rumah123,berdata,3
+Purworejo,kabupaten,Jawa-tengah,56,99.co;FLUS;rumah123,berdata,3
+Kulon Progo,kabupaten,Daerah-istimewa-yogyakarta,55,FLUS;rumah123,berdata,3
+Lampung Tengah,kabupaten,Lampung,55,99.co;FLUS;rumah123,berdata,3
+Pesawaran,kabupaten,Lampung,54,99.co;FLUS;rumah123,berdata,3
+Situbondo,kabupaten,Jawa-timur,54,99.co;FLUS;rumah123,berdata,3
+Karangasem,kabupaten,Bali,53,FLUS;rumah123,berdata,3
+Binjai,kota,Sumatera-utara,52,99.co;FLUS;rumah123,berdata,3
+Gianyar,kabupaten,Bali,50,FLUS;rumah123,berdata,3
+Bangka,kabupaten,Kepulauan-bangka-belitung,48,99.co;FLUS;rumah123,berdata,4
+D U M A I,?,Riau,44,99.co;FLUS;rumah123,berdata,4
+Parepare,?,Sulawesi-selatan,44,FLUS;rumah123,berdata,4
+Bitung,kota,Sulawesi-utara,41,99.co;FLUS;rumah123,berdata,4
+Kampar,kabupaten,Riau,41,99.co;FLUS,berdata,4
+Blitar,kabupaten,Jawa-timur,40,FLUS,berdata,4
+Belitung,kabupaten,Kepulauan-bangka-belitung,35,99.co;FLUS;rumah123,berdata,4
+Tomohon,kota,Sulawesi-utara,35,99.co;FLUS;rumah123,berdata,4
+Gorontalo,kota,Gorontalo,34,FLUS;rumah123,berdata,4
+Kotawaringin Barat,kabupaten,Kalimantan-tengah,34,FLUS,berdata,4
+S I A K,?,Riau,34,Pinhome,berdata,4
+Klungkung,kabupaten,Bali,33,99.co;FLUS;rumah123,berdata,4
+Palopo,kota,Sulawesi-selatan,33,99.co;FLUS;rumah123,berdata,4
+Baubau,?,Sulawesi-tenggara,32,FLUS,berdata,4
+Banjar,kota,Jawa-barat,31,99.co;FLUS;rumah123,berdata,4
+Bintan,kabupaten,Kepulauan-riau,31,99.co;FLUS;rumah123,berdata,4
+Lombok Tengah,kabupaten,Nusa-tenggara-barat,31,99.co;FLUS;rumah123,berdata,4
+Langkat,kabupaten,Sumatera-utara,30,99.co;FLUS;rumah123,berdata,4
+Pangandaran,kabupaten,Jawa-barat,30,99.co;FLUS;rumah123,berdata,4
+Rembang,kabupaten,Jawa-tengah,29,99.co;FLUS;rumah123,berdata,4
+Takalar,kabupaten,Sulawesi-selatan,28,99.co;FLUS;rumah123,berdata,4
+Bangli,kabupaten,Bali,27,99.co;FLUS;rumah123,berdata,4
+Muara Enim,kabupaten,Sumatera-selatan,27,99.co;FLUS;rumah123,berdata,4
+Simalungun,kabupaten,Sumatera-utara,27,99.co;FLUS;rumah123,berdata,4
+Banjarnegara,kabupaten,Jawa-tengah,26,99.co;FLUS;rumah123,berdata,4
+Kebumen,kabupaten,Jawa-tengah,26,99.co;FLUS;rumah123,berdata,4
+Sumbawa,kabupaten,Nusa-tenggara-barat,26,FLUS;rumah123,berdata,4
+Tanggamus,kabupaten,Lampung,26,99.co;FLUS;rumah123,berdata,4
+Aceh Barat Daya,kabupaten,Aceh,25,Pinhome,berdata,4
+Aceh Selatan,kabupaten,Aceh,25,Pinhome,berdata,4
+Aceh Tengah,kabupaten,Aceh,25,Pinhome,berdata,4
+Aceh Timur,kabupaten,Aceh,25,Pinhome,berdata,4
+Bontang,kota,Kalimantan-timur,25,Pinhome,berdata,4
+Halmahera Timur,kabupaten,Maluku-utara,25,Pinhome,berdata,4
+Padang Pariaman,kabupaten,Sumatera-barat,25,99.co;FLUS;rumah123,berdata,4
+Pinrang,kabupaten,Sulawesi-selatan,25,99.co;FLUS;rumah123,berdata,4
+Biak Numfor,kabupaten,Papua,24,99.co;rumah123,berdata,4
+Kupang,kabupaten,Nusa-tenggara-timur,24,FLUS,berdata,4
+Lampung Barat,?,Lampung,24,99.co;rumah123,berdata,4
+Lubuklinggau,?,Sumatera-selatan,24,FLUS;rumah123,berdata,4
+Prabumulih,kota,Sumatera-selatan,24,99.co;FLUS;rumah123,berdata,4
+Tanah Laut,kabupaten,Kalimantan-selatan,24,FLUS;rumah123,berdata,4
+Tarakan,kota,Kalimantan-utara,24,99.co;FLUS;rumah123,berdata,4
+Bone,kabupaten,Sulawesi-selatan,23,FLUS;rumah123,berdata,4
+Jembrana,kabupaten,Bali,23,99.co;FLUS,berdata,4
+Pamekasan,kabupaten,Jawa-timur,23,99.co;FLUS;rumah123,berdata,4
+Pringsewu,kabupaten,Lampung,23,99.co;FLUS;rumah123,berdata,4
+Kepahiang,kabupaten,Bengkulu,22,Pinhome,berdata,4
+Langsa,kota,Aceh,22,99.co;FLUS;rumah123,berdata,4
+Lampung Utara,kabupaten,Lampung,21,99.co;FLUS;rumah123,berdata,4
+Manggarai Barat,kabupaten,Nusa-tenggara-timur,21,99.co;FLUS;rumah123,berdata,4
+Morowali,kabupaten,Sulawesi-tengah,21,FLUS,berdata,4
+Solok,kota,Sumatera-barat,21,99.co;FLUS;rumah123,berdata,4
+Alor,?,Nusa-tenggara-timur,20,Pinhome,berdata,4
+Buton Selatan,kabupaten,Sulawesi-tenggara,20,Pinhome,berdata,4
+Kotawaringin Timur,kabupaten,Kalimantan-tengah,20,FLUS,berdata,4
+Kutai Kartanegara,kabupaten,Kalimantan-timur,20,99.co;FLUS;rumah123,berdata,4
+Lhokseumawe,kota,Aceh,20,99.co;FLUS;rumah123,berdata,4
+Nias Selatan,?,Sumatera-utara,20,Pinhome,berdata,4
+Aceh Besar,kabupaten,Aceh,19,99.co;FLUS;rumah123,berdata,4
+Bangka Barat,kabupaten,Kepulauan-bangka-belitung,19,Pinhome,berdata,4
+Lombok Utara,kabupaten,Nusa-tenggara-barat,19,99.co;FLUS;rumah123,berdata,4
+Asahan,kabupaten,Sumatera-utara,18,99.co;FLUS;rumah123,berdata,4
+Tulangbawang,?,Lampung,18,rumah123,berdata,4
+Mimika,kabupaten,Papua,17,FLUS;rumah123,berdata,4
+Serdang Bedagai,kabupaten,Sumatera-utara,17,99.co;FLUS;rumah123,berdata,4
+Bukittinggi,?,Sumatera-barat,16,99.co;rumah123,berdata,4
+Dharmasraya,kabupaten,Sumatera-barat,16,FLUS,berdata,4
+Ketapang,kabupaten,Kalimantan-barat,16,99.co;FLUS;rumah123,berdata,4
+Payakumbuh,kota,Sumatera-barat,16,FLUS,berdata,4
+Konawe Selatan,kabupaten,Sulawesi-tenggara,15,99.co;FLUS;rumah123,berdata,4
+Mandailing Natal,kabupaten,Sumatera-utara,15,Pinhome,berdata,4
+Ogan Ilir,kabupaten,Sumatera-selatan,15,99.co;FLUS;rumah123,berdata,4
+Sambas,kabupaten,Kalimantan-barat,15,99.co;FLUS;rumah123,berdata,4
+Tapanuli Tengah,kabupaten,Sumatera-utara,15,99.co;FLUS,berdata,4
+Banda Aceh,kota,Aceh,14,99.co;FLUS;rumah123,berdata,4
+Gorontalo,kabupaten,Gorontalo,14,FLUS,berdata,4
+Manokwari,kabupaten,Papua-barat,14,FLUS,berdata,4
+Tebing Tinggi,kota,Sumatera-utara,14,99.co;FLUS;rumah123,berdata,4
+Bireuen,kabupaten,Aceh,13,FLUS,berdata,4
+Ogan Komering Ulu,kabupaten,Sumatera-selatan,13,99.co;FLUS;rumah123,berdata,4
+Seram Bagian Timur,kabupaten,Maluku,13,Pinhome,berdata,4
+Sorong,kota,Papua-barat,13,FLUS;rumah123,berdata,4
+Sorong,kabupaten,Papua-barat,13,FLUS,berdata,4
+Wajo,kabupaten,Sulawesi-selatan,13,FLUS,berdata,4
+Kepulauan Meranti,kabupaten,Riau,12,Pinhome,berdata,4
+Lombok Timur,kabupaten,Nusa-tenggara-barat,12,99.co;FLUS;rumah123,berdata,4
+Balangan,kabupaten,Kalimantan-selatan,11,Pinhome,berdata,4
+Barru,kabupaten,Sulawesi-selatan,11,99.co;FLUS;rumah123,berdata,4
+Kutai Timur,kabupaten,Kalimantan-timur,11,99.co;FLUS;rumah123,berdata,4
+Nagan Raya,kabupaten,Aceh,11,Pinhome,berdata,4
+Rejang Lebong,kabupaten,Bengkulu,11,FLUS;rumah123,berdata,4
+Rokan Hilir,kabupaten,Riau,11,Pinhome,berdata,4
+Sikka,kabupaten,Nusa-tenggara-timur,11,99.co;FLUS;rumah123,berdata,4
+Sumenep,kabupaten,Jawa-timur,11,FLUS;rumah123,berdata,4
+Ambon,kota,Maluku,10,99.co;FLUS;rumah123,berdata,4
+Bengkalis,kabupaten,Riau,10,FLUS;rumah123,berdata,4
+Bungo,kabupaten,Jambi,10,FLUS,berdata,4
+Mamuju,kabupaten,Sulawesi-barat,10,99.co;FLUS;rumah123,berdata,4
+Mempawah,kabupaten,Kalimantan-barat,10,99.co;FLUS;rumah123,berdata,4
+Muna,kabupaten,Sulawesi-tenggara,10,99.co;FLUS;rumah123,berdata,4
+Polewali Mandar,kabupaten,Sulawesi-barat,10,FLUS,berdata,4
+Sigi,kabupaten,Sulawesi-tengah,10,FLUS;rumah123,berdata,4
+Sintang,kabupaten,Kalimantan-barat,10,99.co;FLUS;rumah123,berdata,4
+Tanjung Balai,kota,Sumatera-utara,10,FLUS,berdata,4
+Batu Bara,kabupaten,Sumatera-utara,9,FLUS,berdata,5
+Berau,kabupaten,Kalimantan-timur,9,99.co;FLUS;rumah123,berdata,5
+Barito Kuala,kabupaten,Kalimantan-selatan,8,FLUS,berdata,5
+Bulukumba,kabupaten,Sulawesi-selatan,8,99.co;FLUS;rumah123,berdata,5
+Merauke,kabupaten,Papua,8,99.co;FLUS;rumah123,berdata,5
+Rokan Hulu,kabupaten,Riau,8,99.co;FLUS;rumah123,berdata,5
+Solok,kabupaten,Sumatera-barat,8,FLUS,berdata,5
+Sukamara,kabupaten,Kalimantan-tengah,8,FLUS,berdata,5
+Trenggalek,kabupaten,Jawa-timur,8,99.co;FLUS;rumah123,berdata,5
+Bantaeng,kabupaten,Sulawesi-selatan,7,FLUS,berdata,5
+Belu,kabupaten,Nusa-tenggara-timur,7,99.co;FLUS;rumah123,berdata,5
+Musi Banyuasin,kabupaten,Sumatera-selatan,7,FLUS,berdata,5
+Pacitan,kabupaten,Jawa-timur,7,99.co;FLUS;rumah123,berdata,5
+Penajam Paser Utara,kabupaten,Kalimantan-timur,7,99.co;FLUS;rumah123,berdata,5
+Bengkulu Tengah,kabupaten,Bengkulu,6,FLUS;rumah123,berdata,5
+Enrekang,kabupaten,Sulawesi-selatan,6,99.co;FLUS,berdata,5
+Kuantan Singingi,kabupaten,Riau,6,FLUS,berdata,5
+Kutai Barat,kabupaten,Kalimantan-timur,6,99.co;FLUS;rumah123,berdata,5
+Luwu,kabupaten,Sulawesi-selatan,6,99.co;rumah123,berdata,5
+Pesisir Selatan,kabupaten,Sumatera-barat,6,FLUS,berdata,5
+Sampang,kabupaten,Jawa-timur,6,FLUS,berdata,5
+Sijunjung,kabupaten,Sumatera-barat,6,FLUS,berdata,5
+Soppeng,kabupaten,Sulawesi-selatan,6,FLUS,berdata,5
+Aceh Barat,kabupaten,Aceh,5,99.co;FLUS,berdata,5
+Aceh Utara,kabupaten,Aceh,5,FLUS,berdata,5
+Bulungan,kabupaten,Kalimantan-utara,5,FLUS,berdata,5
+Karo,kabupaten,Sumatera-utara,5,99.co;FLUS,berdata,5
+Ogan Komering Ilir,kabupaten,Sumatera-selatan,5,FLUS,berdata,5
+Paser,kabupaten,Kalimantan-timur,5,FLUS,berdata,5
+Pelalawan,kabupaten,Riau,5,99.co;FLUS,berdata,5
+Sidenreng Rappang,kabupaten,Sulawesi-selatan,5,FLUS;rumah123,berdata,5
+Sumba Timur,kabupaten,Nusa-tenggara-timur,5,99.co;FLUS;rumah123,berdata,5
+Tabalong,kabupaten,Kalimantan-selatan,5,FLUS,berdata,5
+Tanah Bumbu,kabupaten,Kalimantan-selatan,5,99.co;FLUS;rumah123,berdata,5
+Tanah Datar,kabupaten,Sumatera-barat,5,99.co;FLUS;rumah123,berdata,5
+Bolaang Mongondow,kabupaten,Sulawesi-utara,4,99.co;rumah123,berdata,5
+Kapuas,kabupaten,Kalimantan-tengah,4,FLUS;rumah123,berdata,5
+Kapuas Hulu,kabupaten,Kalimantan-barat,4,99.co;FLUS,berdata,5
+Konawe,kabupaten,Sulawesi-tenggara,4,99.co;FLUS,berdata,5
+Luwu Timur,kabupaten,Sulawesi-selatan,4,FLUS,berdata,5
+Ogan Komering Ulu Timur,kabupaten,Sumatera-selatan,4,FLUS,berdata,5
+Padangsidimpuan,kota,Sumatera-utara,4,FLUS,berdata,5
+Pariaman,kota,Sumatera-barat,4,FLUS,berdata,5
+Sabang,?,Aceh,4,99.co;rumah123,berdata,5
+Sawah Lunto,?,Sumatera-barat,4,FLUS,berdata,5
+Tapanuli Utara,kabupaten,Sumatera-utara,4,99.co;FLUS,berdata,5
+Tual,kota,Maluku,4,FLUS,berdata,5
+Aceh Singkil,kabupaten,Aceh,3,FLUS,berdata,5
+Agam,kabupaten,Sumatera-barat,3,99.co;FLUS;rumah123,berdata,5
+Bangka Selatan,kabupaten,Kepulauan-bangka-belitung,3,99.co;FLUS;rumah123,berdata,5
+Barito Utara,kabupaten,Kalimantan-tengah,3,FLUS,berdata,5
+Bengkulu Utara,kabupaten,Bengkulu,3,rumah123,berdata,5
+Buton Tengah,kabupaten,Sulawesi-tenggara,3,FLUS,berdata,5
+Dompu,kabupaten,Nusa-tenggara-barat,3,FLUS,berdata,5
+Flores Timur,kabupaten,Nusa-tenggara-timur,3,FLUS,berdata,5
+Hulu Sungai Selatan,kabupaten,Kalimantan-selatan,3,FLUS,berdata,5
+Indragiri Hilir,kabupaten,Riau,3,FLUS,berdata,5
+Indragiri Hulu,kabupaten,Riau,3,FLUS,berdata,5
+Jayapura,kabupaten,Papua,3,FLUS,berdata,5
+Jeneponto,kabupaten,Sulawesi-selatan,3,FLUS,berdata,5
+Kaimana,kabupaten,Papua-barat,3,FLUS,berdata,5
+Kolaka Utara,kabupaten,Sulawesi-tenggara,3,FLUS,berdata,5
+Kotabaru,kabupaten,Kalimantan-selatan,3,FLUS,berdata,5
+Lahat,kabupaten,Sumatera-selatan,3,FLUS;rumah123,berdata,5
+Lima Puluh Kota,kabupaten,Sumatera-barat,3,FLUS,berdata,5
+Majene,kabupaten,Sulawesi-barat,3,FLUS,berdata,5
+Maluku Tengah,kabupaten,Maluku,3,FLUS,berdata,5
+Mamuju Tengah,kabupaten,Sulawesi-barat,3,FLUS,berdata,5
+Penukal Abab Lematang Ilir,kabupaten,Sumatera-selatan,3,FLUS,berdata,5
+Sanggau,kabupaten,Kalimantan-barat,3,99.co;FLUS,berdata,5
+Sarolangun,kabupaten,Jambi,3,FLUS;rumah123,berdata,5
+Sumba Barat,kabupaten,Nusa-tenggara-timur,3,FLUS,berdata,5
+Ternate,kota,Maluku-utara,3,FLUS,berdata,5
+Aceh Tamiang,kabupaten,Aceh,2,FLUS,berdata,5
+Banggai Laut,?,Sulawesi-tengah,2,rumah123,berdata,5
+Bengkayang,kabupaten,Kalimantan-barat,2,FLUS,berdata,5
+Bengkulu Selatan,kabupaten,Bengkulu,2,FLUS,berdata,5
+Bima,kabupaten,Nusa-tenggara-barat,2,FLUS,berdata,5
+Hulu Sungai Tengah,kabupaten,Kalimantan-selatan,2,FLUS,berdata,5
+Katingan,kabupaten,Kalimantan-tengah,2,FLUS,berdata,5
+Kayong Utara,kabupaten,Kalimantan-barat,2,FLUS,berdata,5
+Kepulauan Mentawai,?,Sumatera-barat,2,rumah123,berdata,5
+Kolaka,kabupaten,Sulawesi-tenggara,2,FLUS,berdata,5
+Kolaka Timur,kabupaten,Sulawesi-tenggara,2,FLUS,berdata,5
+Kotamobagu,kota,Sulawesi-utara,2,FLUS,berdata,5
+Labuhan Batu,?,Sumatera-utara,2,99.co,berdata,5
+Malinau,kabupaten,Kalimantan-utara,2,FLUS,berdata,5
+Manggarai Timur,kabupaten,Nusa-tenggara-timur,2,FLUS,berdata,5
+Mesuji,?,Lampung,2,rumah123,berdata,5
+Minahasa Selatan,kabupaten,Sulawesi-utara,2,99.co;rumah123,berdata,5
+Minahasa Tenggara,kabupaten,Sulawesi-utara,2,99.co;rumah123,berdata,5
+Muna Barat,kabupaten,Sulawesi-tenggara,2,FLUS,berdata,5
+Padang Lawas Utara,kabupaten,Sumatera-utara,2,FLUS,berdata,5
+Pagar Alam,kota,Sumatera-selatan,2,99.co;rumah123,berdata,5
+Poso,kabupaten,Sulawesi-tengah,2,FLUS,berdata,5
+Seluma,kabupaten,Bengkulu,2,rumah123,berdata,5
+Sinjai,kabupaten,Sulawesi-selatan,2,FLUS,berdata,5
+Sumba Barat Daya,kabupaten,Nusa-tenggara-timur,2,99.co;rumah123,berdata,5
+Tana Toraja,?,Sulawesi-selatan,2,99.co,berdata,5
+Tebo,kabupaten,Jambi,2,FLUS,berdata,5
+Toli Toli,kabupaten,Sulawesi-tengah,2,FLUS,berdata,5
+Way Kanan,kabupaten,Lampung,2,99.co;rumah123,berdata,5
+Aceh Tenggara,kabupaten,Aceh,1,FLUS,berdata,5
+Banggai,kabupaten,Sulawesi-tengah,1,FLUS,berdata,5
+Barito Selatan,kabupaten,Kalimantan-tengah,1,FLUS,berdata,5
+Barito Timur,kabupaten,Kalimantan-tengah,1,FLUS,berdata,5
+Belitung Timur,kabupaten,Kepulauan-bangka-belitung,1,FLUS,berdata,5
+Bener Meriah,kabupaten,Aceh,1,FLUS,berdata,5
+Bima,kota,Nusa-tenggara-barat,1,FLUS,berdata,5
+Bone Bolango,kabupaten,Gorontalo,1,rumah123,berdata,5
+Buru,kabupaten,Maluku,1,FLUS,berdata,5
+Empat Lawang,kabupaten,Sumatera-selatan,1,FLUS,berdata,5
+Gunung Mas,kabupaten,Kalimantan-tengah,1,FLUS,berdata,5
+Gunungsitoli,kota,Sumatera-utara,1,rumah123,berdata,5
+Halmahera Barat,kabupaten,Maluku-utara,1,FLUS,berdata,5
+Hulu Sungai Utara,kabupaten,Kalimantan-selatan,1,99.co,berdata,5
+Konawe Utara,kabupaten,Sulawesi-tenggara,1,FLUS,berdata,5
+Landak,kabupaten,Kalimantan-barat,1,FLUS,berdata,5
+Lebong,kabupaten,Bengkulu,1,FLUS,berdata,5
+Luwu Utara,kabupaten,Sulawesi-selatan,1,FLUS,berdata,5
+Merangin,kabupaten,Jambi,1,FLUS,berdata,5
+Morowali Utara,kabupaten,Sulawesi-tengah,1,FLUS,berdata,5
+Murung Raya,kabupaten,Kalimantan-tengah,1,FLUS,berdata,5
+Musi Rawas,kabupaten,Sumatera-selatan,1,rumah123,berdata,5
+Nabire,kabupaten,Papua,1,rumah123,berdata,5
+Nunukan,kabupaten,Kalimantan-utara,1,FLUS,berdata,5
+Parigi Moutong,kabupaten,Sulawesi-tengah,1,FLUS,berdata,5
+Pasaman Barat,kabupaten,Sumatera-barat,1,FLUS,berdata,5
+Pidie,kabupaten,Aceh,1,FLUS,berdata,5
+Rote Ndao,kabupaten,Nusa-tenggara-timur,1,FLUS,berdata,5
+Sumbawa Barat,kabupaten,Nusa-tenggara-barat,1,FLUS,berdata,5
+Tanjung Jabung Barat,kabupaten,Jambi,1,FLUS,berdata,5
+Tapin,kabupaten,Kalimantan-selatan,1,FLUS,berdata,5
+Tidore Kepulauan,kota,Maluku-utara,1,FLUS,berdata,5
+Timor Tengah Selatan,kabupaten,Nusa-tenggara-timur,1,FLUS,berdata,5
+Timor Tengah Utara,kabupaten,Nusa-tenggara-timur,1,FLUS,berdata,5
+Tojo Una Una,kabupaten,Sulawesi-tengah,1,FLUS,berdata,5
+Aceh Jaya,kabupaten,Aceh,0,,NOL,-
+Asmat,?,Papua,0,,NOL,-
+Banggai Kepulauan,kabupaten,Sulawesi-tengah,0,,NOL,-
+Batang Hari,?,Jambi,0,,NOL,-
+Boalemo,kabupaten,Gorontalo,0,,NOL,-
+Bolaang Mongondow Selatan,?,Sulawesi-utara,0,,NOL,-
+Bolaang Mongondow Timur,kabupaten,Sulawesi-utara,0,,NOL,-
+Bolaang Mongondow Utara,kabupaten,Sulawesi-utara,0,,NOL,-
+Bombana,kabupaten,Sulawesi-tenggara,0,,NOL,-
+Boven Digoel,?,Papua,0,,NOL,-
+Buol,kabupaten,Sulawesi-tengah,0,,NOL,-
+Buru Selatan,?,Maluku,0,,NOL,-
+Buton,kabupaten,Sulawesi-tenggara,0,,NOL,-
+Buton Utara,kabupaten,Sulawesi-tenggara,0,,NOL,-
+Dairi,kabupaten,Sumatera-utara,0,,NOL,-
+Deiyai,?,Papua,0,,NOL,-
+Dogiyai,?,Papua,0,,NOL,-
+Donggala,kabupaten,Sulawesi-tengah,0,,NOL,-
+Ende,kabupaten,Nusa-tenggara-timur,0,,NOL,-
+Fakfak,?,Papua-barat,0,,NOL,-
+Gayo Lues,kabupaten,Aceh,0,,NOL,-
+Gorontalo Utara,kabupaten,Gorontalo,0,,NOL,-
+Halmahera Selatan,?,Maluku-utara,0,,NOL,-
+Halmahera Tengah,kabupaten,Maluku-utara,0,,NOL,-
+Halmahera Utara,kabupaten,Maluku-utara,0,,NOL,-
+Humbang Hasundutan,kabupaten,Sumatera-utara,0,,NOL,-
+Intan Jaya,?,Papua,0,,NOL,-
+Jayawijaya,kabupaten,Papua,0,,NOL,-
+Kaur,kabupaten,Bengkulu,0,,NOL,-
+Keerom,kabupaten,Papua,0,,NOL,-
+Kepulauan Anambas,?,Kepulauan-riau,0,,NOL,-
+Kepulauan Aru,?,Maluku,0,,NOL,-
+Kepulauan Sangihe,kabupaten,Sulawesi-utara,0,,NOL,-
+Kepulauan Selayar,kabupaten,Sulawesi-selatan,0,,NOL,-
+Kepulauan Seribu,?,Dki-jakarta,0,,NOL,-
+Kepulauan Sula,?,Maluku-utara,0,,NOL,-
+Kepulauan Talaud,?,Sulawesi-utara,0,,NOL,-
+Kepulauan Tanimbar,?,Maluku,0,,NOL,-
+Kepulauan Yapen,?,Papua,0,,NOL,-
+Kerinci,?,Jambi,0,,NOL,-
+Konawe Kepulauan,?,Sulawesi-tenggara,0,,NOL,-
+Labuhan Batu Selatan,?,Sumatera-utara,0,,NOL,-
+Labuhan Batu Utara,?,Sumatera-utara,0,,NOL,-
+Lamandau,kabupaten,Kalimantan-tengah,0,,NOL,-
+Lanny Jaya,?,Papua,0,,NOL,-
+Lembata,kabupaten,Nusa-tenggara-timur,0,,NOL,-
+Lingga,?,Kepulauan-riau,0,,NOL,-
+Mahakam Hulu,?,Kalimantan-timur,0,,NOL,-
+Malaka,?,Nusa-tenggara-timur,0,,NOL,-
+Maluku Barat Daya,?,Maluku,0,,NOL,-
+Maluku Tenggara,?,Maluku,0,,NOL,-
+Mamasa,kabupaten,Sulawesi-barat,0,,NOL,-
+Mamberamo Raya,?,Papua,0,,NOL,-
+Mamberamo Tengah,?,Papua,0,,NOL,-
+Manggarai,?,Nusa-tenggara-timur,0,,NOL,-
+Manokwari Selatan,kabupaten,Papua-barat,0,,NOL,-
+Mappi,?,Papua,0,,NOL,-
+Maybrat,?,Papua-barat,0,,NOL,-
+Melawi,kabupaten,Kalimantan-barat,0,,NOL,-
+Mukomuko,?,Bengkulu,0,,NOL,-
+Musi Rawas Utara,kabupaten,Sumatera-selatan,0,,NOL,-
+Nagekeo,?,Nusa-tenggara-timur,0,,NOL,-
+Natuna,?,Kepulauan-riau,0,,NOL,-
+Nduga,?,Papua,0,,NOL,-
+Ngada,?,Nusa-tenggara-timur,0,,NOL,-
+Nias,kabupaten,Sumatera-utara,0,,NOL,-
+Nias Barat,?,Sumatera-utara,0,,NOL,-
+Nias Utara,kabupaten,Sumatera-utara,0,,NOL,-
+Ogan Komering Ulu Selatan,kabupaten,Sumatera-selatan,0,,NOL,-
+Padang Lawas,?,Sumatera-utara,0,,NOL,-
+Padang Panjang,kota,Sumatera-barat,0,,NOL,-
+Pakpak Bharat,kabupaten,Sumatera-utara,0,,NOL,-
+Pangkajene Dan Kepulauan,?,Sulawesi-selatan,0,,NOL,-
+Paniai,?,Papua,0,,NOL,-
+Pasaman,kabupaten,Sumatera-barat,0,,NOL,-
+Pasangkayu,?,Sulawesi-barat,0,,NOL,-
+Pegunungan Arfak,?,Papua-barat,0,,NOL,-
+Pegunungan Bintang,?,Papua,0,,NOL,-
+Pesisir Barat,kabupaten,Lampung,0,,NOL,-
+Pidie Jaya,kabupaten,Aceh,0,,NOL,-
+Pohuwato,?,Gorontalo,0,,NOL,-
+Pulang Pisau,kabupaten,Kalimantan-tengah,0,,NOL,-
+Pulau Morotai,kabupaten,Maluku-utara,0,,NOL,-
+Pulau Taliabu,?,Maluku-utara,0,,NOL,-
+Puncak,?,Papua,0,,NOL,-
+Puncak Jaya,?,Papua,0,,NOL,-
+Raja Ampat,kabupaten,Papua-barat,0,,NOL,-
+Sabu Raijua,?,Nusa-tenggara-timur,0,,NOL,-
+Samosir,?,Sumatera-utara,0,,NOL,-
+Sarmi,kabupaten,Papua,0,,NOL,-
+Sekadau,kabupaten,Kalimantan-barat,0,,NOL,-
+Seram Bagian Barat,kabupaten,Maluku,0,,NOL,-
+Seruyan,kabupaten,Kalimantan-tengah,0,,NOL,-
+Siau Tagulandang Biaro,?,Sulawesi-utara,0,,NOL,-
+Sibolga,kota,Sumatera-utara,0,,NOL,-
+Simeulue,?,Aceh,0,,NOL,-
+Solok Selatan,kabupaten,Sumatera-barat,0,,NOL,-
+Sorong Selatan,kabupaten,Papua-barat,0,,NOL,-
+Subulussalam,kota,Aceh,0,,NOL,-
+Sumba Tengah,kabupaten,Nusa-tenggara-timur,0,,NOL,-
+Sungai Penuh,?,Jambi,0,,NOL,-
+Supiori,?,Papua,0,,NOL,-
+Tambrauw,?,Papua-barat,0,,NOL,-
+Tana Tidung,kabupaten,Kalimantan-utara,0,,NOL,-
+Tanjung Jabung Timur,kabupaten,Jambi,0,,NOL,-
+Tapanuli Selatan,kabupaten,Sumatera-utara,0,,NOL,-
+Teluk Bintuni,kabupaten,Papua-barat,0,,NOL,-
+Teluk Wondama,?,Papua-barat,0,,NOL,-
+Toba Samosir,kabupaten,Sumatera-utara,0,,NOL,-
+Tolikara,?,Papua,0,,NOL,-
+Toraja Utara,kabupaten,Sulawesi-selatan,0,,NOL,-
+Tulang Bawang Barat,kabupaten,Lampung,0,,NOL,-
+Wakatobi,kabupaten,Sulawesi-tenggara,0,,NOL,-
+Waropen,?,Papua,0,,NOL,-
+Yahukimo,?,Papua,0,,NOL,-
+Yalimo,?,Papua,0,,NOL,-
