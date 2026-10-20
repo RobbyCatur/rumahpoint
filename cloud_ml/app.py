@@ -11,6 +11,10 @@ MODEL_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "model")
 META = json.load(open(os.path.join(MODEL_DIR, "meta.json"), encoding="utf-8"))
 NUM_FEATURES = META["num_features"]
 CAT_FEATURES = META["cat_features"]
+CITY_TIERS = META.get("city_tiers", {})
+# Label peringatan sesuai keputusan tim (tier murni dari jumlah sampel kota):
+TIER_LABEL = {1: "aman", 2: "warning ringan", 3: "warning level 2",
+              4: "warning level 3", 5: "warning level 4 - data lokal sangat terbatas"}
 
 reg_model = joblib.load(os.path.join(MODEL_DIR, "price_regression.joblib"))
 clf_model = joblib.load(os.path.join(MODEL_DIR, "kategori_classifier.joblib"))
@@ -57,11 +61,15 @@ def predict():
     proba = clf_model.predict_proba(df)[0]
     conf = float(np.max(proba))
     # Rentang sederhana: +/- 25% sebagai indikasi (bukan interval statistik ketat)
+    city_info = CITY_TIERS.get(df.iloc[0]["lokasi"])
+    tier = 5 if city_info is None else int(city_info["tier"])
     return jsonify({
         "estimasi_harga_rupiah": int(round(harga, -5)),
         "estimasi_harga_string": _rupiah(harga),
         "kategori_harga": kategori,
         "confidence": round(conf, 3),
+        "tier": tier,
+        "peringatan": TIER_LABEL[tier],
         "rentang_bawah": _rupiah(harga * 0.75),
         "rentang_atas": _rupiah(harga * 1.25),
         "input": df.iloc[0].to_dict(),

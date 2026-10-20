@@ -267,12 +267,12 @@ class _DetailCard extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
         child: Column(
           children: [
-            _row('Luas tanah', '${formatLuas(p.luasM2)} m²'),
-            _row('Luas bangunan', '${formatLuas(p.luasBangunan)} m²'),
-            _row('Kamar tidur', '${p.jumlahKamar}'),
-            _row('Kamar mandi', '${p.jumlahKamarMandi}'),
-            _row('Kondisi', p.kondisi),
-            _row('Lokasi', p.lokasi, isLast: true),
+            _row(context, 'Luas tanah', '${formatLuas(p.luasM2)} m²'),
+            _row(context, 'Luas bangunan', '${formatLuas(p.luasBangunan)} m²'),
+            _row(context, 'Kamar tidur', '${p.jumlahKamar}'),
+            _row(context, 'Kamar mandi', '${p.jumlahKamarMandi}'),
+            _row(context, 'Kondisi', p.kondisi),
+            _row(context, 'Lokasi', p.lokasi, isLast: true),
           ],
         ),
       ),
