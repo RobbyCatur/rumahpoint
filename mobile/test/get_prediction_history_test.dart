@@ -30,7 +30,10 @@ class FakePredictionRepository implements PredictionRepository {
     required int jumlahKamar,
     required int jumlahKamarMandi,
     required int usiaBangunan,
+    required String kondisi,
     required String lokasi,
+    required String provinsi,
+    required bool lokasiDidukung,
   }) =>
       throw UnimplementedError();
 
@@ -55,7 +58,10 @@ Prediction _sample(String lokasi) => Prediction(
       jumlahKamar: 3,
       jumlahKamarMandi: 2,
       usiaBangunan: 10,
+      kondisi: 'Bekas',
       lokasi: lokasi,
+      provinsi: '',
+      lokasiDidukung: true,
       estimasiHarga: 1520000000,
       estimasiString: 'Rp 1,52 Miliar',
       rentangBawah: 'Rp 1,14 Miliar',

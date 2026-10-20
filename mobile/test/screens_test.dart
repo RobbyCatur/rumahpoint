@@ -20,7 +20,10 @@ class _FakeRepository implements PredictionRepository {
     required int jumlahKamar,
     required int jumlahKamarMandi,
     required int usiaBangunan,
+    required String kondisi,
     required String lokasi,
+    required String provinsi,
+    required bool lokasiDidukung,
   }) async =>
       (prediction: null, failure: null);
 
@@ -47,7 +50,10 @@ final _fake = Prediction(
   jumlahKamar: 3,
   jumlahKamarMandi: 2,
   usiaBangunan: 10,
+  kondisi: 'Bekas',
   lokasi: 'Jakarta Selatan',
+  provinsi: 'DKI Jakarta',
+  lokasiDidukung: true,
   estimasiHarga: 1520000000,
   estimasiString: 'Rp 1,52 Miliar',
   rentangBawah: 'Rp 1,14 Miliar',
@@ -92,7 +98,7 @@ void main() {
     await tester.pumpWidget(_wrap(const HistoryScreen()));
     await tester.pumpAndSettle();
 
-    expect(find.text('Jakarta Selatan'), findsOneWidget);
+    expect(find.text('Jakarta Selatan, DKI Jakarta'), findsOneWidget);
     expect(find.text('Rp 1,52 Miliar'), findsOneWidget);
     expect(find.text('Semua (1)'), findsOneWidget);
     expect(find.text('12 Sep 2025'), findsOneWidget);
@@ -109,7 +115,10 @@ void main() {
       jumlahKamar: 2,
       jumlahKamarMandi: 1,
       usiaBangunan: 15,
+      kondisi: 'Bekas',
       lokasi: 'Bekasi',
+      provinsi: 'Jawa Barat',
+      lokasiDidukung: true,
       estimasiHarga: 350000000,
       estimasiString: 'Rp 350 Juta',
       rentangBawah: '',
@@ -144,8 +153,8 @@ void main() {
     // Filter ke Agustus 2025: hanya item Bekasi yang tampil.
     await tester.tap(find.text('Agu 2025'));
     await tester.pumpAndSettle();
-    expect(find.text('Bekasi'), findsOneWidget);
-    expect(find.text('Jakarta Selatan'), findsNothing);
+    expect(find.text('Bekasi, Jawa Barat'), findsOneWidget);
+    expect(find.text('Jakarta Selatan, DKI Jakarta'), findsNothing);
     expect(find.text('September 2025'), findsNothing);
     expect(find.text('Agustus 2025'), findsOneWidget);
   });
