@@ -1,13 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import '../core/format.dart';
 import '../features/prediction/domain/entities/prediction.dart';
 import '../features/prediction/presentation/providers/prediction_providers.dart';
 import '../theme.dart';
 
+/// Halaman hasil prediksi. Mendukung gesture geser horizontal:
+/// geser ke kiri → Riwayat, geser ke kanan → Beranda.
 class ResultScreen extends ConsumerWidget {
   const ResultScreen({super.key});
+
+  void _onSwipe(BuildContext context, DragEndDetails d) {
+    final v = d.primaryVelocity ?? 0;
+    if (v < -300) context.go('/riwayat'); // geser kiri
+    if (v > 300) context.go('/beranda'); // geser kanan
+  }
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -20,34 +29,121 @@ class ResultScreen extends ConsumerWidget {
       );
     }
 
-    return Scaffold(
-      appBar: AppBar(title: const Text('Estimasi Valuasi')),
-      body: ListView(
-        padding: const EdgeInsets.fromLTRB(20, 8, 20, 24),
-        children: [
-          Row(
-            children: [
-              Expanded(
-                child: Text(
-                  p.lokasi,
-                  style: const TextStyle(
-                      fontSize: 16, fontWeight: FontWeight.w700),
+    return GestureDetector(
+      onHorizontalDragEnd: (d) => _onSwipe(context, d),
+      child: Scaffold(
+        appBar: AppBar(title: const Text('Estimasi Valuasi')),
+        body: ListView(
+          padding: const EdgeInsets.fromLTRB(20, 8, 20, 24),
+          children: [
+            Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    p.provinsi.isEmpty
+                        ? p.lokasi
+                        : '${p.lokasi}, ${p.provinsi}',
+                    style: const TextStyle(
+                        fontSize: 16, fontWeight: FontWeight.w700),
+                  ),
                 ),
-              ),
-              _KategoriChip(kategori: p.kategori),
+                _KategoriChip(kategori: p.kategori),
+              ],
+            ),
+            if (!p.lokasiDidukung) ...[
+              const SizedBox(height: 10),
+              const _AccuracyWarning(),
             ],
-          ),
-          const SizedBox(height: 16),
-          _PriceCard(p: p),
-          const SizedBox(height: 16),
-          _DetailCard(p: p),
-          const SizedBox(height: 16),
-          Text(
-            'Estimasi dihasilkan model Random Forest. Rentang ±25% dari nilai tengah sebagai indikasi, bukan interval statistik ketat.',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: isDark ? const Color(0xFF94A3B8) : AppColors.muted,
-              fontSize: 11.5,
+            const SizedBox(height: 16),
+            _PriceCard(p: p),
+            const SizedBox(height: 16),
+            _DetailCard(p: p),
+            const SizedBox(height: 20),
+            const _SwipeHint(),
+            const SizedBox(height: 12),
+            const Text(
+              'Estimasi dihasilkan model Random Forest. Rentang ±25% dari nilai tengah sebagai indikasi, bukan interval statistik ketat.',
+              textAlign: TextAlign.center,
+              style: TextStyle(color: AppColors.muted, fontSize: 11.5),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// Petunjuk gesture geser di bagian bawah hasil.
+class _SwipeHint extends StatelessWidget {
+  const _SwipeHint();
+
+  @override
+  Widget build(BuildContext context) {
+    return const Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        _HintItem(
+          icon: Icons.arrow_back_rounded,
+          label: 'Beranda',
+          alignLeft: true,
+        ),
+        _HintItem(
+          icon: Icons.arrow_forward_rounded,
+          label: 'Riwayat',
+          alignLeft: false,
+        ),
+      ],
+    );
+  }
+}
+
+class _HintItem extends StatelessWidget {
+  const _HintItem({
+    required this.icon,
+    required this.label,
+    required this.alignLeft,
+  });
+
+  final IconData icon;
+  final String label;
+  final bool alignLeft;
+
+  @override
+  Widget build(BuildContext context) {
+    final children = [
+      Icon(icon, size: 16, color: AppColors.muted),
+      const SizedBox(width: 6),
+      Text(label,
+          style: const TextStyle(fontSize: 12, color: AppColors.muted)),
+    ];
+    return Row(
+      children: alignLeft ? children : children.reversed.toList(),
+    );
+  }
+}
+
+/// Peringatan akurasi bila lokasi tidak tercakup data latih.
+class _AccuracyWarning extends StatelessWidget {
+  const _AccuracyWarning();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: AppColors.amberSoft,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: const Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Icon(Icons.info_outline_rounded, size: 16, color: AppColors.amberDark),
+          SizedBox(width: 8),
+          Expanded(
+            child: Text(
+              'Wilayah ini belum tercakup data latih — estimasi bersifat '
+              'generalisasi dan bisa kurang akurat.',
+              style: TextStyle(fontSize: 12, color: AppColors.amberDark),
             ),
           ),
         ],
@@ -171,12 +267,12 @@ class _DetailCard extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
         child: Column(
           children: [
-            _row(context, 'Luas tanah', '${formatLuas(p.luasM2)} m²'),
-            _row(context, 'Luas bangunan', '${formatLuas(p.luasBangunan)} m²'),
-            _row(context, 'Kamar tidur', '${p.jumlahKamar}'),
-            _row(context, 'Kamar mandi', '${p.jumlahKamarMandi}'),
-            _row(context, 'Usia bangunan', '${p.usiaBangunan} tahun'),
-            _row(context, 'Lokasi', p.lokasi, isLast: true),
+            _row('Luas tanah', '${formatLuas(p.luasM2)} m²'),
+            _row('Luas bangunan', '${formatLuas(p.luasBangunan)} m²'),
+            _row('Kamar tidur', '${p.jumlahKamar}'),
+            _row('Kamar mandi', '${p.jumlahKamarMandi}'),
+            _row('Kondisi', p.kondisi),
+            _row('Lokasi', p.lokasi, isLast: true),
           ],
         ),
       ),

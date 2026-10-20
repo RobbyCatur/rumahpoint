@@ -28,7 +28,10 @@ class PredictionRepositoryImpl implements PredictionRepository {
     required int jumlahKamar,
     required int jumlahKamarMandi,
     required int usiaBangunan,
+    required String kondisi,
     required String lokasi,
+    required String provinsi,
+    required bool lokasiDidukung,
   }) async {
     try {
       final data = await _remote.predict(
@@ -41,7 +44,13 @@ class PredictionRepositoryImpl implements PredictionRepository {
       );
       final input = Map<String, dynamic>.from(data['input'] as Map);
       return (
-        prediction: PredictionModel.fromApiJson(data, input),
+        prediction: PredictionModel.fromApiJson(
+          data,
+          input,
+          kondisi: kondisi,
+          provinsi: provinsi,
+          lokasiDidukung: lokasiDidukung,
+        ),
         failure: null,
       );
     } on DioException {
@@ -116,7 +125,10 @@ class PredictionRepositoryImpl implements PredictionRepository {
         jumlahKamar: p.jumlahKamar,
         jumlahKamarMandi: p.jumlahKamarMandi,
         usiaBangunan: p.usiaBangunan,
+        kondisi: p.kondisi,
         lokasi: p.lokasi,
+        provinsi: p.provinsi,
+        lokasiDidukung: p.lokasiDidukung,
         estimasiHarga: p.estimasiHarga,
         estimasiString: p.estimasiString,
         rentangBawah: p.rentangBawah,

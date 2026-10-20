@@ -10,7 +10,10 @@ class PredictionModel extends Prediction {
     required super.jumlahKamar,
     required super.jumlahKamarMandi,
     required super.usiaBangunan,
+    required super.kondisi,
     required super.lokasi,
+    required super.provinsi,
+    required super.lokasiDidukung,
     required super.estimasiHarga,
     required super.estimasiString,
     required super.rentangBawah,
@@ -21,15 +24,25 @@ class PredictionModel extends Prediction {
   });
 
   /// Dari respons `POST /predict` cloud ML + echo input yang dikirim.
+  /// [kondisi], [provinsi], dan [lokasiDidukung] berasal dari pilihan user
+  /// di form (server cloud tidak mengenal konsep-konsep ini).
   factory PredictionModel.fromApiJson(
-      Map<String, dynamic> j, Map<String, dynamic> input) {
+    Map<String, dynamic> j,
+    Map<String, dynamic> input, {
+    required String kondisi,
+    required String provinsi,
+    required bool lokasiDidukung,
+  }) {
     return PredictionModel(
       luasM2: (input['luas_m2'] as num).toDouble(),
       luasBangunan: (input['luas_bangunan'] as num? ?? 0).toDouble(),
       jumlahKamar: (input['jumlah_kamar'] as num).toInt(),
       jumlahKamarMandi: (input['jumlah_kamar_mandi'] as num).toInt(),
       usiaBangunan: (input['usia_bangunan'] as num).toInt(),
+      kondisi: kondisi,
       lokasi: input['lokasi'].toString(),
+      provinsi: provinsi,
+      lokasiDidukung: lokasiDidukung,
       estimasiHarga: (j['estimasi_harga_rupiah'] as num).toInt(),
       estimasiString: j['estimasi_harga_string'].toString(),
       rentangBawah: (j['rentang_bawah'] ?? '').toString(),
@@ -47,7 +60,12 @@ class PredictionModel extends Prediction {
         jumlahKamar: (m['jumlahKamar'] as num).toInt(),
         jumlahKamarMandi: (m['jumlahKamarMandi'] as num).toInt(),
         usiaBangunan: (m['usiaBangunan'] as num).toInt(),
+        kondisi: (m['kondisi'] ??
+                ((m['usiaBangunan'] as num? ?? 0) == 0 ? 'Baru' : 'Bekas'))
+            .toString(),
         lokasi: m['lokasi'].toString(),
+        provinsi: (m['provinsi'] ?? '').toString(),
+        lokasiDidukung: m['lokasiDidukung'] == true,
         estimasiHarga: (m['estimasiHarga'] as num).toInt(),
         estimasiString: m['estimasiString'].toString(),
         rentangBawah: (m['rentangBawah'] ?? '').toString(),
@@ -63,7 +81,10 @@ class PredictionModel extends Prediction {
         'jumlahKamar': jumlahKamar,
         'jumlahKamarMandi': jumlahKamarMandi,
         'usiaBangunan': usiaBangunan,
+        'kondisi': kondisi,
         'lokasi': lokasi,
+        'provinsi': provinsi,
+        'lokasiDidukung': lokasiDidukung,
         'estimasiHarga': estimasiHarga,
         'estimasiString': estimasiString,
         'rentangBawah': rentangBawah,
