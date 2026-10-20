@@ -48,7 +48,8 @@ class WilayahService {
   }
 
   /// Kab/kota terdekat dari titik GPS (jarak Euclidean sederhana —
-  /// cukup untuk skala kabupaten/kota di Indonesia).
+  /// hanya dipakai sebagai cadangan bila titik tidak jatuh di dalam
+  /// poligon mana pun, mis. di laut).
   static KabupatenKota nearest(List<Provinsi> data, double lat, double lng) {
     KabupatenKota? terbaik;
     var jarakTerbaik = double.infinity;
@@ -65,4 +66,56 @@ class WilayahService {
     }
     return terbaik!;
   }
+
+  static List<BatasWilayah>? _batasCache;
+
+  /// Batas kab/kota (poligon) dari asset `assets/data/batas.json`.
+  static Future<List<BatasWilayah>> loadBatas() async {
+    if (_batasCache != null) return _batasCache!;
+    final raw = await rootBundle.loadString('assets/data/batas.json');
+    final list = (jsonDecode(raw) as List).cast<Map<String, dynamic>>();
+    _batasCache = [for (final j in list) BatasWilayah.fromJson(j)];
+    return _batasCache!;
+  }
+
+  /// Kab/kota dengan nama tepat pada provinsi tertentu (null bila tidak ada).
+  static KabupatenKota? cari(
+      List<Provinsi> data, String nama, String provinsi) {
+    for (final p in data) {
+      if (p.nama != provinsi) continue;
+      for (final k in p.kabupatenKota) {
+        if (k.nama == nama) return k;
+      }
+    }
+    return null;
+  }
+
+  /// Kab/kota tempat titik GPS berada, berdasarkan poligon batas wilayah.
+  /// Bila beberapa poligon memuat (kabupaten induk + kota otonom di
+  /// dalamnya), yang terkecil dipilih. Fallback ke [nearest] bila titik
+  /// tidak jatuh di darat/ dalam poligon mana pun.
+  static KabupatenKota? dalamBatas(
+    List<Provinsi> data,
+    List<BatasWilayah> batas,
+    double lat,
+    double lng,
+  ) {
+    BatasWilayah? terbaik;
+    for (final b in batas) {
+      if (!b.memuat(lat, lng)) continue;
+      if (terbaik == null || b.luas < terbaik.luas) terbaik = b;
+    }
+    if (terbaik == null) return null;
+    return cari(data, terbaik.nama, terbaik.provinsi);
+  }
+
+  /// Lokasi terbaik untuk sebuah titik GPS: poligon dulu, centroid sebagai
+  /// cadangan. Selalu mengembalikan kab/kota (tidak null) selama [data] terisi.
+  static KabupatenKota locate(
+    List<Provinsi> data,
+    List<BatasWilayah> batas,
+    double lat,
+    double lng,
+  ) =>
+      dalamBatas(data, batas, lat, lng) ?? nearest(data, lat, lng);
 }

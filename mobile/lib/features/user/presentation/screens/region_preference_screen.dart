@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../prediction/domain/entities/wilayah.dart';
+import '../../../prediction/presentation/providers/prediction_providers.dart';
+import '../../../prediction/presentation/widgets/wilayah_field.dart';
 import '../providers/user_providers.dart';
 
 class RegionPreferenceScreen extends ConsumerStatefulWidget {
@@ -11,23 +14,50 @@ class RegionPreferenceScreen extends ConsumerStatefulWidget {
       _RegionPreferenceScreenState();
 }
 
-class _RegionPreferenceScreenState
-    extends ConsumerState<RegionPreferenceScreen> {
-  String? _selectedCity;
+class _RegionPreferenceScreenState extends ConsumerState<RegionPreferenceScreen> {
+  /// Wilayah yang sedang dipilih pada layar ini. Null berarti belum ada
+  /// pilihan, sehingga yang ditampilkan adalah preferensi tersimpan.
+  KabupatenKota? _wilayah;
+  bool _mencariGps = false;
+  bool _menyimpan = false;
 
-  static const List<String> _cities = [
-    'Bekasi',
-    'Bogor',
-    'Depok',
-    'Jakarta Selatan',
-    'Jakarta Utara',
-    'Surabaya',
-    'Tangerang',
-  ];
+  /// Deteksi kab/kota tempat perangkat berada (poligon batas wilayah).
+  Future<void> _deteksiGps() async {
+    if (_mencariGps) return;
+    setState(() => _mencariGps = true);
+    final hasil = await deteksiWilayahSaatIni(ref);
+    if (!mounted) return;
+    setState(() {
+      _wilayah = hasil ?? _wilayah;
+      _mencariGps = false;
+    });
+  }
+
+  Future<void> _simpan(KabupatenKota? wilayah) async {
+    if (_menyimpan) return;
+    if (wilayah == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Pilih wilayah dulu.')),
+      );
+      return;
+    }
+    setState(() => _menyimpan = true);
+    await ref.read(wilayahPreferenceProvider.notifier).simpan(wilayah);
+    if (!mounted) return;
+    setState(() => _menyimpan = false);
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text('Preferensi wilayah tersimpan.')),
+    );
+    Navigator.pop(context);
+  }
 
   @override
   Widget build(BuildContext context) {
     final isGpsActive = ref.watch(gpsPriorityProvider);
+    final tersimpan = ref.watch(wilayahPreferenceProvider);
+    // GPS aktif: yang tampil selalu hasil deteksi (bukan preferensi tersimpan),
+    // supaya teks "terdeteksi otomatis" tidak menyesatkan.
+    final tampil = isGpsActive ? _wilayah : (_wilayah ?? tersimpan);
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final backgroundColor =
         isDark ? const Color(0xFF0F172A) : const Color(0xFFF9FAFB);
@@ -38,14 +68,16 @@ class _RegionPreferenceScreenState
         isDark ? Colors.white12 : Colors.grey.withValues(alpha: 0.15);
 
     ref.listen<bool>(gpsPriorityProvider, (previous, next) {
-      if (!next) {
-        setState(() {
-          _selectedCity = null;
-        });
+      if (next) {
+        _deteksiGps();
+      } else {
+        setState(() => _wilayah = null);
       }
     });
 
-    final String? currentCity = isGpsActive ? 'Surabaya' : _selectedCity;
+    if (isGpsActive && tampil == null && !_mencariGps) {
+      WidgetsBinding.instance.addPostFrameCallback((_) => _deteksiGps());
+    }
 
     return Scaffold(
       backgroundColor: backgroundColor,
@@ -91,7 +123,9 @@ class _RegionPreferenceScreenState
                 Expanded(
                   child: Text(
                     isGpsActive
-                        ? 'Lokasi otomatis terdeteksi via GPS (Surabaya). Preferensi wilayah dikunci sesuai koordinat perangkat.'
+                        ? (tampil != null
+                            ? 'Lokasi otomatis terdeteksi (${tampil.nama}, ${tampil.provinsi}). Preferensi wilayah dikunci sesuai koordinat perangkat.'
+                            : 'Mendeteksi lokasi perangkat via GPS…')
                         : 'Mengatur preferensi wilayah akan mempercepat proses saat Anda mengisi formulir prediksi harga.',
                     style: TextStyle(
                       color: isDark ? const Color(0xFFE2E8F0) : Colors.black87,
@@ -113,51 +147,21 @@ class _RegionPreferenceScreenState
             ),
           ),
           const SizedBox(height: 8),
-          DropdownButtonFormField<String>(
-            key: ValueKey(currentCity),
-            initialValue: currentCity,
-            hint: const Text('Pilih Wilayah'),
-            isExpanded: true,
-            dropdownColor: isDark ? const Color(0xFF1E293B) : Colors.white,
-            style: TextStyle(
-              color: textColor,
-              fontSize: 15,
-            ),
-            decoration: InputDecoration(
-              prefixIcon: const Icon(Icons.location_city_outlined),
-              helperText: isGpsActive ? 'Terkunci oleh prioritas GPS' : null,
-              helperStyle: const TextStyle(color: Color(0xFFF59E0B)),
-            ),
-            items: _cities
-                .map(
-                  (city) => DropdownMenuItem<String>(
-                    value: city,
-                    child: Text(
-                      city,
-                      style: TextStyle(color: textColor),
-                    ),
-                  ),
-                )
-                .toList(),
-            onChanged: isGpsActive
-                ? null
-                : (value) {
-                    setState(() {
-                      _selectedCity = value;
-                    });
-                  },
+          // Pemilih yang sama dengan form di Beranda: provinsi → kab/kota.
+          WilayahField(
+            label: '',
+            value: tampil,
+            showGpsButton: !isGpsActive,
+            enabled: !isGpsActive,
+            placeholder: 'Pilih wilayah',
+            onChanged: (v) => setState(() => _wilayah = v),
           ),
           const SizedBox(height: 40),
           ElevatedButton(
-            onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Pembaruan berhasil disimpan.')),
-              );
-              Navigator.pop(context);
-            },
+            onPressed: _menyimpan ? null : () => _simpan(tampil),
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color(0xFFF59E0B),
-              foregroundColor: Colors.white,
+              foregroundColor: const Color(0xFF1F1300),
               padding: const EdgeInsets.symmetric(vertical: 16),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(16),

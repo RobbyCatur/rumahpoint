@@ -4,9 +4,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../core/format.dart';
-import '../features/prediction/data/services/wilayah_service.dart';
 import '../features/prediction/domain/entities/wilayah.dart';
+import '../features/prediction/presentation/widgets/wilayah_field.dart';
 import '../features/prediction/presentation/providers/prediction_providers.dart';
+import '../features/user/presentation/providers/user_providers.dart';
 import '../theme.dart';
 
 /// Usia bangunan yang dikirim ke model untuk tiap pilihan kondisi.
@@ -22,6 +23,7 @@ class HomeScreen extends ConsumerStatefulWidget {
 
 class _HomeScreenState extends ConsumerState<HomeScreen> {
   KabupatenKota? _wilayah;
+  bool _mencariGps = false;
   double _luasTanah = 120;
   double _luasBangunan = 98;
   int _kamar = 3;
@@ -35,21 +37,13 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   }
 
   Future<void> _init() async {
-    // 1) Pulihkan draft autosave (jika ada).
+    // 1) Pulihkan angka form dari draft autosave. Wilayah sengaja tidak ikut
+    //    dipulihkan: form selalu mulai dari preferensi Profil, dan pilihan
+    //    manual di Beranda hanya berlaku selama sesi berjalan.
     final d = await ref.read(predictionControllerProvider.notifier).loadDraft();
-    if (d != null && mounted) {
-      final nama = d['kabKota']?.toString();
-      final prov = d['provinsi']?.toString();
+    if (!mounted) return;
+    if (d != null) {
       setState(() {
-        if (nama != null && prov != null) {
-          _wilayah = KabupatenKota(
-            nama: nama,
-            provinsi: prov,
-            didukung: d['didukung'] == true,
-            lat: 0,
-            lng: 0,
-          );
-        }
         _luasTanah = _clampDouble(d['lt'], 20, 500, _luasTanah);
         _luasBangunan = _clampDouble(d['lb'], 20, 500, _luasBangunan);
         _kamar = _clampInt(d['kamar'], 1, 10, _kamar);
@@ -58,19 +52,40 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         if (kondisiUsia.containsKey(kondisi)) _kondisi = kondisi!;
       });
     }
-    // 2) Bila belum ada pilihan lokasi, coba default dari GPS.
-    if (_wilayah == null) _detectLocation();
+    // 2) Isi wilayah default dari preferensi Profil / GPS.
+    await _isiWilayahDefault();
   }
 
-  /// Minta izin GPS lalu pilihkan kab/kota terdekat sebagai default.
-  /// Gagal/ditolak → biarkan user memilih manual (fallback Jakarta Selatan).
-  Future<void> _detectLocation() async {
-    final pos = await ref.read(locationServiceProvider).currentPosition();
-    if (pos == null || !mounted) return;
-    final wilayah = await ref.read(wilayahProvider.future);
-    final terdekat = WilayahService.nearest(wilayah, pos.lat, pos.lng);
-    setState(() => _wilayah = terdekat);
-    _saveDraft();
+  /// Nilai awal wilayah: preferensi Profil dipakai kecuali lokasi GPS
+  /// diprioritaskan atau preferensi belum pernah disimpan.
+  Future<void> _isiWilayahDefault() async {
+    if (ref.read(gpsPriorityProvider)) return _pakaiGps();
+    final preferensi = await _bacaPreferensi();
+    if (preferensi != null) {
+      if (mounted) _update(() => _wilayah = preferensi);
+      return;
+    }
+    await _pakaiGps();
+  }
+
+  Future<KabupatenKota?> _bacaPreferensi() async {
+    await ref.read(wilayahPreferenceProvider.notifier).siap;
+    return ref.read(wilayahPreferenceProvider);
+  }
+
+  /// Posisi perangkat mengambil alih form. Gagal mengambil GPS → nilai
+  /// saat ini dibiarkan (pemakai masih bisa memilih manual).
+  Future<void> _pakaiGps() async {
+    if (_mencariGps) return;
+    _mencariGps = true;
+    final hasil = await deteksiWilayahSaatIni(ref);
+    _mencariGps = false;
+    if (hasil != null && mounted) _update(() => _wilayah = hasil);
+  }
+
+  Future<void> _pakaiPreferensi() async {
+    final preferensi = await _bacaPreferensi();
+    if (preferensi != null && mounted) _update(() => _wilayah = preferensi);
   }
 
   static double _clampDouble(dynamic v, double min, double max, double fb) {
@@ -85,9 +100,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 
   Future<void> _saveDraft() async {
     await ref.read(predictionControllerProvider.notifier).saveDraft({
-      'kabKota': _wilayah?.nama,
-      'provinsi': _wilayah?.provinsi,
-      'didukung': _wilayah?.didukung ?? false,
       'lt': _luasTanah,
       'lb': _luasBangunan,
       'kamar': _kamar,
@@ -141,22 +153,29 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     }
   }
 
-  Future<void> _openWilayahPicker() async {
-    final wilayah = await ref.read(wilayahProvider.future);
-    if (!mounted) return;
-    final hasil = await showModalBottomSheet<KabupatenKota>(
-      context: context,
-      isScrollControlled: true,
-      backgroundColor: Colors.transparent,
-      builder: (_) => _WilayahPickerSheet(data: wilayah, selected: _wilayah),
-    );
-    if (hasil != null) _update(() => _wilayah = hasil);
-  }
-
   @override
   Widget build(BuildContext context) {
     final state = ref.watch(predictionControllerProvider);
-    final w = _wilayah;
+    final tone = AppTone.of(context);
+
+    // Preferensi Profil → form Beranda. Setiap perubahan langsung diikuti,
+    // kecuali lokasi GPS yang diprioritaskan (posisi perangkat yang menang).
+    ref.listen<KabupatenKota?>(wilayahPreferenceProvider, (previous, next) {
+      if (next == null || next == previous) return;
+      if (ref.read(gpsPriorityProvider)) return;
+      _update(() => _wilayah = next);
+    });
+
+    // Sakelar prioritas GPS berlaku seketika: dinyalakan → form ikut posisi
+    // perangkat; dimatikan → form kembali ikut preferensi Profil.
+    ref.listen<bool>(gpsPriorityProvider, (previous, next) {
+      if (previous == next) return;
+      if (next) {
+        _pakaiGps();
+      } else {
+        _pakaiPreferensi();
+      }
+    });
 
     return Scaffold(
       body: SafeArea(
@@ -175,49 +194,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const _SectionLabel('WILAYAH PROPERTI'),
-                    InkWell(
-                      onTap: _openWilayahPicker,
-                      borderRadius: BorderRadius.circular(14),
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 16, vertical: 14),
-                        decoration: BoxDecoration(
-                          color: AppColors.surface,
-                          border: Border.all(color: AppColors.line),
-                          borderRadius: BorderRadius.circular(14),
-                        ),
-                        child: Row(
-                          children: [
-                            const Icon(Icons.location_on_outlined,
-                                size: 20, color: AppColors.muted),
-                            const SizedBox(width: 12),
-                            Expanded(
-                              child: Text(
-                                w == null
-                                    ? 'Pilih kabupaten/kota'
-                                    : '${w.nama}, ${w.provinsi}',
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: w == null
-                                      ? FontWeight.w400
-                                      : FontWeight.w600,
-                                  color: w == null
-                                      ? AppColors.muted
-                                      : AppColors.ink,
-                                ),
-                              ),
-                            ),
-                            const Icon(Icons.keyboard_arrow_down_rounded,
-                                color: AppColors.muted),
-                          ],
-                        ),
-                      ),
+                    WilayahField(
+                      label: 'WILAYAH PROPERTI',
+                      value: _wilayah,
+                      onChanged: (v) => _update(() => _wilayah = v),
                     ),
-                    if (w != null && !w.didukung) ...[
-                      const SizedBox(height: 10),
-                      const _AccuracyNote(),
-                    ],
                     const SizedBox(height: 20),
                     _SliderField(
                       label: 'Luas Tanah (LT)',
@@ -268,7 +249,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                       Text(
                         'Gagal memprediksi. Pastikan server cloud aktif.',
                         style: TextStyle(
-                          color: Colors.red.shade700,
+                          color: tone.error,
                           fontSize: 13,
                         ),
                       ),
@@ -282,7 +263,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                               height: 18,
                               child: CircularProgressIndicator(
                                 strokeWidth: 2,
-                                color: Colors.white,
                               ),
                             )
                           : const Icon(Icons.calculate_outlined, size: 20),
@@ -297,42 +277,13 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               ),
             ),
             const SizedBox(height: 16),
-            const Text(
+            Text(
               'Model Random Forest • mencakup 500+ kab/kota se-Indonesia',
               textAlign: TextAlign.center,
-              style: TextStyle(color: AppColors.muted, fontSize: 12),
+              style: TextStyle(color: tone.textMuted, fontSize: 12),
             ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-/// Catatan akurasi bila lokasi tidak tercakup data latih.
-class _AccuracyNote extends StatelessWidget {
-  const _AccuracyNote();
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        color: AppColors.amberSoft,
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: const Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Icon(Icons.info_outline_rounded, size: 16, color: AppColors.amberDark),
-          SizedBox(width: 8),
-          Expanded(
-            child: Text(
-              'Data latih terbatas di wilayah ini — estimasi bisa kurang akurat.',
-              style: TextStyle(fontSize: 12, color: AppColors.amberDark),
-            ),
-          ),
-        ],
       ),
     );
   }
@@ -347,19 +298,20 @@ class _KondisiPicker extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tone = AppTone.of(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text(
+        Text(
           'Kondisi Bangunan',
-          style: TextStyle(fontSize: 12, color: AppColors.muted),
+          style: TextStyle(fontSize: 12, color: tone.textMuted),
         ),
         const SizedBox(height: 6),
         Container(
           padding: const EdgeInsets.all(4),
           decoration: BoxDecoration(
-            color: AppColors.background,
-            border: Border.all(color: AppColors.line),
+            color: tone.scaffold,
+            border: Border.all(color: tone.border),
             borderRadius: BorderRadius.circular(12),
           ),
           child: Row(
@@ -373,7 +325,7 @@ class _KondisiPicker extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(vertical: 10),
                       decoration: BoxDecoration(
                         color: value == k
-                            ? AppColors.surface
+                            ? tone.tintBg
                             : Colors.transparent,
                         borderRadius: BorderRadius.circular(9),
                         border: value == k
@@ -386,8 +338,9 @@ class _KondisiPicker extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 13.5,
                           fontWeight: FontWeight.w700,
-                          color:
-                              value == k ? AppColors.amberDark : AppColors.muted,
+                          color: value == k
+                              ? tone.tintText
+                              : tone.textMuted,
                         ),
                       ),
                     ),
@@ -397,176 +350,6 @@ class _KondisiPicker extends StatelessWidget {
           ),
         ),
       ],
-    );
-  }
-}
-
-/// Bottom sheet pemilih wilayah: pilih provinsi → pilih kab/kota.
-/// Daftar dibatasi 5 item terlihat, dengan kolom pencarian.
-class _WilayahPickerSheet extends StatefulWidget {
-  const _WilayahPickerSheet({required this.data, required this.selected});
-
-  final List<Provinsi> data;
-  final KabupatenKota? selected;
-
-  @override
-  State<_WilayahPickerSheet> createState() => _WilayahPickerSheetState();
-}
-
-class _WilayahPickerSheetState extends State<_WilayahPickerSheet> {
-  Provinsi? _provinsi;
-  String _query = '';
-  final _searchCtrl = TextEditingController();
-
-  @override
-  void dispose() {
-    _searchCtrl.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final step2 = _provinsi != null;
-    final items = step2
-        ? widget.data
-            .firstWhere((p) => p.nama == _provinsi!.nama)
-            .kabupatenKota
-            .where((k) => k.nama.toLowerCase().contains(_query.toLowerCase()))
-            .toList()
-        : widget.data
-            .where((p) => p.nama.toLowerCase().contains(_query.toLowerCase()))
-            .toList();
-
-    return DraggableScrollableSheet(
-      initialChildSize: 0.72,
-      minChildSize: 0.5,
-      maxChildSize: 0.92,
-      builder: (context, scrollCtrl) => Material(
-        color: AppColors.surface,
-        borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
-        clipBehavior: Clip.antiAlias,
-        child: Column(
-          children: [
-            const SizedBox(height: 10),
-            Container(
-              width: 40,
-              height: 4,
-              decoration: BoxDecoration(
-                color: AppColors.line,
-                borderRadius: BorderRadius.circular(2),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(20, 14, 20, 0),
-              child: Row(
-                children: [
-                  if (step2)
-                    IconButton(
-                      onPressed: () => setState(() {
-                        _provinsi = null;
-                        _query = '';
-                        _searchCtrl.clear();
-                      }),
-                      icon: const Icon(Icons.arrow_back_rounded),
-                      tooltip: 'Kembali ke provinsi',
-                    ),
-                  Expanded(
-                    child: Text(
-                      step2 ? _provinsi!.nama : 'Pilih Provinsi',
-                      style: const TextStyle(
-                          fontSize: 16, fontWeight: FontWeight.w800),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(20, 8, 20, 8),
-              child: TextField(
-                controller: _searchCtrl,
-                onChanged: (v) => setState(() => _query = v),
-                decoration: InputDecoration(
-                  hintText:
-                      step2 ? 'Cari kabupaten/kota...' : 'Cari provinsi...',
-                  hintStyle:
-                      const TextStyle(color: AppColors.muted, fontSize: 14),
-                  prefixIcon: const Icon(Icons.search_rounded, size: 20),
-                ),
-              ),
-            ),
-            Expanded(
-              child: items.isEmpty
-                  ? const Center(
-                      child: Text('Tidak ditemukan.',
-                          style: TextStyle(color: AppColors.muted)),
-                    )
-                  : ListView.builder(
-                      controller: scrollCtrl,
-                      // Tinggi item seragam → ~5 item terlihat penuh;
-                      // sisanya digulir (tidak full ke bawah).
-                      itemExtent: 65,
-                      padding: const EdgeInsets.fromLTRB(20, 0, 20, 16),
-                      itemCount: items.length,
-                      itemBuilder: (context, i) {
-                        if (!step2) {
-                          final p = items[i] as Provinsi;
-                          return Column(
-                            children: [
-                              ListTile(
-                                dense: true,
-                                title: Text(p.nama),
-                                subtitle: Text(
-                                  '${p.kabupatenKota.length} kab/kota',
-                                  style: const TextStyle(
-                                      fontSize: 11, color: AppColors.muted),
-                                ),
-                                trailing: const Icon(
-                                    Icons.chevron_right_rounded,
-                                    color: AppColors.muted),
-                                onTap: () => setState(() {
-                                  _provinsi = p;
-                                  _query = '';
-                                  _searchCtrl.clear();
-                                }),
-                              ),
-                              const Divider(height: 1, color: AppColors.line),
-                            ],
-                          );
-                        }
-                        final k = items[i] as KabupatenKota;
-                        final aktif = widget.selected?.nama == k.nama &&
-                            widget.selected?.provinsi == k.provinsi;
-                        return Column(
-                          children: [
-                            ListTile(
-                              dense: true,
-                              title: Text(
-                                k.nama,
-                                style: TextStyle(
-                                  fontWeight: aktif
-                                      ? FontWeight.w700
-                                      : FontWeight.w500,
-                                ),
-                              ),
-                              trailing: k.didukung
-                                  ? null
-                                  : const Tooltip(
-                                      message: 'Data latih terbatas',
-                                      child: Icon(Icons.info_outline_rounded,
-                                          size: 16,
-                                          color: AppColors.amberDark),
-                                    ),
-                              onTap: () => Navigator.pop(context, k),
-                            ),
-                            const Divider(height: 1, color: AppColors.line),
-                          ],
-                        );
-                      },
-                    ),
-            ),
-          ],
-        ),
-      ),
     );
   }
 }
@@ -593,17 +376,18 @@ class _Header extends StatelessWidget {
           ),
         ),
         const SizedBox(width: 12),
-        const Expanded(
+        Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 'RumahPoint',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
               ),
               Text(
                 'Valuasi Properti Berbasis AI',
-                style: TextStyle(fontSize: 12, color: AppColors.muted),
+                style: TextStyle(
+                    fontSize: 12, color: AppTone.of(context).textMuted),
               ),
             ],
           ),
@@ -630,12 +414,13 @@ class _Greeting extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tone = AppTone.of(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           '${_sapaan()},',
-          style: const TextStyle(fontSize: 13, color: AppColors.muted),
+          style: TextStyle(fontSize: 13, color: tone.textMuted),
         ),
         const SizedBox(height: 6),
         const Text(
@@ -647,11 +432,11 @@ class _Greeting extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 10),
-        const Text(
+        Text(
           'Isi kriteria rumah di bawah dan model machine learning kami '
           'mengestimasi nilai pasarnya dalam hitungan detik, lengkap '
           'dengan kategori Murah/Mahal.',
-          style: TextStyle(fontSize: 13.5, color: AppColors.muted, height: 1.5),
+          style: TextStyle(fontSize: 13.5, color: tone.textSoft, height: 1.5),
         ),
         const SizedBox(height: 18),
         OutlinedButton.icon(
@@ -659,7 +444,7 @@ class _Greeting extends StatelessWidget {
           icon: const Icon(Icons.keyboard_arrow_down_rounded, size: 20),
           label: const Text('Mulai Hitung Valuasi'),
           style: OutlinedButton.styleFrom(
-            foregroundColor: AppColors.amberDark,
+            foregroundColor: tone.accent,
             side: const BorderSide(color: AppColors.amber),
             textStyle: const TextStyle(
               fontSize: 14,
@@ -681,13 +466,14 @@ class _Banner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tone = AppTone.of(context);
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
         color: AppColors.amber,
         borderRadius: BorderRadius.circular(20),
       ),
-      child: const Row(
+      child: Row(
         children: [
           Expanded(
             child: Column(
@@ -696,44 +482,24 @@ class _Banner extends StatelessWidget {
                 Text(
                   'Kalkulasi Nilai Pasar Properti',
                   style: TextStyle(
-                    color: Colors.white,
+                    color: tone.onAccent,
                     fontSize: 17,
                     fontWeight: FontWeight.w800,
                   ),
                 ),
-                SizedBox(height: 6),
+                const SizedBox(height: 6),
                 Text(
                   'Estimasi harga wajar dari data properti di seluruh Indonesia.',
-                  style: TextStyle(color: Colors.white70, fontSize: 12.5),
+                  style: TextStyle(
+                      color: tone.onAccent.withValues(alpha: 0.82),
+                      fontSize: 12.5),
                 ),
               ],
             ),
           ),
-          SizedBox(width: 12),
-          Icon(Icons.auto_graph_rounded, color: Colors.white, size: 36),
+          const SizedBox(width: 12),
+          Icon(Icons.auto_graph_rounded, color: tone.onAccent, size: 36),
         ],
-      ),
-    );
-  }
-}
-
-class _SectionLabel extends StatelessWidget {
-  const _SectionLabel(this.text);
-
-  final String text;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 10),
-      child: Text(
-        text,
-        style: const TextStyle(
-          fontSize: 11,
-          fontWeight: FontWeight.w700,
-          letterSpacing: 1,
-          color: AppColors.muted,
-        ),
       ),
     );
   }
@@ -803,6 +569,7 @@ class _SliderFieldState extends State<_SliderField> {
 
   @override
   Widget build(BuildContext context) {
+    final tone = AppTone.of(context);
     return Column(
       children: [
         Row(
@@ -829,9 +596,7 @@ class _SliderFieldState extends State<_SliderField> {
                 style: TextStyle(
                   fontSize: 12,
                   fontWeight: FontWeight.w700,
-                  color: Theme.of(context).brightness == Brightness.dark
-                      ? AppColors.amber
-                      : AppColors.amberDark,
+                  color: tone.accent,
                 ),
                 onChanged: _commit,
                 onSubmitted: (raw) {
@@ -841,15 +606,11 @@ class _SliderFieldState extends State<_SliderField> {
                 decoration: InputDecoration(
                   isDense: true,
                   filled: true,
-                  fillColor: Theme.of(context).brightness == Brightness.dark
-                      ? const Color(0xFF334155)
-                      : AppColors.amberSoft,
+                  fillColor: tone.tintBg,
                   suffixText: 'm²',
                   suffixStyle: TextStyle(
                     fontSize: 11,
-                    color: Theme.of(context).brightness == Brightness.dark
-                      ? AppColors.amber
-                      : AppColors.amberDark,
+                    color: tone.accent,
                   ),
                   contentPadding: const EdgeInsets.symmetric(
                     horizontal: 8,
@@ -948,24 +709,19 @@ class _StepperFieldState extends State<_StepperField> {
 
   @override
   Widget build(BuildContext context) {
+    final tone = AppTone.of(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           widget.label,
-          style: const TextStyle(fontSize: 12, color: AppColors.muted),
+          style: TextStyle(fontSize: 12, color: tone.textMuted),
         ),
         const SizedBox(height: 6),
         Container(
           decoration: BoxDecoration(
-            color: Theme.of(context).brightness == Brightness.dark
-                ? (Theme.of(context).inputDecorationTheme.fillColor ?? const Color(0xFF1E293B))
-                : AppColors.surface,
-            border: Border.all(
-              color: Theme.of(context).brightness == Brightness.dark
-                  ? const Color(0xFF334155)
-                  : AppColors.line,
-            ),
+            color: tone.surface,
+            border: Border.all(color: tone.border),
             borderRadius: BorderRadius.circular(12),
           ),
           child: Row(
@@ -985,9 +741,7 @@ class _StepperFieldState extends State<_StepperField> {
                   inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: Theme.of(context).brightness == Brightness.dark
-                        ? Colors.white
-                        : AppColors.ink,
+                    color: tone.text,
                     fontSize: 15,
                     fontWeight: FontWeight.w700,
                   ),
@@ -1028,6 +782,7 @@ class _StepButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tone = AppTone.of(context);
     return InkWell(
       onTap: onPressed,
       borderRadius: BorderRadius.circular(12),
@@ -1037,12 +792,8 @@ class _StepButton extends StatelessWidget {
           icon,
           size: 18,
           color: onPressed != null
-              ? (Theme.of(context).brightness == Brightness.dark
-                  ? AppColors.amber
-                  : AppColors.amberDark)
-              : (Theme.of(context).brightness == Brightness.dark
-                  ? const Color(0xFF475569)
-                  : AppColors.line),
+              ? tone.accent
+              : tone.textMuted.withValues(alpha: 0.45),
         ),
       ),
     );

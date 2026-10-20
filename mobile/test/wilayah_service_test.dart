@@ -41,6 +41,94 @@ void main() {
     expect(WilayahService.nearest(data, -6.90, 107.60).nama, 'Bandung');
   });
 
+  test('dalamBatas: poligon terkecil yang memuat titik, lubang dihormati', () {
+    final dataJatim = [
+      Provinsi(nama: 'Jawa Timur', kabupatenKota: [
+        const KabupatenKota(
+            nama: 'Malang',
+            provinsi: 'Jawa Timur',
+            didukung: true,
+            lat: -7.97,
+            lng: 112.63),
+        const KabupatenKota(
+            nama: 'Kabupaten Malang',
+            provinsi: 'Jawa Timur',
+            didukung: true,
+            lat: -8.05,
+            lng: 112.55),
+      ]),
+    ];
+    // kabupaten membentang luas, kota kecil di dalamnya (kasus Malang).
+    // Cincin disimpan terpipih: [lng, lat, lng, lat, …].
+    final kabupaten = BatasWilayah(
+        nama: 'Kabupaten Malang',
+        provinsi: 'Jawa Timur',
+        bagian: [
+          [
+            [112.4, -8.2, 112.9, -8.2, 112.9, -7.7, 112.4, -7.7, 112.4, -8.2]
+          ]
+        ]);
+    final kota = BatasWilayah(
+        nama: 'Malang',
+        provinsi: 'Jawa Timur',
+        bagian: [
+          [
+            [
+              112.60, -8.02, 112.66, -8.02, 112.66, -7.95, 112.60, -7.95,
+              112.60, -8.02
+            ],
+            // lubang: titik di dalamnya bukan wilayah kota
+            [
+              112.62, -7.99, 112.64, -7.99, 112.64, -7.97, 112.62, -7.97,
+              112.62, -7.99
+            ]
+          ]
+        ]);
+    final batas = [kabupaten, kota];
+
+    // di dalam kota → kota (poligon terkecil), bukan kabupaten induknya
+    expect(
+        WilayahService.dalamBatas(dataJatim, batas, -7.98, 112.61)?.nama, 'Malang');
+    // di dalam lubang kota → tetap kabupaten
+    expect(WilayahService.dalamBatas(dataJatim, batas, -7.98, 112.63)?.nama,
+        'Kabupaten Malang');
+    // di luar semuanya → null
+    expect(WilayahService.dalamBatas(dataJatim, batas, -7.0, 110.0), isNull);
+  });
+
+  test('locate: titik di laut jatuh ke cadangan centroid', () async {
+    final nyata = await WilayahService.load();
+    final batas = await WilayahService.loadBatas();
+    // tengah Laut Jawa — tidak ada poligon yang memuat
+    expect(WilayahService.dalamBatas(nyata, batas, -5.5, 111.0), isNull);
+    expect(WilayahService.locate(nyata, batas, -5.5, 111.0).nama, isNotEmpty);
+  });
+
+  test('batas.json: titik terkenal jatuh di kab/kota yang benar', () async {
+    final nyata = await WilayahService.load();
+    final batas = await WilayahService.loadBatas();
+    const titik = <String, ({double lat, double lng, String nama})>{
+      'Balai Kota Malang': (lat: -7.9666, lng: 112.6326, nama: 'Malang'),
+      'Kepanjen': (lat: -8.1037, lng: 112.5675, nama: 'Kabupaten Malang'),
+      'Kota Batu': (lat: -7.8610, lng: 112.5230, nama: 'Batu'),
+      'Kota Bekasi': (lat: -6.2383, lng: 106.9756, nama: 'Bekasi'),
+      'Cikarang': (lat: -6.3100, lng: 107.1000, nama: 'Kabupaten Bekasi'),
+      'Kota Bandung': (lat: -6.9175, lng: 107.6191, nama: 'Bandung'),
+      'Soreang': (lat: -7.0360, lng: 107.6200, nama: 'Kabupaten Bandung'),
+      'Jakarta Selatan': (lat: -6.2800, lng: 106.8100, nama: 'Jakarta Selatan'),
+      'Gubeng Surabaya': (lat: -7.2580, lng: 112.7450, nama: 'Surabaya'),
+      'Tigaraksa': (lat: -6.2700, lng: 106.5400, nama: 'Kabupaten Tangerang'),
+      'Kota Tangerang': (lat: -6.1783, lng: 106.6319, nama: 'Tangerang'),
+      'Banjarmasin': (lat: -3.3180, lng: 114.5900, nama: 'Banjarmasin'),
+    };
+    for (final e in titik.entries) {
+      final t = e.value;
+      expect(WilayahService.dalamBatas(nyata, batas, t.lat, t.lng)?.nama,
+          t.nama,
+          reason: e.key);
+    }
+  });
+
   test('asset wilayah.json: 34 provinsi, 515 kab/kota, semua berkoordinat',
       () async {
     final data = await WilayahService.load();
@@ -48,7 +136,8 @@ void main() {
     final semua = data.expand((p) => p.kabupatenKota).toList();
     expect(semua, hasLength(515));
     expect(semua.every((k) => k.lat != 0 || k.lng != 0), isTrue);
-    // 7 kota didukung model + 3 kabupaten kembar (nama sama di dataset).
-    expect(semua.where((k) => k.didukung), hasLength(10));
+    // Bendera didukung disinkronkan dari meta.json model 572 lokasi:
+    // 203 dari 515 kab/kota punya tingkat kualitas data 1–4.
+    expect(semua.where((k) => k.didukung), hasLength(203));
   });
 }
