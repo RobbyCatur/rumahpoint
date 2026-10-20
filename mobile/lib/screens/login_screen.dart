@@ -47,6 +47,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final isDark = theme.brightness == Brightness.dark;
     return Scaffold(
       body: SafeArea(
         child: Center(
@@ -93,9 +94,15 @@ class _LoginScreenState extends State<LoginScreen> {
                   Container(
                     padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
-                      color: const Color(0xFFFFFBEB),
+                      color: isDark
+                          ? const Color(0xFF1E293B)
+                          : const Color(0xFFFFFBEB),
                       borderRadius: BorderRadius.circular(18),
-                      border: Border.all(color: const Color(0xFFFDE68A)),
+                      border: Border.all(
+                        color: isDark
+                            ? const Color(0xFF334155)
+                            : const Color(0xFFFDE68A),
+                      ),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -277,7 +284,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                   : 'Dengan daftar, Anda menyetujui Ketentuan Layanan & Kebijakan Privasi.',
                               textAlign: TextAlign.center,
                               style: theme.textTheme.bodySmall?.copyWith(
-                                color: Colors.grey.shade600,
+                                color: isDark
+                                    ? const Color(0xFF94A3B8)
+                                    : Colors.grey.shade600,
                               ),
                             ),
                           ],
@@ -306,7 +315,13 @@ class _ValueProp extends StatelessWidget {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Icon(icon, size: 16, color: const Color(0xFFB45309)),
+        Icon(
+          icon,
+          size: 16,
+          color: Theme.of(context).brightness == Brightness.dark
+              ? const Color(0xFFF59E0B)
+              : const Color(0xFFB45309),
+        ),
         const SizedBox(width: 5),
         Text(label, style: Theme.of(context).textTheme.labelMedium),
       ],

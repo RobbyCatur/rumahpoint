@@ -43,3 +43,6 @@ final userProvider =
     StateNotifierProvider<UserNotifier, AsyncValue<User?>>((ref) {
   return UserNotifier(ref.watch(userRepositoryProvider));
 });
+
+/// Provider status prioritas lokasi GPS (mock UI state).
+final gpsPriorityProvider = StateProvider<bool>((ref) => false);
