@@ -18,10 +18,22 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
   String _query = '';
   String _filter = 'Semua';
 
+  /// Lokasi terpilih dari dropdown; null = semua lokasi.
+  String? _lokasi;
+
   /// Kunci bulan terpilih "tahun-bulan" (mis. 2025-9); null = semua bulan.
   String? _bulan;
 
   static String _monthKey(DateTime d) => '${d.year}-${d.month}';
+
+  /// Daftar lokasi unik dari riwayat (urut abjad) untuk dropdown filter.
+  List<String> _availableLocations(List<Prediction> history) {
+    final set = <String>{};
+    for (final p in history) {
+      set.add(p.provinsi.isEmpty ? p.lokasi : '${p.lokasi}, ${p.provinsi}');
+    }
+    return set.toList()..sort();
+  }
 
   /// Daftar bulan unik dari riwayat, terbaru dulu.
   List<DateTime> _availableMonths(List<Prediction> history) {
@@ -42,7 +54,10 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
       final matchQuery =
           p.lokasi.toLowerCase().contains(_query.toLowerCase());
       final matchMonth = _bulan == null || _monthKey(p.createdAt) == _bulan;
-      return matchFilter && matchQuery && matchMonth;
+      final label =
+          p.provinsi.isEmpty ? p.lokasi : '${p.lokasi}, ${p.provinsi}';
+      final matchLocation = _lokasi == null || label == _lokasi;
+      return matchFilter && matchQuery && matchMonth && matchLocation;
     }).toList();
   }
 
@@ -93,6 +108,9 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
   Widget build(BuildContext context) {
     final history = ref.watch(predictionControllerProvider).history;
     final months = _availableMonths(history);
+    final locations = _availableLocations(history);
+    // Reset pilihan lokasi bila tidak lagi ada di riwayat (mis. habis dihapus).
+    if (_lokasi != null && !locations.contains(_lokasi)) _lokasi = null;
     final items = _applyFilter(history);
     final groups = _groupByMonth(items);
 
@@ -134,6 +152,35 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
                     onSelected: (_) => setState(() => _filter = f),
                   ),
                   if (f != 'Mahal') const SizedBox(width: 8),
+                ],
+                if (locations.length > 1) ...[
+                  const SizedBox(width: 8),
+                  // Filter by location: dropdown lokasi unik dari riwayat.
+                  Expanded(
+                    child: Align(
+                      alignment: Alignment.centerRight,
+                      child: PopupMenuButton<String?>(
+                        tooltip: 'Filter lokasi',
+                        onSelected: (v) => setState(() => _lokasi = v),
+                        itemBuilder: (context) => [
+                          const PopupMenuItem<String?>(
+                            value: null,
+                            child: Text('Semua lokasi'),
+                          ),
+                          for (final l in locations)
+                            PopupMenuItem<String?>(value: l, child: Text(l)),
+                        ],
+                        child: Chip(
+                          avatar: const Icon(Icons.location_on_outlined,
+                              size: 16),
+                          label: Text(
+                            _lokasi ?? 'Lokasi',
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ],
             ),
@@ -275,7 +322,9 @@ class _HistoryCard extends ConsumerWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      p.lokasi,
+                      p.provinsi.isEmpty
+                          ? p.lokasi
+                          : '${p.lokasi}, ${p.provinsi}',
                       style: const TextStyle(
                           fontSize: 14, fontWeight: FontWeight.w700),
                     ),
