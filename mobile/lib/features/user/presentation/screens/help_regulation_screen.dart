@@ -17,7 +17,7 @@ class HelpRegulationScreen extends StatelessWidget {
         isDark ? const Color(0xFF0F172A) : const Color(0xFFF9FAFB);
     final appBarColor = isDark ? const Color(0xFF0F172A) : Colors.white;
     final textColor = isDark ? Colors.white : Colors.black87;
-    final footerColor = isDark ? const Color(0xFF64748B) : Colors.grey;
+    final footerColor = isDark ? const Color(0xFF94A3B8) : Colors.grey;
 
     return Scaffold(
       backgroundColor: backgroundColor,

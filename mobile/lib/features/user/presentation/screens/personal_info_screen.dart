@@ -389,7 +389,7 @@ class _PersonalInfoScreenState extends ConsumerState<PersonalInfoScreen> {
               onPressed: _submit,
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFFF59E0B),
-                foregroundColor: Colors.white,
+                foregroundColor: const Color(0xFF1F1300),
                 padding: const EdgeInsets.symmetric(vertical: 16),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16),
