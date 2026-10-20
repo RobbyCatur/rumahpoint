@@ -34,7 +34,10 @@ class PredictionController extends StateNotifier<PredictionState> {
     required int jumlahKamar,
     required int jumlahKamarMandi,
     required int usiaBangunan,
+    required String kondisi,
     required String lokasi,
+    required String provinsi,
+    required bool lokasiDidukung,
   }) async {
     state = state.copyWith(loading: true, clearError: true);
     final result = await _repository.predict(
@@ -43,7 +46,10 @@ class PredictionController extends StateNotifier<PredictionState> {
       jumlahKamar: jumlahKamar,
       jumlahKamarMandi: jumlahKamarMandi,
       usiaBangunan: usiaBangunan,
+      kondisi: kondisi,
       lokasi: lokasi,
+      provinsi: provinsi,
+      lokasiDidukung: lokasiDidukung,
     );
 
     if (result.failure != null || result.prediction == null) {

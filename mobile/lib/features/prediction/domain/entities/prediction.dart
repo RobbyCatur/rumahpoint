@@ -10,7 +10,10 @@ class Prediction {
     required this.jumlahKamar,
     required this.jumlahKamarMandi,
     required this.usiaBangunan,
+    required this.kondisi,
     required this.lokasi,
+    required this.provinsi,
+    required this.lokasiDidukung,
     required this.estimasiHarga,
     required this.estimasiString,
     required this.rentangBawah,
@@ -25,7 +28,14 @@ class Prediction {
   final int jumlahKamar;
   final int jumlahKamarMandi;
   final int usiaBangunan;
+
+  /// 'Baru' | 'Bekas' — label UI untuk usiaBangunan.
+  final String kondisi;
   final String lokasi;
+  final String provinsi;
+
+  /// false bila lokasi tidak tercakup data latih → UI tampilkan peringatan.
+  final bool lokasiDidukung;
   final int estimasiHarga;
   final String estimasiString;
   final String rentangBawah;

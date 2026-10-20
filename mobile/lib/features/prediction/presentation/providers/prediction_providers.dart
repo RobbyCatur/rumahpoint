@@ -3,6 +3,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../data/datasources/prediction_draft_datasource.dart';
 import '../../data/datasources/prediction_remote_datasource.dart';
 import '../../data/repositories/prediction_repository_impl.dart';
+import '../../data/services/location_service.dart';
+import '../../data/services/wilayah_service.dart';
+import '../../domain/entities/wilayah.dart';
 import '../../domain/repositories/prediction_repository.dart';
 import '../../domain/usecases/get_prediction_history.dart';
 import '../controllers/prediction_controller.dart';
@@ -39,4 +42,14 @@ final predictionControllerProvider =
     ref.watch(predictionRepositoryProvider),
     ref.watch(getPredictionHistoryProvider),
   );
+});
+
+/// Data wilayah administratif (provinsi → kab/kota), dimuat sekali dari asset.
+final wilayahProvider = FutureProvider<List<Provinsi>>((ref) {
+  return WilayahService.load();
+});
+
+/// Akses GPS device (geolocator).
+final locationServiceProvider = Provider<LocationService>((ref) {
+  return LocationService();
 });

@@ -8,13 +8,18 @@ import '../entities/prediction.dart';
 /// diganti fake saat testing dan mudah dipindah ke backend ber-auth nanti.
 abstract class PredictionRepository {
   /// Kirim kriteria properti ke model dan kembalikan hasil prediksi.
+  /// [kondisi] ('Baru'|'Bekas'), [provinsi], [lokasiDidukung] = metadata
+  /// UI yang ikut disimpan di riwayat (tidak dikirim ke model).
   Future<({Prediction? prediction, Failure? failure})> predict({
     required double luasM2,
     required double luasBangunan,
     required int jumlahKamar,
     required int jumlahKamarMandi,
     required int usiaBangunan,
+    required String kondisi,
     required String lokasi,
+    required String provinsi,
+    required bool lokasiDidukung,
   });
 
   /// Ambil seluruh riwayat prediksi yang tersimpan.
