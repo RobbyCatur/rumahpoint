@@ -108,4 +108,42 @@ void main() {
     expect(draft['lt'], 500.0);
     expect(draft['kamar'], 10);
   });
+
+  testWidgets('Picker wilayah: provinsi tampil tanpa overflow, navigasi ke kab/kota',
+      (WidgetTester tester) async {
+    SharedPreferences.setMockInitialValues({});
+    useTallSurface(tester);
+    await tester.pumpWidget(const ProviderScope(child: RumahPointApp()));
+    await tester.pumpAndSettle();
+
+    router.go('/beranda');
+    await tester.pumpAndSettle();
+
+    // Buka bottom sheet pemilih wilayah.
+    await tester.tap(find.text('Pilih kabupaten/kota'));
+    await tester.pumpAndSettle();
+
+    // Langkah 1: daftar provinsi (subtitle "N kab/kota" tidak overflow).
+    expect(find.text('Pilih Provinsi'), findsOneWidget);
+    expect(find.text('Aceh'), findsOneWidget);
+    expect(find.text('Jawa Barat'), findsWidgets);
+    expect(tester.takeException(), isNull);
+
+    // Langkah 2: masuk ke kab/kota Jawa Barat.
+    await tester.tap(find.text('Jawa Barat').first);
+    await tester.pumpAndSettle();
+    expect(find.text('Bekasi'), findsOneWidget);
+
+    // Pilih Bekasi → sheet tertutup, label form terisi.
+    await tester.tap(find.text('Bekasi'));
+    await tester.pumpAndSettle();
+    expect(find.text('Bekasi, Jawa Barat'), findsOneWidget);
+
+    // Draft ikut menyimpan wilayah terpilih.
+    final prefs = await SharedPreferences.getInstance();
+    final draft =
+        Map<String, dynamic>.from(jsonDecode(prefs.getString('rp_draft')!));
+    expect(draft['kabKota'], 'Bekasi');
+    expect(draft['provinsi'], 'Jawa Barat');
+  });
 }

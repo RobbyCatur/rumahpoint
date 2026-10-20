@@ -441,11 +441,10 @@ class _WilayahPickerSheetState extends State<_WilayahPickerSheet> {
       initialChildSize: 0.72,
       minChildSize: 0.5,
       maxChildSize: 0.92,
-      builder: (context, scrollCtrl) => Container(
-        decoration: const BoxDecoration(
-          color: AppColors.surface,
-          borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
-        ),
+      builder: (context, scrollCtrl) => Material(
+        color: AppColors.surface,
+        borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
+        clipBehavior: Clip.antiAlias,
         child: Column(
           children: [
             const SizedBox(height: 10),
@@ -505,7 +504,7 @@ class _WilayahPickerSheetState extends State<_WilayahPickerSheet> {
                       controller: scrollCtrl,
                       // Tinggi item seragam → ~5 item terlihat penuh;
                       // sisanya digulir (tidak full ke bawah).
-                      itemExtent: 53,
+                      itemExtent: 65,
                       padding: const EdgeInsets.fromLTRB(20, 0, 20, 16),
                       itemCount: items.length,
                       itemBuilder: (context, i) {
