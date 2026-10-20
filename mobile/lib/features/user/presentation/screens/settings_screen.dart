@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../providers/theme_provider.dart';
+import '../providers/user_providers.dart';
 
 class SettingsScreen extends ConsumerStatefulWidget {
   const SettingsScreen({super.key});
@@ -19,6 +20,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     final isDark = themeMode == ThemeMode.dark;
     final isDarkTheme = Theme.of(context).brightness == Brightness.dark;
     final subtitleColor = isDarkTheme ? const Color(0xFF94A3B8) : Colors.black54;
+    final gpsPriority = ref.watch(gpsPriorityProvider);
 
     return Scaffold(
       backgroundColor: isDarkTheme ? const Color(0xFF0F172A) : const Color(0xFFF9FAFB),
@@ -56,6 +58,15 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               setState(() {
                 _saveLocalHistory = newValue;
               });
+            },
+          ),
+          _buildDivider(isDarkTheme),
+          _buildToggleItem(
+            title: 'Prioritaskan Lokasi GPS',
+            subtitle: 'Gunakan lokasi saat ini secara otomatis',
+            value: gpsPriority,
+            onChanged: (bool newValue) {
+              ref.read(gpsPriorityProvider.notifier).state = newValue;
             },
           ),
           _buildDivider(isDarkTheme),
@@ -118,6 +129,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
         style: TextStyle(fontSize: 13, color: subtitleColor),
       ),
       value: value,
+      activeThumbColor: Colors.white,
       activeTrackColor: const Color(0xFFF59E0B),
       onChanged: onChanged,
     );
