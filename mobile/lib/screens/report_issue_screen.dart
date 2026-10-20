@@ -46,16 +46,29 @@ class _ReportIssueScreenState extends State<ReportIssueScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final backgroundColor =
+        isDark ? const Color(0xFF0F172A) : const Color(0xFFF9FAFB);
+    final appBarColor = isDark ? const Color(0xFF0F172A) : Colors.white;
+    final textColor = isDark ? Colors.white : Colors.black87;
+    final labelColor = isDark ? const Color(0xFFCBD5E1) : Colors.black54;
+    final fieldColor = isDark ? const Color(0xFF1E293B) : Colors.white;
+    final fieldBorderColor =
+        isDark ? const Color(0xFF334155) : Colors.grey.shade200;
+    final hintColor = isDark ? const Color(0xFF94A3B8) : Colors.grey;
+    final dividerColor =
+        isDark ? Colors.white12 : Colors.grey.withValues(alpha: 0.15);
+
     return Scaffold(
-      backgroundColor: const Color(0xFFF9FAFB),
+      backgroundColor: backgroundColor,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: appBarColor,
         elevation: 0,
-        iconTheme: const IconThemeData(color: Colors.black87),
-        title: const Text(
+        iconTheme: IconThemeData(color: textColor),
+        title: Text(
           'Laporkan Masalah',
           style: TextStyle(
-            color: Colors.black87,
+            color: textColor,
             fontSize: 18,
             fontWeight: FontWeight.w600,
           ),
@@ -64,7 +77,7 @@ class _ReportIssueScreenState extends State<ReportIssueScreen> {
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(1),
           child: Container(
-            color: Colors.grey.withOpacity(0.15),
+            color: dividerColor,
             height: 1,
           ),
         ),
@@ -78,22 +91,28 @@ class _ReportIssueScreenState extends State<ReportIssueScreen> {
             Container(
               padding: const EdgeInsets.all(14),
               decoration: BoxDecoration(
-                color: Colors.blue.withOpacity(0.06),
+                color: isDark
+                    ? const Color(0xFF1E3A8A).withValues(alpha: 0.25)
+                    : Colors.blue.withValues(alpha: 0.06),
                 borderRadius: BorderRadius.circular(14),
-                border: Border.all(color: Colors.blue.withOpacity(0.2)),
+                border: Border.all(
+                  color: isDark
+                      ? const Color(0xFF3B82F6).withValues(alpha: 0.3)
+                      : Colors.blue.withValues(alpha: 0.2),
+                ),
               ),
-              child: const Row(
+              child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Icon(Icons.info_outline, color: Colors.blue, size: 18),
-                  SizedBox(width: 10),
+                  const Icon(Icons.info_outline, color: Colors.blueAccent, size: 18),
+                  const SizedBox(width: 10),
                   Expanded(
                     child: Text(
                       'Laporan Anda akan membantu tim RumahPoint meningkatkan kualitas aplikasi. '
                       'Semua laporan ditinjau dalam 1×24 jam kerja.',
                       style: TextStyle(
                         fontSize: 13,
-                        color: Colors.black54,
+                        color: isDark ? const Color(0xFFE2E8F0) : Colors.black54,
                         height: 1.5,
                       ),
                     ),
@@ -105,49 +124,54 @@ class _ReportIssueScreenState extends State<ReportIssueScreen> {
             const SizedBox(height: 24),
 
             // Kategori masalah
-            const Text(
+            Text(
               'Kategori Masalah',
               style: TextStyle(
                 fontSize: 13,
                 fontWeight: FontWeight.w600,
-                color: Colors.black54,
+                color: labelColor,
               ),
             ),
             const SizedBox(height: 8),
             DropdownButtonFormField<String>(
-            initialValue: _selectedCategory,
+              initialValue: _selectedCategory,
+              dropdownColor: fieldColor,
+              style: TextStyle(color: textColor, fontSize: 14),
               decoration: InputDecoration(
                 filled: true,
-                fillColor: Colors.white,
+                fillColor: fieldColor,
                 contentPadding: const EdgeInsets.symmetric(
                   horizontal: 16,
                   vertical: 14,
                 ),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(14),
-                  borderSide: BorderSide(color: Colors.grey.shade200),
+                  borderSide: BorderSide(color: fieldBorderColor),
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(14),
-                  borderSide: BorderSide(color: Colors.grey.shade200),
+                  borderSide: BorderSide(color: fieldBorderColor),
                 ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(14),
-                  borderSide: const BorderSide(color: Color(0xFFF59E0B)),
+                focusedBorder: const OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(14)),
+                  borderSide: BorderSide(color: Color(0xFFF59E0B)),
                 ),
                 errorBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(14),
                   borderSide:
-                      BorderSide(color: Colors.redAccent.withOpacity(0.5)),
+                      BorderSide(color: Colors.redAccent.withValues(alpha: 0.5)),
                 ),
               ),
-              hint: const Text(
+              hint: Text(
                 'Pilih kategori...',
-                style: TextStyle(color: Colors.grey),
+                style: TextStyle(color: hintColor),
               ),
               items: _categories
                   .map(
-                    (c) => DropdownMenuItem(value: c, child: Text(c)),
+                    (c) => DropdownMenuItem(
+                      value: c,
+                      child: Text(c, style: TextStyle(color: textColor)),
+                    ),
                   )
                   .toList(),
               onChanged: (val) => setState(() => _selectedCategory = val),
@@ -158,12 +182,12 @@ class _ReportIssueScreenState extends State<ReportIssueScreen> {
             const SizedBox(height: 20),
 
             // Deskripsi
-            const Text(
+            Text(
               'Deskripsi Masalah',
               style: TextStyle(
                 fontSize: 13,
                 fontWeight: FontWeight.w600,
-                color: Colors.black54,
+                color: labelColor,
               ),
             ),
             const SizedBox(height: 8),
@@ -171,30 +195,30 @@ class _ReportIssueScreenState extends State<ReportIssueScreen> {
               controller: _descController,
               maxLines: 5,
               maxLength: 500,
+              style: TextStyle(color: textColor, fontSize: 14),
               decoration: InputDecoration(
                 hintText:
                     'Jelaskan masalah yang Anda alami secara detail (langkah, kondisi, pesan error, dll.)...',
-                hintStyle:
-                    const TextStyle(color: Colors.grey, fontSize: 13),
+                hintStyle: TextStyle(color: hintColor, fontSize: 13),
                 filled: true,
-                fillColor: Colors.white,
+                fillColor: fieldColor,
                 contentPadding: const EdgeInsets.all(16),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(14),
-                  borderSide: BorderSide(color: Colors.grey.shade200),
+                  borderSide: BorderSide(color: fieldBorderColor),
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(14),
-                  borderSide: BorderSide(color: Colors.grey.shade200),
+                  borderSide: BorderSide(color: fieldBorderColor),
                 ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(14),
-                  borderSide: const BorderSide(color: Color(0xFFF59E0B)),
+                focusedBorder: const OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(14)),
+                  borderSide: BorderSide(color: Color(0xFFF59E0B)),
                 ),
                 errorBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(14),
                   borderSide:
-                      BorderSide(color: Colors.redAccent.withOpacity(0.5)),
+                      BorderSide(color: Colors.redAccent.withValues(alpha: 0.5)),
                 ),
               ),
               validator: (val) {
@@ -216,7 +240,8 @@ class _ReportIssueScreenState extends State<ReportIssueScreen> {
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.redAccent,
                 foregroundColor: Colors.white,
-                disabledBackgroundColor: Colors.grey.shade300,
+                disabledBackgroundColor:
+                    isDark ? const Color(0xFF334155) : Colors.grey.shade300,
                 padding: const EdgeInsets.symmetric(vertical: 16),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(14),

@@ -42,16 +42,28 @@ class FaqScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final backgroundColor =
+        isDark ? const Color(0xFF0F172A) : const Color(0xFFF9FAFB);
+    final appBarColor = isDark ? const Color(0xFF0F172A) : Colors.white;
+    final textColor = isDark ? Colors.white : Colors.black87;
+    final cardColor = isDark ? const Color(0xFF1E293B) : Colors.white;
+    final borderColor =
+        isDark ? const Color(0xFF334155) : Colors.grey.shade100;
+    final contentColor = isDark ? const Color(0xFFCBD5E1) : Colors.black54;
+    final dividerColor =
+        isDark ? Colors.white12 : Colors.grey.withValues(alpha: 0.15);
+
     return Scaffold(
-      backgroundColor: const Color(0xFFF9FAFB),
+      backgroundColor: backgroundColor,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: appBarColor,
         elevation: 0,
-        iconTheme: const IconThemeData(color: Colors.black87),
-        title: const Text(
+        iconTheme: IconThemeData(color: textColor),
+        title: Text(
           'Pertanyaan Umum (FAQ)',
           style: TextStyle(
-            color: Colors.black87,
+            color: textColor,
             fontSize: 18,
             fontWeight: FontWeight.w600,
           ),
@@ -60,7 +72,7 @@ class FaqScreen extends StatelessWidget {
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(1),
           child: Container(
-            color: Colors.grey.withOpacity(0.15),
+            color: dividerColor,
             height: 1,
           ),
         ),
@@ -73,20 +85,31 @@ class FaqScreen extends StatelessWidget {
             padding: const EdgeInsets.all(14),
             margin: const EdgeInsets.only(bottom: 16),
             decoration: BoxDecoration(
-              color: const Color(0xFFF59E0B).withOpacity(0.08),
+              color: isDark
+                  ? const Color(0xFF78350F).withValues(alpha: 0.28)
+                  : const Color(0xFFF59E0B).withValues(alpha: 0.08),
               borderRadius: BorderRadius.circular(14),
               border: Border.all(
-                color: const Color(0xFFF59E0B).withOpacity(0.3),
+                color: isDark
+                    ? const Color(0xFFF59E0B).withValues(alpha: 0.4)
+                    : const Color(0xFFF59E0B).withValues(alpha: 0.3),
               ),
             ),
-            child: const Row(
+            child: Row(
               children: [
-                Icon(Icons.lightbulb_outline, color: Color(0xFFF59E0B), size: 20),
-                SizedBox(width: 10),
+                const Icon(
+                  Icons.lightbulb_outline,
+                  color: Color(0xFFF59E0B),
+                  size: 20,
+                ),
+                const SizedBox(width: 10),
                 Expanded(
                   child: Text(
                     'Ketuk pertanyaan untuk melihat jawaban lengkapnya.',
-                    style: TextStyle(fontSize: 13, color: Colors.black54),
+                    style: TextStyle(
+                      fontSize: 13,
+                      color: isDark ? const Color(0xFFE2E8F0) : Colors.black54,
+                    ),
                   ),
                 ),
               ],
@@ -98,47 +121,59 @@ class FaqScreen extends StatelessWidget {
             (item) => Container(
               margin: const EdgeInsets.only(bottom: 10),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: cardColor,
                 borderRadius: BorderRadius.circular(14),
-                border: Border.all(color: Colors.grey.shade100),
+                border: Border.all(color: borderColor),
               ),
-              child: ExpansionTile(
-                tilePadding: const EdgeInsets.symmetric(
-                  horizontal: 16,
-                  vertical: 4,
+              child: Theme(
+                data: Theme.of(context).copyWith(
+                  dividerColor: Colors.transparent,
                 ),
-                childrenPadding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-                iconColor: const Color(0xFFF59E0B),
-                collapsedIconColor: Colors.grey,
-                title: Text(
-                  item.q,
-                  style: const TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.black87,
+                child: ExpansionTile(
+                  tilePadding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 4,
                   ),
-                ),
-                children: [
-                  const Divider(height: 1),
-                  const SizedBox(height: 12),
-                  Text(
-                    item.a,
-                    style: const TextStyle(
-                      fontSize: 13,
-                      color: Colors.black54,
-                      height: 1.6,
+                  childrenPadding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+                  iconColor: const Color(0xFFF59E0B),
+                  collapsedIconColor:
+                      isDark ? const Color(0xFF94A3B8) : Colors.grey,
+                  title: Text(
+                    item.q,
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600,
+                      color: textColor,
                     ),
                   ),
-                ],
+                  children: [
+                    Divider(
+                      height: 1,
+                      color: isDark ? const Color(0xFF334155) : Colors.grey.shade200,
+                    ),
+                    const SizedBox(height: 12),
+                    Text(
+                      item.a,
+                      style: TextStyle(
+                        fontSize: 13,
+                        color: contentColor,
+                        height: 1.6,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
 
           const SizedBox(height: 32),
-          const Text(
+          Text(
             'RumahPoint v1.0.0 © 2026 Kelompok 5 PBL Polinema',
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 12, color: Colors.grey),
+            style: TextStyle(
+              fontSize: 12,
+              color: isDark ? const Color(0xFF64748B) : Colors.grey,
+            ),
           ),
           const SizedBox(height: 16),
         ],

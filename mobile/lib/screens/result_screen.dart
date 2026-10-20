@@ -12,6 +12,8 @@ class ResultScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final p = ref.watch(predictionControllerProvider).current;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
     if (p == null) {
       return const Scaffold(
         body: Center(child: Text('Belum ada hasil. Isi form di Beranda.')),
@@ -40,10 +42,13 @@ class ResultScreen extends ConsumerWidget {
           const SizedBox(height: 16),
           _DetailCard(p: p),
           const SizedBox(height: 16),
-          const Text(
+          Text(
             'Estimasi dihasilkan model Random Forest. Rentang ±25% dari nilai tengah sebagai indikasi, bukan interval statistik ketat.',
             textAlign: TextAlign.center,
-            style: TextStyle(color: AppColors.muted, fontSize: 11.5),
+            style: TextStyle(
+              color: isDark ? const Color(0xFF94A3B8) : AppColors.muted,
+              fontSize: 11.5,
+            ),
           ),
         ],
       ),
@@ -59,6 +64,7 @@ class _PriceCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final hasRentang = p.rentangBawah.isNotEmpty && p.rentangAtas.isNotEmpty;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Card(
       child: Padding(
@@ -66,18 +72,18 @@ class _PriceCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Row(
+            Row(
               children: [
-                Icon(Icons.check_circle_rounded,
+                const Icon(Icons.check_circle_rounded,
                     size: 16, color: AppColors.amber),
-                SizedBox(width: 6),
+                const SizedBox(width: 6),
                 Text(
                   'HARGA WAJAR (FAIR MARKET)',
                   style: TextStyle(
                     fontSize: 11,
                     fontWeight: FontWeight.w700,
                     letterSpacing: 0.8,
-                    color: AppColors.amberDark,
+                    color: isDark ? AppColors.amber : AppColors.amberDark,
                   ),
                 ),
               ],
@@ -104,9 +110,12 @@ class _PriceCard extends StatelessWidget {
                 style: const TextStyle(fontSize: 12.5, color: AppColors.muted),
               ),
             ],
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: 16),
-              child: Divider(color: AppColors.line, height: 1),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16),
+              child: Divider(
+                color: isDark ? const Color(0xFF334155) : AppColors.line,
+                height: 1,
+              ),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -119,15 +128,17 @@ class _PriceCard extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                   decoration: BoxDecoration(
-                    color: AppColors.amberSoft,
+                    color: isDark
+                        ? const Color(0xFF334155)
+                        : AppColors.amberSoft,
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Text(
                     formatPersen(p.confidence),
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w700,
-                      color: AppColors.amberDark,
+                      color: isDark ? AppColors.amber : AppColors.amberDark,
                     ),
                   ),
                 ),
@@ -160,31 +171,41 @@ class _DetailCard extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
         child: Column(
           children: [
-            _row('Luas tanah', '${formatLuas(p.luasM2)} m²'),
-            _row('Luas bangunan', '${formatLuas(p.luasBangunan)} m²'),
-            _row('Kamar tidur', '${p.jumlahKamar}'),
-            _row('Kamar mandi', '${p.jumlahKamarMandi}'),
-            _row('Usia bangunan', '${p.usiaBangunan} tahun'),
-            _row('Lokasi', p.lokasi, isLast: true),
+            _row(context, 'Luas tanah', '${formatLuas(p.luasM2)} m²'),
+            _row(context, 'Luas bangunan', '${formatLuas(p.luasBangunan)} m²'),
+            _row(context, 'Kamar tidur', '${p.jumlahKamar}'),
+            _row(context, 'Kamar mandi', '${p.jumlahKamarMandi}'),
+            _row(context, 'Usia bangunan', '${p.usiaBangunan} tahun'),
+            _row(context, 'Lokasi', p.lokasi, isLast: true),
           ],
         ),
       ),
     );
   }
 
-  Widget _row(String label, String value, {bool isLast = false}) {
+  Widget _row(BuildContext context, String label, String value,
+      {bool isLast = false}) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 13),
       decoration: BoxDecoration(
         border: isLast
             ? null
-            : const Border(bottom: BorderSide(color: AppColors.line)),
+            : Border(
+                bottom: BorderSide(
+                  color: isDark ? const Color(0xFF334155) : AppColors.line,
+                ),
+              ),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(label,
-              style: const TextStyle(fontSize: 13, color: AppColors.muted)),
+              style: TextStyle(
+                fontSize: 13,
+                color: isDark ? const Color(0xFF94A3B8) : AppColors.muted,
+              )),
           Text(value,
               style:
                   const TextStyle(fontSize: 13, fontWeight: FontWeight.w700)),
@@ -201,18 +222,25 @@ class _KategoriChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
       decoration: BoxDecoration(
-        color: AppColors.amberSoft,
+        color: isDark ? const Color(0xFF1E293B) : AppColors.amberSoft,
         borderRadius: BorderRadius.circular(10),
+        border: isDark
+            ? Border.all(
+                color: const Color(0xFFF59E0B).withValues(alpha: 0.5),
+              )
+            : null,
       ),
       child: Text(
         kategori,
-        style: const TextStyle(
+        style: TextStyle(
           fontSize: 12,
           fontWeight: FontWeight.w700,
-          color: AppColors.amberDark,
+          color: isDark ? const Color(0xFFF59E0B) : AppColors.amberDark,
         ),
       ),
     );

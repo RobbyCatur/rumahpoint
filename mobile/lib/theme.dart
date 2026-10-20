@@ -69,6 +69,14 @@ ThemeData buildAppTheme() {
         borderRadius: BorderRadius.circular(14),
         borderSide: const BorderSide(color: AppColors.amber, width: 1.6),
       ),
+      errorBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(14),
+        borderSide: const BorderSide(color: AppColors.danger),
+      ),
+      focusedErrorBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(14),
+        borderSide: const BorderSide(color: AppColors.danger, width: 1.6),
+      ),
     ),
     sliderTheme: const SliderThemeData(
       activeTrackColor: AppColors.amber,
@@ -142,6 +150,21 @@ ThemeData buildDarkTheme() {
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
       fillColor: const Color(0xFF1E293B),
+      hintStyle: const TextStyle(
+        color: Color(0xFF94A3B8),
+        fontSize: 14,
+      ),
+      labelStyle: const TextStyle(
+        color: Color(0xFFCBD5E1),
+        fontSize: 14,
+      ),
+      floatingLabelStyle: const TextStyle(
+        color: AppColors.amber,
+        fontSize: 14,
+        fontWeight: FontWeight.w600,
+      ),
+      prefixIconColor: const Color(0xFF94A3B8),
+      suffixIconColor: const Color(0xFF94A3B8),
       contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(14),
@@ -154,6 +177,14 @@ ThemeData buildDarkTheme() {
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(14),
         borderSide: const BorderSide(color: AppColors.amber, width: 1.6),
+      ),
+      errorBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(14),
+        borderSide: const BorderSide(color: AppColors.danger),
+      ),
+      focusedErrorBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(14),
+        borderSide: const BorderSide(color: AppColors.danger, width: 1.6),
       ),
     ),
     sliderTheme: const SliderThemeData(
