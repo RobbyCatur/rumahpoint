@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../features/user/presentation/providers/user_providers.dart';
+import '../providers/user_providers.dart';
 import 'settings_screen.dart';
 import 'personal_info_screen.dart';
 import 'region_preference_screen.dart';

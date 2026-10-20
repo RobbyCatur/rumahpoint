@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'faq_screen.dart';
-import 'report_issue_screen.dart';
-import 'terms_screen.dart';
-import 'privacy_screen.dart';
-import 'disclaimer_screen.dart';
+import '../../../../screens/faq_screen.dart';
+import '../../../../screens/report_issue_screen.dart';
+import '../../../../screens/terms_screen.dart';
+import '../../../../screens/privacy_screen.dart';
+import '../../../../screens/disclaimer_screen.dart';
 
 class HelpRegulationScreen extends StatelessWidget {
   const HelpRegulationScreen({super.key});
