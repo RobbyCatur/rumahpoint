@@ -18,6 +18,21 @@ void main() {
     addTearDown(tester.view.reset);
   }
 
+  testWidgets('Onboarding menjelaskan RumahPoint dan menuju login',
+      (WidgetTester tester) async {
+    await tester.pumpWidget(const ProviderScope(child: RumahPointApp()));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Selamat datang di\nRumahPoint'), findsOneWidget);
+    expect(find.text('Prediksi harga properti'), findsOneWidget);
+    expect(find.text('Mulai Sekarang'), findsOneWidget);
+
+    await tester.tap(find.text('Mulai Sekarang'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Selamat Datang'), findsOneWidget);
+  });
+
   testWidgets('Beranda renders sapaan, banner, form, and bottom nav',
       (WidgetTester tester) async {
     SharedPreferences.setMockInitialValues({});
