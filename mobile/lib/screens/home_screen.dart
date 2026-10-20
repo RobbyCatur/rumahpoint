@@ -496,7 +496,7 @@ class _SliderFieldState extends State<_SliderField> {
             Flexible(
               child: Text(
                 widget.label,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 13,
                   fontWeight: FontWeight.w600,
                 ),
@@ -511,10 +511,12 @@ class _SliderFieldState extends State<_SliderField> {
                   decimal: true,
                 ),
                 textAlign: TextAlign.center,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 12,
                   fontWeight: FontWeight.w700,
-                  color: AppColors.amberDark,
+                  color: Theme.of(context).brightness == Brightness.dark
+                      ? AppColors.amber
+                      : AppColors.amberDark,
                 ),
                 onChanged: _commit,
                 onSubmitted: (raw) {
@@ -524,11 +526,15 @@ class _SliderFieldState extends State<_SliderField> {
                 decoration: InputDecoration(
                   isDense: true,
                   filled: true,
-                  fillColor: AppColors.amberSoft,
+                  fillColor: Theme.of(context).brightness == Brightness.dark
+                      ? const Color(0xFF334155)
+                      : AppColors.amberSoft,
                   suffixText: 'm²',
-                  suffixStyle: const TextStyle(
+                  suffixStyle: TextStyle(
                     fontSize: 11,
-                    color: AppColors.amberDark,
+                    color: Theme.of(context).brightness == Brightness.dark
+                      ? AppColors.amber
+                      : AppColors.amberDark,
                   ),
                   contentPadding: const EdgeInsets.symmetric(
                     horizontal: 8,
@@ -637,8 +643,14 @@ class _StepperFieldState extends State<_StepperField> {
         const SizedBox(height: 6),
         Container(
           decoration: BoxDecoration(
-            color: AppColors.surface,
-            border: Border.all(color: AppColors.line),
+            color: Theme.of(context).brightness == Brightness.dark
+                ? (Theme.of(context).inputDecorationTheme.fillColor ?? const Color(0xFF1E293B))
+                : AppColors.surface,
+            border: Border.all(
+              color: Theme.of(context).brightness == Brightness.dark
+                  ? const Color(0xFF334155)
+                  : AppColors.line,
+            ),
             borderRadius: BorderRadius.circular(12),
           ),
           child: Row(
@@ -657,7 +669,10 @@ class _StepperFieldState extends State<_StepperField> {
                   keyboardType: TextInputType.number,
                   inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                   textAlign: TextAlign.center,
-                  style: const TextStyle(
+                  style: TextStyle(
+                    color: Theme.of(context).brightness == Brightness.dark
+                        ? Colors.white
+                        : AppColors.ink,
                     fontSize: 15,
                     fontWeight: FontWeight.w700,
                   ),
@@ -706,7 +721,13 @@ class _StepButton extends StatelessWidget {
         child: Icon(
           icon,
           size: 18,
-          color: onPressed != null ? AppColors.amberDark : AppColors.line,
+          color: onPressed != null
+              ? (Theme.of(context).brightness == Brightness.dark
+                  ? AppColors.amber
+                  : AppColors.amberDark)
+              : (Theme.of(context).brightness == Brightness.dark
+                  ? const Color(0xFF475569)
+                  : AppColors.line),
         ),
       ),
     );

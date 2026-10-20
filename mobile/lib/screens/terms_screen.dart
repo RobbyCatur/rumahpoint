@@ -5,16 +5,24 @@ class TermsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final backgroundColor =
+        isDark ? const Color(0xFF0F172A) : const Color(0xFFF9FAFB);
+    final appBarColor = isDark ? const Color(0xFF0F172A) : Colors.white;
+    final textColor = isDark ? Colors.white : Colors.black87;
+    final dividerColor =
+        isDark ? Colors.white12 : Colors.grey.withValues(alpha: 0.15);
+
     return Scaffold(
-      backgroundColor: const Color(0xFFF9FAFB),
+      backgroundColor: backgroundColor,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: appBarColor,
         elevation: 0,
-        iconTheme: const IconThemeData(color: Colors.black87),
-        title: const Text(
+        iconTheme: IconThemeData(color: textColor),
+        title: Text(
           'Syarat & Ketentuan',
           style: TextStyle(
-            color: Colors.black87,
+            color: textColor,
             fontSize: 18,
             fontWeight: FontWeight.w600,
           ),
@@ -23,7 +31,7 @@ class TermsScreen extends StatelessWidget {
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(1),
           child: Container(
-            color: Colors.grey.withOpacity(0.15),
+            color: dividerColor,
             height: 1,
           ),
         ),
@@ -31,10 +39,11 @@ class TermsScreen extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(20),
         children: [
-          _buildLastUpdated('1 Oktober 2026'),
+          _buildLastUpdated('1 Oktober 2026', isDark: isDark),
           const SizedBox(height: 20),
 
           _buildSection(
+            context: context,
             number: '1',
             title: 'Penerimaan Syarat',
             body:
@@ -44,6 +53,7 @@ class TermsScreen extends StatelessWidget {
           ),
 
           _buildSection(
+            context: context,
             number: '2',
             title: 'Deskripsi Layanan',
             body:
@@ -54,6 +64,7 @@ class TermsScreen extends StatelessWidget {
           ),
 
           _buildSection(
+            context: context,
             number: '3',
             title: 'Penggunaan yang Diizinkan',
             body:
@@ -64,6 +75,7 @@ class TermsScreen extends StatelessWidget {
           ),
 
           _buildSection(
+            context: context,
             number: '4',
             title: 'Batasan Tanggung Jawab',
             body:
@@ -74,6 +86,7 @@ class TermsScreen extends StatelessWidget {
           ),
 
           _buildSection(
+            context: context,
             number: '5',
             title: 'Perubahan Layanan',
             body:
@@ -83,6 +96,7 @@ class TermsScreen extends StatelessWidget {
           ),
 
           _buildSection(
+            context: context,
             number: '6',
             title: 'Hukum yang Berlaku',
             body:
@@ -92,12 +106,15 @@ class TermsScreen extends StatelessWidget {
           ),
 
           const SizedBox(height: 32),
-          _buildContactInfo(),
+          _buildContactInfo(isDark: isDark),
           const SizedBox(height: 20),
-          const Text(
+          Text(
             'RumahPoint v1.0.0 © 2026 Kelompok 5 PBL Polinema',
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 12, color: Colors.grey),
+            style: TextStyle(
+              fontSize: 12,
+              color: isDark ? const Color(0xFF64748B) : Colors.grey,
+            ),
           ),
           const SizedBox(height: 16),
         ],
@@ -105,23 +122,33 @@ class TermsScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildLastUpdated(String date) {
+  Widget _buildLastUpdated(String date, {required bool isDark}) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
       decoration: BoxDecoration(
-        color: Colors.teal.withOpacity(0.07),
+        color: isDark
+            ? const Color(0xFF134E4A).withValues(alpha: 0.3)
+            : Colors.teal.withValues(alpha: 0.07),
         borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: Colors.teal.withOpacity(0.2)),
+        border: Border.all(
+          color: isDark
+              ? const Color(0xFF14B8A6).withValues(alpha: 0.3)
+              : Colors.teal.withValues(alpha: 0.2),
+        ),
       ),
       child: Row(
         children: [
-          const Icon(Icons.update, color: Colors.teal, size: 16),
+          Icon(
+            Icons.update,
+            color: isDark ? const Color(0xFF2DD4BF) : Colors.teal,
+            size: 16,
+          ),
           const SizedBox(width: 8),
           Text(
             'Terakhir diperbarui: $date',
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 12,
-              color: Colors.teal,
+              color: isDark ? const Color(0xFF2DD4BF) : Colors.teal,
               fontWeight: FontWeight.w500,
             ),
           ),
@@ -131,10 +158,15 @@ class TermsScreen extends StatelessWidget {
   }
 
   Widget _buildSection({
+    required BuildContext context,
     required String number,
     required String title,
     required String body,
   }) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final textColor = isDark ? Colors.white : Colors.black87;
+    final bodyColor = isDark ? const Color(0xFFCBD5E1) : Colors.black54;
+
     return Padding(
       padding: const EdgeInsets.only(bottom: 20),
       child: Column(
@@ -148,15 +180,17 @@ class TermsScreen extends StatelessWidget {
                 height: 28,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  color: Colors.teal.withOpacity(0.12),
+                  color: isDark
+                      ? const Color(0xFF14B8A6).withValues(alpha: 0.2)
+                      : Colors.teal.withValues(alpha: 0.12),
                   shape: BoxShape.circle,
                 ),
                 child: Text(
                   number,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 13,
                     fontWeight: FontWeight.bold,
-                    color: Colors.teal,
+                    color: isDark ? const Color(0xFF2DD4BF) : Colors.teal,
                   ),
                 ),
               ),
@@ -164,10 +198,10 @@ class TermsScreen extends StatelessWidget {
               Expanded(
                 child: Text(
                   title,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
-                    color: Colors.black87,
+                    color: textColor,
                   ),
                 ),
               ),
@@ -178,9 +212,9 @@ class TermsScreen extends StatelessWidget {
             padding: const EdgeInsets.only(left: 38),
             child: Text(
               body,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 13,
-                color: Colors.black54,
+                color: bodyColor,
                 height: 1.7,
               ),
             ),
@@ -190,15 +224,21 @@ class TermsScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildContactInfo() {
+  Widget _buildContactInfo({required bool isDark}) {
+    final cardColor = isDark ? const Color(0xFF1E293B) : Colors.grey.shade50;
+    final borderColor =
+        isDark ? const Color(0xFF334155) : Colors.grey.shade200;
+    final titleColor = isDark ? Colors.white : Colors.black87;
+    final subtitleColor = isDark ? const Color(0xFF94A3B8) : Colors.black54;
+
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: Colors.grey.shade50,
+        color: cardColor,
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: Colors.grey.shade200),
+        border: Border.all(color: borderColor),
       ),
-      child: const Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
@@ -206,13 +246,13 @@ class TermsScreen extends StatelessWidget {
             style: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w600,
-              color: Colors.black87,
+              color: titleColor,
             ),
           ),
-          SizedBox(height: 6),
+          const SizedBox(height: 6),
           Text(
             'Hubungi kami di: pbl-rumahpoint@polinema.ac.id',
-            style: TextStyle(fontSize: 13, color: Colors.black54),
+            style: TextStyle(fontSize: 13, color: subtitleColor),
           ),
         ],
       ),
