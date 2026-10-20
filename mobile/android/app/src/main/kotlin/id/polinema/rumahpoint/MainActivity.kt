@@ -1,4 +1,4 @@
-package id.polinema.rumahpoint
+package rumahpoint.soraven.web.id
 
 import io.flutter.embedding.android.FlutterActivity
 

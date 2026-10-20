@@ -12,26 +12,3570 @@
   "target_reg": "harga (log10)",
   "target_clf": "kategori_harga",
   "cities": [
+    "Aceh",
+    "Aceh Barat",
+    "Aceh Barat Daya",
+    "Aceh Besar",
+    "Aceh Selatan",
+    "Aceh Tengah",
+    "Aceh Timur",
+    "Agam",
+    "Alor",
+    "Ambon",
+    "Asahan",
+    "Badung",
+    "Balangan",
+    "Bali",
+    "Balikpapan",
+    "Banda Aceh",
+    "Bandar Lampung",
+    "Bandung",
+    "Bandung Barat",
+    "Banggai Laut",
+    "Bangka",
+    "Bangka Barat",
+    "Bangka Selatan",
+    "Bangka Tengah",
+    "Bangkalan",
+    "Bangli",
+    "Banjar",
+    "Banjar Baru",
+    "Banjarbaru",
+    "Banjarmasin",
+    "Banjarnegara",
+    "Banten",
+    "Bantul",
+    "Banyuasin",
+    "Banyumas",
+    "Banyuwangi",
+    "Barru",
+    "Batam",
+    "Batang",
+    "Batu",
+    "Bau Bau",
     "Bekasi",
+    "Belitung",
+    "Belu",
+    "Bengkalis",
+    "Bengkulu",
+    "Bengkulu Tengah",
+    "Bengkulu Utara",
+    "Berau",
+    "Biak Numfor",
+    "Bima",
+    "Binjai",
+    "Bintan",
+    "Bitung",
+    "Blitar",
+    "Blora",
     "Bogor",
+    "Bojonegoro",
+    "Bolaang Mongondow",
+    "Bondowoso",
+    "Bone",
+    "Bone Bolango",
+    "Bontang",
+    "Boyolali",
+    "Brebes",
+    "Bukittinggi",
+    "Buleleng",
+    "Bulukumba",
+    "Buton Selatan",
+    "Ciamis",
+    "Cianjur",
+    "Cilacap",
+    "Cilegon",
+    "Cimahi",
+    "Cirebon",
+    "Daerah Istimewa Yogyakarta",
+    "Deli Serdang",
+    "Demak",
+    "Denpasar",
     "Depok",
+    "Dki Jakarta",
+    "Dumai",
+    "Enrekang",
+    "Garut",
+    "Gianyar",
+    "Gorontalo",
+    "Gowa",
+    "Gresik",
+    "Grobogan",
+    "Gunung Kidul",
+    "Gunung Sitoli",
+    "Halmahera Timur",
+    "Hulu Sungai Utara",
+    "Indramayu",
+    "Jakarta Barat",
+    "Jakarta Pusat",
     "Jakarta Selatan",
+    "Jakarta Timur",
     "Jakarta Utara",
+    "Jambi",
+    "Jawa Barat",
+    "Jayapura",
+    "Jember",
+    "Jembrana",
+    "Jepara",
+    "Jombang",
+    "Kabupaten Aceh Barat",
+    "Kabupaten Aceh Besar",
+    "Kabupaten Aceh Singkil",
+    "Kabupaten Aceh Tamiang",
+    "Kabupaten Aceh Tenggara",
+    "Kabupaten Aceh Utara",
+    "Kabupaten Agam",
+    "Kabupaten Asahan",
+    "Kabupaten Badung",
+    "Kabupaten Bandung",
+    "Kabupaten Bandung Barat",
+    "Kabupaten Banggai",
+    "Kabupaten Bangka",
+    "Kabupaten Bangka Selatan",
+    "Kabupaten Bangka Tengah",
+    "Kabupaten Bangkalan",
+    "Kabupaten Bangli",
+    "Kabupaten Banjar",
+    "Kabupaten Banjarnegara",
+    "Kabupaten Bantaeng",
+    "Kabupaten Bantul",
+    "Kabupaten Banyuasin",
+    "Kabupaten Banyumas",
+    "Kabupaten Banyuwangi",
+    "Kabupaten Barito Kuala",
+    "Kabupaten Barito Selatan",
+    "Kabupaten Barito Timur",
+    "Kabupaten Barito Utara",
+    "Kabupaten Barru",
+    "Kabupaten Batang",
+    "Kabupaten Batanghari",
+    "Kabupaten Batu Bara",
+    "Kabupaten Bekasi",
+    "Kabupaten Belitung",
+    "Kabupaten Belitung Timur",
+    "Kabupaten Belu",
+    "Kabupaten Bener Meriah",
+    "Kabupaten Bengkalis",
+    "Kabupaten Bengkayang",
+    "Kabupaten Bengkulu Selatan",
+    "Kabupaten Bengkulu Tengah",
+    "Kabupaten Berau",
+    "Kabupaten Bima",
+    "Kabupaten Bintan",
+    "Kabupaten Bireuen",
+    "Kabupaten Blitar",
+    "Kabupaten Blora",
+    "Kabupaten Bogor",
+    "Kabupaten Bojonegoro",
+    "Kabupaten Bondowoso",
+    "Kabupaten Bone",
+    "Kabupaten Boyolali",
+    "Kabupaten Brebes",
+    "Kabupaten Buleleng",
+    "Kabupaten Bulukumba",
+    "Kabupaten Bulungan",
+    "Kabupaten Bungo",
+    "Kabupaten Buru",
+    "Kabupaten Buton Tengah",
+    "Kabupaten Ciamis",
+    "Kabupaten Cianjur",
+    "Kabupaten Cilacap",
+    "Kabupaten Cirebon",
+    "Kabupaten Deli Serdang",
+    "Kabupaten Demak",
+    "Kabupaten Dharmasraya",
+    "Kabupaten Dompu",
+    "Kabupaten Empat Lawang",
+    "Kabupaten Enrekang",
+    "Kabupaten Flores Timur",
+    "Kabupaten Garut",
+    "Kabupaten Gianyar",
+    "Kabupaten Gorontalo",
+    "Kabupaten Gowa",
+    "Kabupaten Gresik",
+    "Kabupaten Grobogan",
+    "Kabupaten Gunung Mas",
+    "Kabupaten Gunungkidul",
+    "Kabupaten Halmahera Barat",
+    "Kabupaten Hulu Sungai Selatan",
+    "Kabupaten Hulu Sungai Tengah",
+    "Kabupaten Indragiri Hilir",
+    "Kabupaten Indragiri Hulu",
+    "Kabupaten Indramayu",
+    "Kabupaten Jayapura",
+    "Kabupaten Jember",
+    "Kabupaten Jembrana",
+    "Kabupaten Jeneponto",
+    "Kabupaten Jepara",
+    "Kabupaten Jombang",
+    "Kabupaten Kaimana",
+    "Kabupaten Kampar",
+    "Kabupaten Kapuas",
+    "Kabupaten Kapuas Hulu",
+    "Kabupaten Karanganyar",
+    "Kabupaten Karangasem",
+    "Kabupaten Karawang",
+    "Kabupaten Karimun",
+    "Kabupaten Karo",
+    "Kabupaten Katingan",
+    "Kabupaten Kayong Utara",
+    "Kabupaten Kebumen",
+    "Kabupaten Kediri",
+    "Kabupaten Kendal",
+    "Kabupaten Kepulauan Anambas",
+    "Kabupaten Ketapang",
+    "Kabupaten Klaten",
+    "Kabupaten Klungkung",
+    "Kabupaten Kolaka",
+    "Kabupaten Kolaka Timur",
+    "Kabupaten Kolaka Utara",
+    "Kabupaten Konawe",
+    "Kabupaten Konawe Selatan",
+    "Kabupaten Konawe Utara",
+    "Kabupaten Kotabaru",
+    "Kabupaten Kotawaringin Barat",
+    "Kabupaten Kotawaringin Timur",
+    "Kabupaten Kuantan Singingi",
+    "Kabupaten Kubu Raya",
+    "Kabupaten Kudus",
+    "Kabupaten Kulon Progo",
+    "Kabupaten Kuningan",
+    "Kabupaten Kupang",
+    "Kabupaten Kutai Barat",
+    "Kabupaten Kutai Kartanegara",
+    "Kabupaten Kutai Timur",
+    "Kabupaten Labuhanbatu",
+    "Kabupaten Labuhanbatu Selatan",
+    "Kabupaten Lahat",
+    "Kabupaten Lamongan",
+    "Kabupaten Lampung Selatan",
+    "Kabupaten Lampung Tengah",
+    "Kabupaten Lampung Utara",
+    "Kabupaten Landak",
+    "Kabupaten Langkat",
+    "Kabupaten Lebak",
+    "Kabupaten Lebong",
+    "Kabupaten Lima Puluh Kota",
+    "Kabupaten Lombok Barat",
+    "Kabupaten Lombok Tengah",
+    "Kabupaten Lombok Timur",
+    "Kabupaten Lombok Utara",
+    "Kabupaten Lumajang",
+    "Kabupaten Luwu Timur",
+    "Kabupaten Luwu Utara",
+    "Kabupaten Madiun",
+    "Kabupaten Magelang",
+    "Kabupaten Magetan",
+    "Kabupaten Majalengka",
+    "Kabupaten Majene",
+    "Kabupaten Malang",
+    "Kabupaten Malinau",
+    "Kabupaten Maluku Tengah",
+    "Kabupaten Mamuju",
+    "Kabupaten Mamuju Tengah",
+    "Kabupaten Mamuju Utara",
+    "Kabupaten Manggarai Barat",
+    "Kabupaten Manggarai Timur",
+    "Kabupaten Manokwari",
+    "Kabupaten Maros",
+    "Kabupaten Mempawah",
+    "Kabupaten Merangin",
+    "Kabupaten Merauke",
+    "Kabupaten Mimika",
+    "Kabupaten Minahasa",
+    "Kabupaten Minahasa Utara",
+    "Kabupaten Mojokerto",
+    "Kabupaten Morowali",
+    "Kabupaten Morowali Utara",
+    "Kabupaten Muara Enim",
+    "Kabupaten Muaro Jambi",
+    "Kabupaten Muna",
+    "Kabupaten Muna Barat",
+    "Kabupaten Murung Raya",
+    "Kabupaten Musi Banyuasin",
+    "Kabupaten Nganjuk",
+    "Kabupaten Ngawi",
+    "Kabupaten Nunukan",
+    "Kabupaten Ogan Ilir",
+    "Kabupaten Ogan Komering Ilir",
+    "Kabupaten Ogan Komering Ulu",
+    "Kabupaten Ogan Komering Ulu Timur",
+    "Kabupaten Pacitan",
+    "Kabupaten Padang Lawas Utara",
+    "Kabupaten Padang Pariaman",
+    "Kabupaten Pahuwato",
+    "Kabupaten Pamekasan",
+    "Kabupaten Pandeglang",
+    "Kabupaten Pangandaran",
+    "Kabupaten Pangkajene Kepulauan",
+    "Kabupaten Parigi Moutong",
+    "Kabupaten Pasaman Barat",
+    "Kabupaten Paser",
+    "Kabupaten Pasuruan",
+    "Kabupaten Pati",
+    "Kabupaten Pekalongan",
+    "Kabupaten Pelalawan",
+    "Kabupaten Pemalang",
+    "Kabupaten Penajam Paser Utara",
+    "Kabupaten Penukal Abab Lematang Ilir",
+    "Kabupaten Pesawaran",
+    "Kabupaten Pesisir Selatan",
+    "Kabupaten Pidie",
+    "Kabupaten Pinrang",
+    "Kabupaten Polewali Mandar",
+    "Kabupaten Ponorogo",
+    "Kabupaten Poso",
+    "Kabupaten Pringsewu",
+    "Kabupaten Probolinggo",
+    "Kabupaten Purbalingga",
+    "Kabupaten Purwakarta",
+    "Kabupaten Purworejo",
+    "Kabupaten Rejang Lebong",
+    "Kabupaten Rembang",
+    "Kabupaten Rokan Hulu",
+    "Kabupaten Rote Ndao",
+    "Kabupaten Sambas",
+    "Kabupaten Sampang",
+    "Kabupaten Sanggau",
+    "Kabupaten Sarolangun",
+    "Kabupaten Semarang",
+    "Kabupaten Serang",
+    "Kabupaten Serdang Bedagai",
+    "Kabupaten Siak",
+    "Kabupaten Sidenreng Rappang",
+    "Kabupaten Sidoarjo",
+    "Kabupaten Sigi",
+    "Kabupaten Sijunjung",
+    "Kabupaten Sikka",
+    "Kabupaten Simalungun",
+    "Kabupaten Sinjai",
+    "Kabupaten Sintang",
+    "Kabupaten Situbondo",
+    "Kabupaten Sleman",
+    "Kabupaten Solok",
+    "Kabupaten Soppeng",
+    "Kabupaten Sorong",
+    "Kabupaten Sragen",
+    "Kabupaten Subang",
+    "Kabupaten Sukabumi",
+    "Kabupaten Sukamara",
+    "Kabupaten Sukoharjo",
+    "Kabupaten Sumba Barat",
+    "Kabupaten Sumba Timur",
+    "Kabupaten Sumbawa",
+    "Kabupaten Sumbawa Barat",
+    "Kabupaten Sumedang",
+    "Kabupaten Sumenep",
+    "Kabupaten Tabalong",
+    "Kabupaten Tabanan",
+    "Kabupaten Takalar",
+    "Kabupaten Tanah Bumbu",
+    "Kabupaten Tanah Datar",
+    "Kabupaten Tanah Laut",
+    "Kabupaten Tangerang",
+    "Kabupaten Tanggamus",
+    "Kabupaten Tanjung Jabung Barat",
+    "Kabupaten Tapanuli Tengah",
+    "Kabupaten Tapanuli Utara",
+    "Kabupaten Tapin",
+    "Kabupaten Tasikmalaya",
+    "Kabupaten Tebo",
+    "Kabupaten Tegal",
+    "Kabupaten Temanggung",
+    "Kabupaten Timor Tengah Selatan",
+    "Kabupaten Timor Tengah Utara",
+    "Kabupaten Tojo Una Una",
+    "Kabupaten Toli Toli",
+    "Kabupaten Trenggalek",
+    "Kabupaten Tuban",
+    "Kabupaten Tulungagung",
+    "Kabupaten Wajo",
+    "Kabupaten Wonogiri",
+    "Kabupaten Wonosobo",
+    "Kalimantan Barat",
+    "Kalimantan Selatan",
+    "Kalimantan Tengah",
+    "Kalimantan Timur",
+    "Kalimantan Utara",
+    "Kampar",
+    "Kapuas",
+    "Kapuas Hulu",
+    "Karanganyar",
+    "Karangasem",
+    "Karawang",
+    "Karimun",
+    "Karo",
+    "Kebumen",
+    "Kediri",
+    "Kendal",
+    "Kendari",
+    "Kepahiang",
+    "Kepulauan Bangka Belitung",
+    "Kepulauan Mentawai",
+    "Kepulauan Meranti",
+    "Kepulauan Riau",
+    "Ketapang",
+    "Klaten",
+    "Klungkung",
+    "Konawe",
+    "Konawe Selatan",
+    "Kota Baru",
+    "Kota Waringin Barat",
+    "Kota Waringin Timur",
+    "Kotamobagu",
+    "Kubu Raya",
+    "Kulon Progo",
+    "Kuningan",
+    "Kupang",
+    "Kutai Barat",
+    "Kutai Kartanegara",
+    "Kutai Timur",
+    "Labuhan Batu",
+    "Lahat",
+    "Lamongan",
+    "Lampung",
+    "Lampung Barat",
+    "Lampung Selatan",
+    "Lampung Tengah",
+    "Lampung Timur",
+    "Lampung Utara",
+    "Langkat",
+    "Langsa",
+    "Lebak",
+    "Lhokseumawe",
+    "Lombok Barat",
+    "Lombok Tengah",
+    "Lombok Timur",
+    "Lombok Utara",
+    "Lubuk Linggau",
+    "Lumajang",
+    "Luwu",
+    "Madiun",
+    "Madura",
+    "Magelang",
+    "Magetan",
+    "Majalengka",
+    "Makassar",
+    "Malang",
+    "Maluku",
+    "Mamuju",
+    "Manado",
+    "Mandailing Natal",
+    "Manggarai Barat",
+    "Maros",
+    "Mataram",
+    "Medan",
+    "Mempawah",
+    "Merauke",
+    "Mesuji",
+    "Metro",
+    "Mimika",
+    "Minahasa",
+    "Minahasa Selatan",
+    "Minahasa Tenggara",
+    "Minahasa Utara",
+    "Mojokerto",
+    "Muara Enim",
+    "Muaro Jambi",
+    "Muna",
+    "Musi Rawas",
+    "Nabire",
+    "Nagan Raya",
+    "Nganjuk",
+    "Ngawi",
+    "Nias Selatan",
+    "Nusa Tenggara Barat",
+    "Nusa Tenggara Timur",
+    "Ogan Ilir",
+    "Ogan Komering Ulu",
+    "Pacitan",
+    "Padang",
+    "Padang Pariaman",
+    "Padangsidimpuan",
+    "Pagar Alam",
+    "Palangkaraya",
+    "Palembang",
+    "Palopo",
+    "Palu",
+    "Pamekasan",
+    "Pandeglang",
+    "Pangandaran",
+    "Pangkajene",
+    "Pangkal Pinang",
+    "Papua",
+    "Papua Barat",
+    "Papua Selatan",
+    "Pare Pare",
+    "Pariaman",
+    "Pasir",
+    "Pasuruan",
+    "Pati",
+    "Payakumbuh",
+    "Pekalongan",
+    "Pekanbaru",
+    "Pelalawan",
+    "Pemalang",
+    "Pematang Siantar",
+    "Pematangsiantar",
+    "Penajam Paser Utara",
+    "Pesawaran",
+    "Pinrang",
+    "Ponorogo",
+    "Pontianak",
+    "Prabumulih",
+    "Pringsewu",
+    "Probolinggo",
+    "Purbalingga",
+    "Purwakarta",
+    "Purworejo",
+    "Rejang Lebong",
+    "Rembang",
+    "Riau",
+    "Rokan Hilir",
+    "Rokan Hulu",
+    "Sabang",
+    "Salatiga",
+    "Samarinda",
+    "Sambas",
+    "Sanggau",
+    "Sarolangun",
+    "Sawahlunto",
+    "Seluma",
+    "Semarang",
+    "Seram Bagian Timur",
+    "Serang",
+    "Serdang Bedagai",
+    "Siak",
+    "Sidenreng Rappang",
+    "Sidoarjo",
+    "Sigi",
+    "Sikka",
+    "Simalungun",
+    "Singkawang",
+    "Sintang",
+    "Situbondo",
+    "Sleman",
+    "Solo",
+    "Solok",
+    "Sorong",
+    "Sragen",
+    "Subang",
+    "Sukabumi",
+    "Sukoharjo",
+    "Sulawesi Barat",
+    "Sulawesi Selatan",
+    "Sulawesi Tengah",
+    "Sulawesi Tenggara",
+    "Sulawesi Utara",
+    "Sumatera Barat",
+    "Sumatera Selatan",
+    "Sumatera Utara",
+    "Sumba Barat Daya",
+    "Sumba Timur",
+    "Sumbawa",
+    "Sumedang",
+    "Sumenep",
     "Surabaya",
-    "Tangerang"
+    "Surakarta",
+    "Tabanan",
+    "Takalar",
+    "Tana Toraja",
+    "Tanah Bumbu",
+    "Tanah Datar",
+    "Tanah Laut",
+    "Tangerang",
+    "Tangerang Selatan",
+    "Tanggamus",
+    "Tanjung Balai",
+    "Tanjung Pinang",
+    "Tapanuli Tengah",
+    "Tapanuli Utara",
+    "Tarakan",
+    "Tasikmalaya",
+    "Tebing Tinggi",
+    "Tegal",
+    "Temanggung",
+    "Ternate",
+    "Tidore Kepulauan",
+    "Tomohon",
+    "Trenggalek",
+    "Tual",
+    "Tuban",
+    "Tulang Bawang",
+    "Tulungagung",
+    "Way Kanan",
+    "Wonogiri",
+    "Wonosobo",
+    "Yogyakarta"
   ],
-  "city_slugs": {
-    "Bekasi": "bekasi",
-    "Bogor": "bogor",
-    "Depok": "depok",
-    "Jakarta Selatan": "jaksel",
-    "Jakarta Utara": "jakut",
-    "Surabaya": "surabaya",
-    "Tangerang": "tangerang"
+  "city_tiers": {
+    "Bekasi": {
+      "n": 2000,
+      "tier": 1
+    },
+    "Surabaya": {
+      "n": 2000,
+      "tier": 1
+    },
+    "Kabupaten Bekasi": {
+      "n": 2000,
+      "tier": 1
+    },
+    "Kabupaten Tangerang": {
+      "n": 2000,
+      "tier": 1
+    },
+    "Kabupaten Sidoarjo": {
+      "n": 2000,
+      "tier": 1
+    },
+    "Kabupaten Bogor": {
+      "n": 2000,
+      "tier": 1
+    },
+    "Kabupaten Bandung": {
+      "n": 1956,
+      "tier": 1
+    },
+    "Tangerang Selatan": {
+      "n": 1800,
+      "tier": 1
+    },
+    "Depok": {
+      "n": 1622,
+      "tier": 1
+    },
+    "Semarang": {
+      "n": 1611,
+      "tier": 1
+    },
+    "Tangerang": {
+      "n": 1400,
+      "tier": 1
+    },
+    "Serang": {
+      "n": 1346,
+      "tier": 1
+    },
+    "Bogor": {
+      "n": 1302,
+      "tier": 1
+    },
+    "Makassar": {
+      "n": 1191,
+      "tier": 1
+    },
+    "Kabupaten Gresik": {
+      "n": 1161,
+      "tier": 1
+    },
+    "Palembang": {
+      "n": 1048,
+      "tier": 1
+    },
+    "Malang": {
+      "n": 1044,
+      "tier": 1
+    },
+    "Kabupaten Bandung Barat": {
+      "n": 1015,
+      "tier": 1
+    },
+    "Bandung": {
+      "n": 984,
+      "tier": 1
+    },
+    "Kabupaten Karawang": {
+      "n": 886,
+      "tier": 1
+    },
+    "Kabupaten Malang": {
+      "n": 804,
+      "tier": 1
+    },
+    "Jakarta Selatan": {
+      "n": 645,
+      "tier": 1
+    },
+    "Jakarta Utara": {
+      "n": 644,
+      "tier": 1
+    },
+    "Medan": {
+      "n": 637,
+      "tier": 1
+    },
+    "Kabupaten Lebak": {
+      "n": 603,
+      "tier": 1
+    },
+    "Bandar Lampung": {
+      "n": 565,
+      "tier": 1
+    },
+    "Jakarta Timur": {
+      "n": 545,
+      "tier": 1
+    },
+    "Cilegon": {
+      "n": 525,
+      "tier": 1
+    },
+    "Jakarta Barat": {
+      "n": 508,
+      "tier": 1
+    },
+    "Kabupaten Banyumas": {
+      "n": 503,
+      "tier": 1
+    },
+    "Batam": {
+      "n": 502,
+      "tier": 1
+    },
+    "Kabupaten Serang": {
+      "n": 477,
+      "tier": 1
+    },
+    "Balikpapan": {
+      "n": 453,
+      "tier": 1
+    },
+    "Kabupaten Deli Serdang": {
+      "n": 442,
+      "tier": 1
+    },
+    "Kabupaten Jember": {
+      "n": 430,
+      "tier": 1
+    },
+    "Cirebon": {
+      "n": 422,
+      "tier": 1
+    },
+    "Pekanbaru": {
+      "n": 396,
+      "tier": 1
+    },
+    "Tasikmalaya": {
+      "n": 377,
+      "tier": 1
+    },
+    "Kabupaten Sukoharjo": {
+      "n": 349,
+      "tier": 1
+    },
+    "Yogyakarta": {
+      "n": 324,
+      "tier": 1
+    },
+    "Sidoarjo": {
+      "n": 320,
+      "tier": 1
+    },
+    "Kabupaten Kediri": {
+      "n": 319,
+      "tier": 1
+    },
+    "Sukabumi": {
+      "n": 304,
+      "tier": 1
+    },
+    "Jakarta Pusat": {
+      "n": 300,
+      "tier": 1
+    },
+    "Kabupaten Cirebon": {
+      "n": 298,
+      "tier": 1
+    },
+    "Denpasar": {
+      "n": 297,
+      "tier": 1
+    },
+    "Klaten": {
+      "n": 297,
+      "tier": 1
+    },
+    "Tabanan": {
+      "n": 297,
+      "tier": 1
+    },
+    "Samarinda": {
+      "n": 296,
+      "tier": 1
+    },
+    "Manado": {
+      "n": 295,
+      "tier": 1
+    },
+    "Badung": {
+      "n": 294,
+      "tier": 1
+    },
+    "Kabupaten Kubu Raya": {
+      "n": 282,
+      "tier": 1
+    },
+    "Kabupaten Bojonegoro": {
+      "n": 281,
+      "tier": 1
+    },
+    "Surakarta": {
+      "n": 268,
+      "tier": 1
+    },
+    "Jambi": {
+      "n": 267,
+      "tier": 1
+    },
+    "Pasuruan": {
+      "n": 262,
+      "tier": 1
+    },
+    "Tegal": {
+      "n": 253,
+      "tier": 1
+    },
+    "Kabupaten Sleman": {
+      "n": 249,
+      "tier": 1
+    },
+    "Salatiga": {
+      "n": 234,
+      "tier": 1
+    },
+    "Kabupaten Gowa": {
+      "n": 227,
+      "tier": 1
+    },
+    "Kabupaten Magelang": {
+      "n": 227,
+      "tier": 1
+    },
+    "Kabupaten Maros": {
+      "n": 225,
+      "tier": 1
+    },
+    "Sukoharjo": {
+      "n": 223,
+      "tier": 1
+    },
+    "Pontianak": {
+      "n": 220,
+      "tier": 1
+    },
+    "Tanjung Pinang": {
+      "n": 217,
+      "tier": 1
+    },
+    "Kediri": {
+      "n": 215,
+      "tier": 1
+    },
+    "Bandung Barat": {
+      "n": 212,
+      "tier": 1
+    },
+    "Pekalongan": {
+      "n": 209,
+      "tier": 1
+    },
+    "Kabupaten Karanganyar": {
+      "n": 209,
+      "tier": 1
+    },
+    "Boyolali": {
+      "n": 204,
+      "tier": 1
+    },
+    "Kupang": {
+      "n": 201,
+      "tier": 1
+    },
+    "Magelang": {
+      "n": 199,
+      "tier": 1
+    },
+    "Gresik": {
+      "n": 198,
+      "tier": 1
+    },
+    "Padang": {
+      "n": 197,
+      "tier": 1
+    },
+    "Cianjur": {
+      "n": 195,
+      "tier": 1
+    },
+    "Kabupaten Garut": {
+      "n": 194,
+      "tier": 1
+    },
+    "Mojokerto": {
+      "n": 189,
+      "tier": 1
+    },
+    "Kabupaten Pasuruan": {
+      "n": 187,
+      "tier": 1
+    },
+    "Buleleng": {
+      "n": 183,
+      "tier": 1
+    },
+    "Sumedang": {
+      "n": 181,
+      "tier": 1
+    },
+    "Cimahi": {
+      "n": 178,
+      "tier": 1
+    },
+    "Batu": {
+      "n": 177,
+      "tier": 1
+    },
+    "Deli Serdang": {
+      "n": 173,
+      "tier": 1
+    },
+    "Madiun": {
+      "n": 172,
+      "tier": 1
+    },
+    "Karawang": {
+      "n": 171,
+      "tier": 1
+    },
+    "Kabupaten Bantul": {
+      "n": 160,
+      "tier": 1
+    },
+    "Gowa": {
+      "n": 155,
+      "tier": 1
+    },
+    "Garut": {
+      "n": 150,
+      "tier": 1
+    },
+    "Kabupaten Jombang": {
+      "n": 147,
+      "tier": 2
+    },
+    "Lampung Selatan": {
+      "n": 144,
+      "tier": 2
+    },
+    "Blitar": {
+      "n": 141,
+      "tier": 2
+    },
+    "Purwakarta": {
+      "n": 137,
+      "tier": 2
+    },
+    "Kabupaten Mojokerto": {
+      "n": 137,
+      "tier": 2
+    },
+    "Kabupaten Demak": {
+      "n": 130,
+      "tier": 2
+    },
+    "Mataram": {
+      "n": 129,
+      "tier": 2
+    },
+    "Banjarbaru": {
+      "n": 129,
+      "tier": 2
+    },
+    "Pangkal Pinang": {
+      "n": 128,
+      "tier": 2
+    },
+    "Kabupaten Purwakarta": {
+      "n": 128,
+      "tier": 2
+    },
+    "Kabupaten Lombok Barat": {
+      "n": 127,
+      "tier": 2
+    },
+    "Kabupaten Sragen": {
+      "n": 126,
+      "tier": 2
+    },
+    "Maros": {
+      "n": 123,
+      "tier": 2
+    },
+    "Subang": {
+      "n": 123,
+      "tier": 2
+    },
+    "Kabupaten Sumedang": {
+      "n": 123,
+      "tier": 2
+    },
+    "Kabupaten Semarang": {
+      "n": 122,
+      "tier": 2
+    },
+    "Banjarmasin": {
+      "n": 119,
+      "tier": 2
+    },
+    "Kuningan": {
+      "n": 115,
+      "tier": 2
+    },
+    "Pati": {
+      "n": 115,
+      "tier": 2
+    },
+    "Probolinggo": {
+      "n": 115,
+      "tier": 2
+    },
+    "Sragen": {
+      "n": 111,
+      "tier": 2
+    },
+    "Kabupaten Kendal": {
+      "n": 110,
+      "tier": 2
+    },
+    "Kabupaten Sukabumi": {
+      "n": 110,
+      "tier": 2
+    },
+    "Kubu Raya": {
+      "n": 108,
+      "tier": 2
+    },
+    "Majalengka": {
+      "n": 108,
+      "tier": 2
+    },
+    "Nganjuk": {
+      "n": 108,
+      "tier": 2
+    },
+    "Lombok Barat": {
+      "n": 106,
+      "tier": 2
+    },
+    "Kabupaten Muaro Jambi": {
+      "n": 106,
+      "tier": 2
+    },
+    "Tulungagung": {
+      "n": 105,
+      "tier": 2
+    },
+    "Kabupaten Majalengka": {
+      "n": 103,
+      "tier": 2
+    },
+    "Kendari": {
+      "n": 98,
+      "tier": 3
+    },
+    "Kabupaten Ponorogo": {
+      "n": 97,
+      "tier": 3
+    },
+    "Lebak": {
+      "n": 96,
+      "tier": 3
+    },
+    "Kendal": {
+      "n": 93,
+      "tier": 3
+    },
+    "Kabupaten Lumajang": {
+      "n": 93,
+      "tier": 3
+    },
+    "Ciamis": {
+      "n": 90,
+      "tier": 3
+    },
+    "Demak": {
+      "n": 90,
+      "tier": 3
+    },
+    "Kabupaten Banyuwangi": {
+      "n": 86,
+      "tier": 3
+    },
+    "Kabupaten Bangkalan": {
+      "n": 85,
+      "tier": 3
+    },
+    "Kabupaten Karimun": {
+      "n": 85,
+      "tier": 3
+    },
+    "Kabupaten Cianjur": {
+      "n": 83,
+      "tier": 3
+    },
+    "Brebes": {
+      "n": 81,
+      "tier": 3
+    },
+    "Singkawang": {
+      "n": 81,
+      "tier": 3
+    },
+    "Kabupaten Lamongan": {
+      "n": 80,
+      "tier": 3
+    },
+    "Kabupaten Tegal": {
+      "n": 78,
+      "tier": 3
+    },
+    "Kabupaten Banyuasin": {
+      "n": 78,
+      "tier": 3
+    },
+    "Cilacap": {
+      "n": 77,
+      "tier": 3
+    },
+    "Jombang": {
+      "n": 77,
+      "tier": 3
+    },
+    "Kabupaten Banjar": {
+      "n": 75,
+      "tier": 3
+    },
+    "Kabupaten Minahasa": {
+      "n": 74,
+      "tier": 3
+    },
+    "Magetan": {
+      "n": 73,
+      "tier": 3
+    },
+    "Kabupaten Pekalongan": {
+      "n": 73,
+      "tier": 3
+    },
+    "Purbalingga": {
+      "n": 72,
+      "tier": 3
+    },
+    "Kabupaten Pemalang": {
+      "n": 71,
+      "tier": 3
+    },
+    "Jember": {
+      "n": 70,
+      "tier": 3
+    },
+    "Kabupaten Batang": {
+      "n": 69,
+      "tier": 3
+    },
+    "Kabupaten Cilacap": {
+      "n": 69,
+      "tier": 3
+    },
+    "Kabupaten Kudus": {
+      "n": 69,
+      "tier": 3
+    },
+    "Kabupaten Tulungagung": {
+      "n": 68,
+      "tier": 3
+    },
+    "Kabupaten Jepara": {
+      "n": 67,
+      "tier": 3
+    },
+    "Kabupaten Magetan": {
+      "n": 66,
+      "tier": 3
+    },
+    "Kabupaten Buleleng": {
+      "n": 65,
+      "tier": 3
+    },
+    "Kabupaten Pati": {
+      "n": 65,
+      "tier": 3
+    },
+    "Kabupaten Madiun": {
+      "n": 65,
+      "tier": 3
+    },
+    "Banjar Baru": {
+      "n": 63,
+      "tier": 3
+    },
+    "Palu": {
+      "n": 63,
+      "tier": 3
+    },
+    "Palangkaraya": {
+      "n": 63,
+      "tier": 3
+    },
+    "Jayapura": {
+      "n": 62,
+      "tier": 3
+    },
+    "Temanggung": {
+      "n": 62,
+      "tier": 3
+    },
+    "Kabupaten Wonosobo": {
+      "n": 62,
+      "tier": 3
+    },
+    "Pandeglang": {
+      "n": 61,
+      "tier": 3
+    },
+    "Kabupaten Subang": {
+      "n": 61,
+      "tier": 3
+    },
+    "Metro": {
+      "n": 60,
+      "tier": 3
+    },
+    "Kabupaten Brebes": {
+      "n": 60,
+      "tier": 3
+    },
+    "Bengkulu": {
+      "n": 59,
+      "tier": 3
+    },
+    "Kabupaten Probolinggo": {
+      "n": 58,
+      "tier": 3
+    },
+    "Kabupaten Tasikmalaya": {
+      "n": 58,
+      "tier": 3
+    },
+    "Kabupaten Klaten": {
+      "n": 54,
+      "tier": 3
+    },
+    "Purworejo": {
+      "n": 53,
+      "tier": 3
+    },
+    "Binjai": {
+      "n": 52,
+      "tier": 3
+    },
+    "Indramayu": {
+      "n": 52,
+      "tier": 3
+    },
+    "Kabupaten Boyolali": {
+      "n": 52,
+      "tier": 3
+    },
+    "Wonogiri": {
+      "n": 50,
+      "tier": 3
+    },
+    "Banyuwangi": {
+      "n": 50,
+      "tier": 3
+    },
+    "Gunung Kidul": {
+      "n": 50,
+      "tier": 3
+    },
+    "Kepulauan Bangka Belitung": {
+      "n": 50,
+      "tier": 3
+    },
+    "Sumatera Barat": {
+      "n": 50,
+      "tier": 3
+    },
+    "Kabupaten Purbalingga": {
+      "n": 50,
+      "tier": 3
+    },
+    "Tuban": {
+      "n": 49,
+      "tier": 4
+    },
+    "Banyumas": {
+      "n": 49,
+      "tier": 4
+    },
+    "Kalimantan Selatan": {
+      "n": 49,
+      "tier": 4
+    },
+    "Karanganyar": {
+      "n": 49,
+      "tier": 4
+    },
+    "Karangasem": {
+      "n": 49,
+      "tier": 4
+    },
+    "Kulon Progo": {
+      "n": 49,
+      "tier": 4
+    },
+    "Sulawesi Utara": {
+      "n": 49,
+      "tier": 4
+    },
+    "Bojonegoro": {
+      "n": 48,
+      "tier": 4
+    },
+    "Gianyar": {
+      "n": 48,
+      "tier": 4
+    },
+    "Kepulauan Riau": {
+      "n": 48,
+      "tier": 4
+    },
+    "Lampung": {
+      "n": 48,
+      "tier": 4
+    },
+    "Nusa Tenggara Timur": {
+      "n": 48,
+      "tier": 4
+    },
+    "Riau": {
+      "n": 48,
+      "tier": 4
+    },
+    "Batang": {
+      "n": 47,
+      "tier": 4
+    },
+    "Kabupaten Indramayu": {
+      "n": 47,
+      "tier": 4
+    },
+    "Bondowoso": {
+      "n": 46,
+      "tier": 4
+    },
+    "Bantul": {
+      "n": 46,
+      "tier": 4
+    },
+    "Nusa Tenggara Barat": {
+      "n": 46,
+      "tier": 4
+    },
+    "Solo": {
+      "n": 46,
+      "tier": 4
+    },
+    "Sumatera Utara": {
+      "n": 46,
+      "tier": 4
+    },
+    "Kabupaten Ngawi": {
+      "n": 46,
+      "tier": 4
+    },
+    "Bangkalan": {
+      "n": 45,
+      "tier": 4
+    },
+    "Pesawaran": {
+      "n": 45,
+      "tier": 4
+    },
+    "Bali": {
+      "n": 45,
+      "tier": 4
+    },
+    "Daerah Istimewa Yogyakarta": {
+      "n": 45,
+      "tier": 4
+    },
+    "Kalimantan Timur": {
+      "n": 45,
+      "tier": 4
+    },
+    "Kabupaten Ciamis": {
+      "n": 45,
+      "tier": 4
+    },
+    "Dki Jakarta": {
+      "n": 44,
+      "tier": 4
+    },
+    "Sleman": {
+      "n": 44,
+      "tier": 4
+    },
+    "Lamongan": {
+      "n": 43,
+      "tier": 4
+    },
+    "Lampung Tengah": {
+      "n": 43,
+      "tier": 4
+    },
+    "Banten": {
+      "n": 43,
+      "tier": 4
+    },
+    "Sumatera Selatan": {
+      "n": 43,
+      "tier": 4
+    },
+    "Kabupaten Gunungkidul": {
+      "n": 43,
+      "tier": 4
+    },
+    "Sulawesi Selatan": {
+      "n": 42,
+      "tier": 4
+    },
+    "Bitung": {
+      "n": 41,
+      "tier": 4
+    },
+    "Pemalang": {
+      "n": 41,
+      "tier": 4
+    },
+    "Kabupaten Temanggung": {
+      "n": 41,
+      "tier": 4
+    },
+    "Kabupaten Tuban": {
+      "n": 41,
+      "tier": 4
+    },
+    "Kalimantan Barat": {
+      "n": 40,
+      "tier": 4
+    },
+    "Kabupaten Blitar": {
+      "n": 40,
+      "tier": 4
+    },
+    "Banyuasin": {
+      "n": 39,
+      "tier": 4
+    },
+    "Kabupaten Nganjuk": {
+      "n": 39,
+      "tier": 4
+    },
+    "Blora": {
+      "n": 38,
+      "tier": 4
+    },
+    "Grobogan": {
+      "n": 37,
+      "tier": 4
+    },
+    "Kabupaten Wonogiri": {
+      "n": 37,
+      "tier": 4
+    },
+    "Tomohon": {
+      "n": 35,
+      "tier": 4
+    },
+    "Kabupaten Pandeglang": {
+      "n": 35,
+      "tier": 4
+    },
+    "Lampung Timur": {
+      "n": 34,
+      "tier": 4
+    },
+    "Minahasa Utara": {
+      "n": 34,
+      "tier": 4
+    },
+    "Gorontalo": {
+      "n": 34,
+      "tier": 4
+    },
+    "Kabupaten Kotawaringin Barat": {
+      "n": 34,
+      "tier": 4
+    },
+    "Palopo": {
+      "n": 33,
+      "tier": 4
+    },
+    "Kabupaten Tabanan": {
+      "n": 33,
+      "tier": 4
+    },
+    "Kabupaten Bondowoso": {
+      "n": 33,
+      "tier": 4
+    },
+    "Kabupaten Labuhanbatu": {
+      "n": 32,
+      "tier": 4
+    },
+    "Banjar": {
+      "n": 31,
+      "tier": 4
+    },
+    "Kabupaten Situbondo": {
+      "n": 31,
+      "tier": 4
+    },
+    "Minahasa": {
+      "n": 30,
+      "tier": 4
+    },
+    "Ponorogo": {
+      "n": 30,
+      "tier": 4
+    },
+    "Aceh": {
+      "n": 30,
+      "tier": 4
+    },
+    "Kabupaten Bangka Tengah": {
+      "n": 30,
+      "tier": 4
+    },
+    "Bangka Tengah": {
+      "n": 29,
+      "tier": 4
+    },
+    "Bangka": {
+      "n": 29,
+      "tier": 4
+    },
+    "Kabupaten Grobogan": {
+      "n": 29,
+      "tier": 4
+    },
+    "Ngawi": {
+      "n": 28,
+      "tier": 4
+    },
+    "Jepara": {
+      "n": 27,
+      "tier": 4
+    },
+    "Jawa Barat": {
+      "n": 27,
+      "tier": 4
+    },
+    "Kabupaten Minahasa Utara": {
+      "n": 27,
+      "tier": 4
+    },
+    "Bangli": {
+      "n": 26,
+      "tier": 4
+    },
+    "Klungkung": {
+      "n": 26,
+      "tier": 4
+    },
+    "Sulawesi Tenggara": {
+      "n": 26,
+      "tier": 4
+    },
+    "Kabupaten Kuningan": {
+      "n": 26,
+      "tier": 4
+    },
+    "Rembang": {
+      "n": 25,
+      "tier": 4
+    },
+    "Tanggamus": {
+      "n": 25,
+      "tier": 4
+    },
+    "Muaro Jambi": {
+      "n": 25,
+      "tier": 4
+    },
+    "Kabupaten Sumbawa": {
+      "n": 25,
+      "tier": 4
+    },
+    "Bontang": {
+      "n": 25,
+      "tier": 4
+    },
+    "Aceh Barat Daya": {
+      "n": 25,
+      "tier": 4
+    },
+    "Aceh Selatan": {
+      "n": 25,
+      "tier": 4
+    },
+    "Aceh Tengah": {
+      "n": 25,
+      "tier": 4
+    },
+    "Aceh Timur": {
+      "n": 25,
+      "tier": 4
+    },
+    "Halmahera Timur": {
+      "n": 25,
+      "tier": 4
+    },
+    "Biak Numfor": {
+      "n": 24,
+      "tier": 4
+    },
+    "Prabumulih": {
+      "n": 24,
+      "tier": 4
+    },
+    "Tarakan": {
+      "n": 24,
+      "tier": 4
+    },
+    "Kabupaten Kupang": {
+      "n": 24,
+      "tier": 4
+    },
+    "Situbondo": {
+      "n": 23,
+      "tier": 4
+    },
+    "Wonosobo": {
+      "n": 23,
+      "tier": 4
+    },
+    "Kabupaten Padang Pariaman": {
+      "n": 23,
+      "tier": 4
+    },
+    "Kabupaten Lampung Selatan": {
+      "n": 23,
+      "tier": 4
+    },
+    "Kabupaten Langkat": {
+      "n": 23,
+      "tier": 4
+    },
+    "Dumai": {
+      "n": 22,
+      "tier": 4
+    },
+    "Langsa": {
+      "n": 22,
+      "tier": 4
+    },
+    "Lombok Tengah": {
+      "n": 22,
+      "tier": 4
+    },
+    "Pare Pare": {
+      "n": 22,
+      "tier": 4
+    },
+    "Kepahiang": {
+      "n": 22,
+      "tier": 4
+    },
+    "Belitung": {
+      "n": 21,
+      "tier": 4
+    },
+    "Kampar": {
+      "n": 21,
+      "tier": 4
+    },
+    "Kebumen": {
+      "n": 21,
+      "tier": 4
+    },
+    "Pematang Siantar": {
+      "n": 21,
+      "tier": 4
+    },
+    "Solok": {
+      "n": 21,
+      "tier": 4
+    },
+    "Kalimantan Tengah": {
+      "n": 21,
+      "tier": 4
+    },
+    "Kabupaten Morowali": {
+      "n": 21,
+      "tier": 4
+    },
+    "Kabupaten Tanah Laut": {
+      "n": 21,
+      "tier": 4
+    },
+    "Lhokseumawe": {
+      "n": 20,
+      "tier": 4
+    },
+    "Manggarai Barat": {
+      "n": 20,
+      "tier": 4
+    },
+    "Pringsewu": {
+      "n": 20,
+      "tier": 4
+    },
+    "Kota Waringin Timur": {
+      "n": 20,
+      "tier": 4
+    },
+    "Kabupaten Blora": {
+      "n": 20,
+      "tier": 4
+    },
+    "Kabupaten Kotawaringin Timur": {
+      "n": 20,
+      "tier": 4
+    },
+    "Kabupaten Kampar": {
+      "n": 20,
+      "tier": 4
+    },
+    "Kabupaten Simalungun": {
+      "n": 20,
+      "tier": 4
+    },
+    "Buton Selatan": {
+      "n": 20,
+      "tier": 4
+    },
+    "Lumajang": {
+      "n": 19,
+      "tier": 4
+    },
+    "Papua": {
+      "n": 19,
+      "tier": 4
+    },
+    "Kabupaten Bangka": {
+      "n": 19,
+      "tier": 4
+    },
+    "Kabupaten Pangandaran": {
+      "n": 19,
+      "tier": 4
+    },
+    "Bangka Barat": {
+      "n": 19,
+      "tier": 4
+    },
+    "Banjarnegara": {
+      "n": 18,
+      "tier": 4
+    },
+    "Bintan": {
+      "n": 18,
+      "tier": 4
+    },
+    "Kabupaten Badung": {
+      "n": 18,
+      "tier": 4
+    },
+    "Lombok Utara": {
+      "n": 17,
+      "tier": 4
+    },
+    "Kabupaten Muara Enim": {
+      "n": 17,
+      "tier": 4
+    },
+    "Kabupaten Bone": {
+      "n": 17,
+      "tier": 4
+    },
+    "Siak": {
+      "n": 17,
+      "tier": 4
+    },
+    "Pinrang": {
+      "n": 16,
+      "tier": 4
+    },
+    "Kabupaten Mimika": {
+      "n": 16,
+      "tier": 4
+    },
+    "Payakumbuh": {
+      "n": 16,
+      "tier": 4
+    },
+    "Kabupaten Dharmasraya": {
+      "n": 16,
+      "tier": 4
+    },
+    "Bau Bau": {
+      "n": 16,
+      "tier": 4
+    },
+    "Jembrana": {
+      "n": 15,
+      "tier": 4
+    },
+    "Pamekasan": {
+      "n": 15,
+      "tier": 4
+    },
+    "Serdang Bedagai": {
+      "n": 15,
+      "tier": 4
+    },
+    "Takalar": {
+      "n": 15,
+      "tier": 4
+    },
+    "Mandailing Natal": {
+      "n": 15,
+      "tier": 4
+    },
+    "Banda Aceh": {
+      "n": 14,
+      "tier": 4
+    },
+    "Lampung Utara": {
+      "n": 14,
+      "tier": 4
+    },
+    "Tebing Tinggi": {
+      "n": 14,
+      "tier": 4
+    },
+    "Kabupaten Ketapang": {
+      "n": 14,
+      "tier": 4
+    },
+    "Kabupaten Gorontalo": {
+      "n": 14,
+      "tier": 4
+    },
+    "Kabupaten Belitung": {
+      "n": 14,
+      "tier": 4
+    },
+    "Kabupaten Manokwari": {
+      "n": 14,
+      "tier": 4
+    },
+    "Sorong": {
+      "n": 13,
+      "tier": 4
+    },
+    "Kabupaten Sorong": {
+      "n": 13,
+      "tier": 4
+    },
+    "Kabupaten Takalar": {
+      "n": 13,
+      "tier": 4
+    },
+    "Kabupaten Wajo": {
+      "n": 13,
+      "tier": 4
+    },
+    "Kabupaten Tapanuli Tengah": {
+      "n": 13,
+      "tier": 4
+    },
+    "Kabupaten Bireuen": {
+      "n": 13,
+      "tier": 4
+    },
+    "Kabupaten Bintan": {
+      "n": 13,
+      "tier": 4
+    },
+    "Seram Bagian Timur": {
+      "n": 13,
+      "tier": 4
+    },
+    "Lampung Barat": {
+      "n": 12,
+      "tier": 4
+    },
+    "Ogan Ilir": {
+      "n": 12,
+      "tier": 4
+    },
+    "Lubuk Linggau": {
+      "n": 12,
+      "tier": 4
+    },
+    "Kabupaten Lampung Tengah": {
+      "n": 12,
+      "tier": 4
+    },
+    "Kepulauan Meranti": {
+      "n": 12,
+      "tier": 4
+    },
+    "Aceh Besar": {
+      "n": 11,
+      "tier": 4
+    },
+    "Pangandaran": {
+      "n": 11,
+      "tier": 4
+    },
+    "Kabupaten Pangkajene Kepulauan": {
+      "n": 11,
+      "tier": 4
+    },
+    "Kabupaten Asahan": {
+      "n": 11,
+      "tier": 4
+    },
+    "Balangan": {
+      "n": 11,
+      "tier": 4
+    },
+    "Nagan Raya": {
+      "n": 11,
+      "tier": 4
+    },
+    "Rokan Hilir": {
+      "n": 11,
+      "tier": 4
+    },
+    "Ambon": {
+      "n": 10,
+      "tier": 4
+    },
+    "Kutai Kartanegara": {
+      "n": 10,
+      "tier": 4
+    },
+    "Muara Enim": {
+      "n": 10,
+      "tier": 4
+    },
+    "Kalimantan Utara": {
+      "n": 10,
+      "tier": 4
+    },
+    "Sulawesi Tengah": {
+      "n": 10,
+      "tier": 4
+    },
+    "Kabupaten Kutai Kartanegara": {
+      "n": 10,
+      "tier": 4
+    },
+    "Kabupaten Sumenep": {
+      "n": 10,
+      "tier": 4
+    },
+    "Tanjung Balai": {
+      "n": 10,
+      "tier": 4
+    },
+    "Kabupaten Konawe Selatan": {
+      "n": 10,
+      "tier": 4
+    },
+    "Kabupaten Polewali Mandar": {
+      "n": 10,
+      "tier": 4
+    },
+    "Kabupaten Bungo": {
+      "n": 10,
+      "tier": 4
+    },
+    "Alor": {
+      "n": 10,
+      "tier": 4
+    },
+    "Nias Selatan": {
+      "n": 10,
+      "tier": 4
+    },
+    "Rejang Lebong": {
+      "n": 9,
+      "tier": 5
+    },
+    "Tulang Bawang": {
+      "n": 9,
+      "tier": 5
+    },
+    "Kabupaten Pinrang": {
+      "n": 9,
+      "tier": 5
+    },
+    "Kabupaten Lombok Tengah": {
+      "n": 9,
+      "tier": 5
+    },
+    "Kabupaten Kutai Timur": {
+      "n": 9,
+      "tier": 5
+    },
+    "Kabupaten Batu Bara": {
+      "n": 9,
+      "tier": 5
+    },
+    "Kabupaten Pesawaran": {
+      "n": 9,
+      "tier": 5
+    },
+    "Bukittinggi": {
+      "n": 8,
+      "tier": 5
+    },
+    "Muna": {
+      "n": 8,
+      "tier": 5
+    },
+    "Sambas": {
+      "n": 8,
+      "tier": 5
+    },
+    "Papua Barat": {
+      "n": 8,
+      "tier": 5
+    },
+    "Kabupaten Sintang": {
+      "n": 8,
+      "tier": 5
+    },
+    "Kabupaten Pamekasan": {
+      "n": 8,
+      "tier": 5
+    },
+    "Kabupaten Sukamara": {
+      "n": 8,
+      "tier": 5
+    },
+    "Kabupaten Banjarnegara": {
+      "n": 8,
+      "tier": 5
+    },
+    "Kabupaten Jembrana": {
+      "n": 8,
+      "tier": 5
+    },
+    "Kabupaten Sikka": {
+      "n": 8,
+      "tier": 5
+    },
+    "Kabupaten Solok": {
+      "n": 8,
+      "tier": 5
+    },
+    "Kabupaten Aceh Besar": {
+      "n": 8,
+      "tier": 5
+    },
+    "Kabupaten Barito Kuala": {
+      "n": 8,
+      "tier": 5
+    },
+    "Kabupaten Sigi": {
+      "n": 8,
+      "tier": 5
+    },
+    "Kabupaten Ogan Komering Ulu": {
+      "n": 8,
+      "tier": 5
+    },
+    "Asahan": {
+      "n": 7,
+      "tier": 5
+    },
+    "Langkat": {
+      "n": 7,
+      "tier": 5
+    },
+    "Lombok Timur": {
+      "n": 7,
+      "tier": 5
+    },
+    "Simalungun": {
+      "n": 7,
+      "tier": 5
+    },
+    "Trenggalek": {
+      "n": 7,
+      "tier": 5
+    },
+    "Kabupaten Klungkung": {
+      "n": 7,
+      "tier": 5
+    },
+    "Kabupaten Musi Banyuasin": {
+      "n": 7,
+      "tier": 5
+    },
+    "Pematangsiantar": {
+      "n": 7,
+      "tier": 5
+    },
+    "Kabupaten Bantaeng": {
+      "n": 7,
+      "tier": 5
+    },
+    "Kabupaten Lampung Utara": {
+      "n": 7,
+      "tier": 5
+    },
+    "Kabupaten Sambas": {
+      "n": 7,
+      "tier": 5
+    },
+    "Barru": {
+      "n": 6,
+      "tier": 5
+    },
+    "Bulukumba": {
+      "n": 6,
+      "tier": 5
+    },
+    "Luwu": {
+      "n": 6,
+      "tier": 5
+    },
+    "Bone": {
+      "n": 6,
+      "tier": 5
+    },
+    "Kabupaten Merauke": {
+      "n": 6,
+      "tier": 5
+    },
+    "Kabupaten Kulon Progo": {
+      "n": 6,
+      "tier": 5
+    },
+    "Kabupaten Bengkalis": {
+      "n": 6,
+      "tier": 5
+    },
+    "Kabupaten Sijunjung": {
+      "n": 6,
+      "tier": 5
+    },
+    "Kabupaten Mempawah": {
+      "n": 6,
+      "tier": 5
+    },
+    "Kabupaten Kuantan Singingi": {
+      "n": 6,
+      "tier": 5
+    },
+    "Kabupaten Sampang": {
+      "n": 6,
+      "tier": 5
+    },
+    "Kabupaten Pesisir Selatan": {
+      "n": 6,
+      "tier": 5
+    },
+    "Kabupaten Soppeng": {
+      "n": 6,
+      "tier": 5
+    },
+    "Kabupaten Rokan Hulu": {
+      "n": 6,
+      "tier": 5
+    },
+    "Konawe Selatan": {
+      "n": 5,
+      "tier": 5
+    },
+    "Mamuju": {
+      "n": 5,
+      "tier": 5
+    },
+    "Ogan Komering Ulu": {
+      "n": 5,
+      "tier": 5
+    },
+    "Penajam Paser Utara": {
+      "n": 5,
+      "tier": 5
+    },
+    "Bengkulu Tengah": {
+      "n": 5,
+      "tier": 5
+    },
+    "Pasir": {
+      "n": 5,
+      "tier": 5
+    },
+    "Kabupaten Kebumen": {
+      "n": 5,
+      "tier": 5
+    },
+    "Kabupaten Barru": {
+      "n": 5,
+      "tier": 5
+    },
+    "Kabupaten Mamuju": {
+      "n": 5,
+      "tier": 5
+    },
+    "Kabupaten Aceh Utara": {
+      "n": 5,
+      "tier": 5
+    },
+    "Kabupaten Paser": {
+      "n": 5,
+      "tier": 5
+    },
+    "Kabupaten Ogan Komering Ilir": {
+      "n": 5,
+      "tier": 5
+    },
+    "Kabupaten Bulungan": {
+      "n": 5,
+      "tier": 5
+    },
+    "Kabupaten Tabalong": {
+      "n": 5,
+      "tier": 5
+    },
+    "Kabupaten Lombok Timur": {
+      "n": 5,
+      "tier": 5
+    },
+    "Kabupaten Berau": {
+      "n": 5,
+      "tier": 5
+    },
+    "Belu": {
+      "n": 4,
+      "tier": 5
+    },
+    "Berau": {
+      "n": 4,
+      "tier": 5
+    },
+    "Bolaang Mongondow": {
+      "n": 4,
+      "tier": 5
+    },
+    "Kutai Barat": {
+      "n": 4,
+      "tier": 5
+    },
+    "Mempawah": {
+      "n": 4,
+      "tier": 5
+    },
+    "Pacitan": {
+      "n": 4,
+      "tier": 5
+    },
+    "Tanah Bumbu": {
+      "n": 4,
+      "tier": 5
+    },
+    "Tanah Datar": {
+      "n": 4,
+      "tier": 5
+    },
+    "Bengkalis": {
+      "n": 4,
+      "tier": 5
+    },
+    "Kota Waringin Barat": {
+      "n": 4,
+      "tier": 5
+    },
+    "Kabupaten Rembang": {
+      "n": 4,
+      "tier": 5
+    },
+    "Padangsidimpuan": {
+      "n": 4,
+      "tier": 5
+    },
+    "Kabupaten Karo": {
+      "n": 4,
+      "tier": 5
+    },
+    "Pariaman": {
+      "n": 4,
+      "tier": 5
+    },
+    "Kabupaten Labuhanbatu Selatan": {
+      "n": 4,
+      "tier": 5
+    },
+    "Kabupaten Enrekang": {
+      "n": 4,
+      "tier": 5
+    },
+    "Kabupaten Luwu Timur": {
+      "n": 4,
+      "tier": 5
+    },
+    "Kabupaten Ogan Komering Ulu Timur": {
+      "n": 4,
+      "tier": 5
+    },
+    "Kabupaten Aceh Barat": {
+      "n": 4,
+      "tier": 5
+    },
+    "Kabupaten Pelalawan": {
+      "n": 4,
+      "tier": 5
+    },
+    "Kabupaten Karangasem": {
+      "n": 4,
+      "tier": 5
+    },
+    "Tual": {
+      "n": 4,
+      "tier": 5
+    },
+    "Sikka": {
+      "n": 3,
+      "tier": 5
+    },
+    "Bengkulu Utara": {
+      "n": 3,
+      "tier": 5
+    },
+    "Madura": {
+      "n": 3,
+      "tier": 5
+    },
+    "Sulawesi Barat": {
+      "n": 3,
+      "tier": 5
+    },
+    "Tanah Laut": {
+      "n": 3,
+      "tier": 5
+    },
+    "Kabupaten Mamuju Tengah": {
+      "n": 3,
+      "tier": 5
+    },
+    "Kabupaten Buton Tengah": {
+      "n": 3,
+      "tier": 5
+    },
+    "Ternate": {
+      "n": 3,
+      "tier": 5
+    },
+    "Kabupaten Sidenreng Rappang": {
+      "n": 3,
+      "tier": 5
+    },
+    "Kabupaten Maluku Tengah": {
+      "n": 3,
+      "tier": 5
+    },
+    "Kabupaten Hulu Sungai Selatan": {
+      "n": 3,
+      "tier": 5
+    },
+    "Kabupaten Jeneponto": {
+      "n": 3,
+      "tier": 5
+    },
+    "Kabupaten Penukal Abab Lematang Ilir": {
+      "n": 3,
+      "tier": 5
+    },
+    "Kabupaten Dompu": {
+      "n": 3,
+      "tier": 5
+    },
+    "Kabupaten Belu": {
+      "n": 3,
+      "tier": 5
+    },
+    "Kabupaten Kapuas": {
+      "n": 3,
+      "tier": 5
+    },
+    "Kabupaten Kolaka Utara": {
+      "n": 3,
+      "tier": 5
+    },
+    "Kabupaten Barito Utara": {
+      "n": 3,
+      "tier": 5
+    },
+    "Kabupaten Indragiri Hilir": {
+      "n": 3,
+      "tier": 5
+    },
+    "Kabupaten Purworejo": {
+      "n": 3,
+      "tier": 5
+    },
+    "Kabupaten Ogan Ilir": {
+      "n": 3,
+      "tier": 5
+    },
+    "Kabupaten Flores Timur": {
+      "n": 3,
+      "tier": 5
+    },
+    "Kabupaten Jayapura": {
+      "n": 3,
+      "tier": 5
+    },
+    "Kabupaten Sumba Timur": {
+      "n": 3,
+      "tier": 5
+    },
+    "Kabupaten Kotabaru": {
+      "n": 3,
+      "tier": 5
+    },
+    "Kabupaten Lima Puluh Kota": {
+      "n": 3,
+      "tier": 5
+    },
+    "Kabupaten Aceh Singkil": {
+      "n": 3,
+      "tier": 5
+    },
+    "Kabupaten Majene": {
+      "n": 3,
+      "tier": 5
+    },
+    "Kabupaten Indragiri Hulu": {
+      "n": 3,
+      "tier": 5
+    },
+    "Kabupaten Konawe": {
+      "n": 3,
+      "tier": 5
+    },
+    "Kabupaten Sumba Barat": {
+      "n": 3,
+      "tier": 5
+    },
+    "Kabupaten Tapanuli Utara": {
+      "n": 3,
+      "tier": 5
+    },
+    "Kabupaten Kaimana": {
+      "n": 3,
+      "tier": 5
+    },
+    "Kabupaten Pacitan": {
+      "n": 3,
+      "tier": 5
+    },
+    "Kabupaten Pringsewu": {
+      "n": 3,
+      "tier": 5
+    },
+    "Agam": {
+      "n": 2,
+      "tier": 5
+    },
+    "Bangka Selatan": {
+      "n": 2,
+      "tier": 5
+    },
+    "Enrekang": {
+      "n": 2,
+      "tier": 5
+    },
+    "Kapuas Hulu": {
+      "n": 2,
+      "tier": 5
+    },
+    "Ketapang": {
+      "n": 2,
+      "tier": 5
+    },
+    "Kota Baru": {
+      "n": 2,
+      "tier": 5
+    },
+    "Kutai Timur": {
+      "n": 2,
+      "tier": 5
+    },
+    "Merauke": {
+      "n": 2,
+      "tier": 5
+    },
+    "Minahasa Selatan": {
+      "n": 2,
+      "tier": 5
+    },
+    "Minahasa Tenggara": {
+      "n": 2,
+      "tier": 5
+    },
+    "Padang Pariaman": {
+      "n": 2,
+      "tier": 5
+    },
+    "Pagar Alam": {
+      "n": 2,
+      "tier": 5
+    },
+    "Rokan Hulu": {
+      "n": 2,
+      "tier": 5
+    },
+    "Sabang": {
+      "n": 2,
+      "tier": 5
+    },
+    "Sintang": {
+      "n": 2,
+      "tier": 5
+    },
+    "Sumba Barat Daya": {
+      "n": 2,
+      "tier": 5
+    },
+    "Sumba Timur": {
+      "n": 2,
+      "tier": 5
+    },
+    "Tapanuli Tengah": {
+      "n": 2,
+      "tier": 5
+    },
+    "Way Kanan": {
+      "n": 2,
+      "tier": 5
+    },
+    "Maluku": {
+      "n": 2,
+      "tier": 5
+    },
+    "Seluma": {
+      "n": 2,
+      "tier": 5
+    },
+    "Sidenreng Rappang": {
+      "n": 2,
+      "tier": 5
+    },
+    "Sigi": {
+      "n": 2,
+      "tier": 5
+    },
+    "Kabupaten Pahuwato": {
+      "n": 2,
+      "tier": 5
+    },
+    "Kabupaten Lahat": {
+      "n": 2,
+      "tier": 5
+    },
+    "Kabupaten Sanggau": {
+      "n": 2,
+      "tier": 5
+    },
+    "Kabupaten Katingan": {
+      "n": 2,
+      "tier": 5
+    },
+    "Kabupaten Penajam Paser Utara": {
+      "n": 2,
+      "tier": 5
+    },
+    "Kabupaten Bulukumba": {
+      "n": 2,
+      "tier": 5
+    },
+    "Kabupaten Padang Lawas Utara": {
+      "n": 2,
+      "tier": 5
+    },
+    "Kabupaten Kolaka Timur": {
+      "n": 2,
+      "tier": 5
+    },
+    "Kabupaten Hulu Sungai Tengah": {
+      "n": 2,
+      "tier": 5
+    },
+    "Kabupaten Kolaka": {
+      "n": 2,
+      "tier": 5
+    },
+    "Kabupaten Kapuas Hulu": {
+      "n": 2,
+      "tier": 5
+    },
+    "Kabupaten Lombok Utara": {
+      "n": 2,
+      "tier": 5
+    },
+    "Kabupaten Kayong Utara": {
+      "n": 2,
+      "tier": 5
+    },
+    "Kabupaten Malinau": {
+      "n": 2,
+      "tier": 5
+    },
+    "Kabupaten Tebo": {
+      "n": 2,
+      "tier": 5
+    },
+    "Sawahlunto": {
+      "n": 2,
+      "tier": 5
+    },
+    "Kabupaten Aceh Tamiang": {
+      "n": 2,
+      "tier": 5
+    },
+    "Kabupaten Gianyar": {
+      "n": 2,
+      "tier": 5
+    },
+    "Kabupaten Rejang Lebong": {
+      "n": 2,
+      "tier": 5
+    },
+    "Kabupaten Toli Toli": {
+      "n": 2,
+      "tier": 5
+    },
+    "Kabupaten Muna Barat": {
+      "n": 2,
+      "tier": 5
+    },
+    "Kabupaten Bengkayang": {
+      "n": 2,
+      "tier": 5
+    },
+    "Kabupaten Muna": {
+      "n": 2,
+      "tier": 5
+    },
+    "Kabupaten Bengkulu Selatan": {
+      "n": 2,
+      "tier": 5
+    },
+    "Kabupaten Bima": {
+      "n": 2,
+      "tier": 5
+    },
+    "Kabupaten Siak": {
+      "n": 2,
+      "tier": 5
+    },
+    "Kabupaten Serdang Bedagai": {
+      "n": 2,
+      "tier": 5
+    },
+    "Kotamobagu": {
+      "n": 2,
+      "tier": 5
+    },
+    "Kabupaten Sinjai": {
+      "n": 2,
+      "tier": 5
+    },
+    "Kabupaten Poso": {
+      "n": 2,
+      "tier": 5
+    },
+    "Kabupaten Kutai Barat": {
+      "n": 2,
+      "tier": 5
+    },
+    "Kabupaten Manggarai Timur": {
+      "n": 2,
+      "tier": 5
+    },
+    "Kabupaten Sarolangun": {
+      "n": 2,
+      "tier": 5
+    },
+    "Aceh Barat": {
+      "n": 1,
+      "tier": 5
+    },
+    "Hulu Sungai Utara": {
+      "n": 1,
+      "tier": 5
+    },
+    "Karimun": {
+      "n": 1,
+      "tier": 5
+    },
+    "Karo": {
+      "n": 1,
+      "tier": 5
+    },
+    "Konawe": {
+      "n": 1,
+      "tier": 5
+    },
+    "Labuhan Batu": {
+      "n": 1,
+      "tier": 5
+    },
+    "Pelalawan": {
+      "n": 1,
+      "tier": 5
+    },
+    "Sanggau": {
+      "n": 1,
+      "tier": 5
+    },
+    "Tana Toraja": {
+      "n": 1,
+      "tier": 5
+    },
+    "Tapanuli Utara": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Kepulauan Anambas": {
+      "n": 1,
+      "tier": 5
+    },
+    "Banggai Laut": {
+      "n": 1,
+      "tier": 5
+    },
+    "Bone Bolango": {
+      "n": 1,
+      "tier": 5
+    },
+    "Gunung Sitoli": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kapuas": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kepulauan Mentawai": {
+      "n": 1,
+      "tier": 5
+    },
+    "Lahat": {
+      "n": 1,
+      "tier": 5
+    },
+    "Mesuji": {
+      "n": 1,
+      "tier": 5
+    },
+    "Mimika": {
+      "n": 1,
+      "tier": 5
+    },
+    "Musi Rawas": {
+      "n": 1,
+      "tier": 5
+    },
+    "Nabire": {
+      "n": 1,
+      "tier": 5
+    },
+    "Pangkajene": {
+      "n": 1,
+      "tier": 5
+    },
+    "Papua Selatan": {
+      "n": 1,
+      "tier": 5
+    },
+    "Sarolangun": {
+      "n": 1,
+      "tier": 5
+    },
+    "Sumbawa": {
+      "n": 1,
+      "tier": 5
+    },
+    "Sumenep": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Trenggalek": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Tanah Datar": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Manggarai Barat": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Merangin": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Sumbawa Barat": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Pidie": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Banggai": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Lebong": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Agam": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Morowali Utara": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Murung Raya": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Tanjung Jabung Barat": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Barito Timur": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Barito Selatan": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Empat Lawang": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Pasaman Barat": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Belitung Timur": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Bangli": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Tanah Bumbu": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Bener Meriah": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Gunung Mas": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Tojo Una Una": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Mamuju Utara": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Bengkulu Tengah": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Timor Tengah Selatan": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Parigi Moutong": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Nunukan": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Timor Tengah Utara": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Landak": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Batanghari": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Tapin": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Rote Ndao": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Tanggamus": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Konawe Utara": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Buru": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Aceh Tenggara": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Halmahera Barat": {
+      "n": 1,
+      "tier": 5
+    },
+    "Bima": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Bangka Selatan": {
+      "n": 1,
+      "tier": 5
+    },
+    "Kabupaten Luwu Utara": {
+      "n": 1,
+      "tier": 5
+    },
+    "Tidore Kepulauan": {
+      "n": 1,
+      "tier": 5
+    }
   },
-  "median_luas_m2": 118.0,
-  "median_luas_bangunan": 120.0,
-  "median_jumlah_kamar": 3.0,
+  "city_slugs": {
+    "Aceh": "aceh",
+    "Aceh Barat": "aceh-barat",
+    "Aceh Besar": "aceh-besar",
+    "Agam": "agam",
+    "Ambarawa": "ambarawa",
+    "Ambon": "ambon",
+    "Anambas": "anambas",
+    "Anyer": "anyer",
+    "Asahan": "asahan",
+    "Badung": "badung",
+    "Bali": "bali",
+    "Balikpapan": "balikpapan",
+    "Banda Aceh": "banda-aceh",
+    "Bandar Lampung": "bandar-lampung",
+    "Bandung": "bandung",
+    "Bandung Barat": "bandung-barat",
+    "Bangka": "bangka",
+    "Bangka Selatan": "bangka-selatan",
+    "Bangka Tengah": "bangka-tengah",
+    "Bangkalan": "bangkalan",
+    "Bangli": "bangli",
+    "Banjar": "banjar",
+    "Banjar Baru": "banjar-baru",
+    "Banjarbaru": "banjarbaru",
+    "Banjarmasin": "banjarmasin",
+    "Banjarnegara": "banjarnegara",
+    "Banten": "banten",
+    "Bantul": "bantul",
+    "Banyuasin": "banyuasin",
+    "Banyumas": "banyumas",
+    "Banyuwangi": "banyuwangi",
+    "Barru": "barru",
+    "Batam": "batam",
+    "Batang": "batang",
+    "Batu": "batu",
+    "Bau Bau": "bau-bau",
+    "Bekasi": "bekasi",
+    "Belitung": "belitung",
+    "Belu": "belu",
+    "Bengkalis": "bengkalis",
+    "Bengkulu": "bengkulu",
+    "Bengkulu Tengah": "bengkulu-tengah",
+    "Bengkulu Utara": "bengkulu-utara",
+    "Berau": "berau",
+    "Biak Numfor": "biak-numfor",
+    "Bima": "bima",
+    "Binjai": "binjai",
+    "Bintan": "bintan",
+    "Bitung": "bitung",
+    "Blitar": "blitar",
+    "Blora": "blora",
+    "Bogor": "bogor",
+    "Bojonegoro": "bojonegoro",
+    "Bolaang Mongondow": "bolaang-mongondow",
+    "Bondowoso": "bondowoso",
+    "Bone": "bone",
+    "Bone Bolango": "bone-bolango",
+    "Boyolali": "boyolali",
+    "Brebes": "brebes",
+    "Bukittinggi": "bukittinggi",
+    "Buleleng": "buleleng",
+    "Bulukumba": "bulukumba",
+    "Ciamis": "ciamis",
+    "Cianjur": "cianjur",
+    "Cikampek": "cikampek",
+    "Cikarang": "cikarang",
+    "Cilacap": "cilacap",
+    "Cilegon": "cilegon",
+    "Cimahi": "cimahi",
+    "Cirebon": "cirebon",
+    "Daerah Istimewa Yogyakarta": "daerah-istimewa-yogyakarta",
+    "Deli Serdang": "deli-serdang",
+    "Demak": "demak",
+    "Denpasar": "denpasar",
+    "Depok": "depok",
+    "Dki Jakarta": "dki-jakarta",
+    "Dumai": "dumai",
+    "Enrekang": "enrekang",
+    "Garut": "garut",
+    "Gianyar": "gianyar",
+    "Gorontalo": "gorontalo",
+    "Gowa": "gowa",
+    "Gresik": "gresik",
+    "Grobogan": "grobogan",
+    "Gunung Kidul": "gunung-kidul",
+    "Gunung Sitoli": "gunung-sitoli",
+    "Hulu Sungai Utara": "hulu-sungai-utara",
+    "Indramayu": "indramayu",
+    "Jakarta Barat": "jakarta-barat",
+    "Jakarta Pusat": "jakarta-pusat",
+    "Jakarta Selatan": "jaksel",
+    "Jakarta Timur": "jakarta-timur",
+    "Jakarta Utara": "jakut",
+    "Jambi": "jambi",
+    "Jawa Barat": "jawa-barat",
+    "Jayapura": "jayapura",
+    "Jember": "jember",
+    "Jembrana": "jembrana",
+    "Jepara": "jepara",
+    "Jombang": "jombang",
+    "Kabupaten Aceh Barat": "kabupaten-aceh-barat",
+    "Kabupaten Aceh Besar": "kabupaten-aceh-besar",
+    "Kabupaten Aceh Singkil": "kabupaten-aceh-singkil",
+    "Kabupaten Aceh Tamiang": "kabupaten-aceh-tamiang",
+    "Kabupaten Aceh Tenggara": "kabupaten-aceh-tenggara",
+    "Kabupaten Aceh Utara": "kabupaten-aceh-utara",
+    "Kabupaten Agam": "kabupaten-agam",
+    "Kabupaten Asahan": "kabupaten-asahan",
+    "Kabupaten Badung": "kabupaten-badung",
+    "Kabupaten Bandung": "kabupaten-bandung",
+    "Kabupaten Bandung Barat": "kabupaten-bandung-barat",
+    "Kabupaten Banggai": "kabupaten-banggai",
+    "Kabupaten Bangka": "kabupaten-bangka",
+    "Kabupaten Bangka Selatan": "kabupaten-bangka-selatan",
+    "Kabupaten Bangka Tengah": "kabupaten-bangka-tengah",
+    "Kabupaten Bangkalan": "kabupaten-bangkalan",
+    "Kabupaten Bangli": "kabupaten-bangli",
+    "Kabupaten Banjar": "kabupaten-banjar",
+    "Kabupaten Banjarnegara": "kabupaten-banjarnegara",
+    "Kabupaten Bantaeng": "kabupaten-bantaeng",
+    "Kabupaten Bantul": "kabupaten-bantul",
+    "Kabupaten Banyuasin": "kabupaten-banyuasin",
+    "Kabupaten Banyumas": "kabupaten-banyumas",
+    "Kabupaten Banyuwangi": "kabupaten-banyuwangi",
+    "Kabupaten Barito Kuala": "kabupaten-barito-kuala",
+    "Kabupaten Barito Selatan": "kabupaten-barito-selatan",
+    "Kabupaten Barito Timur": "kabupaten-barito-timur",
+    "Kabupaten Barito Utara": "kabupaten-barito-utara",
+    "Kabupaten Barru": "kabupaten-barru",
+    "Kabupaten Batang": "kabupaten-batang",
+    "Kabupaten Batanghari": "kabupaten-batanghari",
+    "Kabupaten Batu Bara": "kabupaten-batu-bara",
+    "Kabupaten Bekasi": "kabupaten-bekasi",
+    "Kabupaten Belitung": "kabupaten-belitung",
+    "Kabupaten Belitung Timur": "kabupaten-belitung-timur",
+    "Kabupaten Belu": "kabupaten-belu",
+    "Kabupaten Bener Meriah": "kabupaten-bener-meriah",
+    "Kabupaten Bengkalis": "kabupaten-bengkalis",
+    "Kabupaten Bengkayang": "kabupaten-bengkayang",
+    "Kabupaten Bengkulu Selatan": "kabupaten-bengkulu-selatan",
+    "Kabupaten Bengkulu Tengah": "kabupaten-bengkulu-tengah",
+    "Kabupaten Berau": "kabupaten-berau",
+    "Kabupaten Bima": "kabupaten-bima",
+    "Kabupaten Bintan": "kabupaten-bintan",
+    "Kabupaten Bireuen": "kabupaten-bireuen",
+    "Kabupaten Blitar": "kabupaten-blitar",
+    "Kabupaten Blora": "kabupaten-blora",
+    "Kabupaten Bogor": "kabupaten-bogor",
+    "Kabupaten Bojonegoro": "kabupaten-bojonegoro",
+    "Kabupaten Bondowoso": "kabupaten-bondowoso",
+    "Kabupaten Bone": "kabupaten-bone",
+    "Kabupaten Boyolali": "kabupaten-boyolali",
+    "Kabupaten Brebes": "kabupaten-brebes",
+    "Kabupaten Buleleng": "kabupaten-buleleng",
+    "Kabupaten Bulukumba": "kabupaten-bulukumba",
+    "Kabupaten Bulungan": "kabupaten-bulungan",
+    "Kabupaten Bungo": "kabupaten-bungo",
+    "Kabupaten Buru": "kabupaten-buru",
+    "Kabupaten Buton Tengah": "kabupaten-buton-tengah",
+    "Kabupaten Ciamis": "kabupaten-ciamis",
+    "Kabupaten Cianjur": "kabupaten-cianjur",
+    "Kabupaten Cilacap": "kabupaten-cilacap",
+    "Kabupaten Cirebon": "kabupaten-cirebon",
+    "Kabupaten Deli Serdang": "kabupaten-deli-serdang",
+    "Kabupaten Demak": "kabupaten-demak",
+    "Kabupaten Dharmasraya": "kabupaten-dharmasraya",
+    "Kabupaten Dompu": "kabupaten-dompu",
+    "Kabupaten Empat Lawang": "kabupaten-empat-lawang",
+    "Kabupaten Enrekang": "kabupaten-enrekang",
+    "Kabupaten Flores Timur": "kabupaten-flores-timur",
+    "Kabupaten Garut": "kabupaten-garut",
+    "Kabupaten Gianyar": "kabupaten-gianyar",
+    "Kabupaten Gorontalo": "kabupaten-gorontalo",
+    "Kabupaten Gowa": "kabupaten-gowa",
+    "Kabupaten Gresik": "kabupaten-gresik",
+    "Kabupaten Grobogan": "kabupaten-grobogan",
+    "Kabupaten Gunung Mas": "kabupaten-gunung-mas",
+    "Kabupaten Gunungkidul": "kabupaten-gunungkidul",
+    "Kabupaten Halmahera Barat": "kabupaten-halmahera-barat",
+    "Kabupaten Hulu Sungai Selatan": "kabupaten-hulu-sungai-selatan",
+    "Kabupaten Hulu Sungai Tengah": "kabupaten-hulu-sungai-tengah",
+    "Kabupaten Indragiri Hilir": "kabupaten-indragiri-hilir",
+    "Kabupaten Indragiri Hulu": "kabupaten-indragiri-hulu",
+    "Kabupaten Indramayu": "kabupaten-indramayu",
+    "Kabupaten Jayapura": "kabupaten-jayapura",
+    "Kabupaten Jember": "kabupaten-jember",
+    "Kabupaten Jembrana": "kabupaten-jembrana",
+    "Kabupaten Jeneponto": "kabupaten-jeneponto",
+    "Kabupaten Jepara": "kabupaten-jepara",
+    "Kabupaten Jombang": "kabupaten-jombang",
+    "Kabupaten Kaimana": "kabupaten-kaimana",
+    "Kabupaten Kampar": "kabupaten-kampar",
+    "Kabupaten Kapuas": "kabupaten-kapuas",
+    "Kabupaten Kapuas Hulu": "kabupaten-kapuas-hulu",
+    "Kabupaten Karanganyar": "kabupaten-karanganyar",
+    "Kabupaten Karangasem": "kabupaten-karangasem",
+    "Kabupaten Karawang": "kabupaten-karawang",
+    "Kabupaten Karimun": "kabupaten-karimun",
+    "Kabupaten Karo": "kabupaten-karo",
+    "Kabupaten Katingan": "kabupaten-katingan",
+    "Kabupaten Kayong Utara": "kabupaten-kayong-utara",
+    "Kabupaten Kebumen": "kabupaten-kebumen",
+    "Kabupaten Kediri": "kabupaten-kediri",
+    "Kabupaten Kendal": "kabupaten-kendal",
+    "Kabupaten Ketapang": "kabupaten-ketapang",
+    "Kabupaten Klaten": "kabupaten-klaten",
+    "Kabupaten Klungkung": "kabupaten-klungkung",
+    "Kabupaten Kolaka": "kabupaten-kolaka",
+    "Kabupaten Kolaka Timur": "kabupaten-kolaka-timur",
+    "Kabupaten Kolaka Utara": "kabupaten-kolaka-utara",
+    "Kabupaten Konawe": "kabupaten-konawe",
+    "Kabupaten Konawe Selatan": "kabupaten-konawe-selatan",
+    "Kabupaten Konawe Utara": "kabupaten-konawe-utara",
+    "Kabupaten Kotabaru": "kabupaten-kotabaru",
+    "Kabupaten Kotawaringin Barat": "kabupaten-kotawaringin-barat",
+    "Kabupaten Kotawaringin Timur": "kabupaten-kotawaringin-timur",
+    "Kabupaten Kuantan Singingi": "kabupaten-kuantan-singingi",
+    "Kabupaten Kubu Raya": "kabupaten-kubu-raya",
+    "Kabupaten Kudus": "kabupaten-kudus",
+    "Kabupaten Kulon Progo": "kabupaten-kulon-progo",
+    "Kabupaten Kuningan": "kabupaten-kuningan",
+    "Kabupaten Kupang": "kabupaten-kupang",
+    "Kabupaten Kutai Barat": "kabupaten-kutai-barat",
+    "Kabupaten Kutai Kartanegara": "kabupaten-kutai-kartanegara",
+    "Kabupaten Kutai Timur": "kabupaten-kutai-timur",
+    "Kabupaten Labuhanbatu": "kabupaten-labuhanbatu",
+    "Kabupaten Labuhanbatu Selatan": "kabupaten-labuhanbatu-selatan",
+    "Kabupaten Lahat": "kabupaten-lahat",
+    "Kabupaten Lamongan": "kabupaten-lamongan",
+    "Kabupaten Lampung Selatan": "kabupaten-lampung-selatan",
+    "Kabupaten Lampung Tengah": "kabupaten-lampung-tengah",
+    "Kabupaten Lampung Utara": "kabupaten-lampung-utara",
+    "Kabupaten Landak": "kabupaten-landak",
+    "Kabupaten Langkat": "kabupaten-langkat",
+    "Kabupaten Lebak": "kabupaten-lebak",
+    "Kabupaten Lebong": "kabupaten-lebong",
+    "Kabupaten Lima Puluh Kota": "kabupaten-lima-puluh-kota",
+    "Kabupaten Lombok Barat": "kabupaten-lombok-barat",
+    "Kabupaten Lombok Tengah": "kabupaten-lombok-tengah",
+    "Kabupaten Lombok Timur": "kabupaten-lombok-timur",
+    "Kabupaten Lombok Utara": "kabupaten-lombok-utara",
+    "Kabupaten Lumajang": "kabupaten-lumajang",
+    "Kabupaten Luwu Timur": "kabupaten-luwu-timur",
+    "Kabupaten Luwu Utara": "kabupaten-luwu-utara",
+    "Kabupaten Madiun": "kabupaten-madiun",
+    "Kabupaten Magelang": "kabupaten-magelang",
+    "Kabupaten Magetan": "kabupaten-magetan",
+    "Kabupaten Majalengka": "kabupaten-majalengka",
+    "Kabupaten Majene": "kabupaten-majene",
+    "Kabupaten Malang": "kabupaten-malang",
+    "Kabupaten Malinau": "kabupaten-malinau",
+    "Kabupaten Maluku Tengah": "kabupaten-maluku-tengah",
+    "Kabupaten Mamuju": "kabupaten-mamuju",
+    "Kabupaten Mamuju Tengah": "kabupaten-mamuju-tengah",
+    "Kabupaten Mamuju Utara": "kabupaten-mamuju-utara",
+    "Kabupaten Manggarai Barat": "kabupaten-manggarai-barat",
+    "Kabupaten Manggarai Timur": "kabupaten-manggarai-timur",
+    "Kabupaten Manokwari": "kabupaten-manokwari",
+    "Kabupaten Maros": "kabupaten-maros",
+    "Kabupaten Mempawah": "kabupaten-mempawah",
+    "Kabupaten Merangin": "kabupaten-merangin",
+    "Kabupaten Merauke": "kabupaten-merauke",
+    "Kabupaten Mimika": "kabupaten-mimika",
+    "Kabupaten Minahasa": "kabupaten-minahasa",
+    "Kabupaten Minahasa Utara": "kabupaten-minahasa-utara",
+    "Kabupaten Mojokerto": "kabupaten-mojokerto",
+    "Kabupaten Morowali": "kabupaten-morowali",
+    "Kabupaten Morowali Utara": "kabupaten-morowali-utara",
+    "Kabupaten Muara Enim": "kabupaten-muara-enim",
+    "Kabupaten Muaro Jambi": "kabupaten-muaro-jambi",
+    "Kabupaten Muna": "kabupaten-muna",
+    "Kabupaten Muna Barat": "kabupaten-muna-barat",
+    "Kabupaten Murung Raya": "kabupaten-murung-raya",
+    "Kabupaten Musi Banyuasin": "kabupaten-musi-banyuasin",
+    "Kabupaten Nganjuk": "kabupaten-nganjuk",
+    "Kabupaten Ngawi": "kabupaten-ngawi",
+    "Kabupaten Nunukan": "kabupaten-nunukan",
+    "Kabupaten Ogan Ilir": "kabupaten-ogan-ilir",
+    "Kabupaten Ogan Komering Ilir": "kabupaten-ogan-komering-ilir",
+    "Kabupaten Ogan Komering Ulu": "kabupaten-ogan-komering-ulu",
+    "Kabupaten Ogan Komering Ulu Timur": "kabupaten-ogan-komering-ulu-timur",
+    "Kabupaten Pacitan": "kabupaten-pacitan",
+    "Kabupaten Padang Lawas Utara": "kabupaten-padang-lawas-utara",
+    "Kabupaten Padang Pariaman": "kabupaten-padang-pariaman",
+    "Kabupaten Pahuwato": "kabupaten-pahuwato",
+    "Kabupaten Pamekasan": "kabupaten-pamekasan",
+    "Kabupaten Pandeglang": "kabupaten-pandeglang",
+    "Kabupaten Pangandaran": "kabupaten-pangandaran",
+    "Kabupaten Pangkajene Kepulauan": "kabupaten-pangkajene-kepulauan",
+    "Kabupaten Parigi Moutong": "kabupaten-parigi-moutong",
+    "Kabupaten Pasaman Barat": "kabupaten-pasaman-barat",
+    "Kabupaten Paser": "kabupaten-paser",
+    "Kabupaten Pasuruan": "kabupaten-pasuruan",
+    "Kabupaten Pati": "kabupaten-pati",
+    "Kabupaten Pekalongan": "kabupaten-pekalongan",
+    "Kabupaten Pelalawan": "kabupaten-pelalawan",
+    "Kabupaten Pemalang": "kabupaten-pemalang",
+    "Kabupaten Penajam Paser Utara": "kabupaten-penajam-paser-utara",
+    "Kabupaten Penukal Abab Lematang Ilir": "kabupaten-penukal-abab-lematang-ilir",
+    "Kabupaten Pesawaran": "kabupaten-pesawaran",
+    "Kabupaten Pesisir Selatan": "kabupaten-pesisir-selatan",
+    "Kabupaten Pidie": "kabupaten-pidie",
+    "Kabupaten Pinrang": "kabupaten-pinrang",
+    "Kabupaten Polewali Mandar": "kabupaten-polewali-mandar",
+    "Kabupaten Ponorogo": "kabupaten-ponorogo",
+    "Kabupaten Poso": "kabupaten-poso",
+    "Kabupaten Pringsewu": "kabupaten-pringsewu",
+    "Kabupaten Probolinggo": "kabupaten-probolinggo",
+    "Kabupaten Purbalingga": "kabupaten-purbalingga",
+    "Kabupaten Purwakarta": "kabupaten-purwakarta",
+    "Kabupaten Purworejo": "kabupaten-purworejo",
+    "Kabupaten Rejang Lebong": "kabupaten-rejang-lebong",
+    "Kabupaten Rembang": "kabupaten-rembang",
+    "Kabupaten Rokan Hulu": "kabupaten-rokan-hulu",
+    "Kabupaten Rote Ndao": "kabupaten-rote-ndao",
+    "Kabupaten Sambas": "kabupaten-sambas",
+    "Kabupaten Sampang": "kabupaten-sampang",
+    "Kabupaten Sanggau": "kabupaten-sanggau",
+    "Kabupaten Sarolangun": "kabupaten-sarolangun",
+    "Kabupaten Semarang": "kabupaten-semarang",
+    "Kabupaten Serang": "kabupaten-serang",
+    "Kabupaten Serdang Bedagai": "kabupaten-serdang-bedagai",
+    "Kabupaten Siak": "kabupaten-siak",
+    "Kabupaten Sidenreng Rappang": "kabupaten-sidenreng-rappang",
+    "Kabupaten Sidoarjo": "kabupaten-sidoarjo",
+    "Kabupaten Sigi": "kabupaten-sigi",
+    "Kabupaten Sijunjung": "kabupaten-sijunjung",
+    "Kabupaten Sikka": "kabupaten-sikka",
+    "Kabupaten Simalungun": "kabupaten-simalungun",
+    "Kabupaten Sinjai": "kabupaten-sinjai",
+    "Kabupaten Sintang": "kabupaten-sintang",
+    "Kabupaten Situbondo": "kabupaten-situbondo",
+    "Kabupaten Sleman": "kabupaten-sleman",
+    "Kabupaten Solok": "kabupaten-solok",
+    "Kabupaten Soppeng": "kabupaten-soppeng",
+    "Kabupaten Sorong": "kabupaten-sorong",
+    "Kabupaten Sragen": "kabupaten-sragen",
+    "Kabupaten Subang": "kabupaten-subang",
+    "Kabupaten Sukabumi": "kabupaten-sukabumi",
+    "Kabupaten Sukamara": "kabupaten-sukamara",
+    "Kabupaten Sukoharjo": "kabupaten-sukoharjo",
+    "Kabupaten Sumba Barat": "kabupaten-sumba-barat",
+    "Kabupaten Sumba Timur": "kabupaten-sumba-timur",
+    "Kabupaten Sumbawa": "kabupaten-sumbawa",
+    "Kabupaten Sumbawa Barat": "kabupaten-sumbawa-barat",
+    "Kabupaten Sumedang": "kabupaten-sumedang",
+    "Kabupaten Sumenep": "kabupaten-sumenep",
+    "Kabupaten Tabalong": "kabupaten-tabalong",
+    "Kabupaten Tabanan": "kabupaten-tabanan",
+    "Kabupaten Takalar": "kabupaten-takalar",
+    "Kabupaten Tanah Bumbu": "kabupaten-tanah-bumbu",
+    "Kabupaten Tanah Datar": "kabupaten-tanah-datar",
+    "Kabupaten Tanah Laut": "kabupaten-tanah-laut",
+    "Kabupaten Tangerang": "kabupaten-tangerang",
+    "Kabupaten Tanggamus": "kabupaten-tanggamus",
+    "Kabupaten Tanjung Jabung Barat": "kabupaten-tanjung-jabung-barat",
+    "Kabupaten Tapanuli Tengah": "kabupaten-tapanuli-tengah",
+    "Kabupaten Tapanuli Utara": "kabupaten-tapanuli-utara",
+    "Kabupaten Tapin": "kabupaten-tapin",
+    "Kabupaten Tasikmalaya": "kabupaten-tasikmalaya",
+    "Kabupaten Tebo": "kabupaten-tebo",
+    "Kabupaten Tegal": "kabupaten-tegal",
+    "Kabupaten Temanggung": "kabupaten-temanggung",
+    "Kabupaten Timor Tengah Selatan": "kabupaten-timor-tengah-selatan",
+    "Kabupaten Timor Tengah Utara": "kabupaten-timor-tengah-utara",
+    "Kabupaten Tojo Una Una": "kabupaten-tojo-una-una",
+    "Kabupaten Toli Toli": "kabupaten-toli-toli",
+    "Kabupaten Trenggalek": "kabupaten-trenggalek",
+    "Kabupaten Tuban": "kabupaten-tuban",
+    "Kabupaten Tulungagung": "kabupaten-tulungagung",
+    "Kabupaten Wajo": "kabupaten-wajo",
+    "Kabupaten Wonogiri": "kabupaten-wonogiri",
+    "Kabupaten Wonosobo": "kabupaten-wonosobo",
+    "Kalimantan Barat": "kalimantan-barat",
+    "Kalimantan Selatan": "kalimantan-selatan",
+    "Kalimantan Tengah": "kalimantan-tengah",
+    "Kalimantan Timur": "kalimantan-timur",
+    "Kalimantan Utara": "kalimantan-utara",
+    "Kampar": "kampar",
+    "Kapuas": "kapuas",
+    "Kapuas Hulu": "kapuas-hulu",
+    "Karanganyar": "karanganyar",
+    "Karangasem": "karangasem",
+    "Karawang": "karawang",
+    "Karimun": "karimun",
+    "Karo": "karo",
+    "Kebumen": "kebumen",
+    "Kediri": "kediri",
+    "Kendal": "kendal",
+    "Kendari": "kendari",
+    "Kepulauan Bangka Belitung": "kepulauan-bangka-belitung",
+    "Kepulauan Riau": "kepulauan-riau",
+    "Ketapang": "ketapang",
+    "Klaten": "klaten",
+    "Klungkung": "klungkung",
+    "Konawe": "konawe",
+    "Konawe Selatan": "konawe-selatan",
+    "Kota Baru": "kota-baru",
+    "Kota Waringin Barat": "kota-waringin-barat",
+    "Kota Waringin Timur": "kota-waringin-timur",
+    "Kotamobagu": "kotamobagu",
+    "Kubu Raya": "kubu-raya",
+    "Kulon Progo": "kulon-progo",
+    "Kuningan": "kuningan",
+    "Kupang": "kupang",
+    "Kutai Barat": "kutai-barat",
+    "Kutai Kartanegara": "kutai-kartanegara",
+    "Kutai Timur": "kutai-timur",
+    "Labuhan Batu": "labuhan-batu",
+    "Lahat": "lahat",
+    "Lamongan": "lamongan",
+    "Lampung": "lampung",
+    "Lampung Barat": "lampung-barat",
+    "Lampung Selatan": "lampung-selatan",
+    "Lampung Tengah": "lampung-tengah",
+    "Lampung Timur": "lampung-timur",
+    "Lampung Utara": "lampung-utara",
+    "Langkat": "langkat",
+    "Langsa": "langsa",
+    "Lebak": "lebak",
+    "Lhokseumawe": "lhokseumawe",
+    "Lombok Barat": "lombok-barat",
+    "Lombok Tengah": "lombok-tengah",
+    "Lombok Timur": "lombok-timur",
+    "Lombok Utara": "lombok-utara",
+    "Lubuk Linggau": "lubuk-linggau",
+    "Lumajang": "lumajang",
+    "Luwu": "luwu",
+    "Madiun": "madiun",
+    "Madura": "madura",
+    "Magelang": "magelang",
+    "Magetan": "magetan",
+    "Majalengka": "majalengka",
+    "Makassar": "makassar",
+    "Malang": "malang",
+    "Maluku": "maluku",
+    "Mamuju": "mamuju",
+    "Manado": "manado",
+    "Manggarai Barat": "manggarai-barat",
+    "Maros": "maros",
+    "Mataram": "mataram",
+    "Medan": "medan",
+    "Mempawah": "mempawah",
+    "Merauke": "merauke",
+    "Metro": "metro",
+    "Mimika": "mimika",
+    "Minahasa": "minahasa",
+    "Minahasa Selatan": "minahasa-selatan",
+    "Minahasa Tenggara": "minahasa-tenggara",
+    "Minahasa Utara": "minahasa-utara",
+    "Mojokerto": "mojokerto",
+    "Muara Enim": "muara-enim",
+    "Muaro Jambi": "muaro-jambi",
+    "Muna": "muna",
+    "Nabire": "nabire",
+    "Nganjuk": "nganjuk",
+    "Ngawi": "ngawi",
+    "Nusa Lembongan": "nusa-lembongan",
+    "Nusa Tenggara Barat": "nusa-tenggara-barat",
+    "Nusa Tenggara Timur": "nusa-tenggara-timur",
+    "Ogan Ilir": "ogan-ilir",
+    "Ogan Komering Ulu": "ogan-komering-ulu",
+    "Others": "others",
+    "Pacitan": "pacitan",
+    "Padang": "padang",
+    "Padang Pariaman": "padang-pariaman",
+    "Padangsidimpuan": "padangsidimpuan",
+    "Pagar Alam": "pagar-alam",
+    "Palangkaraya": "palangkaraya",
+    "Palembang": "palembang",
+    "Palopo": "palopo",
+    "Palu": "palu",
+    "Pamekasan": "pamekasan",
+    "Pandeglang": "pandeglang",
+    "Pangandaran": "pangandaran",
+    "Pangkajene": "pangkajene",
+    "Pangkal Pinang": "pangkal-pinang",
+    "Papua": "papua",
+    "Papua Barat": "papua-barat",
+    "Papua Selatan": "papua-selatan",
+    "Pare Pare": "pare-pare",
+    "Pariaman": "pariaman",
+    "Pasir": "pasir",
+    "Pasuruan": "pasuruan",
+    "Pati": "pati",
+    "Payakumbuh": "payakumbuh",
+    "Pekalongan": "pekalongan",
+    "Pekanbaru": "pekanbaru",
+    "Pelalawan": "pelalawan",
+    "Pemalang": "pemalang",
+    "Pematang Siantar": "pematang-siantar",
+    "Pematangsiantar": "pematangsiantar",
+    "Penajam Paser Utara": "penajam-paser-utara",
+    "Pesawaran": "pesawaran",
+    "Pinrang": "pinrang",
+    "Ponorogo": "ponorogo",
+    "Pontianak": "pontianak",
+    "Prabumulih": "prabumulih",
+    "Pringsewu": "pringsewu",
+    "Probolinggo": "probolinggo",
+    "Purbalingga": "purbalingga",
+    "Purwakarta": "purwakarta",
+    "Purwodadi": "purwodadi",
+    "Purwokerto": "purwokerto",
+    "Purworejo": "purworejo",
+    "Rejang Lebong": "rejang-lebong",
+    "Rembang": "rembang",
+    "Riau": "riau",
+    "Rokan Hulu": "rokan-hulu",
+    "Sabang": "sabang",
+    "Salatiga": "salatiga",
+    "Samarinda": "samarinda",
+    "Sambas": "sambas",
+    "Sanggau": "sanggau",
+    "Sarolangun": "sarolangun",
+    "Sawahlunto": "sawahlunto",
+    "Semarang": "semarang",
+    "Semarapura": "semarapura",
+    "Serang": "serang",
+    "Serdang Bedagai": "serdang-bedagai",
+    "Sidenreng Rappang": "sidenreng-rappang",
+    "Sidoarjo": "sidoarjo",
+    "Sigi": "sigi",
+    "Sikka": "sikka",
+    "Simalungun": "simalungun",
+    "Singkawang": "singkawang",
+    "Sintang": "sintang",
+    "Situbondo": "situbondo",
+    "Sleman": "sleman",
+    "Solo": "solo",
+    "Solok": "solok",
+    "Sorong": "sorong",
+    "Sragen": "sragen",
+    "Subang": "subang",
+    "Sukabumi": "sukabumi",
+    "Sukoharjo": "sukoharjo",
+    "Sulawesi Barat": "sulawesi-barat",
+    "Sulawesi Selatan": "sulawesi-selatan",
+    "Sulawesi Tengah": "sulawesi-tengah",
+    "Sulawesi Tenggara": "sulawesi-tenggara",
+    "Sulawesi Utara": "sulawesi-utara",
+    "Sumatera Barat": "sumatera-barat",
+    "Sumatera Selatan": "sumatera-selatan",
+    "Sumatera Utara": "sumatera-utara",
+    "Sumba Barat Daya": "sumba-barat-daya",
+    "Sumba Timur": "sumba-timur",
+    "Sumbawa": "sumbawa",
+    "Sumedang": "sumedang",
+    "Sumenep": "sumenep",
+    "Surabaya": "surabaya",
+    "Surakarta": "surakarta",
+    "Tabanan": "tabanan",
+    "Takalar": "takalar",
+    "Tana Toraja": "tana-toraja",
+    "Tanah Bumbu": "tanah-bumbu",
+    "Tanah Datar": "tanah-datar",
+    "Tanah Laut": "tanah-laut",
+    "Tangerang": "tangerang",
+    "Tangerang Selatan": "tangerang-selatan",
+    "Tanggamus": "tanggamus",
+    "Tanjung Balai": "tanjung-balai",
+    "Tanjung Pinang": "tanjung-pinang",
+    "Tapanuli Tengah": "tapanuli-tengah",
+    "Tapanuli Utara": "tapanuli-utara",
+    "Tarakan": "tarakan",
+    "Tasikmalaya": "tasikmalaya",
+    "Tebing Tinggi": "tebing-tinggi",
+    "Tegal": "tegal",
+    "Temanggung": "temanggung",
+    "Ternate": "ternate",
+    "Tidore Kepulauan": "tidore-kepulauan",
+    "Tomohon": "tomohon",
+    "Trenggalek": "trenggalek",
+    "Tual": "tual",
+    "Tuban": "tuban",
+    "Tulang Bawang": "tulang-bawang",
+    "Tulungagung": "tulungagung",
+    "Way Kanan": "way-kanan",
+    "Wonogiri": "wonogiri",
+    "Wonosobo": "wonosobo",
+    "Yogyakarta": "yogyakarta"
+  },
+  "median_luas_m2": 98.0,
+  "median_luas_bangunan": 63.0,
+  "median_jumlah_kamar": 2.0,
   "median_jumlah_kamar_mandi": 2.0,
-  "median_usia_bangunan": 32.0
+  "median_usia_bangunan": 2010.0
 }

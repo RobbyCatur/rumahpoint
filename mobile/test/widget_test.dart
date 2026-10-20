@@ -27,6 +27,7 @@ void main() {
     expect(find.text('Prediksi harga properti'), findsOneWidget);
     expect(find.text('Mulai Sekarang'), findsOneWidget);
 
+    await tester.ensureVisible(find.text('Mulai Sekarang'));
     await tester.tap(find.text('Mulai Sekarang'));
     await tester.pumpAndSettle();
 

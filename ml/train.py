@@ -31,6 +31,21 @@ CAT_FEATURES = ["lokasi"]
 TARGET_REG = "log_harga"
 TARGET_CLF = "kategori_harga"
 
+# Tier kualitas kota berdasarkan jumlah sampel (keputusan tim Okt 2026, diperluas ke 5 level
+# setelah arahan dosen "masukkan seluruh kota dengan data apa adanya"):
+# 1 aman (n>=150) | 2 warning ringan (100<=n<150) | 3 warning lvl2 (50<=n<100)
+# 4 warning lvl3 (10<=n<50) | 5 warning lvl4 (n<10)
+def city_tier(n):
+    if n >= 150:
+        return 1
+    if n >= 100:
+        return 2
+    if n >= 50:
+        return 3
+    if n >= 10:
+        return 4
+    return 5
+
 
 def _first_number(s):
     """Ambil angka pertama dari string, mis. '68.0 m2' -> 68.0 ; sudah numerik -> apa adanya."""
@@ -170,12 +185,15 @@ def main():
         except sqlite3.OperationalError:
             pass
         con.close()
+    counts = df["lokasi"].value_counts().to_dict()
     meta = {
         "num_features": NUM_FEATURES,
         "cat_features": CAT_FEATURES,
         "target_reg": "harga (log10)",
         "target_clf": TARGET_CLF,
         "cities": sorted(df["lokasi"].unique().tolist()),
+        "city_tiers": {c: {"n": int(n), "tier": city_tier(int(n))}
+                       for c, n in counts.items()},
         "city_slugs": city_slugs,  # nama -> slug; dipakai fase model per-kota (003)
         **medians,  # memuat median_luas_bangunan (dipakai cloud utk imputasi) dll.
     }
