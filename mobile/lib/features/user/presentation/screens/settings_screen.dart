@@ -18,6 +18,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     final themeMode = ref.watch(themeModeProvider);
     final isDark = themeMode == ThemeMode.dark;
     final isDarkTheme = Theme.of(context).brightness == Brightness.dark;
+    final subtitleColor = isDarkTheme ? const Color(0xFF94A3B8) : Colors.black54;
 
     return Scaffold(
       backgroundColor: isDarkTheme ? const Color(0xFF0F172A) : const Color(0xFFF9FAFB),
@@ -77,9 +78,9 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                 color: isDarkTheme ? Colors.white : Colors.black87,
               ),
             ),
-            subtitle: const Text(
+            subtitle: Text(
               'Kosongkan memori penyimpanan sementara',
-              style: TextStyle(fontSize: 13, color: Colors.grey),
+              style: TextStyle(fontSize: 13, color: subtitleColor),
             ),
             trailing: const Icon(Icons.delete_outline, color: Colors.red),
             onTap: () {
@@ -100,6 +101,8 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     required ValueChanged<bool> onChanged,
   }) {
     final isDarkTheme = Theme.of(context).brightness == Brightness.dark;
+    final subtitleColor = isDarkTheme ? const Color(0xFF94A3B8) : Colors.black54;
+
     return SwitchListTile(
       contentPadding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
       title: Text(
@@ -112,7 +115,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
       ),
       subtitle: Text(
         subtitle,
-        style: const TextStyle(fontSize: 13, color: Colors.grey),
+        style: TextStyle(fontSize: 13, color: subtitleColor),
       ),
       value: value,
       activeTrackColor: const Color(0xFFF59E0B),
@@ -130,4 +133,4 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
       endIndent: 24,
     );
   }
-}
+}

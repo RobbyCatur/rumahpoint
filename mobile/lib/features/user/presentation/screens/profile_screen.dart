@@ -14,17 +14,25 @@ class ProfileScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final userState = ref.watch(userProvider);
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final backgroundColor =
+        isDark ? const Color(0xFF0F172A) : const Color(0xFFF9FAFB);
+    final cardColor = isDark ? const Color(0xFF1E293B) : Colors.white;
+    final borderColor =
+        isDark ? const Color(0xFF334155) : Colors.grey.shade200;
+    final textColor = isDark ? Colors.white : Colors.black87;
+    final subtitleColor = isDark ? const Color(0xFF94A3B8) : Colors.grey;
 
     return Scaffold(
-      backgroundColor: const Color(0xFFF9FAFB), 
+      backgroundColor: backgroundColor,
       appBar: AppBar(
-        backgroundColor: const Color(0xFFF9FAFB),
+        backgroundColor: backgroundColor,
         elevation: 0,
-        title: const Text(
+        title: Text(
           'Profil Saya',
           style: TextStyle(
-            color: Colors.black87, 
-            fontSize: 22, 
+            color: textColor,
+            fontSize: 22,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -43,22 +51,34 @@ class ProfileScreen extends ConsumerWidget {
               child: Container(
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: Colors.grey.shade200,
+                  color: isDark ? const Color(0xFF1E293B) : Colors.grey.shade200,
                   shape: BoxShape.circle,
+                  border: isDark ? Border.all(color: const Color(0xFF334155)) : null,
                 ),
-                child: const Icon(Icons.settings_outlined, color: Colors.black87, size: 22),
+                child: Icon(Icons.settings_outlined, color: textColor, size: 22),
               ),
             ),
           )
         ],
       ),
-      
       body: userState.when(
-        loading: () => const Center(child: CircularProgressIndicator(color: Color(0xFFF59E0B))),
-        error: (err, stack) => Center(child: Text('Error: $err')),
+        loading: () => const Center(
+          child: CircularProgressIndicator(color: Color(0xFFF59E0B)),
+        ),
+        error: (err, stack) => Center(
+          child: Text(
+            'Error: $err',
+            style: TextStyle(color: textColor),
+          ),
+        ),
         data: (user) {
           if (user == null) {
-             return const Center(child: Text('Data pengguna tidak ditemukan.'));
+            return Center(
+              child: Text(
+                'Data pengguna tidak ditemukan.',
+                style: TextStyle(color: textColor),
+              ),
+            );
           }
 
           return SingleChildScrollView(
@@ -67,19 +87,25 @@ class ProfileScreen extends ConsumerWidget {
               child: Column(
                 children: [
                   const SizedBox(height: 16),
-                  
+
                   // Card Profil — bisa diklik untuk ke Informasi Pribadi
                   GestureDetector(
                     onTap: () => Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const PersonalInfoScreen()),
+                      MaterialPageRoute(
+                        builder: (context) => const PersonalInfoScreen(),
+                      ),
                     ),
                     child: Container(
                       padding: const EdgeInsets.all(20),
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: cardColor,
                         borderRadius: BorderRadius.circular(20),
-                        border: Border.all(color: const Color(0xFFF59E0B).withOpacity(0.4)),
+                        border: Border.all(
+                          color: isDark
+                              ? const Color(0xFF334155)
+                              : const Color(0xFFF59E0B).withValues(alpha: 0.4),
+                        ),
                       ),
                       child: Row(
                         children: [
@@ -108,17 +134,28 @@ class ProfileScreen extends ConsumerWidget {
                               children: [
                                 Text(
                                   user.nama,
-                                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black87),
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                    color: textColor,
+                                  ),
                                 ),
                                 const SizedBox(height: 4),
                                 Text(
                                   user.email,
-                                  style: const TextStyle(fontSize: 13, color: Colors.grey),
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    color: subtitleColor,
+                                  ),
                                 ),
                               ],
                             ),
                           ),
-                          const Icon(Icons.chevron_right, color: Colors.grey, size: 22),
+                          Icon(
+                            Icons.chevron_right,
+                            color: subtitleColor,
+                            size: 22,
+                          ),
                         ],
                       ),
                     ),
@@ -129,36 +166,50 @@ class ProfileScreen extends ConsumerWidget {
                   // Daftar Menu
                   Container(
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: cardColor,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: Colors.grey.shade200),
+                      border: Border.all(color: borderColor),
                     ),
                     child: Column(
                       children: [
                         _buildMenuItem(
+                          context: context,
                           icon: Icons.person_outline,
                           iconColor: const Color(0xFFF59E0B),
                           title: 'Informasi Pribadi & Sandi',
-                          onTap: () => _navigateToSettings(context, 'Informasi Pribadi & Sandi'),
+                          onTap: () => _navigateToSettings(
+                            context,
+                            'Informasi Pribadi & Sandi',
+                          ),
                         ),
-                        _buildMenuDivider(),
+                        _buildMenuDivider(context),
                         _buildMenuItem(
+                          context: context,
                           icon: Icons.location_on_outlined,
                           iconColor: Colors.blue,
                           title: 'Preferensi Wilayah',
-                          onTap: () => _navigateToSettings(context, 'Preferensi Wilayah'),
+                          onTap: () => _navigateToSettings(
+                            context,
+                            'Preferensi Wilayah',
+                          ),
                         ),
-                        _buildMenuDivider(),
+                        _buildMenuDivider(context),
                         _buildMenuItem(
+                          context: context,
                           icon: Icons.help_outline,
-                          iconColor: Colors.grey.shade600,
+                          iconColor: isDark
+                              ? const Color(0xFF94A3B8)
+                              : Colors.grey.shade600,
                           title: 'Bantuan & Regulasi',
-                          onTap: () => _navigateToSettings(context, 'Bantuan & Regulasi'),
+                          onTap: () => _navigateToSettings(
+                            context,
+                            'Bantuan & Regulasi',
+                          ),
                         ),
                       ],
                     ),
                   ),
-                  
+
                   const SizedBox(height: 24),
 
                   // Tombol Logout
@@ -172,20 +223,34 @@ class ProfileScreen extends ConsumerWidget {
                       width: double.infinity,
                       padding: const EdgeInsets.symmetric(vertical: 16),
                       decoration: BoxDecoration(
-                        color: Colors.red.shade50,
+                        color: isDark
+                            ? const Color(0xFF450A0A).withValues(alpha: 0.4)
+                            : Colors.red.shade50,
                         borderRadius: BorderRadius.circular(16),
-                        border: Border.all(color: Colors.red.shade100),
+                        border: Border.all(
+                          color: isDark
+                              ? const Color(0xFF991B1B).withValues(alpha: 0.5)
+                              : Colors.red.shade100,
+                        ),
                       ),
-                      child: const Row(
+                      child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.logout, color: Colors.red, size: 20),
-                          SizedBox(width: 8),
+                          Icon(
+                            Icons.logout,
+                            color: isDark
+                                ? const Color(0xFFF87171)
+                                : Colors.red,
+                            size: 20,
+                          ),
+                          const SizedBox(width: 8),
                           Text(
                             'Keluar dari Akun',
                             style: TextStyle(
-                              color: Colors.red, 
-                              fontWeight: FontWeight.w600, 
+                              color: isDark
+                                  ? const Color(0xFFF87171)
+                                  : Colors.red,
+                              fontWeight: FontWeight.w600,
                               fontSize: 14,
                             ),
                           ),
@@ -206,7 +271,7 @@ class ProfileScreen extends ConsumerWidget {
   // Logika navigasi ke file yang telah dipecah
   void _navigateToSettings(BuildContext context, String title) {
     Widget destination;
-    
+
     if (title == 'Informasi Pribadi & Sandi') {
       destination = const PersonalInfoScreen();
     } else if (title == 'Preferensi Wilayah') {
@@ -225,8 +290,8 @@ class ProfileScreen extends ConsumerWidget {
     List<String> names = name.split(" ");
     String initials = "";
     int numWords = names.length > 2 ? 2 : names.length;
-    for(int i = 0; i < numWords; i++){
-      if(names[i].isNotEmpty){
+    for (int i = 0; i < numWords; i++) {
+      if (names[i].isNotEmpty) {
         initials += names[i][0].toUpperCase();
       }
     }
@@ -234,38 +299,53 @@ class ProfileScreen extends ConsumerWidget {
   }
 
   Widget _buildMenuItem({
-    required IconData icon, 
-    required Color iconColor, 
-    required String title, 
+    required BuildContext context,
+    required IconData icon,
+    required Color iconColor,
+    required String title,
     required VoidCallback onTap,
   }) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final textColor = isDark ? Colors.white : Colors.black87;
+    final subtitleColor = isDark ? const Color(0xFF94A3B8) : Colors.grey;
+
     return ListTile(
       contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 4),
       leading: Container(
-         padding: const EdgeInsets.all(8),
-         decoration: BoxDecoration(
-           color: iconColor.withOpacity(0.08),
-           shape: BoxShape.circle,
-         ),
-         child: Icon(icon, color: iconColor, size: 22)
+        padding: const EdgeInsets.all(8),
+        decoration: BoxDecoration(
+          color: iconColor.withValues(alpha: 0.12),
+          shape: BoxShape.circle,
+        ),
+        child: Icon(icon, color: iconColor, size: 22),
       ),
       title: Text(
-        title, 
-        style: const TextStyle(
-          fontSize: 14, 
-          fontWeight: FontWeight.w600, 
-          color: Colors.black87,
+        title,
+        style: TextStyle(
+          fontSize: 14,
+          fontWeight: FontWeight.w600,
+          color: textColor,
         ),
       ),
-      trailing: const Icon(Icons.chevron_right, color: Colors.grey, size: 20),
+      trailing: Icon(
+        Icons.chevron_right,
+        color: subtitleColor,
+        size: 20,
+      ),
       onTap: onTap,
     );
   }
 
-  Widget _buildMenuDivider() {
+  Widget _buildMenuDivider(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Divider(height: 1, color: Colors.grey.withOpacity(0.15)),
+      child: Divider(
+        height: 1,
+        color: isDark
+            ? const Color(0xFF334155)
+            : Colors.grey.withValues(alpha: 0.15),
+      ),
     );
   }
 }

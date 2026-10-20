@@ -5,16 +5,24 @@ class PrivacyScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final backgroundColor =
+        isDark ? const Color(0xFF0F172A) : const Color(0xFFF9FAFB);
+    final appBarColor = isDark ? const Color(0xFF0F172A) : Colors.white;
+    final textColor = isDark ? Colors.white : Colors.black87;
+    final dividerColor =
+        isDark ? Colors.white12 : Colors.grey.withValues(alpha: 0.15);
+
     return Scaffold(
-      backgroundColor: const Color(0xFFF9FAFB),
+      backgroundColor: backgroundColor,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: appBarColor,
         elevation: 0,
-        iconTheme: const IconThemeData(color: Colors.black87),
-        title: const Text(
+        iconTheme: IconThemeData(color: textColor),
+        title: Text(
           'Kebijakan Privasi',
           style: TextStyle(
-            color: Colors.black87,
+            color: textColor,
             fontSize: 18,
             fontWeight: FontWeight.w600,
           ),
@@ -23,7 +31,7 @@ class PrivacyScreen extends StatelessWidget {
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(1),
           child: Container(
-            color: Colors.grey.withOpacity(0.15),
+            color: dividerColor,
             height: 1,
           ),
         ),
@@ -31,11 +39,12 @@ class PrivacyScreen extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(20),
         children: [
-          _buildLastUpdated('1 Oktober 2026'),
+          _buildLastUpdated('1 Oktober 2026', isDark: isDark),
           const SizedBox(height: 20),
 
           // Ringkasan
           _buildHighlightCard(
+            isDark: isDark,
             icon: Icons.shield_outlined,
             color: Colors.indigo,
             text:
@@ -45,8 +54,9 @@ class PrivacyScreen extends StatelessWidget {
           const SizedBox(height: 20),
 
           _buildSection(
+            context: context,
             icon: Icons.person_outline,
-            iconColor: Colors.indigo,
+            iconColor: isDark ? const Color(0xFF818CF8) : Colors.indigo,
             title: 'Data yang Kami Kumpulkan',
             items: [
               'Nama dan alamat email saat registrasi akun.',
@@ -56,8 +66,9 @@ class PrivacyScreen extends StatelessWidget {
           ),
 
           _buildSection(
+            context: context,
             icon: Icons.storage_outlined,
-            iconColor: Colors.indigo,
+            iconColor: isDark ? const Color(0xFF818CF8) : Colors.indigo,
             title: 'Cara Kami Menyimpan Data',
             items: [
               'Riwayat prediksi disimpan secara lokal di perangkat Anda menggunakan SharedPreferences.',
@@ -67,8 +78,9 @@ class PrivacyScreen extends StatelessWidget {
           ),
 
           _buildSection(
+            context: context,
             icon: Icons.share_outlined,
-            iconColor: Colors.indigo,
+            iconColor: isDark ? const Color(0xFF818CF8) : Colors.indigo,
             title: 'Penggunaan & Pembagian Data',
             items: [
               'Data prediksi Anda digunakan untuk meningkatkan akurasi model Machine Learning kami.',
@@ -78,8 +90,9 @@ class PrivacyScreen extends StatelessWidget {
           ),
 
           _buildSection(
+            context: context,
             icon: Icons.lock_outline,
-            iconColor: Colors.indigo,
+            iconColor: isDark ? const Color(0xFF818CF8) : Colors.indigo,
             title: 'Keamanan Data',
             items: [
               'Komunikasi antara aplikasi dan server menggunakan HTTPS (TLS).',
@@ -89,8 +102,9 @@ class PrivacyScreen extends StatelessWidget {
           ),
 
           _buildSection(
+            context: context,
             icon: Icons.manage_accounts_outlined,
-            iconColor: Colors.indigo,
+            iconColor: isDark ? const Color(0xFF818CF8) : Colors.indigo,
             title: 'Hak Pengguna',
             items: [
               'Anda berhak meminta penghapusan akun dan seluruh data terkait.',
@@ -100,10 +114,13 @@ class PrivacyScreen extends StatelessWidget {
           ),
 
           const SizedBox(height: 32),
-          const Text(
+          Text(
             'RumahPoint v1.0.0 © 2026 Kelompok 5 PBL Polinema',
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 12, color: Colors.grey),
+            style: TextStyle(
+              fontSize: 12,
+              color: isDark ? const Color(0xFF64748B) : Colors.grey,
+            ),
           ),
           const SizedBox(height: 16),
         ],
@@ -111,23 +128,33 @@ class PrivacyScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildLastUpdated(String date) {
+  Widget _buildLastUpdated(String date, {required bool isDark}) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
       decoration: BoxDecoration(
-        color: Colors.indigo.withOpacity(0.07),
+        color: isDark
+            ? const Color(0xFF312E81).withValues(alpha: 0.3)
+            : Colors.indigo.withValues(alpha: 0.07),
         borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: Colors.indigo.withOpacity(0.2)),
+        border: Border.all(
+          color: isDark
+              ? const Color(0xFF6366F1).withValues(alpha: 0.3)
+              : Colors.indigo.withValues(alpha: 0.2),
+        ),
       ),
       child: Row(
         children: [
-          const Icon(Icons.update, color: Colors.indigo, size: 16),
+          Icon(
+            Icons.update,
+            color: isDark ? const Color(0xFF818CF8) : Colors.indigo,
+            size: 16,
+          ),
           const SizedBox(width: 8),
           Text(
             'Terakhir diperbarui: $date',
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 12,
-              color: Colors.indigo,
+              color: isDark ? const Color(0xFF818CF8) : Colors.indigo,
               fontWeight: FontWeight.w500,
             ),
           ),
@@ -137,6 +164,7 @@ class PrivacyScreen extends StatelessWidget {
   }
 
   Widget _buildHighlightCard({
+    required bool isDark,
     required IconData icon,
     required Color color,
     required String text,
@@ -144,21 +172,31 @@ class PrivacyScreen extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.07),
+        color: isDark
+            ? const Color(0xFF312E81).withValues(alpha: 0.3)
+            : color.withValues(alpha: 0.07),
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: color.withOpacity(0.2)),
+        border: Border.all(
+          color: isDark
+              ? const Color(0xFF6366F1).withValues(alpha: 0.3)
+              : color.withValues(alpha: 0.2),
+        ),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(icon, color: color, size: 20),
+          Icon(
+            icon,
+            color: isDark ? const Color(0xFF818CF8) : color,
+            size: 20,
+          ),
           const SizedBox(width: 12),
           Expanded(
             child: Text(
               text,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 13,
-                color: Colors.black54,
+                color: isDark ? const Color(0xFFE2E8F0) : Colors.black54,
                 height: 1.6,
               ),
             ),
@@ -169,19 +207,27 @@ class PrivacyScreen extends StatelessWidget {
   }
 
   Widget _buildSection({
+    required BuildContext context,
     required IconData icon,
     required Color iconColor,
     required String title,
     required List<String> items,
   }) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final cardColor = isDark ? const Color(0xFF1E293B) : Colors.white;
+    final borderColor =
+        isDark ? const Color(0xFF334155) : Colors.grey.shade100;
+    final textColor = isDark ? Colors.white : Colors.black87;
+    final bodyColor = isDark ? const Color(0xFFCBD5E1) : Colors.black54;
+
     return Padding(
       padding: const EdgeInsets.only(bottom: 20),
       child: Container(
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: cardColor,
           borderRadius: BorderRadius.circular(14),
-          border: Border.all(color: Colors.grey.shade100),
+          border: Border.all(color: borderColor),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -192,10 +238,10 @@ class PrivacyScreen extends StatelessWidget {
                 const SizedBox(width: 8),
                 Text(
                   title,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
-                    color: Colors.black87,
+                    color: textColor,
                   ),
                 ),
               ],
@@ -220,9 +266,9 @@ class PrivacyScreen extends StatelessWidget {
                     Expanded(
                       child: Text(
                         item,
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 13,
-                          color: Colors.black54,
+                          color: bodyColor,
                           height: 1.6,
                         ),
                       ),

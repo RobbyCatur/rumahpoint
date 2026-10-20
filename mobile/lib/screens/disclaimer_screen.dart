@@ -5,16 +5,24 @@ class DisclaimerScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final backgroundColor =
+        isDark ? const Color(0xFF0F172A) : const Color(0xFFF9FAFB);
+    final appBarColor = isDark ? const Color(0xFF0F172A) : Colors.white;
+    final textColor = isDark ? Colors.white : Colors.black87;
+    final dividerColor =
+        isDark ? Colors.white12 : Colors.grey.withValues(alpha: 0.15);
+
     return Scaffold(
-      backgroundColor: const Color(0xFFF9FAFB),
+      backgroundColor: backgroundColor,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: appBarColor,
         elevation: 0,
-        iconTheme: const IconThemeData(color: Colors.black87),
-        title: const Text(
+        iconTheme: IconThemeData(color: textColor),
+        title: Text(
           'Disclaimer Penilaian Properti',
           style: TextStyle(
-            color: Colors.black87,
+            color: textColor,
             fontSize: 16,
             fontWeight: FontWeight.w600,
           ),
@@ -23,7 +31,7 @@ class DisclaimerScreen extends StatelessWidget {
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(1),
           child: Container(
-            color: Colors.grey.withOpacity(0.15),
+            color: dividerColor,
             height: 1,
           ),
         ),
@@ -35,15 +43,25 @@ class DisclaimerScreen extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: Colors.orange.withOpacity(0.08),
+              color: isDark
+                  ? const Color(0xFF78350F).withValues(alpha: 0.28)
+                  : Colors.orange.withValues(alpha: 0.08),
               borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: Colors.orange.withOpacity(0.3)),
+              border: Border.all(
+                color: isDark
+                    ? const Color(0xFFF59E0B).withValues(alpha: 0.4)
+                    : Colors.orange.withValues(alpha: 0.3),
+              ),
             ),
-            child: const Row(
+            child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Icon(Icons.warning_amber_rounded, color: Colors.orange, size: 22),
-                SizedBox(width: 12),
+                const Icon(
+                  Icons.warning_amber_rounded,
+                  color: Color(0xFFF59E0B),
+                  size: 22,
+                ),
+                const SizedBox(width: 12),
                 Expanded(
                   child: Text(
                     'Hasil estimasi dari RumahPoint adalah alat bantu analisis, '
@@ -51,7 +69,7 @@ class DisclaimerScreen extends StatelessWidget {
                     'Jangan jadikan satu-satunya dasar keputusan transaksi properti.',
                     style: TextStyle(
                       fontSize: 13,
-                      color: Colors.black54,
+                      color: isDark ? const Color(0xFFE2E8F0) : Colors.black54,
                       height: 1.6,
                     ),
                   ),
@@ -63,8 +81,9 @@ class DisclaimerScreen extends StatelessWidget {
           const SizedBox(height: 24),
 
           _buildCard(
+            context: context,
             icon: Icons.model_training_outlined,
-            iconColor: Colors.orange,
+            iconColor: const Color(0xFFF59E0B),
             title: 'Tentang Model Prediksi',
             content:
                 'RumahPoint menggunakan algoritma Random Forest yang dilatih dengan dataset '
@@ -75,8 +94,9 @@ class DisclaimerScreen extends StatelessWidget {
           ),
 
           _buildCard(
+            context: context,
             icon: Icons.location_off_outlined,
-            iconColor: Colors.orange,
+            iconColor: const Color(0xFFF59E0B),
             title: 'Keterbatasan Geografis',
             content:
                 'Dataset pelatihan hanya mencakup 7 wilayah: Jakarta Selatan, Jakarta Utara, '
@@ -86,8 +106,9 @@ class DisclaimerScreen extends StatelessWidget {
           ),
 
           _buildCard(
+            context: context,
             icon: Icons.trending_up_outlined,
-            iconColor: Colors.orange,
+            iconColor: const Color(0xFFF59E0B),
             title: 'Dinamika Pasar Properti',
             content:
                 'Harga properti bersifat sangat dinamis dan dipengaruhi oleh: kondisi ekonomi makro, '
@@ -96,8 +117,9 @@ class DisclaimerScreen extends StatelessWidget {
           ),
 
           _buildCard(
+            context: context,
             icon: Icons.rule_outlined,
-            iconColor: Colors.orange,
+            iconColor: const Color(0xFFF59E0B),
             title: 'Bukan Penilai Resmi (KJPP)',
             content:
                 'Penilaian resmi properti untuk keperluan KPR, sengketa hukum, atau keperluan perpajakan '
@@ -107,8 +129,9 @@ class DisclaimerScreen extends StatelessWidget {
           ),
 
           _buildCard(
+            context: context,
             icon: Icons.school_outlined,
-            iconColor: Colors.orange,
+            iconColor: const Color(0xFFF59E0B),
             title: 'Konteks Akademik',
             content:
                 'RumahPoint dikembangkan sebagai proyek berbasis masalah (PBL) mahasiswa Teknologi Informasi '
@@ -123,27 +146,33 @@ class DisclaimerScreen extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: Colors.green.withOpacity(0.06),
+              color: isDark
+                  ? const Color(0xFF064E3B).withValues(alpha: 0.3)
+                  : Colors.green.withValues(alpha: 0.06),
               borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: Colors.green.withOpacity(0.2)),
+              border: Border.all(
+                color: isDark
+                    ? const Color(0xFF10B981).withValues(alpha: 0.4)
+                    : Colors.green.withValues(alpha: 0.2),
+              ),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Row(
+                Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.check_circle_outline,
-                      color: Colors.green,
+                      color: Color(0xFF10B981),
                       size: 18,
                     ),
-                    SizedBox(width: 8),
+                    const SizedBox(width: 8),
                     Text(
                       'Panduan Penggunaan yang Bijak',
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
-                        color: Colors.black87,
+                        color: textColor,
                       ),
                     ),
                   ],
@@ -162,16 +191,18 @@ class DisclaimerScreen extends StatelessWidget {
                       children: [
                         const Icon(
                           Icons.arrow_right,
-                          color: Colors.green,
+                          color: Color(0xFF10B981),
                           size: 18,
                         ),
                         const SizedBox(width: 4),
                         Expanded(
                           child: Text(
                             tip,
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontSize: 13,
-                              color: Colors.black54,
+                              color: isDark
+                                  ? const Color(0xFFCBD5E1)
+                                  : Colors.black54,
                               height: 1.5,
                             ),
                           ),
@@ -185,10 +216,13 @@ class DisclaimerScreen extends StatelessWidget {
           ),
 
           const SizedBox(height: 32),
-          const Text(
+          Text(
             'RumahPoint v1.0.0 © 2026 Kelompok 5 PBL Polinema',
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 12, color: Colors.grey),
+            style: TextStyle(
+              fontSize: 12,
+              color: isDark ? const Color(0xFF64748B) : Colors.grey,
+            ),
           ),
           const SizedBox(height: 16),
         ],
@@ -197,19 +231,27 @@ class DisclaimerScreen extends StatelessWidget {
   }
 
   Widget _buildCard({
+    required BuildContext context,
     required IconData icon,
     required Color iconColor,
     required String title,
     required String content,
   }) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final cardColor = isDark ? const Color(0xFF1E293B) : Colors.white;
+    final borderColor =
+        isDark ? const Color(0xFF334155) : Colors.grey.shade100;
+    final textColor = isDark ? Colors.white : Colors.black87;
+    final contentColor = isDark ? const Color(0xFFCBD5E1) : Colors.black54;
+
     return Padding(
       padding: const EdgeInsets.only(bottom: 14),
       child: Container(
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: cardColor,
           borderRadius: BorderRadius.circular(14),
-          border: Border.all(color: Colors.grey.shade100),
+          border: Border.all(color: borderColor),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -221,10 +263,10 @@ class DisclaimerScreen extends StatelessWidget {
                 Expanded(
                   child: Text(
                     title,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
-                      color: Colors.black87,
+                      color: textColor,
                     ),
                   ),
                 ),
@@ -233,9 +275,9 @@ class DisclaimerScreen extends StatelessWidget {
             const SizedBox(height: 10),
             Text(
               content,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 13,
-                color: Colors.black54,
+                color: contentColor,
                 height: 1.7,
               ),
             ),
