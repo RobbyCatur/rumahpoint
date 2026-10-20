@@ -4,19 +4,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../core/format.dart';
+import '../features/prediction/data/services/wilayah_service.dart';
+import '../features/prediction/domain/entities/wilayah.dart';
 import '../features/prediction/presentation/providers/prediction_providers.dart';
 import '../theme.dart';
 
-/// Kota yang didukung model (sesuai dataset union).
-const cities = [
-  'Bekasi',
-  'Bogor',
-  'Depok',
-  'Jakarta Selatan',
-  'Jakarta Utara',
-  'Surabaya',
-  'Tangerang',
-];
+/// Usia bangunan yang dikirim ke model untuk tiap pilihan kondisi.
+/// Model ML tetap butuh angka; user cukup memilih Baru/Bekas.
+const kondisiUsia = {'Baru': 0, 'Bekas': 10};
 
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
@@ -26,31 +21,56 @@ class HomeScreen extends ConsumerStatefulWidget {
 }
 
 class _HomeScreenState extends ConsumerState<HomeScreen> {
-  String _city = 'Jakarta Selatan';
+  KabupatenKota? _wilayah;
   double _luasTanah = 120;
   double _luasBangunan = 98;
   int _kamar = 3;
   int _kamarMandi = 2;
-  int _usia = 10;
+  String _kondisi = 'Baru';
 
   @override
   void initState() {
     super.initState();
-    _loadDraft();
+    _init();
   }
 
-  Future<void> _loadDraft() async {
+  Future<void> _init() async {
+    // 1) Pulihkan draft autosave (jika ada).
     final d = await ref.read(predictionControllerProvider.notifier).loadDraft();
-    if (d == null) return;
-    final city = d['city']?.toString();
-    setState(() {
-      if (city != null && cities.contains(city)) _city = city;
-      _luasTanah = _clampDouble(d['lt'], 20, 500, _luasTanah);
-      _luasBangunan = _clampDouble(d['lb'], 20, 500, _luasBangunan);
-      _kamar = _clampInt(d['kamar'], 1, 10, _kamar);
-      _kamarMandi = _clampInt(d['kamarMandi'], 1, 10, _kamarMandi);
-      _usia = _clampInt(d['usia'], 0, 50, _usia);
-    });
+    if (d != null && mounted) {
+      final nama = d['kabKota']?.toString();
+      final prov = d['provinsi']?.toString();
+      setState(() {
+        if (nama != null && prov != null) {
+          _wilayah = KabupatenKota(
+            nama: nama,
+            provinsi: prov,
+            didukung: d['didukung'] == true,
+            lat: 0,
+            lng: 0,
+          );
+        }
+        _luasTanah = _clampDouble(d['lt'], 20, 500, _luasTanah);
+        _luasBangunan = _clampDouble(d['lb'], 20, 500, _luasBangunan);
+        _kamar = _clampInt(d['kamar'], 1, 10, _kamar);
+        _kamarMandi = _clampInt(d['kamarMandi'], 1, 10, _kamarMandi);
+        final kondisi = d['kondisi']?.toString();
+        if (kondisiUsia.containsKey(kondisi)) _kondisi = kondisi!;
+      });
+    }
+    // 2) Bila belum ada pilihan lokasi, coba default dari GPS.
+    if (_wilayah == null) _detectLocation();
+  }
+
+  /// Minta izin GPS lalu pilihkan kab/kota terdekat sebagai default.
+  /// Gagal/ditolak → biarkan user memilih manual (fallback Jakarta Selatan).
+  Future<void> _detectLocation() async {
+    final pos = await ref.read(locationServiceProvider).currentPosition();
+    if (pos == null || !mounted) return;
+    final wilayah = await ref.read(wilayahProvider.future);
+    final terdekat = WilayahService.nearest(wilayah, pos.lat, pos.lng);
+    setState(() => _wilayah = terdekat);
+    _saveDraft();
   }
 
   static double _clampDouble(dynamic v, double min, double max, double fb) {
@@ -65,12 +85,14 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 
   Future<void> _saveDraft() async {
     await ref.read(predictionControllerProvider.notifier).saveDraft({
-      'city': _city,
+      'kabKota': _wilayah?.nama,
+      'provinsi': _wilayah?.provinsi,
+      'didukung': _wilayah?.didukung ?? false,
       'lt': _luasTanah,
       'lb': _luasBangunan,
       'kamar': _kamar,
       'kamarMandi': _kamarMandi,
-      'usia': _usia,
+      'kondisi': _kondisi,
     });
   }
 
@@ -95,23 +117,46 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   }
 
   Future<void> _submit() async {
+    final w = _wilayah;
+    if (w == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Pilih wilayah properti dulu.')),
+      );
+      return;
+    }
     final ctrl = ref.read(predictionControllerProvider.notifier);
     await ctrl.predict(
       luasM2: _luasTanah,
       luasBangunan: _luasBangunan,
       jumlahKamar: _kamar,
       jumlahKamarMandi: _kamarMandi,
-      usiaBangunan: _usia,
-      lokasi: _city,
+      usiaBangunan: kondisiUsia[_kondisi]!,
+      kondisi: _kondisi,
+      lokasi: w.nama,
+      provinsi: w.provinsi,
+      lokasiDidukung: w.didukung,
     );
     if (mounted && ref.read(predictionControllerProvider).current != null) {
       context.push('/hasil');
     }
   }
 
+  Future<void> _openWilayahPicker() async {
+    final wilayah = await ref.read(wilayahProvider.future);
+    if (!mounted) return;
+    final hasil = await showModalBottomSheet<KabupatenKota>(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      builder: (_) => _WilayahPickerSheet(data: wilayah, selected: _wilayah),
+    );
+    if (hasil != null) _update(() => _wilayah = hasil);
+  }
+
   @override
   Widget build(BuildContext context) {
     final state = ref.watch(predictionControllerProvider);
+    final w = _wilayah;
 
     return Scaffold(
       body: SafeArea(
@@ -131,19 +176,48 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const _SectionLabel('WILAYAH PROPERTI'),
-                    DropdownButtonFormField<String>(
-                      initialValue: _city,
-                      isExpanded: true,
-                      decoration: const InputDecoration(
-                        prefixIcon: Icon(Icons.location_on_outlined, size: 20),
+                    InkWell(
+                      onTap: _openWilayahPicker,
+                      borderRadius: BorderRadius.circular(14),
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 16, vertical: 14),
+                        decoration: BoxDecoration(
+                          color: AppColors.surface,
+                          border: Border.all(color: AppColors.line),
+                          borderRadius: BorderRadius.circular(14),
+                        ),
+                        child: Row(
+                          children: [
+                            const Icon(Icons.location_on_outlined,
+                                size: 20, color: AppColors.muted),
+                            const SizedBox(width: 12),
+                            Expanded(
+                              child: Text(
+                                w == null
+                                    ? 'Pilih kabupaten/kota'
+                                    : '${w.nama}, ${w.provinsi}',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: w == null
+                                      ? FontWeight.w400
+                                      : FontWeight.w600,
+                                  color: w == null
+                                      ? AppColors.muted
+                                      : AppColors.ink,
+                                ),
+                              ),
+                            ),
+                            const Icon(Icons.keyboard_arrow_down_rounded,
+                                color: AppColors.muted),
+                          ],
+                        ),
                       ),
-                      items: cities
-                          .map(
-                            (c) => DropdownMenuItem(value: c, child: Text(c)),
-                          )
-                          .toList(),
-                      onChanged: (v) => _update(() => _city = v!),
                     ),
+                    if (w != null && !w.didukung) ...[
+                      const SizedBox(height: 10),
+                      const _AccuracyNote(),
+                    ],
                     const SizedBox(height: 20),
                     _SliderField(
                       label: 'Luas Tanah (LT)',
@@ -161,54 +235,33 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                       onChanged: (v) => _update(() => _luasBangunan = v),
                     ),
                     const SizedBox(height: 16),
-                    LayoutBuilder(
-                      builder: (context, constraints) {
-                        final steppers = [
-                          _StepperField(
+                    Row(
+                      children: [
+                        Expanded(
+                          child: _StepperField(
                             label: 'Kamar Tidur',
                             value: _kamar,
                             min: 1,
                             max: 10,
                             onChanged: (v) => _update(() => _kamar = v),
                           ),
-                          _StepperField(
+                        ),
+                        const SizedBox(width: 10),
+                        Expanded(
+                          child: _StepperField(
                             label: 'Kamar Mandi',
                             value: _kamarMandi,
                             min: 1,
                             max: 10,
                             onChanged: (v) => _update(() => _kamarMandi = v),
                           ),
-                          _StepperField(
-                            label: 'Usia (Thn)',
-                            value: _usia,
-                            min: 0,
-                            max: 50,
-                            onChanged: (v) => _update(() => _usia = v),
-                          ),
-                        ];
-                        // Layar sempit (dp kecil / font diperbesar): tumpuk
-                        // vertikal agar isi stepper tidak overflow.
-                        if (constraints.maxWidth < 340) {
-                          return Column(
-                            children: [
-                              steppers[0],
-                              const SizedBox(height: 12),
-                              steppers[1],
-                              const SizedBox(height: 12),
-                              steppers[2],
-                            ],
-                          );
-                        }
-                        return Row(
-                          children: [
-                            Expanded(child: steppers[0]),
-                            const SizedBox(width: 10),
-                            Expanded(child: steppers[1]),
-                            const SizedBox(width: 10),
-                            Expanded(child: steppers[2]),
-                          ],
-                        );
-                      },
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 16),
+                    _KondisiPicker(
+                      value: _kondisi,
+                      onChanged: (v) => _update(() => _kondisi = v),
                     ),
                     if (state.error != null) ...[
                       const SizedBox(height: 16),
@@ -245,9 +298,272 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             ),
             const SizedBox(height: 16),
             const Text(
-              'Model Random Forest • R² 0,85 • 7 kota',
+              'Model Random Forest • mencakup 500+ kab/kota se-Indonesia',
               textAlign: TextAlign.center,
               style: TextStyle(color: AppColors.muted, fontSize: 12),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// Catatan akurasi bila lokasi tidak tercakup data latih.
+class _AccuracyNote extends StatelessWidget {
+  const _AccuracyNote();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: AppColors.amberSoft,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: const Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Icon(Icons.info_outline_rounded, size: 16, color: AppColors.amberDark),
+          SizedBox(width: 8),
+          Expanded(
+            child: Text(
+              'Data latih terbatas di wilayah ini — estimasi bisa kurang akurat.',
+              style: TextStyle(fontSize: 12, color: AppColors.amberDark),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// Pilihan kondisi bangunan: Baru / Bekas (pengganti stepper usia).
+class _KondisiPicker extends StatelessWidget {
+  const _KondisiPicker({required this.value, required this.onChanged});
+
+  final String value;
+  final ValueChanged<String> onChanged;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text(
+          'Kondisi Bangunan',
+          style: TextStyle(fontSize: 12, color: AppColors.muted),
+        ),
+        const SizedBox(height: 6),
+        Container(
+          padding: const EdgeInsets.all(4),
+          decoration: BoxDecoration(
+            color: AppColors.background,
+            border: Border.all(color: AppColors.line),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Row(
+            children: [
+              for (final k in ['Baru', 'Bekas'])
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () => onChanged(k),
+                    child: AnimatedContainer(
+                      duration: const Duration(milliseconds: 150),
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      decoration: BoxDecoration(
+                        color: value == k
+                            ? AppColors.surface
+                            : Colors.transparent,
+                        borderRadius: BorderRadius.circular(9),
+                        border: value == k
+                            ? Border.all(color: AppColors.amber, width: 1.4)
+                            : null,
+                      ),
+                      child: Text(
+                        k,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 13.5,
+                          fontWeight: FontWeight.w700,
+                          color:
+                              value == k ? AppColors.amberDark : AppColors.muted,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+/// Bottom sheet pemilih wilayah: pilih provinsi → pilih kab/kota.
+/// Daftar dibatasi 5 item terlihat, dengan kolom pencarian.
+class _WilayahPickerSheet extends StatefulWidget {
+  const _WilayahPickerSheet({required this.data, required this.selected});
+
+  final List<Provinsi> data;
+  final KabupatenKota? selected;
+
+  @override
+  State<_WilayahPickerSheet> createState() => _WilayahPickerSheetState();
+}
+
+class _WilayahPickerSheetState extends State<_WilayahPickerSheet> {
+  Provinsi? _provinsi;
+  String _query = '';
+  final _searchCtrl = TextEditingController();
+
+  @override
+  void dispose() {
+    _searchCtrl.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final step2 = _provinsi != null;
+    final items = step2
+        ? widget.data
+            .firstWhere((p) => p.nama == _provinsi!.nama)
+            .kabupatenKota
+            .where((k) => k.nama.toLowerCase().contains(_query.toLowerCase()))
+            .toList()
+        : widget.data
+            .where((p) => p.nama.toLowerCase().contains(_query.toLowerCase()))
+            .toList();
+
+    return DraggableScrollableSheet(
+      initialChildSize: 0.72,
+      minChildSize: 0.5,
+      maxChildSize: 0.92,
+      builder: (context, scrollCtrl) => Container(
+        decoration: const BoxDecoration(
+          color: AppColors.surface,
+          borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+        ),
+        child: Column(
+          children: [
+            const SizedBox(height: 10),
+            Container(
+              width: 40,
+              height: 4,
+              decoration: BoxDecoration(
+                color: AppColors.line,
+                borderRadius: BorderRadius.circular(2),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 14, 20, 0),
+              child: Row(
+                children: [
+                  if (step2)
+                    IconButton(
+                      onPressed: () => setState(() {
+                        _provinsi = null;
+                        _query = '';
+                        _searchCtrl.clear();
+                      }),
+                      icon: const Icon(Icons.arrow_back_rounded),
+                      tooltip: 'Kembali ke provinsi',
+                    ),
+                  Expanded(
+                    child: Text(
+                      step2 ? _provinsi!.nama : 'Pilih Provinsi',
+                      style: const TextStyle(
+                          fontSize: 16, fontWeight: FontWeight.w800),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 8, 20, 8),
+              child: TextField(
+                controller: _searchCtrl,
+                onChanged: (v) => setState(() => _query = v),
+                decoration: InputDecoration(
+                  hintText:
+                      step2 ? 'Cari kabupaten/kota...' : 'Cari provinsi...',
+                  hintStyle:
+                      const TextStyle(color: AppColors.muted, fontSize: 14),
+                  prefixIcon: const Icon(Icons.search_rounded, size: 20),
+                ),
+              ),
+            ),
+            Expanded(
+              child: items.isEmpty
+                  ? const Center(
+                      child: Text('Tidak ditemukan.',
+                          style: TextStyle(color: AppColors.muted)),
+                    )
+                  : ListView.builder(
+                      controller: scrollCtrl,
+                      // Tinggi item seragam → ~5 item terlihat penuh;
+                      // sisanya digulir (tidak full ke bawah).
+                      itemExtent: 53,
+                      padding: const EdgeInsets.fromLTRB(20, 0, 20, 16),
+                      itemCount: items.length,
+                      itemBuilder: (context, i) {
+                        if (!step2) {
+                          final p = items[i] as Provinsi;
+                          return Column(
+                            children: [
+                              ListTile(
+                                dense: true,
+                                title: Text(p.nama),
+                                subtitle: Text(
+                                  '${p.kabupatenKota.length} kab/kota',
+                                  style: const TextStyle(
+                                      fontSize: 11, color: AppColors.muted),
+                                ),
+                                trailing: const Icon(
+                                    Icons.chevron_right_rounded,
+                                    color: AppColors.muted),
+                                onTap: () => setState(() {
+                                  _provinsi = p;
+                                  _query = '';
+                                  _searchCtrl.clear();
+                                }),
+                              ),
+                              const Divider(height: 1, color: AppColors.line),
+                            ],
+                          );
+                        }
+                        final k = items[i] as KabupatenKota;
+                        final aktif = widget.selected?.nama == k.nama &&
+                            widget.selected?.provinsi == k.provinsi;
+                        return Column(
+                          children: [
+                            ListTile(
+                              dense: true,
+                              title: Text(
+                                k.nama,
+                                style: TextStyle(
+                                  fontWeight: aktif
+                                      ? FontWeight.w700
+                                      : FontWeight.w500,
+                                ),
+                              ),
+                              trailing: k.didukung
+                                  ? null
+                                  : const Tooltip(
+                                      message: 'Data latih terbatas',
+                                      child: Icon(Icons.info_outline_rounded,
+                                          size: 16,
+                                          color: AppColors.amberDark),
+                                    ),
+                              onTap: () => Navigator.pop(context, k),
+                            ),
+                            const Divider(height: 1, color: AppColors.line),
+                          ],
+                        );
+                      },
+                    ),
             ),
           ],
         ),
@@ -388,7 +704,7 @@ class _Banner extends StatelessWidget {
                 ),
                 SizedBox(height: 6),
                 Text(
-                  'Estimasi harga wajar dari 3.700+ data properti di 7 kota.',
+                  'Estimasi harga wajar dari data properti di seluruh Indonesia.',
                   style: TextStyle(color: Colors.white70, fontSize: 12.5),
                 ),
               ],
