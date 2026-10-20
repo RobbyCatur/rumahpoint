@@ -1,0 +1,134 @@
+=== batch start: 49 kota (min-count=10, target=150) ===
+[1/49] Purbalingga              ->   30 baris (45s) T4-warning-lvl3
+[2/49] Temanggung               ->   30 baris (70s) T4-warning-lvl3
+[3/49] Bondowoso                ->   33 baris (57s) T4-warning-lvl3
+[4/49] Probolinggo              ->   29 baris (35s) T4-warning-lvl3
+[5/49] Purworejo                ->   24 baris (33s) T4-warning-lvl3
+[6/49] Pandeglang               ->   26 baris (69s) T4-warning-lvl3
+[7/49] Jepara                   ->   27 baris (52s) T4-warning-lvl3
+[8/49] Metro                    ->   33 baris (57s) T4-warning-lvl3
+[9/49] Indramayu                ->   25 baris (37s) T4-warning-lvl3
+[10/49] Wonogiri                 ->   24 baris (41s) T4-warning-lvl3
+[11/49] Cilacap                  ->   27 baris (50s) T4-warning-lvl3
+[12/49] Banjarmasin              ->   27 baris (44s) T4-warning-lvl3
+[13/49] Pemalang                 ->   23 baris (31s) T4-warning-lvl3
+[14/49] Tuban                    ->   24 baris (55s) T4-warning-lvl3
+[15/49] Batang                   ->   23 baris (42s) T4-warning-lvl3
+[16/49] Grobogan                 ->   25 baris (51s) T4-warning-lvl3
+[17/49] Pesawaran                ->   24 baris (34s) T4-warning-lvl3
+[18/49] Bojonegoro               ->   24 baris (46s) T4-warning-lvl3
+[19/49] Singkawang               ->   23 baris (33s) T4-warning-lvl3
+[20/49] Bangkalan                ->   21 baris (34s) T4-warning-lvl3
+[21/49] Blora                    ->   17 baris (35s) T4-warning-lvl3
+[22/49] Ponorogo                 ->   20 baris (22s) T4-warning-lvl3
+[23/49] Lampung Timur            ->   20 baris (57s) T4-warning-lvl3
+[24/49] Kampar                   ->   21 baris (16s) T4-warning-lvl3
+[25/49] Banjar Baru              ->   18 baris (24s) T4-warning-lvl3
+[26/49] Lampung Tengah           ->   20 baris (47s) T4-warning-lvl3
+[27/49] Lamongan                 ->   18 baris (55s) T4-warning-lvl3
+[28/49] Jembrana                 ->   15 baris (61s) T4-warning-lvl3
+[29/49] Minahasa Utara           ->   17 baris (40s) T4-warning-lvl3
+[30/49] Pematang Siantar         ->   14 baris (43s) T4-warning-lvl3
+[31/49] Tanggamus                ->   14 baris (21s) T4-warning-lvl3
+[32/49] Biak Numfor              ->   14 baris (8s) T4-warning-lvl3
+[33/49] Kebumen                  ->   13 baris (18s) T4-warning-lvl3
+[34/49] Situbondo                ->   13 baris (16s) T4-warning-lvl3
+[35/49] Binjai                   ->   13 baris (36s) T4-warning-lvl3
+[36/49] Bangli                   ->   12 baris (29s) T4-warning-lvl3
+[37/49] Klungkung                ->   12 baris (29s) T4-warning-lvl3
+[38/49] Rembang                  ->   13 baris (18s) T4-warning-lvl3
+[39/49] Wonosobo                 ->   12 baris (27s) T4-warning-lvl3
+[40/49] Bangka Tengah            ->   12 baris (21s) T4-warning-lvl3
+[41/49] Jayapura                 ->   12 baris (26s) T4-warning-lvl3
+[42/49] Tomohon                  ->   12 baris (30s) T4-warning-lvl3
+[43/49] Ngawi                    ->   11 baris (15s) T4-warning-lvl3
+[44/49] Palopo                   ->   11 baris (26s) T4-warning-lvl3
+[45/49] Bitung                   ->    9 baris (21s) T4-warning-lvl3
+[46/49] Minahasa                 ->   11 baris (32s) T4-warning-lvl3
+[47/49] Bangka                   ->   11 baris (36s) T4-warning-lvl3
+[48/49] Belitung                 ->   10 baris (27s) T4-warning-lvl3
+[49/49] Palu                     ->   10 baris (13s) T4-warning-lvl3
+=== batch selesai ===
+=== batch start: 81 kota (min-count=1, target=150) ===
+[1/81] Bintan                   ->    9 baris (28s) T4-warning-lvl3
+[2/81] Lombok Tengah            ->   10 baris (32s) T4-warning-lvl3
+[3/81] Manggarai Barat          ->    9 baris (9s) T4-warning-lvl3
+[4/81] Kendari                  ->   10 baris (38s) T4-warning-lvl3
+[5/81] Lumajang                 ->    7 baris (27s) T4-warning-lvl3
+[6/81] Pamekasan                ->    8 baris (24s) T4-warning-lvl3
+[7/81] Lampung Utara            ->    8 baris (21s) T4-warning-lvl3
+[8/81] Pringsewu                ->    8 baris (6s) T4-warning-lvl3
+[9/81] Lombok Utara             ->    8 baris (27s) T4-warning-lvl3
+[10/81] Takalar                  ->    7 baris (28s) T4-warning-lvl3
+[11/81] Lampung Barat            ->    6 baris (26s) T4-warning-lvl3
+[12/81] Aceh Besar               ->    5 baris (24s) T4-warning-lvl3
+[13/81] Pangandaran              ->    5 baris (15s) T4-warning-lvl3
+[14/81] Trenggalek               ->    5 baris (19s) T4-warning-lvl3
+[15/81] Sambas                   ->    5 baris (13s) T4-warning-lvl3
+[16/81] Solok                    ->    5 baris (16s) T4-warning-lvl3
+[17/81] Banjarnegara             ->    6 baris (14s) T4-warning-lvl3
+[18/81] Tarakan                  ->    4 baris (14s) T4-warning-lvl3
+[19/81] Muna                     ->    4 baris (19s) T4-warning-lvl3
+[20/81] Ogan Ilir                ->    4 baris (7s) T4-warning-lvl3
+[21/81] Serdang Bedagai          ->    4 baris (16s) T4-warning-lvl3
+[22/81] Tebing Tinggi            ->    4 baris (15s) T4-warning-lvl3
+[23/81] Langsa                   ->    3 baris (20s) T4-warning-lvl3
+[24/81] Kutai Kartanegara        ->    3 baris (14s) T4-warning-lvl3
+[25/81] Ambon                    ->    3 baris (10s) T4-warning-lvl3
+[26/81] Barru                    ->    3 baris (7s) T4-warning-lvl3
+[27/81] Bulukumba                ->    3 baris (6s) T4-warning-lvl3
+[28/81] Luwu                     ->    3 baris (20s) T4-warning-lvl3
+[29/81] Pinrang                  ->    3 baris (15s) T4-warning-lvl3
+[30/81] Bukittinggi              ->    3 baris (12s) T4-warning-lvl3
+[31/81] Muara Enim               ->    3 baris (9s) T4-warning-lvl3
+[32/81] Ogan Komering Ulu        ->    3 baris (20s) T4-warning-lvl3
+[33/81] Prabumulih               ->    3 baris (18s) T4-warning-lvl3
+[34/81] Langkat                  ->    3 baris (13s) T4-warning-lvl3
+[35/81] Simalungun               ->    3 baris (19s) T4-warning-lvl3
+[36/81] Kapuas Hulu              ->    2 baris (17s) T4-warning-lvl3
+[37/81] Mempawah                 ->    2 baris (15s) T4-warning-lvl3
+[38/81] Berau                    ->    2 baris (7s) T4-warning-lvl3
+[39/81] Kutai Barat              ->    2 baris (8s) T4-warning-lvl3
+[40/81] Lombok Timur             ->    2 baris (12s) T4-warning-lvl3
+[41/81] Belu                     ->    2 baris (8s) T4-warning-lvl3
+[42/81] Dumai                    ->    2 baris (13s) T4-warning-lvl3
+[43/81] Mamuju                   ->    2 baris (8s) T4-warning-lvl3
+[44/81] Enrekang                 ->    2 baris (9s) T4-warning-lvl3
+[45/81] Bolaang Mongondow        ->    2 baris (13s) T4-warning-lvl3
+[46/81] Tanah Datar              ->    2 baris (7s) T4-warning-lvl3
+[47/81] Asahan                   ->    2 baris (12s) T4-warning-lvl3
+[48/81] Tapanuli Tengah          ->    2 baris (19s) T4-warning-lvl3
+[49/81] Aceh Barat               ->    1 baris (7s) T4-warning-lvl3
+[50/81] Banda Aceh               ->    1 baris (7s) T4-warning-lvl3
+[51/81] Lhokseumawe              ->    1 baris (7s) T4-warning-lvl3
+[52/81] Sabang                   ->    1 baris (6s) T4-warning-lvl3
+[53/81] Pacitan                  ->    1 baris (7s) T4-warning-lvl3
+[54/81] Ketapang                 ->    1 baris (7s) T4-warning-lvl3
+[55/81] Sanggau                  ->    1 baris (8s) T4-warning-lvl3
+[56/81] Sintang                  ->    1 baris (9s) T4-warning-lvl3
+[57/81] Hulu Sungai Utara        ->    1 baris (7s) T4-warning-lvl3
+[58/81] Kota Baru                ->    1 baris (8s) T4-warning-lvl3
+[59/81] Tanah Bumbu              ->    1 baris (7s) T4-warning-lvl3
+[60/81] Kutai Timur              ->    1 baris (10s) T4-warning-lvl3
+[61/81] Penajam Paser Utara      ->    1 baris (7s) T4-warning-lvl3
+[62/81] Bangka Selatan           ->    1 baris (8s) T4-warning-lvl3
+[63/81] Karimun                  ->    1 baris (7s) T4-warning-lvl3
+[64/81] Way Kanan                ->    1 baris (7s) T4-warning-lvl3
+[65/81] Sikka                    ->    1 baris (6s) T4-warning-lvl3
+[66/81] Sumba Barat Daya         ->    1 baris (8s) T4-warning-lvl3
+[67/81] Sumba Timur              ->    1 baris (7s) T4-warning-lvl3
+[68/81] Merauke                  ->    1 baris (0s) T4-warning-lvl3
+[69/81] Pelalawan                ->    1 baris (6s) T4-warning-lvl3
+[70/81] Rokan Hulu               ->    1 baris (8s) T4-warning-lvl3
+[71/81] Tana Toraja              ->    1 baris (7s) T4-warning-lvl3
+[72/81] Konawe                   ->    1 baris (8s) T4-warning-lvl3
+[73/81] Konawe Selatan           ->    2 baris (12s) T4-warning-lvl3
+[74/81] Minahasa Selatan         ->    1 baris (8s) T4-warning-lvl3
+[75/81] Minahasa Tenggara        ->    1 baris (7s) T4-warning-lvl3
+[76/81] Agam                     ->    1 baris (12s) T4-warning-lvl3
+[77/81] Padang Pariaman          ->    1 baris (7s) T4-warning-lvl3
+[78/81] Pagar Alam               ->    1 baris (8s) T4-warning-lvl3
+[79/81] Karo                     ->    1 baris (9s) T4-warning-lvl3
+[80/81] Labuhan Batu             ->    1 baris (7s) T4-warning-lvl3
+[81/81] Tapanuli Utara           ->    1 baris (7s) T4-warning-lvl3
+=== batch selesai ===

@@ -1,0 +1,596 @@
+lokasi_union,inti,tipe,aturan,baris,sumber
+Bekasi,Bekasi,kota,kembar: default-kota,2000,99.co;ColectDataRumah;FLUS;rumah123;uas-properti
+Surabaya,Surabaya,kota,tunggal,2000,rumah123
+Kabupaten Bekasi,Bekasi,kabupaten,eksplisit,2000,FLUS;rumah123
+Kabupaten Tangerang,Tangerang,kabupaten,eksplisit,2000,FLUS
+Kabupaten Sidoarjo,Sidoarjo,kabupaten,eksplisit,2000,FLUS
+Kabupaten Bogor,Bogor,kabupaten,eksplisit,2000,FLUS
+Kabupaten Bandung,Bandung,kabupaten,eksplisit,1956,FLUS
+Tangerang Selatan,Tangerang Selatan,kota,tunggal,1800,99.co;FLUS;rumah123
+Depok,Depok,kota,tunggal,1622,99.co;FLUS;rumah123;uas-properti
+Semarang,Semarang,kota,kembar: default-kota,1611,99.co;FLUS;rumah123
+Tangerang,Tangerang,kota,kembar: default-kota,1400,99.co;FLUS;rumah123;uas-properti
+Serang,Serang,kota,kembar: default-kota,1346,99.co;FLUS;rumah123
+Bogor,Bogor,kota,kembar: default-kota,1302,99.co;FLUS;rumah123;uas-properti
+Makassar,Makassar,kota,tunggal,1191,99.co;FLUS;rumah123
+Kabupaten Gresik,Gresik,kabupaten,eksplisit,1161,FLUS
+Palembang,Palembang,kota,tunggal,1048,99.co;FLUS;rumah123
+Malang,Malang,kota,kembar: default-kota,1044,99.co;FLUS;rumah123
+Kabupaten Bandung Barat,Bandung Barat,kabupaten,eksplisit,1015,FLUS
+Bandung,Bandung,kota,kembar: default-kota,984,99.co;FLUS;rumah123
+Kabupaten Karawang,Karawang,kabupaten,eksplisit,886,FLUS;rumah123
+Kabupaten Malang,Malang,kabupaten,eksplisit,804,FLUS
+Jakarta Selatan,Jakarta Selatan,kota adm,tunggal,645,99.co;FLUS;rumah123;uas-properti
+Jakarta Utara,Jakarta Utara,kota adm,tunggal,644,99.co;FLUS;rumah123;uas-properti
+Medan,Medan,kota,tunggal,637,99.co;FLUS;rumah123
+Kabupaten Lebak,Lebak,kabupaten,eksplisit,603,FLUS
+Bandar Lampung,Bandar Lampung,kota,tunggal,565,99.co;FLUS;rumah123
+Jakarta Timur,Jakarta Timur,kota adm,tunggal,545,99.co;FLUS;rumah123
+Cilegon,Cilegon,kota,tunggal,525,99.co;FLUS;rumah123
+Jakarta Barat,Jakarta Barat,kota adm,tunggal,508,99.co;FLUS;rumah123
+Kabupaten Banyumas,Banyumas,kabupaten,eksplisit,503,FLUS;rumah123
+Batam,Batam,kota,tunggal,502,99.co;FLUS;rumah123
+Kabupaten Serang,Serang,kabupaten,eksplisit,477,FLUS;rumah123
+Balikpapan,Balikpapan,kota,tunggal,453,99.co;FLUS;rumah123
+Kabupaten Deli Serdang,Deli Serdang,kabupaten,eksplisit,442,FLUS
+Kabupaten Jember,Jember,kabupaten,eksplisit,430,FLUS
+Cirebon,Cirebon,kota,kembar: default-kota,422,99.co;FLUS;rumah123
+Pekanbaru,Pekanbaru,kota,tunggal,396,99.co;FLUS;rumah123
+Tasikmalaya,Tasikmalaya,kota,kembar: default-kota,377,99.co;FLUS;rumah123
+Kabupaten Sukoharjo,Sukoharjo,kabupaten,eksplisit,349,FLUS
+Yogyakarta,Yogyakarta,kota,tunggal,324,99.co;FLUS;rumah123
+Sidoarjo,Sidoarjo,kabupaten,tunggal,320,99.co;rumah123
+Kabupaten Kediri,Kediri,kabupaten,eksplisit,319,FLUS
+Sukabumi,Sukabumi,kota,kembar: default-kota,304,99.co;FLUS;rumah123
+Jakarta Pusat,Jakarta Pusat,?,tunggal,300,99.co;rumah123
+Kabupaten Cirebon,Cirebon,kabupaten,eksplisit,298,FLUS
+Denpasar,Denpasar,kota,tunggal,297,99.co;FLUS;rumah123
+Klaten,Klaten,kabupaten,tunggal,297,99.co;rumah123
+Tabanan,Tabanan,kabupaten,tunggal,297,99.co;rumah123
+Samarinda,Samarinda,kota,tunggal,296,99.co;FLUS;rumah123
+Manado,Manado,kota,tunggal,295,99.co;FLUS;rumah123
+Badung,Badung,kabupaten,tunggal,294,99.co;rumah123
+Kabupaten Kubu Raya,Kubu Raya,kabupaten,eksplisit,282,FLUS
+Kabupaten Bojonegoro,Bojonegoro,kabupaten,eksplisit,281,FLUS
+Surakarta,Surakarta,?,tunggal,268,99.co;rumah123
+Jambi,Jambi,kota,tunggal,267,FLUS;rumah123
+Pasuruan,Pasuruan,kota,kembar: default-kota,262,99.co;FLUS;rumah123
+Tegal,Tegal,kota,kembar: default-kota,253,99.co;FLUS;rumah123
+Kabupaten Sleman,Sleman,kabupaten,eksplisit,249,FLUS
+Salatiga,Salatiga,kota,tunggal,234,99.co;FLUS;rumah123
+Kabupaten Gowa,Gowa,kabupaten,eksplisit,227,FLUS
+Kabupaten Magelang,Magelang,kabupaten,eksplisit,227,FLUS
+Kabupaten Maros,Maros,kabupaten,eksplisit,225,FLUS
+Sukoharjo,Sukoharjo,kabupaten,tunggal,223,99.co;rumah123
+Pontianak,Pontianak,kota,tunggal,220,99.co;FLUS;rumah123
+Tanjung Pinang,Tanjung Pinang,kota,tunggal,217,99.co;FLUS;rumah123
+Kediri,Kediri,kota,kembar: default-kota,215,99.co;FLUS;rumah123
+Bandung Barat,Bandung Barat,kabupaten,tunggal,212,99.co;rumah123
+Pekalongan,Pekalongan,kota,kembar: default-kota,209,99.co;FLUS;rumah123
+Kabupaten Karanganyar,Karanganyar,kabupaten,eksplisit,209,FLUS
+Boyolali,Boyolali,kabupaten,tunggal,204,99.co;rumah123
+Kupang,Kupang,kota,kembar: default-kota,201,99.co;FLUS;rumah123
+Magelang,Magelang,kota,kembar: default-kota,199,99.co;FLUS;rumah123
+Gresik,Gresik,kabupaten,tunggal,198,99.co;rumah123
+Padang,Padang,kota,tunggal,197,99.co;FLUS;rumah123
+Cianjur,Cianjur,kabupaten,tunggal,195,99.co;rumah123
+Kabupaten Garut,Garut,kabupaten,eksplisit,194,FLUS
+Mojokerto,Mojokerto,kota,kembar: default-kota,189,99.co;FLUS;rumah123
+Kabupaten Pasuruan,Pasuruan,kabupaten,eksplisit,187,FLUS
+Buleleng,Buleleng,kabupaten,tunggal,183,99.co;rumah123
+Sumedang,Sumedang,kabupaten,tunggal,181,99.co;rumah123
+Cimahi,Cimahi,kota,tunggal,178,99.co;FLUS;rumah123
+Batu,Batu,kota,tunggal,177,99.co;FLUS;rumah123
+Deli Serdang,Deli Serdang,kabupaten,tunggal,173,99.co;rumah123
+Madiun,Madiun,kota,kembar: default-kota,172,99.co;FLUS;rumah123
+Karawang,Karawang,kabupaten,tunggal,171,99.co
+Kabupaten Bantul,Bantul,kabupaten,eksplisit,160,FLUS
+Gowa,Gowa,kabupaten,tunggal,155,99.co;rumah123
+Garut,Garut,kabupaten,tunggal,150,99.co;rumah123
+Kabupaten Jombang,Jombang,kabupaten,eksplisit,147,FLUS
+Lampung Selatan,Lampung Selatan,kabupaten,tunggal,144,99.co;rumah123
+Blitar,Blitar,kota,kembar: default-kota,141,99.co;FLUS;rumah123
+Purwakarta,Purwakarta,kabupaten,tunggal,137,99.co;rumah123
+Kabupaten Mojokerto,Mojokerto,kabupaten,eksplisit,137,FLUS
+Kabupaten Demak,Demak,kabupaten,eksplisit,130,FLUS
+Mataram,Mataram,kota,tunggal,129,99.co;FLUS;rumah123
+Banjarbaru,Banjar Baru,?,tunggal,129,FLUS
+Pangkal Pinang,Pangkal Pinang,kota,tunggal,128,99.co;FLUS;rumah123
+Kabupaten Purwakarta,Purwakarta,kabupaten,eksplisit,128,FLUS
+Kabupaten Lombok Barat,Lombok Barat,kabupaten,eksplisit,127,FLUS
+Kabupaten Sragen,Sragen,kabupaten,eksplisit,126,FLUS
+Maros,Maros,kabupaten,tunggal,123,99.co;rumah123
+Subang,Subang,kabupaten,tunggal,123,99.co;rumah123
+Kabupaten Sumedang,Sumedang,kabupaten,eksplisit,123,FLUS
+Kabupaten Semarang,Semarang,kabupaten,eksplisit,122,FLUS;rumah123
+Banjarmasin,Banjarmasin,kota,tunggal,119,99.co;FLUS;rumah123
+Kuningan,Kuningan,kabupaten,tunggal,115,99.co;rumah123
+Pati,Pati,kabupaten,tunggal,115,99.co;rumah123
+Probolinggo,Probolinggo,kota,kembar: default-kota,115,99.co;FLUS;rumah123
+Sragen,Sragen,kabupaten,tunggal,111,99.co;rumah123
+Kabupaten Kendal,Kendal,kabupaten,eksplisit,110,FLUS
+Kabupaten Sukabumi,Sukabumi,kabupaten,eksplisit,110,FLUS
+Kubu Raya,Kubu Raya,kabupaten,tunggal,108,99.co;rumah123
+Majalengka,Majalengka,kabupaten,tunggal,108,99.co;rumah123
+Nganjuk,Nganjuk,kabupaten,tunggal,108,99.co;rumah123
+Lombok Barat,Lombok Barat,kabupaten,tunggal,106,99.co;rumah123
+Kabupaten Muaro Jambi,Muaro Jambi,kabupaten,eksplisit,106,FLUS
+Tulungagung,Tulungagung,kabupaten,tunggal,105,99.co;rumah123
+Kabupaten Majalengka,Majalengka,kabupaten,eksplisit,103,FLUS
+Kendari,Kendari,kota,tunggal,98,99.co;FLUS;rumah123
+Kabupaten Ponorogo,Ponorogo,kabupaten,eksplisit,97,FLUS
+Lebak,Lebak,kabupaten,tunggal,96,99.co;rumah123
+Kendal,Kendal,kabupaten,tunggal,93,99.co
+Kabupaten Lumajang,Lumajang,kabupaten,eksplisit,93,FLUS
+Ciamis,Ciamis,kabupaten,tunggal,90,99.co;rumah123
+Demak,Demak,kabupaten,tunggal,90,99.co;rumah123
+Kabupaten Banyuwangi,Banyuwangi,kabupaten,eksplisit,86,FLUS
+Kabupaten Bangkalan,Bangkalan,kabupaten,eksplisit,85,FLUS
+Kabupaten Karimun,Karimun,kabupaten,eksplisit,85,FLUS
+Kabupaten Cianjur,Cianjur,kabupaten,eksplisit,83,FLUS
+Brebes,Brebes,kabupaten,tunggal,81,99.co;rumah123
+Singkawang,Singkawang,kota,tunggal,81,99.co;FLUS;rumah123
+Kabupaten Lamongan,Lamongan,kabupaten,eksplisit,80,FLUS
+Kabupaten Tegal,Tegal,kabupaten,eksplisit,78,FLUS
+Kabupaten Banyuasin,Banyu Asin,kabupaten,eksplisit,78,FLUS
+Cilacap,Cilacap,kabupaten,tunggal,77,99.co;rumah123
+Jombang,Jombang,kabupaten,tunggal,77,99.co
+Kabupaten Banjar,Banjar,kabupaten,eksplisit,75,FLUS
+Kabupaten Minahasa,Minahasa,kabupaten,eksplisit,74,FLUS
+Magetan,Magetan,kabupaten,tunggal,73,99.co;rumah123
+Kabupaten Pekalongan,Pekalongan,kabupaten,eksplisit,73,FLUS
+Purbalingga,Purbalingga,kabupaten,tunggal,72,99.co;rumah123
+Kabupaten Pemalang,Pemalang,kabupaten,eksplisit,71,FLUS
+Jember,Jember,kabupaten,tunggal,70,99.co
+Kabupaten Batang,Batang,kabupaten,eksplisit,69,FLUS
+Kabupaten Cilacap,Cilacap,kabupaten,eksplisit,69,FLUS
+Kabupaten Kudus,Kudus,kabupaten,eksplisit,69,FLUS
+Kabupaten Tulungagung,Tulungagung,kabupaten,eksplisit,68,FLUS
+Kabupaten Jepara,Jepara,kabupaten,eksplisit,67,FLUS
+Kabupaten Magetan,Magetan,kabupaten,eksplisit,66,FLUS
+Kabupaten Buleleng,Buleleng,kabupaten,eksplisit,65,FLUS
+Kabupaten Pati,Pati,kabupaten,eksplisit,65,FLUS
+Kabupaten Madiun,Madiun,kabupaten,eksplisit,65,FLUS
+Banjar Baru,Banjar Baru,?,tunggal,63,99.co;rumah123
+Palu,Palu,kota,tunggal,63,99.co;FLUS;rumah123
+Palangkaraya,Palangka Raya,?,tunggal,63,FLUS;rumah123
+Jayapura,Jayapura,kota,kembar: default-kota,62,99.co;FLUS;rumah123
+Temanggung,Temanggung,kabupaten,tunggal,62,99.co;rumah123
+Kabupaten Wonosobo,Wonosobo,kabupaten,eksplisit,62,FLUS
+Pandeglang,Pandeglang,kabupaten,tunggal,61,99.co;rumah123
+Kabupaten Subang,Subang,kabupaten,eksplisit,61,FLUS
+Metro,Metro,kota,tunggal,60,99.co;FLUS;rumah123
+Kabupaten Brebes,Brebes,kabupaten,eksplisit,60,FLUS
+Bengkulu,Bengkulu,kota,tunggal,59,FLUS;rumah123
+Kabupaten Probolinggo,Probolinggo,kabupaten,eksplisit,58,FLUS
+Kabupaten Tasikmalaya,Tasikmalaya,kabupaten,eksplisit,58,FLUS
+Kabupaten Klaten,Klaten,kabupaten,eksplisit,54,FLUS
+Purworejo,Purworejo,kabupaten,tunggal,53,99.co;rumah123
+Binjai,Binjai,kota,tunggal,52,99.co;FLUS;rumah123
+Indramayu,Indramayu,kabupaten,tunggal,52,99.co;rumah123
+Kabupaten Boyolali,Boyolali,kabupaten,eksplisit,52,FLUS
+Wonogiri,Wonogiri,kabupaten,tunggal,50,99.co;rumah123
+Banyuwangi,Banyuwangi,kabupaten,tunggal,50,rumah123
+Gunung Kidul,Gunungkidul,kabupaten,tunggal,50,rumah123
+Kepulauan Bangka Belitung,Kepulauan Bangka Belitung,luar,di-luar-induk,50,rumah123
+Sumatera Barat,Sumatera Barat,luar,di-luar-induk,50,rumah123
+Kabupaten Purbalingga,Purbalingga,kabupaten,eksplisit,50,FLUS
+Tuban,Tuban,kabupaten,tunggal,49,99.co;rumah123
+Banyumas,Banyumas,kabupaten,tunggal,49,rumah123
+Kalimantan Selatan,Kalimantan Selatan,luar,di-luar-induk,49,rumah123
+Karanganyar,Karanganyar,kabupaten,tunggal,49,rumah123
+Karangasem,Karangasem,kabupaten,tunggal,49,rumah123
+Kulon Progo,Kulon Progo,kabupaten,tunggal,49,rumah123
+Sulawesi Utara,Sulawesi Utara,luar,di-luar-induk,49,rumah123
+Bojonegoro,Bojonegoro,kabupaten,tunggal,48,99.co;rumah123
+Gianyar,Gianyar,kabupaten,tunggal,48,rumah123
+Kepulauan Riau,Kepulauan Riau,luar,di-luar-induk,48,rumah123
+Lampung,Lampung,luar,di-luar-induk,48,rumah123
+Nusa Tenggara Timur,Nusa Tenggara Timur,luar,di-luar-induk,48,rumah123
+Riau,Riau,luar,di-luar-induk,48,rumah123
+Batang,Batang,kabupaten,tunggal,47,99.co;rumah123
+Kabupaten Indramayu,Indramayu,kabupaten,eksplisit,47,FLUS
+Bondowoso,Bondowoso,kabupaten,tunggal,46,99.co;rumah123
+Bantul,Bantul,kabupaten,tunggal,46,rumah123
+Nusa Tenggara Barat,Nusa Tenggara Barat,luar,di-luar-induk,46,rumah123
+Solo,Solo,?,tunggal,46,rumah123
+Sumatera Utara,Sumatera Utara,luar,di-luar-induk,46,rumah123
+Kabupaten Ngawi,Ngawi,kabupaten,eksplisit,46,FLUS
+Bangkalan,Bangkalan,kabupaten,tunggal,45,99.co;rumah123
+Pesawaran,Pesawaran,kabupaten,tunggal,45,99.co;rumah123
+Bali,Bali,luar,di-luar-induk,45,rumah123
+Daerah Istimewa Yogyakarta,Daerah Istimewa Yogyakarta,luar,di-luar-induk,45,rumah123
+Kalimantan Timur,Kalimantan Timur,luar,di-luar-induk,45,rumah123
+Kabupaten Ciamis,Ciamis,kabupaten,eksplisit,45,FLUS
+Dki Jakarta,Dki Jakarta,luar,di-luar-induk,44,rumah123
+Sleman,Sleman,kabupaten,tunggal,44,rumah123
+Lamongan,Lamongan,kabupaten,tunggal,43,99.co;rumah123
+Lampung Tengah,Lampung Tengah,kabupaten,tunggal,43,99.co;rumah123
+Banten,Banten,luar,di-luar-induk,43,rumah123
+Sumatera Selatan,Sumatera Selatan,luar,di-luar-induk,43,rumah123
+Kabupaten Gunungkidul,Gunungkidul,kabupaten,eksplisit,43,FLUS
+Sulawesi Selatan,Sulawesi Selatan,luar,di-luar-induk,42,rumah123
+Bitung,Bitung,kota,tunggal,41,99.co;FLUS;rumah123
+Pemalang,Pemalang,kabupaten,tunggal,41,99.co;rumah123
+Kabupaten Temanggung,Temanggung,kabupaten,eksplisit,41,FLUS
+Kabupaten Tuban,Tuban,kabupaten,eksplisit,41,FLUS
+Kalimantan Barat,Kalimantan Barat,luar,di-luar-induk,40,rumah123
+Kabupaten Blitar,Blitar,kabupaten,eksplisit,40,FLUS
+Banyuasin,Banyu Asin,?,tunggal,39,rumah123
+Kabupaten Nganjuk,Nganjuk,kabupaten,eksplisit,39,FLUS
+Blora,Blora,kabupaten,tunggal,38,99.co;rumah123
+Grobogan,Grobogan,kabupaten,tunggal,37,99.co;rumah123
+Kabupaten Wonogiri,Wonogiri,kabupaten,eksplisit,37,FLUS
+Tomohon,Tomohon,kota,tunggal,35,99.co;FLUS;rumah123
+Kabupaten Pandeglang,Pandeglang,kabupaten,eksplisit,35,FLUS
+Lampung Timur,Lampung Timur,?,tunggal,34,99.co;rumah123
+Minahasa Utara,Minahasa Utara,kabupaten,tunggal,34,99.co;rumah123
+Gorontalo,Gorontalo,kota,kembar: default-kota,34,FLUS;rumah123
+Kabupaten Kotawaringin Barat,Kotawaringin Barat,kabupaten,eksplisit,34,FLUS
+Palopo,Palopo,kota,tunggal,33,99.co;FLUS;rumah123
+Kabupaten Tabanan,Tabanan,kabupaten,eksplisit,33,FLUS
+Kabupaten Bondowoso,Bondowoso,kabupaten,eksplisit,33,FLUS
+Kabupaten Labuhanbatu,Labuhan Batu,kabupaten,eksplisit,32,FLUS
+Banjar,Banjar,kota,kembar: default-kota,31,99.co;FLUS;rumah123
+Kabupaten Situbondo,Situbondo,kabupaten,eksplisit,31,FLUS
+Minahasa,Minahasa,kabupaten,tunggal,30,99.co;rumah123
+Ponorogo,Ponorogo,kabupaten,tunggal,30,99.co;rumah123
+Aceh,Aceh,luar,di-luar-induk,30,rumah123
+Kabupaten Bangka Tengah,Bangka Tengah,kabupaten,eksplisit,30,FLUS
+Bangka Tengah,Bangka Tengah,kabupaten,tunggal,29,99.co;rumah123
+Bangka,Bangka,kabupaten,tunggal,29,99.co;rumah123
+Kabupaten Grobogan,Grobogan,kabupaten,eksplisit,29,FLUS;rumah123
+Ngawi,Ngawi,kabupaten,tunggal,28,99.co;rumah123
+Jepara,Jepara,kabupaten,tunggal,27,99.co
+Jawa Barat,Jawa Barat,luar,di-luar-induk,27,rumah123
+Kabupaten Minahasa Utara,Minahasa Utara,kabupaten,eksplisit,27,FLUS
+Bangli,Bangli,kabupaten,tunggal,26,99.co;rumah123
+Klungkung,Klungkung,kabupaten,tunggal,26,99.co;rumah123
+Sulawesi Tenggara,Sulawesi Tenggara,luar,di-luar-induk,26,rumah123
+Kabupaten Kuningan,Kuningan,kabupaten,eksplisit,26,FLUS
+Rembang,Rembang,kabupaten,tunggal,25,99.co;rumah123
+Tanggamus,Tanggamus,kabupaten,tunggal,25,99.co;rumah123
+Muaro Jambi,Muaro Jambi,kabupaten,tunggal,25,rumah123
+Kabupaten Sumbawa,Sumbawa,kabupaten,eksplisit,25,FLUS
+Bontang,Bontang,kota,tunggal,25,Pinhome
+Aceh Barat Daya,Aceh Barat Daya,kabupaten,tunggal,25,Pinhome
+Aceh Selatan,Aceh Selatan,kabupaten,tunggal,25,Pinhome
+Aceh Tengah,Aceh Tengah,kabupaten,tunggal,25,Pinhome
+Aceh Timur,Aceh Timur,kabupaten,tunggal,25,Pinhome
+Halmahera Timur,Halmahera Timur,kabupaten,tunggal,25,Pinhome
+Biak Numfor,Biak Numfor,kabupaten,tunggal,24,99.co;rumah123
+Prabumulih,Prabumulih,kota,tunggal,24,99.co;FLUS;rumah123
+Tarakan,Tarakan,kota,tunggal,24,99.co;FLUS;rumah123
+Kabupaten Kupang,Kupang,kabupaten,eksplisit,24,FLUS
+Situbondo,Situbondo,kabupaten,tunggal,23,99.co;rumah123
+Wonosobo,Wonosobo,kabupaten,tunggal,23,99.co;rumah123
+Kabupaten Padang Pariaman,Padang Pariaman,kabupaten,eksplisit,23,FLUS
+Kabupaten Lampung Selatan,Lampung Selatan,kabupaten,eksplisit,23,FLUS
+Kabupaten Langkat,Langkat,kabupaten,eksplisit,23,FLUS
+Dumai,D U M A I,?,tunggal,22,99.co;FLUS;rumah123
+Langsa,Langsa,kota,tunggal,22,99.co;FLUS;rumah123
+Lombok Tengah,Lombok Tengah,kabupaten,tunggal,22,99.co;rumah123
+Pare Pare,Parepare,?,tunggal,22,FLUS;rumah123
+Kepahiang,Kepahiang,kabupaten,tunggal,22,Pinhome
+Belitung,Belitung,kabupaten,tunggal,21,99.co;rumah123
+Kampar,Kampar,kabupaten,tunggal,21,99.co
+Kebumen,Kebumen,kabupaten,tunggal,21,99.co;rumah123
+Pematang Siantar,Pematang Siantar,?,tunggal,21,99.co;rumah123
+Solok,Solok,kota,kembar: default-kota,21,99.co;FLUS;rumah123
+Kalimantan Tengah,Kalimantan Tengah,luar,di-luar-induk,21,rumah123
+Kabupaten Morowali,Morowali,kabupaten,eksplisit,21,FLUS
+Kabupaten Tanah Laut,Tanah Laut,kabupaten,eksplisit,21,FLUS
+Lhokseumawe,Lhokseumawe,kota,tunggal,20,99.co;FLUS;rumah123
+Manggarai Barat,Manggarai Barat,kabupaten,tunggal,20,99.co;rumah123
+Pringsewu,Pringsewu,kabupaten,tunggal,20,99.co;rumah123
+Kota Waringin Timur,Waringin Timur,kota,eksplisit,20,rumah123
+Kabupaten Blora,Blora,kabupaten,eksplisit,20,FLUS
+Kabupaten Kotawaringin Timur,Kotawaringin Timur,kabupaten,eksplisit,20,FLUS
+Kabupaten Kampar,Kampar,kabupaten,eksplisit,20,FLUS
+Kabupaten Simalungun,Simalungun,kabupaten,eksplisit,20,FLUS
+Buton Selatan,Buton Selatan,kabupaten,tunggal,20,Pinhome
+Lumajang,Lumajang,kabupaten,tunggal,19,99.co;rumah123
+Papua,Papua,luar,di-luar-induk,19,rumah123
+Kabupaten Bangka,Bangka,kabupaten,eksplisit,19,FLUS
+Kabupaten Pangandaran,Pangandaran,kabupaten,eksplisit,19,FLUS
+Bangka Barat,Bangka Barat,kabupaten,tunggal,19,Pinhome
+Banjarnegara,Banjarnegara,kabupaten,tunggal,18,99.co;rumah123
+Bintan,Bintan,kabupaten,tunggal,18,99.co;rumah123
+Kabupaten Badung,Badung,kabupaten,eksplisit,18,FLUS
+Lombok Utara,Lombok Utara,kabupaten,tunggal,17,99.co;rumah123
+Kabupaten Muara Enim,Muara Enim,kabupaten,eksplisit,17,FLUS
+Kabupaten Bone,Bone,kabupaten,eksplisit,17,FLUS
+Siak,S I A K,?,tunggal,17,Pinhome
+Pinrang,Pinrang,kabupaten,tunggal,16,99.co;rumah123
+Kabupaten Mimika,Mimika,kabupaten,eksplisit,16,FLUS
+Payakumbuh,Payakumbuh,kota,tunggal,16,FLUS
+Kabupaten Dharmasraya,Dharmasraya,kabupaten,eksplisit,16,FLUS
+Bau Bau,Baubau,?,tunggal,16,FLUS
+Jembrana,Jembrana,kabupaten,tunggal,15,99.co
+Pamekasan,Pamekasan,kabupaten,tunggal,15,99.co;rumah123
+Serdang Bedagai,Serdang Bedagai,kabupaten,tunggal,15,99.co;rumah123
+Takalar,Takalar,kabupaten,tunggal,15,99.co;rumah123
+Mandailing Natal,Mandailing Natal,kabupaten,tunggal,15,Pinhome
+Banda Aceh,Banda Aceh,kota,tunggal,14,99.co;FLUS;rumah123
+Lampung Utara,Lampung Utara,kabupaten,tunggal,14,99.co;rumah123
+Tebing Tinggi,Tebing Tinggi,kota,tunggal,14,99.co;FLUS;rumah123
+Kabupaten Ketapang,Ketapang,kabupaten,eksplisit,14,FLUS
+Kabupaten Gorontalo,Gorontalo,kabupaten,eksplisit,14,FLUS
+Kabupaten Belitung,Belitung,kabupaten,eksplisit,14,FLUS
+Kabupaten Manokwari,Manokwari,kabupaten,eksplisit,14,FLUS
+Sorong,Sorong,kota,kembar: default-kota,13,FLUS;rumah123
+Kabupaten Sorong,Sorong,kabupaten,eksplisit,13,FLUS
+Kabupaten Takalar,Takalar,kabupaten,eksplisit,13,FLUS
+Kabupaten Wajo,Wajo,kabupaten,eksplisit,13,FLUS
+Kabupaten Tapanuli Tengah,Tapanuli Tengah,kabupaten,eksplisit,13,FLUS
+Kabupaten Bireuen,Bireuen,kabupaten,eksplisit,13,FLUS
+Kabupaten Bintan,Bintan,kabupaten,eksplisit,13,FLUS
+Seram Bagian Timur,Seram Bagian Timur,kabupaten,tunggal,13,Pinhome
+Lampung Barat,Lampung Barat,?,tunggal,12,99.co;rumah123
+Ogan Ilir,Ogan Ilir,kabupaten,tunggal,12,99.co;rumah123
+Lubuk Linggau,Lubuklinggau,?,tunggal,12,FLUS;rumah123
+Kabupaten Lampung Tengah,Lampung Tengah,kabupaten,eksplisit,12,FLUS
+Kepulauan Meranti,Kepulauan Meranti,kabupaten,tunggal,12,Pinhome
+Aceh Besar,Aceh Besar,kabupaten,tunggal,11,99.co;rumah123
+Pangandaran,Pangandaran,kabupaten,tunggal,11,99.co;rumah123
+Kabupaten Pangkajene Kepulauan,Pangkajene Kepulauan,kabupaten,eksplisit,11,FLUS
+Kabupaten Asahan,Asahan,kabupaten,eksplisit,11,FLUS
+Balangan,Balangan,kabupaten,tunggal,11,Pinhome
+Nagan Raya,Nagan Raya,kabupaten,tunggal,11,Pinhome
+Rokan Hilir,Rokan Hilir,kabupaten,tunggal,11,Pinhome
+Ambon,Ambon,kota,tunggal,10,99.co;FLUS;rumah123
+Kutai Kartanegara,Kutai Kartanegara,kabupaten,tunggal,10,99.co;rumah123
+Muara Enim,Muara Enim,kabupaten,tunggal,10,99.co;rumah123
+Kalimantan Utara,Kalimantan Utara,luar,di-luar-induk,10,rumah123
+Sulawesi Tengah,Sulawesi Tengah,luar,di-luar-induk,10,rumah123
+Kabupaten Kutai Kartanegara,Kutai Kartanegara,kabupaten,eksplisit,10,FLUS
+Kabupaten Sumenep,Sumenep,kabupaten,eksplisit,10,FLUS
+Tanjung Balai,Tanjung Balai,kota,tunggal,10,FLUS
+Kabupaten Konawe Selatan,Konawe Selatan,kabupaten,eksplisit,10,FLUS
+Kabupaten Polewali Mandar,Polewali Mandar,kabupaten,eksplisit,10,FLUS
+Kabupaten Bungo,Bungo,kabupaten,eksplisit,10,FLUS
+Alor,Alor,?,tunggal,10,Pinhome
+Nias Selatan,Nias Selatan,?,tunggal,10,Pinhome
+Rejang Lebong,Rejang Lebong,kabupaten,tunggal,9,rumah123
+Tulang Bawang,Tulangbawang,?,tunggal,9,rumah123
+Kabupaten Pinrang,Pinrang,kabupaten,eksplisit,9,FLUS
+Kabupaten Lombok Tengah,Lombok Tengah,kabupaten,eksplisit,9,FLUS
+Kabupaten Kutai Timur,Kutai Timur,kabupaten,eksplisit,9,FLUS
+Kabupaten Batu Bara,Batu Bara,kabupaten,eksplisit,9,FLUS
+Kabupaten Pesawaran,Pesawaran,kabupaten,eksplisit,9,FLUS
+Bukittinggi,Bukittinggi,?,tunggal,8,99.co;rumah123
+Muna,Muna,kabupaten,tunggal,8,99.co;rumah123
+Sambas,Sambas,kabupaten,tunggal,8,99.co;rumah123
+Papua Barat,Papua Barat,luar,di-luar-induk,8,rumah123
+Kabupaten Sintang,Sintang,kabupaten,eksplisit,8,FLUS
+Kabupaten Pamekasan,Pamekasan,kabupaten,eksplisit,8,FLUS
+Kabupaten Sukamara,Sukamara,kabupaten,eksplisit,8,FLUS
+Kabupaten Banjarnegara,Banjarnegara,kabupaten,eksplisit,8,FLUS
+Kabupaten Jembrana,Jembrana,kabupaten,eksplisit,8,FLUS
+Kabupaten Sikka,Sikka,kabupaten,eksplisit,8,FLUS
+Kabupaten Solok,Solok,kabupaten,eksplisit,8,FLUS
+Kabupaten Aceh Besar,Aceh Besar,kabupaten,eksplisit,8,FLUS
+Kabupaten Barito Kuala,Barito Kuala,kabupaten,eksplisit,8,FLUS
+Kabupaten Sigi,Sigi,kabupaten,eksplisit,8,FLUS
+Kabupaten Ogan Komering Ulu,Ogan Komering Ulu,kabupaten,eksplisit,8,FLUS
+Asahan,Asahan,kabupaten,tunggal,7,99.co;rumah123
+Langkat,Langkat,kabupaten,tunggal,7,99.co;rumah123
+Lombok Timur,Lombok Timur,kabupaten,tunggal,7,99.co;rumah123
+Simalungun,Simalungun,kabupaten,tunggal,7,99.co;rumah123
+Trenggalek,Trenggalek,kabupaten,tunggal,7,99.co;rumah123
+Kabupaten Klungkung,Klungkung,kabupaten,eksplisit,7,FLUS;rumah123
+Kabupaten Musi Banyuasin,Musi Banyuasin,kabupaten,eksplisit,7,FLUS
+Pematangsiantar,Pematang Siantar,?,tunggal,7,FLUS
+Kabupaten Bantaeng,Bantaeng,kabupaten,eksplisit,7,FLUS
+Kabupaten Lampung Utara,Lampung Utara,kabupaten,eksplisit,7,FLUS
+Kabupaten Sambas,Sambas,kabupaten,eksplisit,7,FLUS
+Barru,Barru,kabupaten,tunggal,6,99.co;rumah123
+Bulukumba,Bulukumba,kabupaten,tunggal,6,99.co;rumah123
+Luwu,Luwu,kabupaten,tunggal,6,99.co;rumah123
+Bone,Bone,kabupaten,tunggal,6,rumah123
+Kabupaten Merauke,Merauke,kabupaten,eksplisit,6,FLUS
+Kabupaten Kulon Progo,Kulon Progo,kabupaten,eksplisit,6,FLUS
+Kabupaten Bengkalis,Bengkalis,kabupaten,eksplisit,6,FLUS
+Kabupaten Sijunjung,Sijunjung,kabupaten,eksplisit,6,FLUS
+Kabupaten Mempawah,Mempawah,kabupaten,eksplisit,6,FLUS
+Kabupaten Kuantan Singingi,Kuantan Singingi,kabupaten,eksplisit,6,FLUS
+Kabupaten Sampang,Sampang,kabupaten,eksplisit,6,FLUS
+Kabupaten Pesisir Selatan,Pesisir Selatan,kabupaten,eksplisit,6,FLUS
+Kabupaten Soppeng,Soppeng,kabupaten,eksplisit,6,FLUS
+Kabupaten Rokan Hulu,Rokan Hulu,kabupaten,eksplisit,6,FLUS
+Konawe Selatan,Konawe Selatan,kabupaten,tunggal,5,99.co;rumah123
+Mamuju,Mamuju,kabupaten,tunggal,5,99.co;rumah123
+Ogan Komering Ulu,Ogan Komering Ulu,kabupaten,tunggal,5,99.co;rumah123
+Penajam Paser Utara,Penajam Paser Utara,kabupaten,tunggal,5,99.co;rumah123
+Bengkulu Tengah,Bengkulu Tengah,kabupaten,tunggal,5,rumah123
+Pasir,Pasir,luar,di-luar-induk,5,rumah123
+Kabupaten Kebumen,Kebumen,kabupaten,eksplisit,5,FLUS
+Kabupaten Barru,Barru,kabupaten,eksplisit,5,FLUS
+Kabupaten Mamuju,Mamuju,kabupaten,eksplisit,5,FLUS
+Kabupaten Aceh Utara,Aceh Utara,kabupaten,eksplisit,5,FLUS
+Kabupaten Paser,Paser,kabupaten,eksplisit,5,FLUS
+Kabupaten Ogan Komering Ilir,Ogan Komering Ilir,kabupaten,eksplisit,5,FLUS
+Kabupaten Bulungan,Bulungan,kabupaten,eksplisit,5,FLUS
+Kabupaten Tabalong,Tabalong,kabupaten,eksplisit,5,FLUS
+Kabupaten Lombok Timur,Lombok Timur,kabupaten,eksplisit,5,FLUS
+Kabupaten Berau,Berau,kabupaten,eksplisit,5,FLUS
+Belu,Belu,kabupaten,tunggal,4,99.co;rumah123
+Berau,Berau,kabupaten,tunggal,4,99.co;rumah123
+Bolaang Mongondow,Bolaang Mongondow,kabupaten,tunggal,4,99.co;rumah123
+Kutai Barat,Kutai Barat,kabupaten,tunggal,4,99.co;rumah123
+Mempawah,Mempawah,kabupaten,tunggal,4,99.co;rumah123
+Pacitan,Pacitan,kabupaten,tunggal,4,99.co;rumah123
+Tanah Bumbu,Tanah Bumbu,kabupaten,tunggal,4,99.co;rumah123
+Tanah Datar,Tanah Datar,kabupaten,tunggal,4,99.co;rumah123
+Bengkalis,Bengkalis,kabupaten,tunggal,4,rumah123
+Kota Waringin Barat,Waringin Barat,kota,eksplisit,4,rumah123
+Kabupaten Rembang,Rembang,kabupaten,eksplisit,4,FLUS
+Padangsidimpuan,Padangsidimpuan,kota,tunggal,4,FLUS
+Kabupaten Karo,Karo,kabupaten,eksplisit,4,FLUS
+Pariaman,Pariaman,kota,tunggal,4,FLUS
+Kabupaten Labuhanbatu Selatan,Labuhan Batu Selatan,kabupaten,eksplisit,4,FLUS
+Kabupaten Enrekang,Enrekang,kabupaten,eksplisit,4,FLUS
+Kabupaten Luwu Timur,Luwu Timur,kabupaten,eksplisit,4,FLUS
+Kabupaten Ogan Komering Ulu Timur,Ogan Komering Ulu Timur,kabupaten,eksplisit,4,FLUS
+Kabupaten Aceh Barat,Aceh Barat,kabupaten,eksplisit,4,FLUS
+Kabupaten Pelalawan,Pelalawan,kabupaten,eksplisit,4,FLUS
+Kabupaten Karangasem,Karangasem,kabupaten,eksplisit,4,FLUS
+Tual,Tual,kota,tunggal,4,FLUS
+Sikka,Sikka,kabupaten,tunggal,3,99.co;rumah123
+Bengkulu Utara,Bengkulu Utara,kabupaten,tunggal,3,rumah123
+Madura,Madura,luar,di-luar-induk,3,rumah123
+Sulawesi Barat,Sulawesi Barat,luar,di-luar-induk,3,rumah123
+Tanah Laut,Tanah Laut,kabupaten,tunggal,3,rumah123
+Kabupaten Mamuju Tengah,Mamuju Tengah,kabupaten,eksplisit,3,FLUS
+Kabupaten Buton Tengah,Buton Tengah,kabupaten,eksplisit,3,FLUS
+Ternate,Ternate,kota,tunggal,3,FLUS
+Kabupaten Sidenreng Rappang,Sidenreng Rappang,kabupaten,eksplisit,3,FLUS
+Kabupaten Maluku Tengah,Maluku Tengah,kabupaten,eksplisit,3,FLUS
+Kabupaten Hulu Sungai Selatan,Hulu Sungai Selatan,kabupaten,eksplisit,3,FLUS
+Kabupaten Jeneponto,Jeneponto,kabupaten,eksplisit,3,FLUS
+Kabupaten Penukal Abab Lematang Ilir,Penukal Abab Lematang Ilir,kabupaten,eksplisit,3,FLUS
+Kabupaten Dompu,Dompu,kabupaten,eksplisit,3,FLUS
+Kabupaten Belu,Belu,kabupaten,eksplisit,3,FLUS
+Kabupaten Kapuas,Kapuas,kabupaten,eksplisit,3,FLUS
+Kabupaten Kolaka Utara,Kolaka Utara,kabupaten,eksplisit,3,FLUS
+Kabupaten Barito Utara,Barito Utara,kabupaten,eksplisit,3,FLUS
+Kabupaten Indragiri Hilir,Indragiri Hilir,kabupaten,eksplisit,3,FLUS
+Kabupaten Purworejo,Purworejo,kabupaten,eksplisit,3,FLUS
+Kabupaten Ogan Ilir,Ogan Ilir,kabupaten,eksplisit,3,FLUS
+Kabupaten Flores Timur,Flores Timur,kabupaten,eksplisit,3,FLUS
+Kabupaten Jayapura,Jayapura,kabupaten,eksplisit,3,FLUS
+Kabupaten Sumba Timur,Sumba Timur,kabupaten,eksplisit,3,FLUS
+Kabupaten Kotabaru,Kotabaru,kabupaten,eksplisit,3,FLUS
+Kabupaten Lima Puluh Kota,Lima Puluh Kota,kabupaten,eksplisit,3,FLUS
+Kabupaten Aceh Singkil,Aceh Singkil,kabupaten,eksplisit,3,FLUS
+Kabupaten Majene,Majene,kabupaten,eksplisit,3,FLUS
+Kabupaten Indragiri Hulu,Indragiri Hulu,kabupaten,eksplisit,3,FLUS
+Kabupaten Konawe,Konawe,kabupaten,eksplisit,3,FLUS
+Kabupaten Sumba Barat,Sumba Barat,kabupaten,eksplisit,3,FLUS
+Kabupaten Tapanuli Utara,Tapanuli Utara,kabupaten,eksplisit,3,FLUS
+Kabupaten Kaimana,Kaimana,kabupaten,eksplisit,3,FLUS
+Kabupaten Pacitan,Pacitan,kabupaten,eksplisit,3,FLUS
+Kabupaten Pringsewu,Pringsewu,kabupaten,eksplisit,3,FLUS
+Agam,Agam,kabupaten,tunggal,2,99.co;rumah123
+Bangka Selatan,Bangka Selatan,kabupaten,tunggal,2,99.co;rumah123
+Enrekang,Enrekang,kabupaten,tunggal,2,99.co
+Kapuas Hulu,Kapuas Hulu,kabupaten,tunggal,2,99.co
+Ketapang,Ketapang,kabupaten,tunggal,2,99.co;rumah123
+Kota Baru,Baru,kota,eksplisit,2,99.co;rumah123
+Kutai Timur,Kutai Timur,kabupaten,tunggal,2,99.co;rumah123
+Merauke,Merauke,kabupaten,tunggal,2,99.co;rumah123
+Minahasa Selatan,Minahasa Selatan,kabupaten,tunggal,2,99.co;rumah123
+Minahasa Tenggara,Minahasa Tenggara,kabupaten,tunggal,2,99.co;rumah123
+Padang Pariaman,Padang Pariaman,kabupaten,tunggal,2,99.co;rumah123
+Pagar Alam,Pagar Alam,kota,tunggal,2,99.co;rumah123
+Rokan Hulu,Rokan Hulu,kabupaten,tunggal,2,99.co;rumah123
+Sabang,Sabang,?,tunggal,2,99.co;rumah123
+Sintang,Sintang,kabupaten,tunggal,2,99.co;rumah123
+Sumba Barat Daya,Sumba Barat Daya,kabupaten,tunggal,2,99.co;rumah123
+Sumba Timur,Sumba Timur,kabupaten,tunggal,2,99.co;rumah123
+Tapanuli Tengah,Tapanuli Tengah,kabupaten,tunggal,2,99.co
+Way Kanan,Way Kanan,kabupaten,tunggal,2,99.co;rumah123
+Maluku,Maluku,luar,di-luar-induk,2,rumah123
+Seluma,Seluma,kabupaten,tunggal,2,rumah123
+Sidenreng Rappang,Sidenreng Rappang,kabupaten,tunggal,2,rumah123
+Sigi,Sigi,kabupaten,tunggal,2,rumah123
+Kabupaten Pahuwato,Pahuwato,kabupaten,eksplisit,2,FLUS
+Kabupaten Lahat,Lahat,kabupaten,eksplisit,2,FLUS
+Kabupaten Sanggau,Sanggau,kabupaten,eksplisit,2,FLUS
+Kabupaten Katingan,Katingan,kabupaten,eksplisit,2,FLUS
+Kabupaten Penajam Paser Utara,Penajam Paser Utara,kabupaten,eksplisit,2,FLUS
+Kabupaten Bulukumba,Bulukumba,kabupaten,eksplisit,2,FLUS
+Kabupaten Padang Lawas Utara,Padang Lawas Utara,kabupaten,eksplisit,2,FLUS
+Kabupaten Kolaka Timur,Kolaka Timur,kabupaten,eksplisit,2,FLUS
+Kabupaten Hulu Sungai Tengah,Hulu Sungai Tengah,kabupaten,eksplisit,2,FLUS
+Kabupaten Kolaka,Kolaka,kabupaten,eksplisit,2,FLUS
+Kabupaten Kapuas Hulu,Kapuas Hulu,kabupaten,eksplisit,2,FLUS
+Kabupaten Lombok Utara,Lombok Utara,kabupaten,eksplisit,2,FLUS
+Kabupaten Kayong Utara,Kayong Utara,kabupaten,eksplisit,2,FLUS
+Kabupaten Malinau,Malinau,kabupaten,eksplisit,2,FLUS
+Kabupaten Tebo,Tebo,kabupaten,eksplisit,2,FLUS
+Sawahlunto,Sawah Lunto,?,tunggal,2,FLUS
+Kabupaten Aceh Tamiang,Aceh Tamiang,kabupaten,eksplisit,2,FLUS
+Kabupaten Gianyar,Gianyar,kabupaten,eksplisit,2,FLUS
+Kabupaten Rejang Lebong,Rejang Lebong,kabupaten,eksplisit,2,FLUS
+Kabupaten Toli Toli,Toli Toli,kabupaten,eksplisit,2,FLUS
+Kabupaten Muna Barat,Muna Barat,kabupaten,eksplisit,2,FLUS
+Kabupaten Bengkayang,Bengkayang,kabupaten,eksplisit,2,FLUS
+Kabupaten Muna,Muna,kabupaten,eksplisit,2,FLUS
+Kabupaten Bengkulu Selatan,Bengkulu Selatan,kabupaten,eksplisit,2,FLUS
+Kabupaten Bima,Bima,kabupaten,eksplisit,2,FLUS
+Kabupaten Siak,S I A K,kabupaten,eksplisit,2,FLUS
+Kabupaten Serdang Bedagai,Serdang Bedagai,kabupaten,eksplisit,2,FLUS
+Kotamobagu,Kotamobagu,kota,tunggal,2,FLUS
+Kabupaten Sinjai,Sinjai,kabupaten,eksplisit,2,FLUS
+Kabupaten Poso,Poso,kabupaten,eksplisit,2,FLUS
+Kabupaten Kutai Barat,Kutai Barat,kabupaten,eksplisit,2,FLUS
+Kabupaten Manggarai Timur,Manggarai Timur,kabupaten,eksplisit,2,FLUS
+Kabupaten Sarolangun,Sarolangun,kabupaten,eksplisit,2,FLUS
+Aceh Barat,Aceh Barat,kabupaten,tunggal,1,99.co
+Hulu Sungai Utara,Hulu Sungai Utara,kabupaten,tunggal,1,99.co
+Karimun,Karimun,kabupaten,tunggal,1,99.co
+Karo,Karo,kabupaten,tunggal,1,99.co
+Konawe,Konawe,kabupaten,tunggal,1,99.co
+Labuhan Batu,Labuhan Batu,?,tunggal,1,99.co
+Pelalawan,Pelalawan,kabupaten,tunggal,1,99.co
+Sanggau,Sanggau,kabupaten,tunggal,1,99.co
+Tana Toraja,Tana Toraja,?,tunggal,1,99.co
+Tapanuli Utara,Tapanuli Utara,kabupaten,tunggal,1,99.co
+Kabupaten Kepulauan Anambas,Kepulauan Anambas,kabupaten,eksplisit,1,rumah123
+Banggai Laut,Banggai Laut,?,tunggal,1,rumah123
+Bone Bolango,Bone Bolango,kabupaten,tunggal,1,rumah123
+Gunung Sitoli,Gunungsitoli,kota,tunggal,1,rumah123
+Kapuas,Kapuas,kabupaten,tunggal,1,rumah123
+Kepulauan Mentawai,Kepulauan Mentawai,?,tunggal,1,rumah123
+Lahat,Lahat,kabupaten,tunggal,1,rumah123
+Mesuji,Mesuji,?,tunggal,1,rumah123
+Mimika,Mimika,kabupaten,tunggal,1,rumah123
+Musi Rawas,Musi Rawas,kabupaten,tunggal,1,rumah123
+Nabire,Nabire,kabupaten,tunggal,1,rumah123
+Pangkajene,Pangkajene,luar,di-luar-induk,1,rumah123
+Papua Selatan,Papua Selatan,luar,di-luar-induk,1,rumah123
+Sarolangun,Sarolangun,kabupaten,tunggal,1,rumah123
+Sumbawa,Sumbawa,kabupaten,tunggal,1,rumah123
+Sumenep,Sumenep,kabupaten,tunggal,1,rumah123
+Kabupaten Trenggalek,Trenggalek,kabupaten,eksplisit,1,FLUS
+Kabupaten Tanah Datar,Tanah Datar,kabupaten,eksplisit,1,FLUS
+Kabupaten Manggarai Barat,Manggarai Barat,kabupaten,eksplisit,1,FLUS
+Kabupaten Merangin,Merangin,kabupaten,eksplisit,1,FLUS
+Kabupaten Sumbawa Barat,Sumbawa Barat,kabupaten,eksplisit,1,FLUS
+Kabupaten Pidie,Pidie,kabupaten,eksplisit,1,FLUS
+Kabupaten Banggai,Banggai,kabupaten,eksplisit,1,FLUS
+Kabupaten Lebong,Lebong,kabupaten,eksplisit,1,FLUS
+Kabupaten Agam,Agam,kabupaten,eksplisit,1,FLUS
+Kabupaten Morowali Utara,Morowali Utara,kabupaten,eksplisit,1,FLUS
+Kabupaten Murung Raya,Murung Raya,kabupaten,eksplisit,1,FLUS
+Kabupaten Tanjung Jabung Barat,Tanjung Jabung Barat,kabupaten,eksplisit,1,FLUS
+Kabupaten Barito Timur,Barito Timur,kabupaten,eksplisit,1,FLUS
+Kabupaten Barito Selatan,Barito Selatan,kabupaten,eksplisit,1,FLUS
+Kabupaten Empat Lawang,Empat Lawang,kabupaten,eksplisit,1,FLUS
+Kabupaten Pasaman Barat,Pasaman Barat,kabupaten,eksplisit,1,FLUS
+Kabupaten Belitung Timur,Belitung Timur,kabupaten,eksplisit,1,FLUS
+Kabupaten Bangli,Bangli,kabupaten,eksplisit,1,FLUS
+Kabupaten Tanah Bumbu,Tanah Bumbu,kabupaten,eksplisit,1,FLUS
+Kabupaten Bener Meriah,Bener Meriah,kabupaten,eksplisit,1,FLUS
+Kabupaten Gunung Mas,Gunung Mas,kabupaten,eksplisit,1,FLUS
+Kabupaten Tojo Una Una,Tojo Una Una,kabupaten,eksplisit,1,FLUS
+Kabupaten Mamuju Utara,Mamuju Utara,kabupaten,eksplisit,1,FLUS
+Kabupaten Bengkulu Tengah,Bengkulu Tengah,kabupaten,eksplisit,1,FLUS
+Kabupaten Timor Tengah Selatan,Timor Tengah Selatan,kabupaten,eksplisit,1,FLUS
+Kabupaten Parigi Moutong,Parigi Moutong,kabupaten,eksplisit,1,FLUS
+Kabupaten Nunukan,Nunukan,kabupaten,eksplisit,1,FLUS
+Kabupaten Timor Tengah Utara,Timor Tengah Utara,kabupaten,eksplisit,1,FLUS
+Kabupaten Landak,Landak,kabupaten,eksplisit,1,FLUS
+Kabupaten Batanghari,Batang Hari,kabupaten,eksplisit,1,FLUS
+Kabupaten Tapin,Tapin,kabupaten,eksplisit,1,FLUS
+Kabupaten Rote Ndao,Rote Ndao,kabupaten,eksplisit,1,FLUS
+Kabupaten Tanggamus,Tanggamus,kabupaten,eksplisit,1,FLUS
+Kabupaten Konawe Utara,Konawe Utara,kabupaten,eksplisit,1,FLUS
+Kabupaten Buru,Buru,kabupaten,eksplisit,1,FLUS
+Kabupaten Aceh Tenggara,Aceh Tenggara,kabupaten,eksplisit,1,FLUS
+Kabupaten Halmahera Barat,Halmahera Barat,kabupaten,eksplisit,1,FLUS
+Bima,Bima,kota,kembar: default-kota,1,FLUS
+Kabupaten Bangka Selatan,Bangka Selatan,kabupaten,eksplisit,1,FLUS
+Kabupaten Luwu Utara,Luwu Utara,kabupaten,eksplisit,1,FLUS
+Tidore Kepulauan,Tidore Kepulauan,kota,tunggal,1,FLUS
