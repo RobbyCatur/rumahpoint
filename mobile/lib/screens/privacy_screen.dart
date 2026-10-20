@@ -119,7 +119,7 @@ class PrivacyScreen extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 12,
-              color: isDark ? const Color(0xFF64748B) : Colors.grey,
+              color: isDark ? const Color(0xFF94A3B8) : Colors.grey,
             ),
           ),
           const SizedBox(height: 16),

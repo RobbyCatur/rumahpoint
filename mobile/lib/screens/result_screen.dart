@@ -21,13 +21,14 @@ class ResultScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final p = ref.watch(predictionControllerProvider).current;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
 
     if (p == null) {
       return const Scaffold(
         body: Center(child: Text('Belum ada hasil. Isi form di Beranda.')),
       );
     }
+
+    final tone = AppTone.of(context);
 
     return GestureDetector(
       onHorizontalDragEnd: (d) => _onSwipe(context, d),
@@ -61,10 +62,10 @@ class ResultScreen extends ConsumerWidget {
             const SizedBox(height: 20),
             const _SwipeHint(),
             const SizedBox(height: 12),
-            const Text(
+            Text(
               'Estimasi dihasilkan model Random Forest. Rentang ±25% dari nilai tengah sebagai indikasi, bukan interval statistik ketat.',
               textAlign: TextAlign.center,
-              style: TextStyle(color: AppColors.muted, fontSize: 11.5),
+              style: TextStyle(color: tone.textMuted, fontSize: 11.5),
             ),
           ],
         ),
@@ -110,11 +111,12 @@ class _HintItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tone = AppTone.of(context);
     final children = [
-      Icon(icon, size: 16, color: AppColors.muted),
+      Icon(icon, size: 16, color: tone.textMuted),
       const SizedBox(width: 6),
       Text(label,
-          style: const TextStyle(fontSize: 12, color: AppColors.muted)),
+          style: TextStyle(fontSize: 12, color: tone.textMuted)),
     ];
     return Row(
       children: alignLeft ? children : children.reversed.toList(),
@@ -128,22 +130,23 @@ class _AccuracyWarning extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tone = AppTone.of(context);
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: AppColors.amberSoft,
+        color: tone.tintBg,
         borderRadius: BorderRadius.circular(10),
       ),
-      child: const Row(
+      child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(Icons.info_outline_rounded, size: 16, color: AppColors.amberDark),
-          SizedBox(width: 8),
+          Icon(Icons.info_outline_rounded, size: 16, color: tone.tintText),
+          const SizedBox(width: 8),
           Expanded(
             child: Text(
               'Wilayah ini belum tercakup data latih — estimasi bersifat '
               'generalisasi dan bisa kurang akurat.',
-              style: TextStyle(fontSize: 12, color: AppColors.amberDark),
+              style: TextStyle(fontSize: 12, color: tone.tintText),
             ),
           ),
         ],
@@ -160,7 +163,7 @@ class _PriceCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final hasRentang = p.rentangBawah.isNotEmpty && p.rentangAtas.isNotEmpty;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final tone = AppTone.of(context);
 
     return Card(
       child: Padding(
@@ -179,19 +182,19 @@ class _PriceCard extends StatelessWidget {
                     fontSize: 11,
                     fontWeight: FontWeight.w700,
                     letterSpacing: 0.8,
-                    color: isDark ? AppColors.amber : AppColors.amberDark,
+                    color: tone.accent,
                   ),
                 ),
               ],
             ),
             const SizedBox(height: 14),
-            const Text(
+            Text(
               'TAKSIRAN NILAI PROPERTI',
               style: TextStyle(
                 fontSize: 11,
                 fontWeight: FontWeight.w600,
                 letterSpacing: 0.8,
-                color: AppColors.muted,
+                color: tone.textMuted,
               ),
             ),
             const SizedBox(height: 6),
@@ -203,15 +206,12 @@ class _PriceCard extends StatelessWidget {
               const SizedBox(height: 4),
               Text(
                 'Rentang: ${p.rentangBawah} – ${p.rentangAtas}',
-                style: const TextStyle(fontSize: 12.5, color: AppColors.muted),
+                style: TextStyle(fontSize: 12.5, color: tone.textMuted),
               ),
             ],
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 16),
-              child: Divider(
-                color: isDark ? const Color(0xFF334155) : AppColors.line,
-                height: 1,
-              ),
+              child: Divider(color: tone.border, height: 1),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -224,9 +224,7 @@ class _PriceCard extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                   decoration: BoxDecoration(
-                    color: isDark
-                        ? const Color(0xFF334155)
-                        : AppColors.amberSoft,
+                    color: tone.tintBg,
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Text(
@@ -234,7 +232,7 @@ class _PriceCard extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w700,
-                      color: isDark ? AppColors.amber : AppColors.amberDark,
+                      color: tone.tintText,
                     ),
                   ),
                 ),
@@ -281,7 +279,7 @@ class _DetailCard extends StatelessWidget {
 
   Widget _row(BuildContext context, String label, String value,
       {bool isLast = false}) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final tone = AppTone.of(context);
 
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 13),
@@ -289,9 +287,7 @@ class _DetailCard extends StatelessWidget {
         border: isLast
             ? null
             : Border(
-                bottom: BorderSide(
-                  color: isDark ? const Color(0xFF334155) : AppColors.line,
-                ),
+                bottom: BorderSide(color: tone.border),
               ),
       ),
       child: Row(
@@ -300,7 +296,7 @@ class _DetailCard extends StatelessWidget {
           Text(label,
               style: TextStyle(
                 fontSize: 13,
-                color: isDark ? const Color(0xFF94A3B8) : AppColors.muted,
+                color: tone.textMuted,
               )),
           Text(value,
               style:
@@ -318,25 +314,21 @@ class _KategoriChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final tone = AppTone.of(context);
 
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
       decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF1E293B) : AppColors.amberSoft,
+        color: tone.tintBg,
         borderRadius: BorderRadius.circular(10),
-        border: isDark
-            ? Border.all(
-                color: const Color(0xFFF59E0B).withValues(alpha: 0.5),
-              )
-            : null,
+        border: Border.all(color: tone.tintBorder),
       ),
       child: Text(
         kategori,
         style: TextStyle(
           fontSize: 12,
           fontWeight: FontWeight.w700,
-          color: isDark ? const Color(0xFFF59E0B) : AppColors.amberDark,
+          color: tone.tintText,
         ),
       ),
     );

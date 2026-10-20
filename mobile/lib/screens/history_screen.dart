@@ -106,6 +106,7 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final tone = AppTone.of(context);
     final history = ref.watch(predictionControllerProvider).history;
     final months = _availableMonths(history);
     final locations = _availableLocations(history);
@@ -132,10 +133,12 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
             padding: const EdgeInsets.fromLTRB(20, 4, 20, 0),
             child: TextField(
               onChanged: (v) => setState(() => _query = v),
-              decoration: const InputDecoration(
+              style: TextStyle(color: tone.text, fontSize: 14),
+              decoration: InputDecoration(
                 hintText: 'Cari riwayat lokasi...',
-                hintStyle: TextStyle(color: AppColors.muted, fontSize: 14),
-                prefixIcon: Icon(Icons.search_rounded, size: 20),
+                hintStyle: TextStyle(color: tone.textMuted, fontSize: 14),
+                prefixIcon: Icon(Icons.search_rounded,
+                    size: 20, color: tone.textMuted),
               ),
             ),
           ),
@@ -225,11 +228,11 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
                                 2, gi == 0 ? 8 : 20, 2, 8),
                             child: Text(
                               formatBulanPenuh(g.month),
-                              style: const TextStyle(
+                              style: TextStyle(
                                 fontSize: 12.5,
                                 fontWeight: FontWeight.w700,
                                 letterSpacing: 0.3,
-                                color: AppColors.muted,
+                                color: tone.textMuted,
                               ),
                             ),
                           ),
@@ -257,9 +260,10 @@ class _KategoriBadge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tone = AppTone.of(context);
     final isMurah = kategori.toLowerCase() == 'murah';
-    final fg = isMurah ? AppColors.success : AppColors.danger;
-    final bg = isMurah ? AppColors.successSoft : AppColors.dangerSoft;
+    final fg = isMurah ? tone.positive : tone.negative;
+    final bg = isMurah ? tone.positiveBg : tone.negativeBg;
     final icon =
         isMurah ? Icons.trending_down_rounded : Icons.trending_up_rounded;
 
@@ -295,6 +299,7 @@ class _HistoryCard extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final tone = AppTone.of(context);
     return Card(
       child: InkWell(
         borderRadius: BorderRadius.circular(20),
@@ -310,11 +315,11 @@ class _HistoryCard extends ConsumerWidget {
                 width: 44,
                 height: 44,
                 decoration: BoxDecoration(
-                  color: AppColors.amberSoft,
+                  color: tone.tintBg,
                   borderRadius: BorderRadius.circular(12),
                 ),
-                child: const Icon(Icons.home_work_rounded,
-                    color: AppColors.amberDark, size: 22),
+                child: Icon(Icons.home_work_rounded,
+                    color: tone.accent, size: 22),
               ),
               const SizedBox(width: 12),
               Expanded(
@@ -325,20 +330,22 @@ class _HistoryCard extends ConsumerWidget {
                       p.provinsi.isEmpty
                           ? p.lokasi
                           : '${p.lokasi}, ${p.provinsi}',
-                      style: const TextStyle(
-                          fontSize: 14, fontWeight: FontWeight.w700),
+                      style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w700,
+                          color: tone.text),
                     ),
                     const SizedBox(height: 3),
                     Text(
                       '${p.luasM2.round()} m² • ${p.jumlahKamar} KT • ${p.jumlahKamarMandi} KM',
-                      style: const TextStyle(
-                          fontSize: 12, color: AppColors.muted),
+                      style: TextStyle(
+                          fontSize: 12, color: tone.textMuted),
                     ),
                     const SizedBox(height: 2),
                     Text(
                       formatTanggal(p.createdAt),
-                      style: const TextStyle(
-                          fontSize: 11, color: AppColors.muted),
+                      style:
+                          TextStyle(fontSize: 11, color: tone.textMuted),
                     ),
                   ],
                 ),
@@ -349,8 +356,10 @@ class _HistoryCard extends ConsumerWidget {
                 children: [
                   Text(
                     p.estimasiString,
-                    style: const TextStyle(
-                        fontSize: 13.5, fontWeight: FontWeight.w800),
+                    style: TextStyle(
+                        fontSize: 13.5,
+                        fontWeight: FontWeight.w800,
+                        color: tone.text),
                   ),
                   const SizedBox(height: 4),
                   _KategoriBadge(kategori: p.kategori),
@@ -369,20 +378,24 @@ class _EmptyState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
+    final tone = AppTone.of(context);
+    return Center(
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.history_rounded, size: 48, color: AppColors.line),
-          SizedBox(height: 12),
+          Icon(Icons.history_rounded, size: 48, color: tone.border),
+          const SizedBox(height: 12),
           Text(
             'Belum ada riwayat',
-            style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700),
+            style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.w700,
+                color: tone.text),
           ),
-          SizedBox(height: 4),
+          const SizedBox(height: 4),
           Text(
             'Hasil prediksi akan tersimpan di sini.',
-            style: TextStyle(fontSize: 12.5, color: AppColors.muted),
+            style: TextStyle(fontSize: 12.5, color: tone.textMuted),
           ),
         ],
       ),

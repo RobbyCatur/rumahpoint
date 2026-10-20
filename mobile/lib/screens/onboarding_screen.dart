@@ -9,6 +9,7 @@ class OnboardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final tone = AppTone.of(context);
 
     return Scaffold(
       body: SafeArea(
@@ -45,7 +46,7 @@ class OnboardingScreen extends StatelessWidget {
                 Text(
                   'Selamat datang di\nRumahPoint',
                   style: theme.textTheme.displaySmall?.copyWith(
-                    color: AppColors.ink,
+                    color: tone.text,
                     fontWeight: FontWeight.w800,
                     height: 1.08,
                   ),
@@ -54,7 +55,7 @@ class OnboardingScreen extends StatelessWidget {
                 Text(
                   'Kenali nilai wajar properti di Indonesia dengan lebih mudah, cepat, dan berbasis data.',
                   style: theme.textTheme.titleMedium?.copyWith(
-                    color: AppColors.muted,
+                    color: tone.textSoft,
                     height: 1.45,
                   ),
                 ),
@@ -62,9 +63,9 @@ class OnboardingScreen extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
-                    color: AppColors.amberSoft,
+                    color: tone.tintBg,
                     borderRadius: BorderRadius.circular(24),
-                    border: Border.all(color: const Color(0xFFFDE68A)),
+                    border: Border.all(color: tone.tintBorder),
                   ),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -75,9 +76,9 @@ class OnboardingScreen extends StatelessWidget {
                           color: AppColors.amber,
                           borderRadius: BorderRadius.circular(16),
                         ),
-                        child: const Icon(
+                        child: Icon(
                           Icons.insights_rounded,
-                          color: Colors.white,
+                          color: tone.onAccent,
                           size: 28,
                         ),
                       ),
@@ -86,7 +87,7 @@ class OnboardingScreen extends StatelessWidget {
                         child: Text(
                           'RumahPoint membantu memperkirakan harga rumah dan memahami kategorinya sebelum kamu mengambil keputusan.',
                           style: theme.textTheme.bodyMedium?.copyWith(
-                            color: AppColors.ink,
+                            color: tone.tintText,
                             height: 1.45,
                             fontWeight: FontWeight.w600,
                           ),
@@ -99,7 +100,7 @@ class OnboardingScreen extends StatelessWidget {
                 Text(
                   'Apa yang bisa kamu lakukan?',
                   style: theme.textTheme.titleLarge?.copyWith(
-                    color: AppColors.ink,
+                    color: tone.text,
                     fontWeight: FontWeight.w800,
                   ),
                 ),
@@ -134,7 +135,7 @@ class OnboardingScreen extends StatelessWidget {
                   'Buat akun atau masuk untuk mulai menggunakan RumahPoint.',
                   textAlign: TextAlign.center,
                   style: theme.textTheme.bodySmall?.copyWith(
-                    color: AppColors.muted,
+                    color: tone.textMuted,
                   ),
                 ),
               ],
@@ -160,18 +161,19 @@ class _FeatureTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final tone = AppTone.of(context);
 
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: theme.cardColor,
+        color: tone.surface,
         borderRadius: BorderRadius.circular(18),
-        border: Border.all(color: AppColors.line),
+        border: Border.all(color: tone.border),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(icon, color: AppColors.amberDark, size: 26),
+          Icon(icon, color: tone.accent, size: 26),
           const SizedBox(width: 14),
           Expanded(
             child: Column(
@@ -180,7 +182,7 @@ class _FeatureTile extends StatelessWidget {
                 Text(
                   title,
                   style: theme.textTheme.titleSmall?.copyWith(
-                    color: AppColors.ink,
+                    color: tone.text,
                     fontWeight: FontWeight.w800,
                   ),
                 ),
@@ -188,7 +190,7 @@ class _FeatureTile extends StatelessWidget {
                 Text(
                   description,
                   style: theme.textTheme.bodySmall?.copyWith(
-                    color: AppColors.muted,
+                    color: tone.textMuted,
                     height: 1.35,
                   ),
                 ),

@@ -155,11 +155,12 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.text('Bekasi, Jawa Barat'), findsOneWidget);
 
-    // Draft ikut menyimpan wilayah terpilih.
+    // Pilihan manual di Beranda bersifat sementara (satu sesi): draft hanya
+    // menampung angka, wilayah tetap bersumber dari preferensi Profil.
     final prefs = await SharedPreferences.getInstance();
     final draft =
         Map<String, dynamic>.from(jsonDecode(prefs.getString('rp_draft')!));
-    expect(draft['kabKota'], 'Bekasi');
-    expect(draft['provinsi'], 'Jawa Barat');
+    expect(draft.containsKey('kabKota'), isFalse);
+    expect(draft['lt'], 120.0);
   });
 }
