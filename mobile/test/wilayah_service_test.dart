@@ -136,8 +136,8 @@ void main() {
     final semua = data.expand((p) => p.kabupatenKota).toList();
     expect(semua, hasLength(515));
     expect(semua.every((k) => k.lat != 0 || k.lng != 0), isTrue);
-    // Bendera didukung disinkronkan dari meta.json model 572 lokasi:
-    // 203 dari 515 kab/kota punya tingkat kualitas data 1–4.
-    expect(semua.where((k) => k.didukung), hasLength(203));
+    // Bendera didukung dibangun ml/build_wilayah.py dari meta.json model:
+    // wilayah dengan >= 100 baris data latih dianggap cukup.
+    expect(semua.where((k) => k.didukung), hasLength(118));
   });
 }

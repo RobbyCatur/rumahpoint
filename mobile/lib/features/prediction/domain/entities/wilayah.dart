@@ -1,8 +1,9 @@
 /// Wilayah administratif Indonesia (provinsi → kabupaten/kota).
 ///
-/// Sumber data: `assets/data/wilayah.json` (audit cakupan dataset project
-/// + koordinat OSM). `didukung` = true bila lokasi tercakup data latih
-/// model (prediksi akurat); false = model mengeneralisasi (peringatan UI).
+/// Sumber data: `assets/data/wilayah.json` (koordinat OSM + bendera cakupan
+/// yang dibangun `ml/build_wilayah.py` dari `meta.json` hasil training).
+/// `didukung` = true bila wilayah punya cukup baris data latih (ambang ada di
+/// skrip itu); false = model banyak mengeneralisasi → UI memberi peringatan.
 class KabupatenKota {
   const KabupatenKota({
     required this.nama,

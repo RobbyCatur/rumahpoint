@@ -124,7 +124,7 @@ class _HintItem extends StatelessWidget {
   }
 }
 
-/// Peringatan akurasi bila lokasi tidak tercakup data latih.
+/// Peringatan akurasi bila cakupan data latih wilayah belum cukup.
 class _AccuracyWarning extends StatelessWidget {
   const _AccuracyWarning();
 
@@ -144,8 +144,8 @@ class _AccuracyWarning extends StatelessWidget {
           const SizedBox(width: 8),
           Expanded(
             child: Text(
-              'Wilayah ini belum tercakup data latih — estimasi bersifat '
-              'generalisasi dan bisa kurang akurat.',
+              'Model belum punya cukup data untuk wilayah ini — '
+              'estimasi bisa kurang akurat.',
               style: TextStyle(fontSize: 12, color: tone.tintText),
             ),
           ),

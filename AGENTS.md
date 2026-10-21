@@ -19,6 +19,7 @@ Admin/tim (web) --CRUD dataset + statistik--> Backend Web --> DB --train.py--> m
 - `dataset/properti_multi_kota.csv` (union) + `dataset/build_union.py` + `dataset/raw_sources/` + `README.md` (sumber/lisensi). `dataset_properti.csv` = salah satu sumber (Jabodetabek).
 - `database/seed.py` → baca CSV union → isi `properti.db`; kolom `sumber`, `luas_bangunan`; **kategori per-sentile per-kota** (≥ median kota → 'Mahal'). Run: `python database/seed.py`.
 - `ml/train.py` → baca DB (fallback CSV union) → **fitur** `luas_m2, luas_bangunan(imputasi median), jumlah_kamar, jumlah_kamar_mandi, usia_bangunan` + `lokasi` → `cloud_ml/model/*.joblib` + `metrics.json` (termasuk `regression_by_city`). Run: `python ml/train.py`.
+- `ml/build_wilayah.py` → baca `meta.json:city_tiers` (hasil train.py) → tulis bendera `didukung` di `mobile/assets/data/wilayah.json`; `--cek` untuk melihat ringkasan tanpa menulis. Run: `python ml/build_wilayah.py`.
 - `cloud_ml/app.py` :8081 — `GET /health`, `POST /predict` (muat model; imputasi `luas_bangunan` via `meta.json:median_luas_bangunan`; **CORS aktif**). Tidak sentuh DB.
 - `web/app.py` :8080 — **landing publik `/`** + **CRUD `properti` dilindungi login admin** (`/admin/login`, password env `ADMIN_PASSWORD`, session cookie; default `rumahpoint-admin` untuk dev). INSERT menyertakan `sumber='manual-web'`, kategori via median kota. Pemegang DB. Deploy: VPS NAT + PM2 (lihat `docs/DEPLOY-VPS.md`), publik via Cloudflare Tunnel `rumahpoint.soraven.web.id` (web) & `ml.soraven.web.id` (cloud).
 - `mobile/` — Flutter: `flutter pub get/analyze/test/run`. `go_router`,`Riverpod`,`dio`,`shared_preferences`,`flutter_secure_storage`. UI mockup light: aksen amber `#F59E0B` + netral slate (satu sumber di `lib/theme.dart`); `StatefulShellRoute` (Beranda=sapaan singkat + CTA gulir ke form input `/beranda`, Riwayat `/riwayat`, Profil `/profil`) + `/` login + `/hasil`; form mengirim `luas_bangunan` (imputasi median tetap di server bila 0), autosave draft (`rp_draft`), luas float & stepper bisa diketik manual. Platform: android + web.
@@ -31,15 +32,19 @@ Admin/tim (web) --CRUD dataset + statistik--> Backend Web --> DB --train.py--> m
 4. Device fisik (USB): `adb reverse tcp:8081 tcp:8081` lalu `flutter run --dart-define=ML_URL=http://127.0.0.1:8081`
    - Emulator: `ML_URL` default `http://10.0.2.2:8081`.
    - `adb` ada di `D:\new\AndroidSDK\platform-tools` (sudah ditambahkan ke User PATH) — buka terminal baru agar aktif. Reverse :8080 juga saat auth aktif (roadmap). Tunnel hilang saat device dicabut/reboot → jalankan ulang.
-5. Ubah data via web → jalankan ulang `train.py`.
+5. Ubah data via web → jalankan ulang `train.py`, lalu `python ml/build_wilayah.py` supaya bendera
+   `didukung` di `mobile/assets/data/wilayah.json` ikut model (tanpa training ulang; ±1 milidetik).
+   Kalau angkanya berubah, sesuaikan `mobile/test/wilayah_service_test.dart` (mengunci jumlah 118).
 
 ## Preprocessing (WAJIB konsisten di train & cloud)
 - Ekstrak angka dari string ("68.0 m2"→68). Lihat `_first_number` (`ml/train.py`) & `_to_frame` (`cloud_ml/app.py`).
 - `harga` **log10** → back `10**pred`. `luas_bangunan` kosong → **imputasi median** (`meta.json`).
-- Normalisasi `lokasi` ("Jak. Utara"→"Jakarta Utara"; casing). **7 kota**: Bekasi, Bogor, Depok, Jakarta Selatan, Jakarta Utara, Surabaya, Tangerang (Surabaya di-cap 2000).
+- Normalisasi `lokasi` ("Jak. Utara"→"Jakarta Utara"; casing). Cakupan sekarang **595 nama lokasi mentah** di DB (±403 kabupaten/kota resmi setelah pencocokan nama; 34 nama ±998 baris masih berupa nama provinsi dan belum terpetakan).
+- **Batas "cukup data" = 100 baris/wilayah** (keputusan tim 21 Okt 2026, dasar kurva belajar — lihat `docs/DISKUSI-PERINGATAN-CAKUPAN-DATA.md` §3). Dipakai di dua tempat dengan konstanta `AMAN_MIN`: `ml/build_wilayah.py` (bendera `didukung` di asset) dan `cloud_ml/app.py` (`cukup_data` + `peringatan` di `/predict`).
 
 ## Model & metrik (via `ml/metrics.json`)
-- Regresi RF **R²=0,85, MAE≈Rp806jt** (naik dari 0,68 pasca-union+luas_bangunan). Klasifikasi akurasi **0,933**. Metrik per-kota tersedia.
+- Regresi RF **R²=0,49, MAE≈Rp1,83M** (log10 MAE 0,159 ≈ galat khas 1,45×). Klasifikasi akurasi **0,865**. Metrik per-kota tersedia.
+- Angka lama R²=0,85 / 0,933 berasal dari dataset 7 kota sebelum union diperluas — UI (FAQ, Disclaimer, landing `web/app.py`) sudah diperbarui ke angka terkini.
 - Cloud-ML (bukan on-device TFLite) = **deviasi RPP §4.2 sudah disetujui dosen** (keterbatasan mobile → web/cloud).
 - Android `http://` butuh `usesCleartextTraffic` (sudah di set).
 

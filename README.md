@@ -8,7 +8,7 @@ Prediksi dihitung **langsung oleh layanan cloud ML** (mobile → cloud). Semua y
 
 **Sudah berjalan & teruji**
 - Prediksi mobile → cloud: `POST /predict` (regresi + klasifikasi + rentang estimasi)
-- Dataset **union 7 kota** (3.730 baris) + seed DB + training (R² **0,85**, akurasi kategori **93,3%**)
+- Dataset union (berawal 7 kota, kini **64.650 baris** di ±403 kabupaten/kota) + seed DB + training (R² **0,49**, akurasi kategori **86,5%**)
 - Web CRUD dataset properti (Flask + SQLite) + `GET /api/properti`
 - CORS cloud, `AndroidManifest` (cleartext + INTERNET), `flutter analyze`/`test` lulus
 
@@ -106,9 +106,11 @@ curl -X POST http://127.0.0.1:8081/predict \
 
 ## Model & dataset
 
-- **7 kota**: Bekasi, Bogor, Depok, Jakarta Selatan, Jakarta Utara, Surabaya, Tangerang
-- **Regresi** RandomForest: R² **0,85**, MAE ≈ Rp 806 juta (metrik per-kota di `ml/metrics.json`)
-- **Klasifikasi**: akurasi **93,3%** (label diturunkan per-sentile per-kota)
+- **Cakupan**: 595 nama lokasi di data latih → ±403 kabupaten/kota resmi (64.650 baris). Daftar awal dulu 7 kota: Bekasi, Bogor, Depok, Jakarta Selatan, Jakarta Utara, Surabaya, Tangerang
+- **Regresi** RandomForest: R² **0,49**, MAE ≈ Rp 1,83 miliar; galat khas 1,45× harga (metrik per-kota di `ml/metrics.json`)
+- **Klasifikasi**: akurasi **86,5%** (label diturunkan per-sentile per-kota)
+- Peringatan cakupan: wilayah dengan **< 100 baris** data latih diberi peringatan di form & layar hasil; benderanya dibangun ulang oleh `python ml/build_wilayah.py` tiap model dilatih
+- Alasan garis 100 dan bukti kurva belajarnya: `docs/DISKUSI-PERINGATAN-CAKUPAN-DATA.md`
 - Preprocessing: harga `log10`, parsing angka dari teks ("68.0 m2"), normalisasi nama kota, imputasi median `luas_bangunan`
 - Sumber data & atribusi (wajib dikredit, RPP §10): `dataset/README.md`
 

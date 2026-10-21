@@ -31,20 +31,17 @@ CAT_FEATURES = ["lokasi"]
 TARGET_REG = "log_harga"
 TARGET_CLF = "kategori_harga"
 
-# Tier kualitas kota berdasarkan jumlah sampel (keputusan tim Okt 2026, diperluas ke 5 level
-# setelah arahan dosen "masukkan seluruh kota dengan data apa adanya"):
-# 1 aman (n>=150) | 2 warning ringan (100<=n<150) | 3 warning lvl2 (50<=n<100)
-# 4 warning lvl3 (10<=n<50) | 5 warning lvl4 (n<10)
+# Tier kualitas wilayah berdasarkan jumlah sampel di data latih (keputusan tim 21 Okt 2026,
+# dasar: eksperimen kurva belajar di docs/DISKUSI-PERINGATAN-CAKUPAN-DATA.md §3 — kenaikan
+# galat terbesar terjadi di bawah 25 baris dan kurva sudah landai setelah 100):
+# 1 cukup data (n>=100) | 2 data terbatas (25<=n<100) | 3 sangat sedikit (n<25)
+# Angka 150 yang lama dipakai sebagai target pengumpulan data, bukan penanda akurasi.
 def city_tier(n):
-    if n >= 150:
-        return 1
     if n >= 100:
+        return 1
+    if n >= 25:
         return 2
-    if n >= 50:
-        return 3
-    if n >= 10:
-        return 4
-    return 5
+    return 3
 
 
 def _first_number(s):
