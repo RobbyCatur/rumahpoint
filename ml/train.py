@@ -44,6 +44,17 @@ def city_tier(n):
     return 3
 
 
+# Batas kewarasan baris data latih. Ada dua kelas baris yang merusak metrik dan keduanya
+# sisa scraping, bukan properti nyata: harga per m2 yang tidak mungkin (placeholder digit
+# berulang 111111111111111, dan iklan tanah 1 m2 seharga miliaran) serta luas tanah di
+# bawah ukuran petak rumah mana pun. Diukur 22 Okt dari DB 64.650 baris: aturan ini memotong
+# 167 baris (0,26 %) tanpa menjatuhkan satu wilayah pun dari garis 100.
+# Ditaruh di sini (bukan di seed.py) supaya SEMUA sumber baris tercakup — CSV union, DB,
+# maupun entri yang ditambahkan lewat panel admin — dan berlaku tanpa reseed.
+MAKS_HARGA_PER_M2 = 1e8
+MIN_LUAS_TANAH = 10
+
+
 def _first_number(s):
     """Ambil angka pertama dari string, mis. '68.0 m2' -> 68.0 ; sudah numerik -> apa adanya."""
     if pd.isna(s):
@@ -73,6 +84,14 @@ def load_and_clean():
     # kolom wajib: lokasi, luas_m2, harga
     df = df.dropna(subset=["harga", "lokasi"]).copy()
     df = df[(df["harga"] > 0) & df["luas_m2"].notna()]
+    # potong ekor: tanah tak masuk akal / harga per m2 di luar dunia nyata
+    luas = df["luas_m2"].where(df["luas_m2"] > 0)
+    akal = (df["luas_m2"] >= MIN_LUAS_TANAH) & (df["harga"] / luas <= MAKS_HARGA_PER_M2)
+    buang = int((~akal).sum())
+    if buang:
+        print(f"[ekor] buang {buang} baris tidak masuk akal "
+              f"(luas tanah < {MIN_LUAS_TANAH} m2 atau harga > Rp {MAKS_HARGA_PER_M2:,.0f}/m2)")
+    df = df[akal].copy()
     # imputasi median untuk numerik yang boleh kosong (mis. luas_bangunan/usia)
     medians = {}
     for col in NUM_FEATURES:
