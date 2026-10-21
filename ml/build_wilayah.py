@@ -72,6 +72,11 @@ def indeks_asset(wilayah):
     return kab, kota
 
 
+def indeks_provinsi(wilayah):
+    """Nama 34 provinsi di asset, untuk mengenali 'Lorong 2' (dataset/README.md)."""
+    return {_norm(p["nama"]) for p in wilayah}
+
+
 def cocokkan(city_tiers, kab, kota):
     """Sebar jumlah baris model ke entitas asset. Kembalikan hasil + masalahnya."""
     jumlah = {}
@@ -116,6 +121,7 @@ def main():
 
     asset = json.loads(ASSET_PATH.read_text(encoding="utf-8"))
     kab, kota = indeks_asset(asset)
+    provinsi = indeks_provinsi(asset)
     jumlah, asal, tak_tercakup = cocokkan(city_tiers, kab, kota)
 
     berubah = 0
@@ -135,20 +141,50 @@ def main():
     print(f"Asset: {total} kab/kota, {dikenali} dikenali nama model, "
           f"{aman} jadi aman (n>={AMAN_MIN}); {berubah} benderanya berubah.")
     if tak_tercakup:
-        sisa = sum(n for _, n in tak_tercakup)
+        lorong2 = [(n, k) for n, k in tak_tercakup if _norm(n) in provinsi]
+        lain = [(n, k) for n, k in tak_tercakup if _norm(n) not in provinsi]
         print(f"\n{len(tak_tercakup)} nama di data latih tidak ada di daftar 515 "
-              f"({sisa} baris) — perlu dibersihkan di database/seed.py:")
-        for nama, n in tak_tercakup[:15]:
-            print(f"  {nama:<34} {n:>6} baris")
-        if len(tak_tercakup) > 15:
-            print(f"  ... {len(tak_tercakup) - 15} lainnya")
+              f"({sum(k for _, k in tak_tercakup)} baris).")
+        if lorong2:
+            print(f"  {len(lorong2)} nama = kategori area setingkat provinsi. Ini 'Lorong 2' "
+                  f"(dataset/README.md) — ikut melatih model, memang tidak bisa dipilih user. "
+                  f"({sum(k for _, k in lorong2)} baris)")
+        if lain:
+            print(f"  {len(lain)} nama BUKAN provinsi — ini yang perlu dicek/dibersihkan di "
+                  f"database/seed.py ({sum(k for _, k in lain)} baris):")
+            for nama, n in lain[:20]:
+                print(f"    {nama:<34} {n:>6} baris")
+            if len(lain) > 20:
+                print(f"    ... {len(lain) - 20} lainnya")
 
     gabung = {k: v for k, v in asal.items() if len(v) > 1}
     if gabung:
+        baris_ganda = sum(jumlah[k] for k in gabung)
         print(f"\n{len(gabung)} entitas menampung lebih dari satu nama data latih "
-              f"(ejaan ganda di DB):")
-        for ent, nama in list(gabung.items())[:10]:
-            print(f"  {ent:<28} <- {', '.join(nama)}")
+              f"(ejaan ganda di DB, {baris_ganda} baris digabung):")
+        for ent, nama_list in list(gabung.items())[:10]:
+            rincian = ", ".join(f"{nm} ({city_tiers[nm]['n']})" for nm in nama_list)
+            print(f"  {ent:<30} <- {rincian}")
+
+        # train.py meng-encode nama MENTAH dari DB, jadi dua ejaan untuk wilayah yang sama tetap
+        # dua kategori terpisah di model. Penjumlahan di atas hanya untuk mencocokkan nama asset.
+        # Wilayah yang lolos AMAN_MIN semata karena dijumlahkan perlu dilaporkan, bukan disembunyikan.
+        hanya_gabung = [
+            ent for ent, nama_list in gabung.items()
+            if jumlah[ent] >= AMAN_MIN
+            and max(city_tiers[nm]["n"] for nm in nama_list) < AMAN_MIN
+        ]
+        if hanya_gabung:
+            print(f"\n  {len(hanya_gabung)} di antaranya berstatus aman HANYA karena ejaannya "
+                  f"dijumlahkan — kategori tunggal terbesarnya masih di bawah {AMAN_MIN} baris, "
+                  f"dan itulah yang dilihat model:")
+            for ent in sorted(hanya_gabung, key=lambda e: -jumlah[e]):
+                nama_list = gabung[ent]
+                terbesar = max(nama_list, key=lambda nm: city_tiers[nm]["n"])
+                print(f"    {ent:<30} {jumlah[ent]:>4} gabungan, "
+                      f"terbesar {city_tiers[terbesar]['n']} ({terbesar})")
+            print("    Perbaikannya di hulu: normalkan ejaan di database/seed.py, tidak perlu "
+                  "menambah data.")
 
     if args.cek:
         print("\n--cek: file tidak ditulis.")

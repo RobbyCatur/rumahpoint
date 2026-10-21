@@ -8,8 +8,11 @@ Prediksi dihitung **langsung oleh layanan cloud ML** (mobile → cloud). Semua y
 
 **Sudah berjalan & teruji**
 - Prediksi mobile → cloud: `POST /predict` (regresi + klasifikasi + rentang estimasi)
-- Dataset union (berawal 7 kota, kini **64.650 baris** di ±403 kabupaten/kota) + seed DB + training (R² **0,49**, akurasi kategori **86,5%**)
+- Dataset union (berawal 7 kota, kini **64.650 baris** di 403 kabupaten/kota) + seed DB + training (R² **0,49**, akurasi kategori **86,5%**)
 - Web CRUD dataset properti (Flask + SQLite) + `GET /api/properti`
+- Peringatan cakupan data: garis **n≥100** (2 tingkat — aman / peringatan satu kalimat), bendera
+  `didukung` di form dibangun dari model lewat `python ml/build_wilayah.py` → **118** dari 515
+  kabupaten/kota berstatus aman. Sudah diverifikasi silang: `/predict` dan form sepakat di 515/515 entitas
 - CORS cloud, `AndroidManifest` (cleartext + INTERNET), `flutter analyze`/`test` lulus
 
 **Sedang dikembangkan** (desain final, lihat `docs/`)
@@ -59,6 +62,9 @@ python database/seed.py
 # 3. Latih model (tulis ulang cloud_ml/model/)
 python ml/train.py
 
+# 3b. Sinkronkan bendera cakupan ke model (tulis wilayah.json + cakupan_wilayah.json)
+python ml/build_wilayah.py        # pakai --cek untuk lihat ringkasan tanpa menulis
+
 # 4. Jalankan cloud ML (:8081)
 python cloud_ml/app.py
 
@@ -93,20 +99,30 @@ curl -X POST http://127.0.0.1:8081/predict \
 
 ```json
 {
-  "estimasi_harga_rupiah": 1500000000,
-  "estimasi_harga_string": "Rp 1.50 Miliar",
+  "estimasi_harga_rupiah": 1252500000,
+  "estimasi_harga_string": "Rp 1.25 Miliar",
   "kategori_harga": "Mahal",
-  "confidence": 0.93,
-  "rentang_bawah": "Rp 1.12 Miliar",
-  "rentang_atas": "Rp 1.88 Miliar"
+  "confidence": 0.597,
+  "cukup_data": true,
+  "peringatan": null,
+  "rentang_bawah": "Rp 939 Juta",
+  "rentang_atas": "Rp 1.57 Miliar",
+  "input": {
+    "luas_m2": 120.0, "jumlah_kamar": 3.0, "jumlah_kamar_mandi": 2.0,
+    "usia_bangunan": 5.0, "luas_bangunan": 63.0, "lokasi": "Depok"
+  }
 }
 ```
+
+`cukup_data` = `false` (dengan `peringatan` berisi satu kalimat) bila wilayah itu punya kurang dari
+100 baris data latih. Angka jumlah barisnya dibaca dari `cloud_ml/model/cakupan_wilayah.json` —
+sumber yang sama dengan bendera `didukung` di form, jadi keduanya tidak boleh berbeda.
 
 `GET /health` untuk cek kesiapan layanan.
 
 ## Model & dataset
 
-- **Cakupan**: 595 nama lokasi di data latih → ±403 kabupaten/kota resmi (64.650 baris). Daftar awal dulu 7 kota: Bekasi, Bogor, Depok, Jakarta Selatan, Jakarta Utara, Surabaya, Tangerang
+- **Cakupan**: 595 nama lokasi di data latih → 403 kabupaten/kota resmi (64.650 baris). Dari 595 itu, **27 nama (±940 baris)** adalah area setingkat provinsi yang sengaja tidak dipetakan ke pilihan user ("Lorong 2", lihat `dataset/README.md`), dan **7 nama (58 baris)** memang belum terpetakan. **158 entitas** menampung dua ejaan sekaligus (`Sidoarjo` + `Kabupaten Sidoarjo`) dan barisnya dijumlahkan — pembersihannya di `database/seed.py`, belum dikerjakan. Daftar awal dulu 7 kota: Bekasi, Bogor, Depok, Jakarta Selatan, Jakarta Utara, Surabaya, Tangerang
 - **Regresi** RandomForest: R² **0,49**, MAE ≈ Rp 1,83 miliar; galat khas 1,45× harga (metrik per-kota di `ml/metrics.json`)
 - **Klasifikasi**: akurasi **86,5%** (label diturunkan per-sentile per-kota)
 - Peringatan cakupan: wilayah dengan **< 100 baris** data latih diberi peringatan di form & layar hasil; benderanya dibangun ulang oleh `python ml/build_wilayah.py` tiap model dilatih
@@ -114,7 +130,9 @@ curl -X POST http://127.0.0.1:8081/predict \
 - Preprocessing: harga `log10`, parsing angka dari teks ("68.0 m2"), normalisasi nama kota, imputasi median `luas_bangunan`
 - Sumber data & atribusi (wajib dikredit, RPP §10): `dataset/README.md`
 
-Alur retrain: ubah data via web/admin → `python ml/train.py` → restart cloud.
+Alur retrain: ubah data via web/admin → `python ml/train.py` → `python ml/build_wilayah.py` →
+restart cloud (`cloud_ml/model/cakupan_wilayah.json` harus ikut ter-upload; kalau hilang, API diam-diam
+pakai nama mentah dari `meta.json` dan bisa berbeda pendapat dengan bendera di form).
 (JANGAN jalankan `seed.py` setelah ada entri manual di web — seed membangun ulang DB dari CSV dan menghapus entri `manual-web`.)
 
 ## Tech stack
