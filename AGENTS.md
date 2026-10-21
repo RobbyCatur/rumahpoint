@@ -53,6 +53,8 @@ Admin/tim (web) --CRUD dataset + statistik--> Backend Web --> DB --train.py--> m
 - Angka lama R²=0,85 / 0,933 berasal dari dataset 7 kota sebelum union diperluas — UI (FAQ, Disclaimer, landing `web/app.py`) sudah diperbarui ke angka terkini.
 - Cloud-ML (bukan on-device TFLite) = **deviasi RPP §4.2 sudah disetujui dosen** (keterbatasan mobile → web/cloud).
 - Android `http://` butuh `usesCleartextTraffic` (sudah di set).
+- **`meta.json`, `model/cakupan_wilayah.json` dan `model/*.joblib` wajib berasal dari SATU kali training** dan di-upload berempat. cek 22 Okt: joblib di disk berumur 16 Okt sedangkan meta.json/metrics.json 20 Okt — training 20 Okt tidak menimpa joblib. Model mengenal 578 kategori `lokasi` vs 595 nama di meta → 17 nama diprediksi tanpa sinyal lokasi (total 20 baris, tidak ada yang jadi "aman", jadi belum berbahaya — tapi jangan diulang di produksi). Cari tahu penyebabnya sebelum reseed (A2).
+- **JANGAN `git add -A` / `git add .`** di repo ini: `cloud_ml/model/*.joblib` yang belum ter-commit di disk berukuran **±1,5 GB** (yang ter-commit hanya ±85 MB) dan `database/properti.db.bak-*` menumpuk. Stage berkas eksplisit satu per satu dengan nama paths-nya. LFS aktif tapi `.gitattributes` tidak ada → model masuk sebagai blob biasa.
 
 ## Dataset (terunduh; jangan unduh ulang sembarangan)
 - Union dari: `d1041251013-lab/uas-properti`, `FluffHound/east_surabaya_house_predict`, `HaafizHhamda/ColectDataRumah`. Pihak ketiga → **atribusi + cek lisensi/ToS** (RPP §10, lihat `dataset/README.md`).
