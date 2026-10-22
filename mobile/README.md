@@ -42,11 +42,12 @@ bersih dari Flutter/Dio.
 |------|-----|
 | `lib/core/` | `failures.dart`, `format.dart` (pemformatan Rp) |
 | `lib/features/prediction/` | entity `Prediction`, `PredictionRepository` (Dio + SharedPreferences), use case, `presentation/` (screens, providers/Riverpod DI) |
-| `lib/features/prediction/data/services/` | `wilayah_service.dart` (bendera `didukung` per wilayah), `location_service.dart` (GPS → kab/kota terdekat) |
+| `lib/features/prediction/data/services/` | `wilayah_service.dart` (baca aset wilayah + bendera `didukung` + uji titik GPS di dalam poligon), `location_service.dart` (geolocator, akurasi `low`) |
 | `lib/features/user/` | entity `User`, penyimpanan sesi lewat `flutter_secure_storage` |
 | `lib/screens/` | halaman lama (masih dipakai router) |
 | `lib/theme.dart` | satu sumber warna/tema — aksen amber `#F59E0B` + slate |
-| `assets/data/wilayah.json` | 34 provinsi → 515 kab/kota + koordinat + bendera `didukung` |
+| `assets/data/wilayah.json` | 34 provinsi → 515 kab/kota + koordinat centroid + bendera `didukung` |
+| `assets/data/batas.json` | poligon batas ±515 kab/kota (±2,1 MB) — dipakai `WilayahService.locate()` untuk menentukan wilayah dari titik GPS; bila titik tidak jatuh di poligon mana pun, jatuh ke centroid terdekat (`nearest`) |
 
 Router: `go_router` dengan `StatefulShellRoute` — `/` login, `/beranda`, `/riwayat`, `/profil`,
 `/hasil` (geser kiri → Riwayat, kanan → Beranda).
