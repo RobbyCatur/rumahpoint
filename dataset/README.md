@@ -1,7 +1,7 @@
 # Dataset Rumah Point (union multi-kota, ekspansi nasional)
 
 ## Berkas
-- `properti_multi_kota.csv` — hasil **union** gabungan (build via `build_union.py`). Saat ini **64.323 baris / 572 lokasi unik**.
+- `properti_multi_kota.csv` — hasil **union** gabungan (build via `build_union.py`). Saat ini **64.650 baris / 595 nama lokasi** (= 403 kabupaten/kota resmi setelah peta-ulang + Lorong 2).
 - `raw_sources/` — CSV mentah per sumber + scraper (lihat tabel sumber).
 - `dataset_properti.csv` — sumber awal (Jabodetabek).
 - `build_union.py` — skrip pembangun union (6 blok sumber, normalisasi kota, parsing harga/luas, cap 2000/kota, filter NON_ID).
@@ -10,6 +10,10 @@
 `sumber, lokasi(kota), luas_m2, luas_bangunan, jumlah_kamar, jumlah_kamar_mandi, usia_bangunan, harga`
 - `harga` = target regresi (Rupiah). `kategori_harga` (Murah/Mahal) **diturunkan di seed.py secara per-sentile per-kota** (≥ median kota tsb = Mahal).
 - `luas_bangunan` bisa kosong (imputasi median saat training). FLUS tidak punya `usia_bangunan` → kosong, diimputasi median juga.
+- **Filter kewarasan saat training (bukan saat seed)**: `ml/train.py` membuang baris ber-`harga/luas_m2 > Rp 100 juta/m²`
+  atau `luas_m2 < 10` — sisa scraping (placeholder `111111111111111`, iklan tanah 1 m2 miliaran). Diukur 22 Okt: **167 baris (0,26 %)**
+  sehingga yang dilatih **64.483**, bukan 64.650. Ke-167 baris itu **masih tersimpan di `properti.db` dan di CSV ini** — sengaja,
+  supaya aturan bisa diubah tanpa reseed, dan supaya asal angka bisa diverifikasi. Tidak ada wilayah yang jatuh dari garis 100 karenanya.
 
 ## Sumber & atribusi (RPP §10 — wajib dikredit)
 | sumber | cakupan | baris di union | asal | catatan lisensi |
@@ -22,7 +26,7 @@
 
 Catatan: data rumah123/99.co merupakan hasil scraping listing publik — **verifikasi lisensi & kepatuhan ToS** sebelum dipakai lebih luas; untuk PBL sebagai dataset latih internal. Sitemap rumah123 memuat entri non-Indonesia (Singapore, Australia, Malaysia, UAE, dst.) — difilter via `NON_ID` di `build_union.py`.
 
-## Disclosure kualitas data per wilayah (keputusan dosen Okt 2026: "seluruh kota, data apa adanya")
+## Pengungkapan kualitas data per wilayah (keputusan dosen Okt 2026: "seluruh kota, data apa adanya")
 Keperluan cakupan nasional tidak menurunkan kota; kualitas **dibuka ke pengguna** berdasar jumlah
 sampel wilayah itu. ~~Lewat tier 5 level~~ → **direvisi 21 Okt 2026** menjadi dua tingkat, dengan garis
 yang diambil dari eksperimen **kurva belajar** (kenaikan galat terbesar ada di bawah 25 baris dan
@@ -42,8 +46,8 @@ Tingkat ketiga (`n<25` vs `25–99`) sudah diputuskan bentuknya tapi belum dikir
 
 Distribusi saat ini (64.650 baris / 595 nama lokasi mentah): **403** entitas `wilayah.json` terpetakan
 → **118** n≥100 · 73 di 25–99 · 212 di bawah 25; **112** entitas belum punya satu baris pun.
-Periksa-cakupan entitas 514: `dataset/cakupan_514.csv` (dibuat `audit_cakupan.py`; catatan: skrip itu
-masih memakai batas tier lama, jadi angkanya tidak sebanding dengan tabel di atas).
+Periksa-cakupan entitas 514: `dataset/cakupan_514.csv` — isinya **515 baris = 399 berdata + 116 bertanda NOL**
+(dibuat `audit_cakupan.py` **sebelum** batch rumah123 susulan, dan masih memakai batas tier lama — karena itu 116 NOL di file itu, angka hari ini 112).
 
 ## Kebijakan dua lorong — lokasi non-administratif (keputusan tim Okt 2026)
 Nama di luar daftar induk 514 kabupaten/kota hasil pemeriksaan cakupan (`audit_cakupan.py`):
@@ -54,7 +58,7 @@ Nama di luar daftar induk 514 kabupaten/kota hasil pemeriksaan cakupan (`audit_c
 ## Status cakupan
 - 99.co: **selesai 214/214** indeks. rumah123: **selesai 331/331** (log `raw_sources/rumah123_batch.log`). Rantai ulang (union+REMAP→seed→train→audit) dijalankan 16 Okt.
 - Tabel `cities` DB memuat 581 lokasi + `provinsi` (migrasi `006_all_cities.sql`). Kolom `lokasi` di `properti` kini berisi **595 nama** (64.650 baris) — lebih banyak dari 572 pada tahap REMAP awal karena batch susulan; **27 nama** di antaranya area setingkat provinsi (Lorong 2, sengaja tidak dipetakan) dan **7 nama** (58 baris) masih belum terpetakan, sisanya terpetakan ke **403** kabupaten/kota.
-- Konsekuensi metrik "apa adanya": R² RF 0,828→**0,4915**, akurasi 0,933→**0,8647** — lihat `ml/metrics.json`; dibuka ke user lewat `cukup_data` + peringatan (lihat §disclosure di atas), bukan lewat memangkas kota.
+- Konsekuensi metrik "apa adanya": R² RF 0,828→**0,4915**, akurasi 0,933→**0,8647** — lihat `ml/metrics.json`; dibuka ke user lewat `cukup_data` + peringatan (bagian "Pengungkapan kualitas data" di atas), bukan lewat memangkas kota.
 
 ## Cara membangun ulang
 ```

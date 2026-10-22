@@ -14,6 +14,12 @@ Pohon keputusan pemetaan lokasi union -> entitas induk:
 Jalankan:  python dataset/audit_cakupan.py
 Keluaran:  dataset/cakupan_514.csv (per entitas induk)
            dataset/peetaan_lokasi.csv (per lokasi union + aturan yang dipakai)
+
+CATATAN (22 Okt 2026): skrip ini **peninggalan tahap audit** dan masih memakai skala lima tingkat
+lama (150/100/50/10). Skala yang benar-benar dipakai produk sekarang satu garis saja, n>=100,
+konstanta `AMAN_MIN` di `ml/build_wilayah.py` dan `cloud_ml/app.py`. Angka `cakupan_514.csv` karena
+itu tidak sebanding dengan `cloud_ml/model/cakupan_wilayah.json` — jangan dipetiknya untuk keputusan
+wilayah, dan jangan skala di sini "diseragamkan" diam-diam: file keluarannya ikut berubah makna.
 """
 import csv
 import json
@@ -33,6 +39,7 @@ FLUS = os.path.join(RAW, "kaggle_flus_housing.csv")
 OUT_CAKUP = os.path.join(HERE, "cakupan_514.csv")
 OUT_PETA = os.path.join(HERE, "peetaan_lokasi.csv")
 
+# Skala lima tingkat LAMA — lihat catatan di docstring; produk sekarang hanya kenal n>=100.
 AMAN, RINGAN, LV2, LV3 = 150, 100, 50, 10
 
 
