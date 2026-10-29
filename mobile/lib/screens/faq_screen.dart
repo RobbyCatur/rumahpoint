@@ -7,20 +7,21 @@ class FaqScreen extends StatelessWidget {
     (
       q: 'Bagaimana cara kerja prediksi harga di RumahPoint?',
       a:
-          'RumahPoint menggunakan model Machine Learning (Random Forest) yang dilatih dengan data ribuan properti dari 7 kota besar di Indonesia. '
+          'RumahPoint menggunakan model Machine Learning (Random Forest) yang dilatih dengan 64.650 data properti dari 403 kabupaten/kota di Indonesia. '
               'Anda cukup mengisi data seperti luas tanah, luas bangunan, jumlah kamar, dan lokasi — sistem kami akan memberikan estimasi harga beserta kategori Murah/Mahal secara otomatis.',
     ),
     (
       q: 'Seberapa akurat hasil prediksi harga properti?',
       a:
-          'Model kami saat ini memiliki akurasi regresi R² sebesar 0,85 dan akurasi klasifikasi 93,3%. '
-              'Namun, hasil prediksi bersifat estimasi dan tidak menggantikan penilaian profesional dari Appraisal atau KJPP. '
+          'Pada model terkini, akurasi regresi R² sebesar 0,49 dan akurasi klasifikasi 86,5%. '
+              'Angka tersebut adalah rata-rata di seluruh wilayah: akurasi per kabupaten/kota berbeda-beda, dan pada wilayah yang data latihnya masih sedikit estimasi bisa meleset lebih jauh — aplikasi memberi peringatan bila wilayah Anda termasuk itu. '
+              'Hasil prediksi bersifat estimasi dan tidak menggantikan penilaian profesional dari Appraisal atau KJPP. '
               'Gunakan hasil ini sebagai referensi awal sebelum melakukan survei lapangan.',
     ),
     (
       q: 'Kota apa saja yang didukung oleh RumahPoint?',
       a:
-          'Saat ini RumahPoint mendukung 7 kota/wilayah: Jakarta Selatan, Jakarta Utara, Bekasi, Bogor, Depok, Tangerang, dan Surabaya. '
+          'Model dilatih dari data 403 kabupaten/kota. Daftar wilayah pada form dipilih dari 515 kabupaten/kota di Indonesia; wilayah yang datanya belum tercukupi tetap bisa diprediksi, tetapi hasilnya ditandai dengan peringatan cakupan data. '
               'Kami akan terus memperluas cakupan dataset ke lebih banyak kota di Indonesia.',
     ),
     (

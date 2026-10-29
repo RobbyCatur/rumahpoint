@@ -126,16 +126,16 @@ LANDING = """<!doctype html>
 </div></nav>
 <div class="hero">
   <h1>Perkiraan harga rumah dalam hitungan detik</h1>
-  <p>Rumah Point membantu calon pembeli dan penjual menaksir harga rumah di 7 kota
+  <p>Rumah Point membantu calon pembeli dan penjual menaksir harga rumah di 403 kabupaten/kota
      Indonesia dari atributnya — luas, jumlah kamar, usia bangunan, dan lokasi —
      dengan model machine learning di cloud.</p>
   <a class="btn" href="#unduh">Coba Aplikasi Mobile</a>
 </div>
 <div class="stats">
-  <div class="stat"><b>7</b><span>Kota didukung</span></div>
-  <div class="stat"><b>3.730</b><span>Data latih properti</span></div>
-  <div class="stat"><b>R² 0,85</b><span>Akurasi regresi harga</span></div>
-  <div class="stat"><b>93,3%</b><span>Akurasi klasifikasi kategori</span></div>
+  <div class="stat"><b>403</b><span>Kabupaten/kota didukung</span></div>
+  <div class="stat"><b>64.650</b><span>Data latih properti</span></div>
+  <div class="stat"><b>R² 0,49</b><span>Akurasi regresi harga</span></div>
+  <div class="stat"><b>86,5%</b><span>Akurasi klasifikasi kategori</span></div>
 </div>
 <section class="wrap">
   <h2>Cara Kerja</h2>

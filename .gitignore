@@ -1,0 +1,16 @@
+ppt
+.qoder
+docs
+web/.secret_key
+__pycache__/
+*.pyc
+database/*.bak
+database/*.db-journal
+database/*.db-wal
+database/*.db-shm
+tmp/
+core.*
+
+# Model terlatih: ±1,5 GB di disk, tidak pernah cocok dengan blob git.
+# Hanya hidup di server + cadangan terpisah (lihat docs/DEPLOY-VPS.md).
+cloud_ml/model/*.joblib

@@ -86,11 +86,13 @@ class DisclaimerScreen extends StatelessWidget {
             iconColor: const Color(0xFFF59E0B),
             title: 'Tentang Model Prediksi',
             content:
-                'RumahPoint menggunakan algoritma Random Forest yang dilatih dengan dataset '
-                'properti dari 7 kota di Indonesia. Model ini memiliki nilai R² (koefisien determinasi) '
-                'sebesar 0,85 — artinya sekitar 85% variasi harga dapat dijelaskan oleh model. '
-                'Sisa 15% dipengaruhi faktor yang belum tercakup dalam dataset seperti kondisi fisik '
-                'bangunan, akses jalan, dan faktor lokal spesifik.',
+                'RumahPoint menggunakan algoritma Random Forest yang dilatih dengan 64.650 data '
+                'properti dari 403 kabupaten/kota di Indonesia. Model ini memiliki nilai R² (koefisien determinasi) '
+                'sebesar 0,49 — artinya sekitar 49% variasi harga dapat dijelaskan oleh model. '
+                'Sisa 51% dipengaruhi faktor yang belum tercakup dalam dataset seperti kondisi fisik '
+                'bangunan, akses jalan, dan faktor lokal spesifik. '
+                'Angka tersebut rata-rata seluruh wilayah: pada kabupaten/kota yang data latihnya masih sedikit, '
+                'galat estimasi membesar dan aplikasi menandainya dengan peringatan.',
           ),
 
           _buildCard(
@@ -99,9 +101,9 @@ class DisclaimerScreen extends StatelessWidget {
             iconColor: const Color(0xFFF59E0B),
             title: 'Keterbatasan Geografis',
             content:
-                'Dataset pelatihan hanya mencakup 7 wilayah: Jakarta Selatan, Jakarta Utara, '
-                'Bekasi, Bogor, Depok, Tangerang, dan Surabaya. '
-                'Estimasi untuk properti di luar wilayah ini atau di kecamatan yang sangat spesifik '
+                'Dataset pelatihan tersebar di 403 kabupaten/kota dengan kepadatan yang tidak merata. '
+                'Wilayah yang jumlah data latihnya belum cukup ditandai dengan peringatan saat prediksi. '
+                'Estimasi untuk properti di luar wilayah yang pernah dilatih, atau di kecamatan yang sangat spesifik, '
                 'mungkin kurang akurat karena model melakukan ekstrapolasi di luar distribusi data latih.',
           ),
 

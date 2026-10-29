@@ -18,7 +18,7 @@ Future<KabupatenKota?> deteksiWilayahSaatIni(WidgetRef ref) async {
 
 /// Bidang pemilihan wilayah yang dipakai Beranda dan Preferensi Profil:
 /// label, tombol GPS, kotak pilih (bottom sheet provinsi → kab/kota),
-/// dan catatan akurasi bila wilayah belum tercakup data latih.
+/// dan catatan akurasi bila cakupan data latih wilayah belum cukup.
 class WilayahField extends ConsumerStatefulWidget {
   const WilayahField({
     super.key,
@@ -363,7 +363,7 @@ class _WilayahPickerSheetState extends State<WilayahPickerSheet> {
                                 trailing: k.didukung
                                     ? null
                                     : Tooltip(
-                                        message: 'Data latih terbatas',
+                                        message: 'Data wilayah ini belum cukup',
                                         child: Icon(
                                             Icons.info_outline_rounded,
                                             size: 16,
@@ -385,7 +385,7 @@ class _WilayahPickerSheetState extends State<WilayahPickerSheet> {
   }
 }
 
-/// Catatan akurasi bila lokasi tidak tercakup data latih.
+/// Catatan akurasi bila cakupan data latih wilayah belum cukup.
 class _AccuracyNote extends StatelessWidget {
   const _AccuracyNote();
 
@@ -405,7 +405,8 @@ class _AccuracyNote extends StatelessWidget {
           const SizedBox(width: 8),
           Expanded(
             child: Text(
-              'Data latih terbatas di wilayah ini — estimasi bisa kurang akurat.',
+              'Model belum punya cukup data untuk wilayah ini — '
+              'estimasi bisa kurang akurat.',
               style: TextStyle(fontSize: 12, color: tone.tintText),
             ),
           ),

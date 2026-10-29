@@ -31,20 +31,28 @@ CAT_FEATURES = ["lokasi"]
 TARGET_REG = "log_harga"
 TARGET_CLF = "kategori_harga"
 
-# Tier kualitas kota berdasarkan jumlah sampel (keputusan tim Okt 2026, diperluas ke 5 level
-# setelah arahan dosen "masukkan seluruh kota dengan data apa adanya"):
-# 1 aman (n>=150) | 2 warning ringan (100<=n<150) | 3 warning lvl2 (50<=n<100)
-# 4 warning lvl3 (10<=n<50) | 5 warning lvl4 (n<10)
+# Tier kualitas wilayah berdasarkan jumlah sampel di data latih (keputusan tim 21 Okt 2026,
+# dasar: eksperimen kurva belajar di docs/DISKUSI-PERINGATAN-CAKUPAN-DATA.md §3 — kenaikan
+# galat terbesar terjadi di bawah 25 baris dan kurva sudah landai setelah 100):
+# 1 cukup data (n>=100) | 2 data terbatas (25<=n<100) | 3 sangat sedikit (n<25)
+# Angka 150 yang lama dipakai sebagai target pengumpulan data, bukan penanda akurasi.
 def city_tier(n):
-    if n >= 150:
-        return 1
     if n >= 100:
+        return 1
+    if n >= 25:
         return 2
-    if n >= 50:
-        return 3
-    if n >= 10:
-        return 4
-    return 5
+    return 3
+
+
+# Batas kewarasan baris data latih. Ada dua kelas baris yang merusak metrik dan keduanya
+# sisa scraping, bukan properti nyata: harga per m2 yang tidak mungkin (placeholder digit
+# berulang 111111111111111, dan iklan tanah 1 m2 seharga miliaran) serta luas tanah di
+# bawah ukuran petak rumah mana pun. Diukur 22 Okt dari DB 64.650 baris: aturan ini memotong
+# 167 baris (0,26 %) tanpa menjatuhkan satu wilayah pun dari garis 100.
+# Ditaruh di sini (bukan di seed.py) supaya SEMUA sumber baris tercakup — CSV union, DB,
+# maupun entri yang ditambahkan lewat panel admin — dan berlaku tanpa reseed.
+MAKS_HARGA_PER_M2 = 1e8
+MIN_LUAS_TANAH = 10
 
 
 def _first_number(s):
@@ -76,6 +84,14 @@ def load_and_clean():
     # kolom wajib: lokasi, luas_m2, harga
     df = df.dropna(subset=["harga", "lokasi"]).copy()
     df = df[(df["harga"] > 0) & df["luas_m2"].notna()]
+    # potong ekor: tanah tak masuk akal / harga per m2 di luar dunia nyata
+    luas = df["luas_m2"].where(df["luas_m2"] > 0)
+    akal = (df["luas_m2"] >= MIN_LUAS_TANAH) & (df["harga"] / luas <= MAKS_HARGA_PER_M2)
+    buang = int((~akal).sum())
+    if buang:
+        print(f"[ekor] buang {buang} baris tidak masuk akal "
+              f"(luas tanah < {MIN_LUAS_TANAH} m2 atau harga > Rp {MAKS_HARGA_PER_M2:,.0f}/m2)")
+    df = df[akal].copy()
     # imputasi median untuk numerik yang boleh kosong (mis. luas_bangunan/usia)
     medians = {}
     for col in NUM_FEATURES:

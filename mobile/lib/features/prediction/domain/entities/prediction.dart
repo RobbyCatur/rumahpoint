@@ -34,7 +34,7 @@ class Prediction {
   final String lokasi;
   final String provinsi;
 
-  /// false bila lokasi tidak tercakup data latih → UI tampilkan peringatan.
+  /// false bila cakupan data latih lokasi belum cukup → UI tampilkan peringatan.
   final bool lokasiDidukung;
   final int estimasiHarga;
   final String estimasiString;
