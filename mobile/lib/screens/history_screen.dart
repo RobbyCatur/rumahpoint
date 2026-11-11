@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import '../core/format.dart';
 import '../features/prediction/domain/entities/prediction.dart';
 import '../features/prediction/presentation/providers/prediction_providers.dart';
+import '../features/prediction/presentation/widgets/history_filter_dialog.dart';
 import '../theme.dart';
 
 class HistoryScreen extends ConsumerStatefulWidget {
@@ -15,14 +16,15 @@ class HistoryScreen extends ConsumerStatefulWidget {
 }
 
 class _HistoryScreenState extends ConsumerState<HistoryScreen> {
+  final _searchCtrl = TextEditingController();
   String _query = '';
-  String _filter = 'Semua';
+  HistoryFilter _filter = const HistoryFilter();
 
-  /// Lokasi terpilih dari dropdown; null = semua lokasi.
-  String? _lokasi;
-
-  /// Kunci bulan terpilih "tahun-bulan" (mis. 2025-9); null = semua bulan.
-  String? _bulan;
+  @override
+  void dispose() {
+    _searchCtrl.dispose();
+    super.dispose();
+  }
 
   static String _monthKey(DateTime d) => '${d.year}-${d.month}';
 
@@ -30,42 +32,22 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
   List<String> _availableLocations(List<Prediction> history) {
     final set = <String>{};
     for (final p in history) {
-      set.add(p.provinsi.isEmpty ? p.lokasi : '${p.lokasi}, ${p.provinsi}');
+      set.add(predictionLocationLabel(p));
     }
     return set.toList()..sort();
   }
 
-  /// Daftar bulan unik dari riwayat, terbaru dulu.
-  List<DateTime> _availableMonths(List<Prediction> history) {
-    final seen = <String>{};
-    final months = <DateTime>[];
-    for (final p in history.reversed) {
-      final key = _monthKey(p.createdAt);
-      if (seen.add(key)) {
-        months.add(DateTime(p.createdAt.year, p.createdAt.month));
-      }
-    }
-    return months;
-  }
-
   List<Prediction> _applyFilter(List<Prediction> history) {
-    return history.reversed.where((p) {
-      final matchFilter = _filter == 'Semua' || p.kategori == _filter;
-      final matchQuery =
-          p.lokasi.toLowerCase().contains(_query.toLowerCase());
-      final matchMonth = _bulan == null || _monthKey(p.createdAt) == _bulan;
-      final label =
-          p.provinsi.isEmpty ? p.lokasi : '${p.lokasi}, ${p.provinsi}';
-      final matchLocation = _lokasi == null || label == _lokasi;
-      return matchFilter && matchQuery && matchMonth && matchLocation;
-    }).toList();
+    return history.reversed
+        .where((p) => _filter.matches(p) && _filter.matchesQuery(p, _query))
+        .toList();
   }
 
   /// Kelompokkan item (sudah terurut terbaru) per bulan, terbaru dulu.
   List<({String key, DateTime month, List<Prediction> items})> _groupByMonth(
-      List<Prediction> items) {
-    final groups =
-        <({String key, DateTime month, List<Prediction> items})>[];
+    List<Prediction> items,
+  ) {
+    final groups = <({String key, DateTime month, List<Prediction> items})>[];
     for (final p in items) {
       final key = _monthKey(p.createdAt);
       if (groups.isEmpty || groups.last.key != key) {
@@ -79,6 +61,25 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
       }
     }
     return groups;
+  }
+
+  Future<void> _openFilter(List<Prediction> history) async {
+    final result = await showHistoryFilterDialog(
+      context,
+      initial: _filter,
+      locations: _availableLocations(history),
+    );
+    if (result != null && mounted) {
+      setState(() => _filter = result);
+    }
+  }
+
+  void _resetFilter() {
+    setState(() {
+      _filter = const HistoryFilter();
+      _query = '';
+      _searchCtrl.clear();
+    });
   }
 
   Future<void> _confirmClear() async {
@@ -101,6 +102,7 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
     );
     if (ok == true) {
       await ref.read(predictionControllerProvider.notifier).clearHistory();
+      if (mounted) _resetFilter();
     }
   }
 
@@ -108,10 +110,6 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
   Widget build(BuildContext context) {
     final tone = AppTone.of(context);
     final history = ref.watch(predictionControllerProvider).history;
-    final months = _availableMonths(history);
-    final locations = _availableLocations(history);
-    // Reset pilihan lokasi bila tidak lagi ada di riwayat (mis. habis dihapus).
-    if (_lokasi != null && !locations.contains(_lokasi)) _lokasi = null;
     final items = _applyFilter(history);
     final groups = _groupByMonth(items);
 
@@ -132,89 +130,71 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
           Padding(
             padding: const EdgeInsets.fromLTRB(20, 4, 20, 0),
             child: TextField(
+              controller: _searchCtrl,
               onChanged: (v) => setState(() => _query = v),
               style: TextStyle(color: tone.text, fontSize: 14),
               decoration: InputDecoration(
                 hintText: 'Cari riwayat lokasi...',
                 hintStyle: TextStyle(color: tone.textMuted, fontSize: 14),
-                prefixIcon: Icon(Icons.search_rounded,
-                    size: 20, color: tone.textMuted),
+                prefixIcon: Icon(
+                  Icons.search_rounded,
+                  size: 20,
+                  color: tone.textMuted,
+                ),
+                suffixIcon: _query.isEmpty
+                    ? null
+                    : IconButton(
+                        onPressed: () {
+                          _searchCtrl.clear();
+                          setState(() => _query = '');
+                        },
+                        tooltip: 'Hapus pencarian',
+                        icon: Icon(
+                          Icons.close_rounded,
+                          color: tone.textMuted,
+                          size: 18,
+                        ),
+                      ),
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(20, 12, 20, 4),
-            child: Row(
-              children: [
-                for (final f in ['Semua', 'Murah', 'Mahal']) ...[
-                  ChoiceChip(
-                    label: Text(f == 'Semua'
-                        ? 'Semua (${history.length})'
-                        : f),
-                    selected: _filter == f,
-                    onSelected: (_) => setState(() => _filter = f),
-                  ),
-                  if (f != 'Mahal') const SizedBox(width: 8),
-                ],
-                if (locations.length > 1) ...[
-                  const SizedBox(width: 8),
-                  // Filter by location: dropdown lokasi unik dari riwayat.
-                  Expanded(
-                    child: Align(
-                      alignment: Alignment.centerRight,
-                      child: PopupMenuButton<String?>(
-                        tooltip: 'Filter lokasi',
-                        onSelected: (v) => setState(() => _lokasi = v),
-                        itemBuilder: (context) => [
-                          const PopupMenuItem<String?>(
-                            value: null,
-                            child: Text('Semua lokasi'),
-                          ),
-                          for (final l in locations)
-                            PopupMenuItem<String?>(value: l, child: Text(l)),
-                        ],
-                        child: Chip(
-                          avatar: const Icon(Icons.location_on_outlined,
-                              size: 16),
-                          label: Text(
-                            _lokasi ?? 'Lokasi',
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ],
-            ),
-          ),
-          if (months.length > 1)
-            SizedBox(
-              height: 48,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                padding: const EdgeInsets.fromLTRB(20, 4, 20, 0),
+          if (history.isNotEmpty)
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 10, 20, 2),
+              child: Row(
                 children: [
-                  ChoiceChip(
-                    label: const Text('Semua bulan'),
-                    selected: _bulan == null,
-                    onSelected: (_) => setState(() => _bulan = null),
+                  Text(
+                    '${items.length} hasil',
+                    style: TextStyle(fontSize: 12.5, color: tone.textMuted),
                   ),
-                  for (final m in months) ...[
-                    const SizedBox(width: 8),
-                    ChoiceChip(
-                      label: Text(formatBulanSingkat(m)),
-                      selected: _bulan == _monthKey(m),
-                      onSelected: (_) =>
-                          setState(() => _bulan = _monthKey(m)),
+                  const Spacer(),
+                  OutlinedButton.icon(
+                    onPressed: () => _openFilter(history),
+                    icon: const Icon(Icons.tune_rounded, size: 18),
+                    label: Text(
+                      _filter.isEmpty
+                          ? 'Filter'
+                          : 'Filter (${_filter.activeCount})',
                     ),
-                  ],
+                    style: OutlinedButton.styleFrom(
+                      foregroundColor: _filter.isEmpty
+                          ? tone.textSoft
+                          : tone.accent,
+                      side: BorderSide(
+                        color: _filter.isEmpty ? tone.border : tone.accent,
+                      ),
+                      minimumSize: const Size(0, 40),
+                      visualDensity: VisualDensity.compact,
+                    ),
+                  ),
                 ],
               ),
             ),
           Expanded(
             child: items.isEmpty
-                ? const _EmptyState()
+                ? (history.isEmpty
+                      ? const _EmptyState()
+                      : _NoResultState(onReset: _resetFilter))
                 : ListView.builder(
                     padding: const EdgeInsets.fromLTRB(20, 8, 20, 20),
                     itemCount: groups.length,
@@ -225,7 +205,11 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
                         children: [
                           Padding(
                             padding: EdgeInsets.fromLTRB(
-                                2, gi == 0 ? 8 : 20, 2, 8),
+                              2,
+                              gi == 0 ? 8 : 20,
+                              2,
+                              8,
+                            ),
                             child: Text(
                               formatBulanPenuh(g.month),
                               style: TextStyle(
@@ -264,8 +248,9 @@ class _KategoriBadge extends StatelessWidget {
     final isMurah = kategori.toLowerCase() == 'murah';
     final fg = isMurah ? tone.positive : tone.negative;
     final bg = isMurah ? tone.positiveBg : tone.negativeBg;
-    final icon =
-        isMurah ? Icons.trending_down_rounded : Icons.trending_up_rounded;
+    final icon = isMurah
+        ? Icons.trending_down_rounded
+        : Icons.trending_up_rounded;
 
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
@@ -318,8 +303,11 @@ class _HistoryCard extends ConsumerWidget {
                   color: tone.tintBg,
                   borderRadius: BorderRadius.circular(12),
                 ),
-                child: Icon(Icons.home_work_rounded,
-                    color: tone.accent, size: 22),
+                child: Icon(
+                  Icons.home_work_rounded,
+                  color: tone.accent,
+                  size: 22,
+                ),
               ),
               const SizedBox(width: 12),
               Expanded(
@@ -327,25 +315,23 @@ class _HistoryCard extends ConsumerWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      p.provinsi.isEmpty
-                          ? p.lokasi
-                          : '${p.lokasi}, ${p.provinsi}',
+                      predictionLocationLabel(p),
                       style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w700,
-                          color: tone.text),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w700,
+                        color: tone.text,
+                      ),
                     ),
                     const SizedBox(height: 3),
                     Text(
-                      '${p.luasM2.round()} m² • ${p.jumlahKamar} KT • ${p.jumlahKamarMandi} KM',
-                      style: TextStyle(
-                          fontSize: 12, color: tone.textMuted),
+                      '${p.luasM2.round()} m² • ${p.jumlahKamar} KT • '
+                      '${p.jumlahKamarMandi} KM',
+                      style: TextStyle(fontSize: 12, color: tone.textMuted),
                     ),
                     const SizedBox(height: 2),
                     Text(
                       formatTanggal(p.createdAt),
-                      style:
-                          TextStyle(fontSize: 11, color: tone.textMuted),
+                      style: TextStyle(fontSize: 11, color: tone.textMuted),
                     ),
                   ],
                 ),
@@ -357,9 +343,10 @@ class _HistoryCard extends ConsumerWidget {
                   Text(
                     p.estimasiString,
                     style: TextStyle(
-                        fontSize: 13.5,
-                        fontWeight: FontWeight.w800,
-                        color: tone.text),
+                      fontSize: 13.5,
+                      fontWeight: FontWeight.w800,
+                      color: tone.text,
+                    ),
                   ),
                   const SizedBox(height: 4),
                   _KategoriBadge(kategori: p.kategori),
@@ -388,9 +375,10 @@ class _EmptyState extends StatelessWidget {
           Text(
             'Belum ada riwayat',
             style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w700,
-                color: tone.text),
+              fontSize: 15,
+              fontWeight: FontWeight.w700,
+              color: tone.text,
+            ),
           ),
           const SizedBox(height: 4),
           Text(
@@ -398,6 +386,49 @@ class _EmptyState extends StatelessWidget {
             style: TextStyle(fontSize: 12.5, color: tone.textMuted),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class _NoResultState extends StatelessWidget {
+  const _NoResultState({required this.onReset});
+
+  final VoidCallback onReset;
+
+  @override
+  Widget build(BuildContext context) {
+    final tone = AppTone.of(context);
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 32),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(Icons.filter_alt_off_rounded, size: 56, color: tone.border),
+            const SizedBox(height: 12),
+            Text(
+              'Tidak ada hasil',
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.w700,
+                color: tone.text,
+              ),
+            ),
+            const SizedBox(height: 4),
+            Text(
+              'Tidak ada riwayat yang cocok dengan filter atau pencarianmu.',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 12.5, color: tone.textMuted),
+            ),
+            const SizedBox(height: 16),
+            OutlinedButton.icon(
+              onPressed: onReset,
+              icon: const Icon(Icons.refresh_rounded, size: 18),
+              label: const Text('Atur ulang filter'),
+            ),
+          ],
+        ),
       ),
     );
   }

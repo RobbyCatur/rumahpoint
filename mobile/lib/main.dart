@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'features/prediction/presentation/providers/prediction_providers.dart';
@@ -33,6 +34,13 @@ class _RumahPointAppState extends ConsumerState<RumahPointApp> {
     return MaterialApp.router(
       title: 'RumahPoint',
       debugShowCheckedModeBanner: false,
+      locale: const Locale('id'),
+      supportedLocales: const [Locale('id'), Locale('en')],
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
       theme: buildAppTheme(),
       darkTheme: buildDarkTheme(),
       themeMode: themeMode,
@@ -40,4 +48,3 @@ class _RumahPointAppState extends ConsumerState<RumahPointApp> {
     );
   }
 }
-
