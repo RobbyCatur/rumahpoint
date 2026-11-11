@@ -57,12 +57,16 @@ class PredictionRepositoryImpl implements PredictionRepository {
       return (
         prediction: null,
         failure: const NetworkFailure(
-            'Gagal memprediksi. Pastikan server cloud aktif.'),
+          'Tidak bisa menghubungi layanan prediksi. Periksa koneksi '
+          'internetmu, lalu coba lagi.',
+        ),
       );
-    } catch (e) {
+    } catch (_) {
       return (
         prediction: null,
-        failure: NetworkFailure('Terjadi kesalahan tak terduga: $e'),
+        failure: const NetworkFailure(
+          'Prediksi belum berhasil diproses. Coba lagi beberapa saat lagi.',
+        ),
       );
     }
   }
