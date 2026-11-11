@@ -1,5 +1,7 @@
 import 'package:go_router/go_router.dart';
 
+import 'features/tutorial/domain/tutorial_page.dart';
+import 'features/tutorial/presentation/tutorial_gate.dart';
 import 'screens/forgot_password_screen.dart';
 import 'screens/history_screen.dart';
 import 'screens/home_screen.dart';
@@ -20,17 +22,35 @@ final router = GoRouter(
       branches: [
         StatefulShellBranch(
           routes: [
-            GoRoute(path: '/beranda', builder: (_, _) => const HomeScreen()),
+            GoRoute(
+              path: '/beranda',
+              builder: (_, _) => const TutorialGate(
+                page: TutorialPage.beranda,
+                child: HomeScreen(),
+              ),
+            ),
           ],
         ),
         StatefulShellBranch(
           routes: [
-            GoRoute(path: '/riwayat', builder: (_, _) => const HistoryScreen()),
+            GoRoute(
+              path: '/riwayat',
+              builder: (_, _) => const TutorialGate(
+                page: TutorialPage.riwayat,
+                child: HistoryScreen(),
+              ),
+            ),
           ],
         ),
         StatefulShellBranch(
           routes: [
-            GoRoute(path: '/profil', builder: (_, _) => const ProfileScreen()),
+            GoRoute(
+              path: '/profil',
+              builder: (_, _) => const TutorialGate(
+                page: TutorialPage.profil,
+                child: ProfileScreen(),
+              ),
+            ),
           ],
         ),
       ],

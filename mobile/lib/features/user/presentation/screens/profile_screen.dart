@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../tutorial/presentation/tutorial_picker.dart';
 import '../providers/user_providers.dart';
 import 'settings_screen.dart';
 import 'personal_info_screen.dart';
@@ -164,11 +165,12 @@ class ProfileScreen extends ConsumerWidget {
                   const SizedBox(height: 24),
 
                   // Daftar Menu
-                  Container(
-                    decoration: BoxDecoration(
-                      color: cardColor,
+                  Material(
+                    color: cardColor,
+                    clipBehavior: Clip.antiAlias,
+                    shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: borderColor),
+                      side: BorderSide(color: borderColor),
                     ),
                     child: Column(
                       children: [
@@ -192,6 +194,14 @@ class ProfileScreen extends ConsumerWidget {
                             context,
                             'Preferensi Wilayah',
                           ),
+                        ),
+                        _buildMenuDivider(context),
+                        _buildMenuItem(
+                          context: context,
+                          icon: Icons.tips_and_updates_outlined,
+                          iconColor: const Color(0xFFF59E0B),
+                          title: 'Panduan Aplikasi',
+                          onTap: () => showTutorialPicker(context),
                         ),
                         _buildMenuDivider(context),
                         _buildMenuItem(
