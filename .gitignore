@@ -18,3 +18,6 @@ node_modules/
 # Model terlatih: ±1,5 GB di disk, tidak pernah cocok dengan blob git.
 # Hanya hidup di server + cadangan terpisah (lihat docs/DEPLOY-VPS.md).
 cloud_ml/model/*.joblib
+
+# Sisa artefak lama (20 Okt); tidak dibaca kode mana pun. Jangan di-upload.
+cloud_ml/model/city_tiers.json
