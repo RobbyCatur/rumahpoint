@@ -8,6 +8,13 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:rumahpoint/main.dart';
 import 'package:rumahpoint/router.dart';
 
+/// Tutorial otomatis dimatikan agar test lama tidak tertutup popup panduan.
+const _tutorialSeen = <String, Object>{
+  'rp_tutorial_v1_beranda': true,
+  'rp_tutorial_v1_riwayat': true,
+  'rp_tutorial_v1_profil': true,
+};
+
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
@@ -36,7 +43,7 @@ void main() {
 
   testWidgets('Beranda renders sapaan, banner, form, and bottom nav',
       (WidgetTester tester) async {
-    SharedPreferences.setMockInitialValues({});
+    SharedPreferences.setMockInitialValues(_tutorialSeen);
     useTallSurface(tester);
     await tester.pumpWidget(const ProviderScope(child: RumahPointApp()));
     await tester.pumpAndSettle();
@@ -55,7 +62,7 @@ void main() {
 
   testWidgets('CTA sapaan menggulir ke fitur utama',
       (WidgetTester tester) async {
-    SharedPreferences.setMockInitialValues({});
+    SharedPreferences.setMockInitialValues(_tutorialSeen);
     await tester.pumpWidget(const ProviderScope(child: RumahPointApp()));
     await tester.pumpAndSettle();
 
@@ -75,7 +82,7 @@ void main() {
 
   testWidgets('Draft tersimpan otomatis dan dimuat kembali saat restart',
       (WidgetTester tester) async {
-    SharedPreferences.setMockInitialValues({});
+    SharedPreferences.setMockInitialValues(_tutorialSeen);
     useTallSurface(tester);
     await tester.pumpWidget(const ProviderScope(child: RumahPointApp()));
     await tester.pumpAndSettle();
@@ -105,7 +112,7 @@ void main() {
 
   testWidgets('Input manual di-clamp ke rentang yang valid',
       (WidgetTester tester) async {
-    SharedPreferences.setMockInitialValues({});
+    SharedPreferences.setMockInitialValues(_tutorialSeen);
     useTallSurface(tester);
     await tester.pumpWidget(const ProviderScope(child: RumahPointApp()));
     await tester.pumpAndSettle();
@@ -127,7 +134,7 @@ void main() {
 
   testWidgets('Picker wilayah: provinsi tampil tanpa overflow, navigasi ke kab/kota',
       (WidgetTester tester) async {
-    SharedPreferences.setMockInitialValues({});
+    SharedPreferences.setMockInitialValues(_tutorialSeen);
     useTallSurface(tester);
     await tester.pumpWidget(const ProviderScope(child: RumahPointApp()));
     await tester.pumpAndSettle();
