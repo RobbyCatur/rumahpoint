@@ -76,8 +76,8 @@ Nama di luar daftar induk 514 kabupaten/kota hasil pemeriksaan cakupan (`audit_c
   `tools/build_batas.js` menulis "ODCL" — dua-duanya menuntut atribusi, tapi tidak bisa dipakai
   sambil ditebak. Pembangkitnya `tools/build_batas.js` (simplifikasi poligon) +
   `tools/fix_pusat.js` (perbaikan titik pusat kabupaten yang dobel dengan kotanya).
-  **Kedua skrip itu sampai 22 Okt masih belum ter-commit** (`?? tools/`), padahal aset hasilnya sudah
-  masuk repo dan ikut terkemas di APK — lihat `docs/BACKLOG.md` §1.
+  **Kedua skrip itu sempat tertinggal di disk sampai 22 Okt**; sejak commit 12 Nov 2026 keduanya
+  sudah masuk repo, jadi aset `batas.json` kini bisa dibangun ulang.
 
 ## Cara membangun ulang
 ```
