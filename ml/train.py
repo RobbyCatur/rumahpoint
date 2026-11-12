@@ -23,6 +23,7 @@ from sklearn.preprocessing import OneHotEncoder
 BASE = os.path.dirname(os.path.abspath(__file__))
 CSV = os.path.join(BASE, "..", "dataset", "properti_multi_kota.csv")
 DB = os.path.join(BASE, "..", "database", "properti.db")
+ASSET = os.path.join(BASE, "..", "mobile", "assets", "data", "wilayah.json")
 OUT_DIR = os.path.join(BASE, "..", "cloud_ml", "model")
 os.makedirs(OUT_DIR, exist_ok=True)
 
@@ -66,18 +67,43 @@ def _first_number(s):
     return float(m.group(0).replace(",", ".")) if m else np.nan
 
 
+def _nama_aset():
+    try:
+        with open(ASSET, encoding="utf-8") as f:
+            wilayah = json.load(f)
+    except OSError:
+        return set()
+    return {ent["nama"] for p in wilayah for ent in p["kabupatenKota"]}
+
+
+def _kanonik(seri):
+    aset = _nama_aset()
+    return seri.map(lambda n: n if n in aset else
+                    ("Kabupaten " + n if "Kabupaten " + n in aset else n))
+
+
 def load_and_clean():
     """Kembalikan (df, medians). Sumber utama: DB; fallback: CSV union."""
     if os.path.exists(DB):
         import sqlite3
         con = sqlite3.connect(DB)
-        df = pd.read_sql_query("SELECT * FROM properti", con)
+        try:
+            df = pd.read_sql_query(
+                "SELECT p.*, c.nama AS lokasi_kanonik FROM properti p "
+                "LEFT JOIN cities c ON c.id = p.city_id", con)
+        except sqlite3.OperationalError:
+            df = pd.read_sql_query("SELECT * FROM properti", con)
         con.close()
         src = "database"
     else:
         df = pd.read_csv(CSV)
         src = "csv"
     df["lokasi"] = df["lokasi"].replace({"Jak. Utara": "Jakarta Utara"}).str.strip()
+    if "lokasi_kanonik" in df.columns:
+        kanonik = df["lokasi_kanonik"].fillna("").str.strip()
+        df["lokasi"] = kanonik.where(kanonik != "", df["lokasi"])
+    else:
+        df["lokasi"] = _kanonik(df["lokasi"])
     for col in NUM_FEATURES + ["harga"]:
         if col in df.columns:
             df[col] = df[col].map(_first_number)

@@ -1,1328 +1,1143 @@
 {
   "regression_baseline_linreg": {
-    "rmse_log10": 0.6272,
-    "mae_log10": 0.3921,
-    "r2": 0.0002,
-    "mae_rupiah": 2621812148,
-    "rmse_rupiah": 99338627118
+    "rmse_log10": 0.6457,
+    "mae_log10": 0.3969,
+    "r2": -0.0001,
+    "mae_rupiah": 1420567715,
+    "rmse_rupiah": 5218306321
   },
   "regression_randomforest": {
-    "rmse_log10": 0.4473,
-    "mae_log10": 0.1586,
-    "r2": 0.4915,
-    "mae_rupiah": 1834644327,
-    "rmse_rupiah": 99183824857
+    "rmse_log10": 0.45,
+    "mae_log10": 0.1548,
+    "r2": 0.5142,
+    "mae_rupiah": 626083067,
+    "rmse_rupiah": 3318504230
   },
   "regression_by_city": {
-    "Aceh": {
-      "n": 6,
-      "mae_rupiah": 296721490,
-      "r2": -2.0013
-    },
-    "Aceh Barat Daya": {
-      "n": 5,
-      "mae_rupiah": 219742551,
-      "r2": 0.8564
-    },
-    "Aceh Selatan": {
-      "n": 9,
-      "mae_rupiah": 4958548240,
-      "r2": -1.5139
-    },
-    "Aceh Timur": {
-      "n": 7,
-      "mae_rupiah": 2561624744,
-      "r2": 0.0453
-    },
-    "Badung": {
-      "n": 59,
-      "mae_rupiah": 1333190913,
-      "r2": 0.6996
-    },
     "Bali": {
-      "n": 9,
-      "mae_rupiah": 2624511615,
-      "r2": 0.0435
+      "n": 7,
+      "mae_rupiah": 2291182970,
+      "r2": 0.4739
     },
     "Balikpapan": {
-      "n": 100,
-      "mae_rupiah": 688910144,
-      "r2": 0.4184
+      "n": 102,
+      "mae_rupiah": 679358516,
+      "r2": 0.731
     },
     "Bandar Lampung": {
-      "n": 99,
-      "mae_rupiah": 2787968575,
-      "r2": 0.0256
+      "n": 112,
+      "mae_rupiah": 994361116,
+      "r2": 0.6324
     },
     "Bandung": {
-      "n": 182,
-      "mae_rupiah": 1527940470,
-      "r2": 0.1345
-    },
-    "Bandung Barat": {
-      "n": 36,
-      "mae_rupiah": 1668998525,
-      "r2": 0.4443
-    },
-    "Bangka": {
-      "n": 6,
-      "mae_rupiah": 246821425,
-      "r2": -3.7458
-    },
-    "Bangka Tengah": {
-      "n": 6,
-      "mae_rupiah": 311263322,
-      "r2": 0.9549
-    },
-    "Bangkalan": {
-      "n": 14,
-      "mae_rupiah": 3611632425,
-      "r2": 0.7604
+      "n": 191,
+      "mae_rupiah": 1582067013,
+      "r2": 0.1539
     },
     "Banjar": {
-      "n": 7,
-      "mae_rupiah": 280892929,
-      "r2": 0.9526
+      "n": 9,
+      "mae_rupiah": 570587413,
+      "r2": 0.6412
     },
     "Banjar Baru": {
-      "n": 13,
-      "mae_rupiah": 284511635,
-      "r2": 0.4646
+      "n": 14,
+      "mae_rupiah": 361002760,
+      "r2": -0.8616
     },
     "Banjarbaru": {
-      "n": 26,
-      "mae_rupiah": 169749744,
-      "r2": -2.6217
+      "n": 24,
+      "mae_rupiah": 114761550,
+      "r2": 0.2987
     },
     "Banjarmasin": {
-      "n": 30,
-      "mae_rupiah": 500205311,
-      "r2": 0.8578
+      "n": 19,
+      "mae_rupiah": 1065783749,
+      "r2": 0.8747
     },
     "Banten": {
-      "n": 7,
-      "mae_rupiah": 1611449697,
-      "r2": 0.6397
-    },
-    "Bantul": {
-      "n": 8,
-      "mae_rupiah": 266337807,
-      "r2": 0.4268
+      "n": 13,
+      "mae_rupiah": 1423267002,
+      "r2": 0.3767
     },
     "Banyuasin": {
       "n": 7,
-      "mae_rupiah": 281026199,
-      "r2": -1.3415
-    },
-    "Banyumas": {
-      "n": 14,
-      "mae_rupiah": 408774661,
-      "r2": 0.8161
-    },
-    "Banyuwangi": {
-      "n": 11,
-      "mae_rupiah": 2129154858,
-      "r2": 0.5863
+      "mae_rupiah": 235806565,
+      "r2": 0.6191
     },
     "Batam": {
-      "n": 104,
-      "mae_rupiah": 376895969,
-      "r2": 0.8716
-    },
-    "Batang": {
-      "n": 9,
-      "mae_rupiah": 1698661393,
-      "r2": 0.9616
+      "n": 102,
+      "mae_rupiah": 666732775,
+      "r2": 0.6946
     },
     "Batu": {
-      "n": 34,
-      "mae_rupiah": 1581362138,
-      "r2": 0.7831
+      "n": 46,
+      "mae_rupiah": 566669932,
+      "r2": 0.8388
+    },
+    "Bau Bau": {
+      "n": 5,
+      "mae_rupiah": 148770578,
+      "r2": -0.9108
     },
     "Bekasi": {
-      "n": 389,
-      "mae_rupiah": 288899501,
-      "r2": 0.6425
+      "n": 400,
+      "mae_rupiah": 280840059,
+      "r2": 0.6793
     },
     "Bengkulu": {
-      "n": 12,
-      "mae_rupiah": 1555105730,
-      "r2": -10.9732
+      "n": 7,
+      "mae_rupiah": 179226167,
+      "r2": -5.8403
     },
     "Binjai": {
-      "n": 13,
-      "mae_rupiah": 153337802,
-      "r2": 0.9551
+      "n": 10,
+      "mae_rupiah": 509214087,
+      "r2": 0.2947
     },
     "Bitung": {
-      "n": 13,
-      "mae_rupiah": 112971712,
-      "r2": 0.8231
+      "n": 7,
+      "mae_rupiah": 29662470,
+      "r2": 0.8487
     },
     "Blitar": {
-      "n": 27,
-      "mae_rupiah": 368744432,
-      "r2": 0.959
-    },
-    "Blora": {
-      "n": 6,
-      "mae_rupiah": 613466465,
-      "r2": 0.5038
+      "n": 28,
+      "mae_rupiah": 660864642,
+      "r2": 0.9033
     },
     "Bogor": {
-      "n": 232,
-      "mae_rupiah": 410054759,
-      "r2": 0.6295
+      "n": 261,
+      "mae_rupiah": 429530389,
+      "r2": 0.3885
     },
-    "Bojonegoro": {
-      "n": 11,
-      "mae_rupiah": 344209514,
-      "r2": 0.8478
-    },
-    "Bondowoso": {
-      "n": 7,
-      "mae_rupiah": 176430540,
-      "r2": -0.7513
-    },
-    "Boyolali": {
-      "n": 48,
-      "mae_rupiah": 603292557,
-      "r2": 0.3642
-    },
-    "Brebes": {
-      "n": 15,
-      "mae_rupiah": 85155441,
-      "r2": 0.5925
-    },
-    "Buleleng": {
-      "n": 39,
-      "mae_rupiah": 2121256275,
-      "r2": 0.8568
-    },
-    "Ciamis": {
-      "n": 25,
-      "mae_rupiah": 760638805,
-      "r2": 0.2909
-    },
-    "Cianjur": {
-      "n": 33,
-      "mae_rupiah": 655433899,
-      "r2": 0.5065
-    },
-    "Cilacap": {
-      "n": 12,
-      "mae_rupiah": 1533240061,
-      "r2": 0.4827
+    "Bontang": {
+      "n": 8,
+      "mae_rupiah": 643652836,
+      "r2": -14.046
     },
     "Cilegon": {
-      "n": 101,
-      "mae_rupiah": 221649314,
-      "r2": 0.6863
+      "n": 100,
+      "mae_rupiah": 356241045,
+      "r2": 0.682
     },
     "Cimahi": {
-      "n": 35,
-      "mae_rupiah": 499432137,
-      "r2": 0.7587
+      "n": 32,
+      "mae_rupiah": 548756806,
+      "r2": -0.2968
     },
     "Cirebon": {
-      "n": 91,
-      "mae_rupiah": 1617165742,
-      "r2": -0.0138
+      "n": 88,
+      "mae_rupiah": 602267849,
+      "r2": 0.8694
     },
     "Daerah Istimewa Yogyakarta": {
-      "n": 11,
-      "mae_rupiah": 174235403,
-      "r2": 0.7529
-    },
-    "Deli Serdang": {
-      "n": 33,
-      "mae_rupiah": 1036409824,
-      "r2": 0.4817
-    },
-    "Demak": {
-      "n": 14,
-      "mae_rupiah": 558869310,
-      "r2": 0.5647
+      "n": 6,
+      "mae_rupiah": 192589129,
+      "r2": 0.7471
     },
     "Denpasar": {
-      "n": 56,
-      "mae_rupiah": 1257138241,
-      "r2": 0.3788
+      "n": 58,
+      "mae_rupiah": 1208681804,
+      "r2": 0.6157
     },
     "Depok": {
-      "n": 352,
-      "mae_rupiah": 459448950,
-      "r2": -5.1421
+      "n": 303,
+      "mae_rupiah": 272602222,
+      "r2": 0.6873
     },
     "Dki Jakarta": {
-      "n": 8,
-      "mae_rupiah": 5089247314,
-      "r2": 0.0263
+      "n": 9,
+      "mae_rupiah": 5369784700,
+      "r2": -0.1794
     },
     "Dumai": {
-      "n": 8,
-      "mae_rupiah": 133335629,
-      "r2": -10.7718
-    },
-    "Garut": {
-      "n": 22,
-      "mae_rupiah": 523564186,
-      "r2": 0.0711
-    },
-    "Gianyar": {
-      "n": 9,
-      "mae_rupiah": 8060945607,
-      "r2": 0.7773
-    },
-    "Gorontalo": {
-      "n": 8,
-      "mae_rupiah": 219684106,
-      "r2": 0.6723
-    },
-    "Gowa": {
-      "n": 33,
-      "mae_rupiah": 238699420,
-      "r2": 0.8573
-    },
-    "Gresik": {
-      "n": 52,
-      "mae_rupiah": 3439086882,
-      "r2": 0.0821
-    },
-    "Grobogan": {
-      "n": 8,
-      "mae_rupiah": 789757845,
-      "r2": 0.4105
+      "n": 5,
+      "mae_rupiah": 123060661,
+      "r2": 0.2029
     },
     "Gunung Kidul": {
-      "n": 6,
-      "mae_rupiah": 1601226440,
-      "r2": -2.9864
-    },
-    "Halmahera Timur": {
-      "n": 6,
-      "mae_rupiah": 2195507724,
-      "r2": -0.5299
-    },
-    "Indramayu": {
-      "n": 12,
-      "mae_rupiah": 774843202,
-      "r2": -0.243
+      "n": 8,
+      "mae_rupiah": 28929360,
+      "r2": 0.4841
     },
     "Jakarta Barat": {
-      "n": 96,
-      "mae_rupiah": 1536160496,
-      "r2": 0.4976
+      "n": 109,
+      "mae_rupiah": 1057086296,
+      "r2": 0.7164
     },
     "Jakarta Pusat": {
-      "n": 57,
-      "mae_rupiah": 7391423339,
-      "r2": 0.3066
+      "n": 56,
+      "mae_rupiah": 6359166963,
+      "r2": 0.5485
     },
     "Jakarta Selatan": {
-      "n": 152,
-      "mae_rupiah": 3484773821,
-      "r2": 0.5717
+      "n": 142,
+      "mae_rupiah": 3308114608,
+      "r2": 0.649
     },
     "Jakarta Timur": {
-      "n": 94,
-      "mae_rupiah": 879929840,
-      "r2": 0.4719
+      "n": 115,
+      "mae_rupiah": 1041418125,
+      "r2": 0.5739
     },
     "Jakarta Utara": {
-      "n": 118,
-      "mae_rupiah": 1234601496,
-      "r2": 0.7407
+      "n": 110,
+      "mae_rupiah": 1416783309,
+      "r2": 0.6506
     },
     "Jambi": {
-      "n": 49,
-      "mae_rupiah": 423286737,
-      "r2": 0.1241
-    },
-    "Jawa Barat": {
-      "n": 5,
-      "mae_rupiah": 202267611,
-      "r2": 0.9808
+      "n": 46,
+      "mae_rupiah": 290212810,
+      "r2": 0.5413
     },
     "Jayapura": {
-      "n": 14,
-      "mae_rupiah": 254231056,
-      "r2": 0.7171
+      "n": 12,
+      "mae_rupiah": 1184765868,
+      "r2": 0.6058
     },
-    "Jember": {
-      "n": 17,
-      "mae_rupiah": 1057183289,
-      "r2": -0.3401
+    "Kabupaten Aceh Barat Daya": {
+      "n": 6,
+      "mae_rupiah": 1499596941,
+      "r2": 0.6258
     },
-    "Jombang": {
-      "n": 19,
-      "mae_rupiah": 1079548120,
-      "r2": -1.4036
+    "Kabupaten Aceh Selatan": {
+      "n": 5,
+      "mae_rupiah": 4494480292,
+      "r2": -40.8488
+    },
+    "Kabupaten Aceh Timur": {
+      "n": 6,
+      "mae_rupiah": 387539485,
+      "r2": 0.8284
+    },
+    "Kabupaten Badung": {
+      "n": 67,
+      "mae_rupiah": 3355967921,
+      "r2": 0.1849
     },
     "Kabupaten Bandung": {
-      "n": 413,
-      "mae_rupiah": 121784708,
-      "r2": 0.7701
+      "n": 407,
+      "mae_rupiah": 141750690,
+      "r2": 0.738
     },
     "Kabupaten Bandung Barat": {
-      "n": 199,
-      "mae_rupiah": 626492657,
-      "r2": 0.0062
+      "n": 255,
+      "mae_rupiah": 243189061,
+      "r2": 0.604
+    },
+    "Kabupaten Bangka": {
+      "n": 13,
+      "mae_rupiah": 517053770,
+      "r2": -2.54
+    },
+    "Kabupaten Bangka Barat": {
+      "n": 5,
+      "mae_rupiah": 263597446,
+      "r2": 0.9197
+    },
+    "Kabupaten Bangka Tengah": {
+      "n": 13,
+      "mae_rupiah": 276848361,
+      "r2": 0.7971
     },
     "Kabupaten Bangkalan": {
-      "n": 28,
-      "mae_rupiah": 67273675,
-      "r2": 0.9264
+      "n": 24,
+      "mae_rupiah": 429246555,
+      "r2": 0.8957
+    },
+    "Kabupaten Bangli": {
+      "n": 5,
+      "mae_rupiah": 3612662910,
+      "r2": 0.3508
     },
     "Kabupaten Banjar": {
-      "n": 7,
-      "mae_rupiah": 235160017,
-      "r2": -0.0331
+      "n": 14,
+      "mae_rupiah": 199246084,
+      "r2": 0.7762
+    },
+    "Kabupaten Banjarnegara": {
+      "n": 6,
+      "mae_rupiah": 2558230999,
+      "r2": -0.1916
     },
     "Kabupaten Bantul": {
-      "n": 26,
-      "mae_rupiah": 161228020,
-      "r2": 0.8185
+      "n": 39,
+      "mae_rupiah": 535564452,
+      "r2": 0.8364
     },
     "Kabupaten Banyuasin": {
-      "n": 15,
-      "mae_rupiah": 215538313,
-      "r2": 0.6292
+      "n": 16,
+      "mae_rupiah": 154131116,
+      "r2": 0.605
     },
     "Kabupaten Banyumas": {
-      "n": 107,
-      "mae_rupiah": 4219078911,
-      "r2": -0.0108
+      "n": 98,
+      "mae_rupiah": 140567072,
+      "r2": 0.8633
     },
     "Kabupaten Banyuwangi": {
-      "n": 21,
-      "mae_rupiah": 132253641,
-      "r2": -2.6887
+      "n": 27,
+      "mae_rupiah": 255884714,
+      "r2": 0.2747
     },
     "Kabupaten Batang": {
-      "n": 17,
-      "mae_rupiah": 53014185,
-      "r2": 0.2562
+      "n": 26,
+      "mae_rupiah": 176324206,
+      "r2": 0.9318
     },
     "Kabupaten Bekasi": {
-      "n": 410,
-      "mae_rupiah": 165559099,
-      "r2": 0.8575
+      "n": 385,
+      "mae_rupiah": 187973274,
+      "r2": 0.8042
     },
-    "Kabupaten Blitar": {
+    "Kabupaten Belitung": {
       "n": 8,
-      "mae_rupiah": 9986223,
-      "r2": 0.9633
+      "mae_rupiah": 1656788697,
+      "r2": 0.9851
+    },
+    "Kabupaten Biak Numfor": {
+      "n": 5,
+      "mae_rupiah": 217222967,
+      "r2": -0.4
+    },
+    "Kabupaten Bintan": {
+      "n": 7,
+      "mae_rupiah": 208129030,
+      "r2": 0.9481
+    },
+    "Kabupaten Blora": {
+      "n": 14,
+      "mae_rupiah": 787922122,
+      "r2": 0.6423
     },
     "Kabupaten Bogor": {
-      "n": 394,
-      "mae_rupiah": 1770991301,
-      "r2": -0.0038
+      "n": 412,
+      "mae_rupiah": 168129602,
+      "r2": 0.8442
     },
     "Kabupaten Bojonegoro": {
-      "n": 59,
-      "mae_rupiah": 94053552,
-      "r2": 0.635
+      "n": 75,
+      "mae_rupiah": 177437244,
+      "r2": 0.6293
     },
     "Kabupaten Bondowoso": {
+      "n": 15,
+      "mae_rupiah": 140877102,
+      "r2": 0.8823
+    },
+    "Kabupaten Bone": {
       "n": 5,
-      "mae_rupiah": 145402095,
-      "r2": 0.4113
+      "mae_rupiah": 139816197,
+      "r2": -2.1497
     },
     "Kabupaten Boyolali": {
-      "n": 7,
-      "mae_rupiah": 53555495,
-      "r2": 0.0724
+      "n": 60,
+      "mae_rupiah": 415237730,
+      "r2": 0.8644
     },
     "Kabupaten Brebes": {
-      "n": 18,
-      "mae_rupiah": 94088965,
-      "r2": 0.2098
+      "n": 36,
+      "mae_rupiah": 234496438,
+      "r2": 0.5146
     },
     "Kabupaten Buleleng": {
-      "n": 11,
-      "mae_rupiah": 34316449,
-      "r2": 0.4945
+      "n": 53,
+      "mae_rupiah": 1476627974,
+      "r2": 0.3938
+    },
+    "Kabupaten Buton Selatan": {
+      "n": 5,
+      "mae_rupiah": 1229475064,
+      "r2": -0.5328
     },
     "Kabupaten Ciamis": {
-      "n": 9,
-      "mae_rupiah": 173105618,
-      "r2": -1.0547
+      "n": 35,
+      "mae_rupiah": 279834461,
+      "r2": 0.7231
     },
     "Kabupaten Cianjur": {
-      "n": 19,
-      "mae_rupiah": 120401636,
-      "r2": 0.6652
+      "n": 46,
+      "mae_rupiah": 528765652,
+      "r2": 0.8219
     },
     "Kabupaten Cilacap": {
-      "n": 14,
-      "mae_rupiah": 96428576,
-      "r2": 0.7832
+      "n": 34,
+      "mae_rupiah": 429671093,
+      "r2": 0.7991
     },
     "Kabupaten Cirebon": {
-      "n": 68,
-      "mae_rupiah": 189439708,
-      "r2": 0.5896
+      "n": 58,
+      "mae_rupiah": 184042948,
+      "r2": 0.7463
     },
     "Kabupaten Deli Serdang": {
-      "n": 101,
-      "mae_rupiah": 887630549,
-      "r2": -8.4324
+      "n": 117,
+      "mae_rupiah": 493177669,
+      "r2": 0.628
     },
     "Kabupaten Demak": {
-      "n": 27,
-      "mae_rupiah": 91918694,
-      "r2": 0.4246
+      "n": 37,
+      "mae_rupiah": 261940298,
+      "r2": 0.6698
     },
     "Kabupaten Garut": {
-      "n": 41,
-      "mae_rupiah": 107048474,
-      "r2": -1.0901
+      "n": 62,
+      "mae_rupiah": 365367134,
+      "r2": 0.2402
+    },
+    "Kabupaten Gianyar": {
+      "n": 11,
+      "mae_rupiah": 4324019542,
+      "r2": 0.5128
     },
     "Kabupaten Gowa": {
-      "n": 48,
-      "mae_rupiah": 172329523,
-      "r2": 0.7804
+      "n": 83,
+      "mae_rupiah": 234321476,
+      "r2": 0.8081
     },
     "Kabupaten Gresik": {
-      "n": 232,
-      "mae_rupiah": 196429045,
-      "r2": -1.193
+      "n": 272,
+      "mae_rupiah": 191294929,
+      "r2": 0.6538
+    },
+    "Kabupaten Grobogan": {
+      "n": 19,
+      "mae_rupiah": 940983356,
+      "r2": 0.9358
     },
     "Kabupaten Gunungkidul": {
-      "n": 7,
-      "mae_rupiah": 59238456,
-      "r2": -0.2267
+      "n": 6,
+      "mae_rupiah": 55221227,
+      "r2": 0.2881
     },
     "Kabupaten Indramayu": {
-      "n": 16,
-      "mae_rupiah": 75277812,
-      "r2": 0.757
+      "n": 22,
+      "mae_rupiah": 551302579,
+      "r2": 0.7772
     },
     "Kabupaten Jember": {
-      "n": 85,
-      "mae_rupiah": 82884982,
-      "r2": -0.503
+      "n": 108,
+      "mae_rupiah": 212774452,
+      "r2": 0.4186
+    },
+    "Kabupaten Jembrana": {
+      "n": 9,
+      "mae_rupiah": 3659931981,
+      "r2": 0.8281
     },
     "Kabupaten Jepara": {
-      "n": 9,
-      "mae_rupiah": 7255354,
-      "r2": 0.8235
+      "n": 17,
+      "mae_rupiah": 316152872,
+      "r2": 0.9085
     },
     "Kabupaten Jombang": {
-      "n": 35,
-      "mae_rupiah": 158710134,
-      "r2": 0.3416
+      "n": 46,
+      "mae_rupiah": 377213690,
+      "r2": -1.7936
+    },
+    "Kabupaten Kampar": {
+      "n": 10,
+      "mae_rupiah": 202690096,
+      "r2": -4.8897
     },
     "Kabupaten Karanganyar": {
-      "n": 47,
-      "mae_rupiah": 129543061,
-      "r2": 0.548
+      "n": 51,
+      "mae_rupiah": 283407749,
+      "r2": 0.2479
+    },
+    "Kabupaten Karangasem": {
+      "n": 15,
+      "mae_rupiah": 2990301002,
+      "r2": 0.507
     },
     "Kabupaten Karawang": {
-      "n": 161,
-      "mae_rupiah": 184747891,
-      "r2": 0.8798
+      "n": 201,
+      "mae_rupiah": 214878186,
+      "r2": 0.8601
     },
     "Kabupaten Karimun": {
-      "n": 16,
-      "mae_rupiah": 211347522,
-      "r2": -17.9075
+      "n": 18,
+      "mae_rupiah": 199078648,
+      "r2": -9.7961
     },
     "Kabupaten Kediri": {
-      "n": 58,
-      "mae_rupiah": 170256986,
-      "r2": 0.1708
+      "n": 69,
+      "mae_rupiah": 143174800,
+      "r2": 0.5187
     },
     "Kabupaten Kendal": {
-      "n": 24,
-      "mae_rupiah": 141899151,
-      "r2": 0.1169
+      "n": 30,
+      "mae_rupiah": 115245437,
+      "r2": 0.5847
     },
-    "Kabupaten Ketapang": {
-      "n": 6,
-      "mae_rupiah": 80521021,
-      "r2": 0.5096
+    "Kabupaten Kepahiang": {
+      "n": 7,
+      "mae_rupiah": 2035741349,
+      "r2": -1.2021
     },
     "Kabupaten Klaten": {
-      "n": 14,
-      "mae_rupiah": 63225616,
-      "r2": 0.5777
+      "n": 83,
+      "mae_rupiah": 397789273,
+      "r2": 0.4255
+    },
+    "Kabupaten Klungkung": {
+      "n": 7,
+      "mae_rupiah": 2308636396,
+      "r2": -0.0478
     },
     "Kabupaten Kotawaringin Barat": {
-      "n": 5,
-      "mae_rupiah": 196100826,
-      "r2": -5.8232
-    },
-    "Kabupaten Kotawaringin Timur": {
       "n": 8,
-      "mae_rupiah": 140436400,
-      "r2": 0.2427
+      "mae_rupiah": 483081008,
+      "r2": -0.1763
     },
     "Kabupaten Kubu Raya": {
-      "n": 66,
-      "mae_rupiah": 74759929,
-      "r2": 0.9379
+      "n": 72,
+      "mae_rupiah": 127506577,
+      "r2": 0.9001
     },
     "Kabupaten Kudus": {
-      "n": 15,
-      "mae_rupiah": 73098648,
-      "r2": 0.5181
+      "n": 18,
+      "mae_rupiah": 67421024,
+      "r2": 0.4426
+    },
+    "Kabupaten Kulon Progo": {
+      "n": 9,
+      "mae_rupiah": 615167779,
+      "r2": -2.1094
+    },
+    "Kabupaten Kuningan": {
+      "n": 27,
+      "mae_rupiah": 959917146,
+      "r2": 0.9462
+    },
+    "Kabupaten Kupang": {
+      "n": 6,
+      "mae_rupiah": 377059051,
+      "r2": 0.697
+    },
+    "Kabupaten Kutai Kartanegara": {
+      "n": 5,
+      "mae_rupiah": 39933760,
+      "r2": -0.1721
     },
     "Kabupaten Lamongan": {
-      "n": 16,
-      "mae_rupiah": 64788563,
-      "r2": 0.8885
+      "n": 20,
+      "mae_rupiah": 109804398,
+      "r2": 0.8798
     },
-    "Kabupaten Langkat": {
-      "n": 7,
-      "mae_rupiah": 191006523,
-      "r2": -2.0962
+    "Kabupaten Lampung Selatan": {
+      "n": 32,
+      "mae_rupiah": 1098550231,
+      "r2": 0.2419
     },
     "Kabupaten Lebak": {
-      "n": 116,
-      "mae_rupiah": 41243131,
-      "r2": 0.8381
+      "n": 127,
+      "mae_rupiah": 59211411,
+      "r2": 0.9716
     },
     "Kabupaten Lombok Barat": {
-      "n": 29,
-      "mae_rupiah": 161093386,
-      "r2": 0.0341
+      "n": 41,
+      "mae_rupiah": 574157457,
+      "r2": 0.7171
+    },
+    "Kabupaten Lombok Tengah": {
+      "n": 8,
+      "mae_rupiah": 13327173811,
+      "r2": -0.1456
+    },
+    "Kabupaten Lombok Utara": {
+      "n": 6,
+      "mae_rupiah": 3443518351,
+      "r2": -0.0324
     },
     "Kabupaten Lumajang": {
-      "n": 14,
-      "mae_rupiah": 89546678,
-      "r2": -1.7583
+      "n": 25,
+      "mae_rupiah": 164081836,
+      "r2": 0.4758
     },
     "Kabupaten Madiun": {
-      "n": 10,
-      "mae_rupiah": 60129585,
-      "r2": -4.8634
+      "n": 12,
+      "mae_rupiah": 90737824,
+      "r2": -1.6131
     },
     "Kabupaten Magelang": {
       "n": 46,
-      "mae_rupiah": 54790564,
-      "r2": 0.8589
+      "mae_rupiah": 69341103,
+      "r2": 0.703
     },
     "Kabupaten Magetan": {
-      "n": 15,
-      "mae_rupiah": 46257929,
-      "r2": -1.6066
+      "n": 30,
+      "mae_rupiah": 101847403,
+      "r2": 0.7012
     },
     "Kabupaten Majalengka": {
-      "n": 28,
-      "mae_rupiah": 66564425,
-      "r2": 0.6476
+      "n": 42,
+      "mae_rupiah": 2689902488,
+      "r2": 0.194
     },
     "Kabupaten Malang": {
-      "n": 159,
-      "mae_rupiah": 178814168,
-      "r2": 0.6715
+      "n": 138,
+      "mae_rupiah": 188133975,
+      "r2": 0.7641
+    },
+    "Kabupaten Manggarai Barat": {
+      "n": 6,
+      "mae_rupiah": 1292305538,
+      "r2": 0.4651
     },
     "Kabupaten Maros": {
-      "n": 44,
-      "mae_rupiah": 109693703,
-      "r2": 0.8219
-    },
-    "Kabupaten Mimika": {
-      "n": 5,
-      "mae_rupiah": 147324293,
-      "r2": 0.0463
+      "n": 72,
+      "mae_rupiah": 105213327,
+      "r2": 0.3467
     },
     "Kabupaten Minahasa": {
-      "n": 15,
-      "mae_rupiah": 209111700,
-      "r2": 0.6323
+      "n": 19,
+      "mae_rupiah": 263323881,
+      "r2": 0.036
     },
     "Kabupaten Minahasa Utara": {
-      "n": 5,
-      "mae_rupiah": 66216979,
-      "r2": 0.5986
+      "n": 16,
+      "mae_rupiah": 323906323,
+      "r2": -0.5351
     },
     "Kabupaten Mojokerto": {
-      "n": 25,
-      "mae_rupiah": 137722937,
-      "r2": -1.1783
+      "n": 28,
+      "mae_rupiah": 193595749,
+      "r2": -1.3614
     },
     "Kabupaten Morowali": {
-      "n": 7,
-      "mae_rupiah": 177302605,
-      "r2": 0.8322
+      "n": 5,
+      "mae_rupiah": 128505666,
+      "r2": 0.9139
+    },
+    "Kabupaten Muara Enim": {
+      "n": 6,
+      "mae_rupiah": 40881417,
+      "r2": 0.8782
     },
     "Kabupaten Muaro Jambi": {
-      "n": 27,
-      "mae_rupiah": 132108511,
-      "r2": 0.8098
+      "n": 20,
+      "mae_rupiah": 113136164,
+      "r2": 0.767
     },
     "Kabupaten Nganjuk": {
-      "n": 7,
-      "mae_rupiah": 171255903,
-      "r2": -2.6099
+      "n": 44,
+      "mae_rupiah": 179841796,
+      "r2": 0.7877
     },
     "Kabupaten Ngawi": {
-      "n": 12,
-      "mae_rupiah": 196178788,
-      "r2": -5.6478
+      "n": 14,
+      "mae_rupiah": 162074743,
+      "r2": 0.8389
+    },
+    "Kabupaten Ogan Ilir": {
+      "n": 5,
+      "mae_rupiah": 38015800,
+      "r2": 0.9885
+    },
+    "Kabupaten Padang Pariaman": {
+      "n": 9,
+      "mae_rupiah": 62048281,
+      "r2": -0.1874
+    },
+    "Kabupaten Pamekasan": {
+      "n": 5,
+      "mae_rupiah": 1137177947,
+      "r2": -0.0706
+    },
+    "Kabupaten Pandeglang": {
+      "n": 13,
+      "mae_rupiah": 275791182,
+      "r2": 0.9379
+    },
+    "Kabupaten Pangandaran": {
+      "n": 6,
+      "mae_rupiah": 381508088,
+      "r2": 0.8072
     },
     "Kabupaten Pasuruan": {
-      "n": 41,
-      "mae_rupiah": 161099029,
-      "r2": 0.6929
+      "n": 36,
+      "mae_rupiah": 161534364,
+      "r2": 0.7931
     },
     "Kabupaten Pati": {
-      "n": 13,
-      "mae_rupiah": 373939876,
-      "r2": -0.1977
+      "n": 40,
+      "mae_rupiah": 293925294,
+      "r2": 0.8617
     },
     "Kabupaten Pekalongan": {
-      "n": 17,
-      "mae_rupiah": 51826790,
-      "r2": 0.1538
+      "n": 14,
+      "mae_rupiah": 63752344,
+      "r2": -0.4192
     },
     "Kabupaten Pemalang": {
+      "n": 26,
+      "mae_rupiah": 529361292,
+      "r2": 0.3888
+    },
+    "Kabupaten Pesawaran": {
       "n": 13,
-      "mae_rupiah": 55465605,
-      "r2": 0.3984
+      "mae_rupiah": 4631542771,
+      "r2": -0.1149
+    },
+    "Kabupaten Pinrang": {
+      "n": 6,
+      "mae_rupiah": 176082160,
+      "r2": 0.5186
     },
     "Kabupaten Ponorogo": {
-      "n": 13,
-      "mae_rupiah": 85147990,
-      "r2": 0.323
+      "n": 24,
+      "mae_rupiah": 504074705,
+      "r2": 0.8606
     },
     "Kabupaten Probolinggo": {
-      "n": 12,
-      "mae_rupiah": 74540321,
-      "r2": 0.9299
+      "n": 14,
+      "mae_rupiah": 115390187,
+      "r2": 0.7887
     },
     "Kabupaten Purbalingga": {
-      "n": 5,
-      "mae_rupiah": 71008399,
-      "r2": -0.131
+      "n": 21,
+      "mae_rupiah": 413374655,
+      "r2": 0.5588
     },
     "Kabupaten Purwakarta": {
-      "n": 23,
-      "mae_rupiah": 127358861,
-      "r2": 0.6549
+      "n": 49,
+      "mae_rupiah": 471230700,
+      "r2": 0.8905
+    },
+    "Kabupaten Purworejo": {
+      "n": 8,
+      "mae_rupiah": 137246111,
+      "r2": 0.736
+    },
+    "Kabupaten Rembang": {
+      "n": 5,
+      "mae_rupiah": 91043113,
+      "r2": 0.9732
     },
     "Kabupaten Semarang": {
-      "n": 21,
-      "mae_rupiah": 206009138,
-      "r2": -0.3312
+      "n": 28,
+      "mae_rupiah": 284240799,
+      "r2": 0.7541
     },
     "Kabupaten Serang": {
-      "n": 90,
-      "mae_rupiah": 77590141,
-      "r2": 0.5202
+      "n": 105,
+      "mae_rupiah": 104799613,
+      "r2": 0.6955
     },
     "Kabupaten Sidoarjo": {
-      "n": 418,
-      "mae_rupiah": 1424511131,
-      "r2": -0.0035
-    },
-    "Kabupaten Simalungun": {
-      "n": 6,
-      "mae_rupiah": 590264398,
-      "r2": -7.6761
+      "n": 485,
+      "mae_rupiah": 190858470,
+      "r2": 0.6595
     },
     "Kabupaten Situbondo": {
-      "n": 6,
-      "mae_rupiah": 184546341,
-      "r2": -32.3717
+      "n": 13,
+      "mae_rupiah": 396618813,
+      "r2": 0.8567
     },
     "Kabupaten Sleman": {
-      "n": 55,
-      "mae_rupiah": 428301656,
-      "r2": 0.4596
+      "n": 62,
+      "mae_rupiah": 362332507,
+      "r2": 0.2564
     },
     "Kabupaten Sragen": {
-      "n": 21,
-      "mae_rupiah": 167547358,
-      "r2": 0.2122
+      "n": 52,
+      "mae_rupiah": 222805245,
+      "r2": 0.7736
     },
     "Kabupaten Subang": {
-      "n": 17,
-      "mae_rupiah": 55302213,
-      "r2": 0.7366
+      "n": 47,
+      "mae_rupiah": 424165487,
+      "r2": 0.5294
     },
     "Kabupaten Sukabumi": {
-      "n": 16,
-      "mae_rupiah": 194815756,
-      "r2": -2.1094
+      "n": 20,
+      "mae_rupiah": 46945713,
+      "r2": 0.8635
     },
     "Kabupaten Sukoharjo": {
-      "n": 68,
-      "mae_rupiah": 158552403,
-      "r2": 0.2129
+      "n": 95,
+      "mae_rupiah": 1325314294,
+      "r2": -98.6698
     },
     "Kabupaten Sumedang": {
-      "n": 26,
-      "mae_rupiah": 230661432,
-      "r2": 0.664
+      "n": 51,
+      "mae_rupiah": 751314822,
+      "r2": 0.6994
     },
-    "Kabupaten Tanah Laut": {
-      "n": 6,
-      "mae_rupiah": 145276322,
-      "r2": -0.6496
+    "Kabupaten Tabanan": {
+      "n": 60,
+      "mae_rupiah": 4428306716,
+      "r2": 0.6997
+    },
+    "Kabupaten Takalar": {
+      "n": 7,
+      "mae_rupiah": 69921703,
+      "r2": 0.4202
     },
     "Kabupaten Tangerang": {
-      "n": 403,
-      "mae_rupiah": 267998855,
-      "r2": 0.8748
+      "n": 383,
+      "mae_rupiah": 239914655,
+      "r2": 0.8976
+    },
+    "Kabupaten Tanggamus": {
+      "n": 6,
+      "mae_rupiah": 1344000831,
+      "r2": 0.676
     },
     "Kabupaten Tasikmalaya": {
-      "n": 16,
-      "mae_rupiah": 84760493,
-      "r2": 0.5323
+      "n": 18,
+      "mae_rupiah": 87966982,
+      "r2": 0.4891
     },
     "Kabupaten Tegal": {
-      "n": 14,
-      "mae_rupiah": 33808914,
-      "r2": 0.9399
+      "n": 15,
+      "mae_rupiah": 48013712,
+      "r2": 0.6924
     },
     "Kabupaten Temanggung": {
-      "n": 7,
-      "mae_rupiah": 94143776,
-      "r2": -1.455
+      "n": 22,
+      "mae_rupiah": 338575679,
+      "r2": 0.9756
     },
     "Kabupaten Tuban": {
-      "n": 11,
-      "mae_rupiah": 138239490,
-      "r2": -1.5421
+      "n": 22,
+      "mae_rupiah": 854090150,
+      "r2": 0.8808
     },
     "Kabupaten Tulungagung": {
-      "n": 16,
-      "mae_rupiah": 15231218,
-      "r2": 0.8117
+      "n": 39,
+      "mae_rupiah": 923424998,
+      "r2": 0.4063
     },
     "Kabupaten Wajo": {
-      "n": 6,
-      "mae_rupiah": 159642585,
-      "r2": -3.5746
+      "n": 5,
+      "mae_rupiah": 43884494,
+      "r2": 0.9247
+    },
+    "Kabupaten Wonogiri": {
+      "n": 18,
+      "mae_rupiah": 312967809,
+      "r2": 0.7667
     },
     "Kabupaten Wonosobo": {
-      "n": 15,
-      "mae_rupiah": 58992821,
-      "r2": 0.9514
+      "n": 14,
+      "mae_rupiah": 129928191,
+      "r2": 0.9673
     },
     "Kalimantan Barat": {
-      "n": 9,
-      "mae_rupiah": 172883913,
-      "r2": 0.8559
+      "n": 7,
+      "mae_rupiah": 269228958,
+      "r2": 0.3713
     },
     "Kalimantan Selatan": {
-      "n": 8,
-      "mae_rupiah": 627818628,
-      "r2": 0.589
+      "n": 13,
+      "mae_rupiah": 518931862,
+      "r2": -2.0097
     },
     "Kalimantan Timur": {
       "n": 9,
-      "mae_rupiah": 306149924,
-      "r2": 0.5055
-    },
-    "Karanganyar": {
-      "n": 15,
-      "mae_rupiah": 416984594,
-      "r2": -2.0998
-    },
-    "Karangasem": {
-      "n": 8,
-      "mae_rupiah": 2671821246,
-      "r2": 0.5353
-    },
-    "Karawang": {
-      "n": 37,
-      "mae_rupiah": 428633351,
-      "r2": 0.3639
+      "mae_rupiah": 458877487,
+      "r2": 0.1182
     },
     "Kediri": {
-      "n": 43,
-      "mae_rupiah": 453081626,
-      "r2": 0.5595
-    },
-    "Kendal": {
-      "n": 10,
-      "mae_rupiah": 530514214,
-      "r2": 0.697
+      "n": 38,
+      "mae_rupiah": 594235277,
+      "r2": 0.4346
     },
     "Kendari": {
-      "n": 22,
-      "mae_rupiah": 227471213,
-      "r2": 0.9401
-    },
-    "Kepahiang": {
-      "n": 8,
-      "mae_rupiah": 4541255129,
-      "r2": -5.7993
-    },
-    "Kepulauan Bangka Belitung": {
-      "n": 9,
-      "mae_rupiah": 3620932303,
-      "r2": 0.9336
+      "n": 20,
+      "mae_rupiah": 229261731,
+      "r2": 0.9518
     },
     "Kepulauan Riau": {
-      "n": 12,
-      "mae_rupiah": 787954709,
-      "r2": 0.564
+      "n": 14,
+      "mae_rupiah": 404063306,
+      "r2": 0.7013
     },
-    "Klaten": {
-      "n": 70,
-      "mae_rupiah": 369461433,
-      "r2": 0.5111
-    },
-    "Kubu Raya": {
-      "n": 19,
-      "mae_rupiah": 591594976,
-      "r2": -2.8439
-    },
-    "Kulon Progo": {
-      "n": 7,
-      "mae_rupiah": 976328183,
-      "r2": -4.7445
-    },
-    "Kuningan": {
-      "n": 21,
-      "mae_rupiah": 3214899170,
-      "r2": 0.7271
+    "Kota Waringin Timur": {
+      "n": 6,
+      "mae_rupiah": 90463353,
+      "r2": -1.2926
     },
     "Kupang": {
-      "n": 37,
-      "mae_rupiah": 1065545925,
-      "r2": 0.0919
-    },
-    "Lamongan": {
-      "n": 10,
-      "mae_rupiah": 368679966,
-      "r2": 0.9708
+      "n": 45,
+      "mae_rupiah": 242213307,
+      "r2": 0.8031
     },
     "Lampung": {
-      "n": 5,
-      "mae_rupiah": 481794299,
-      "r2": -3.2267
-    },
-    "Lampung Selatan": {
-      "n": 21,
-      "mae_rupiah": 601778633,
-      "r2": 0.7453
-    },
-    "Lampung Tengah": {
-      "n": 14,
-      "mae_rupiah": 793272865,
-      "r2": 0.9588
+      "n": 10,
+      "mae_rupiah": 144034884,
+      "r2": 0.8932
     },
     "Lampung Timur": {
-      "n": 6,
-      "mae_rupiah": 564646227,
-      "r2": -1.0021
+      "n": 9,
+      "mae_rupiah": 356757695,
+      "r2": 0.8723
     },
-    "Lebak": {
-      "n": 12,
-      "mae_rupiah": 152192365,
-      "r2": 0.4673
-    },
-    "Lombok Barat": {
-      "n": 22,
-      "mae_rupiah": 873082002,
-      "r2": 0.7158
-    },
-    "Lumajang": {
+    "Langsa": {
       "n": 5,
-      "mae_rupiah": 558789207,
-      "r2": 0.7632
+      "mae_rupiah": 120173946,
+      "r2": 0.9706
+    },
+    "Lhokseumawe": {
+      "n": 7,
+      "mae_rupiah": 811789227,
+      "r2": -1.0306
     },
     "Madiun": {
-      "n": 36,
-      "mae_rupiah": 243582048,
-      "r2": 0.9096
+      "n": 35,
+      "mae_rupiah": 234516762,
+      "r2": 0.8943
     },
     "Magelang": {
-      "n": 31,
-      "mae_rupiah": 1022122517,
-      "r2": 0.5972
-    },
-    "Magetan": {
-      "n": 20,
-      "mae_rupiah": 20963878,
-      "r2": 0.8819
-    },
-    "Majalengka": {
-      "n": 24,
-      "mae_rupiah": 1178163420,
-      "r2": -2.728
+      "n": 34,
+      "mae_rupiah": 673978824,
+      "r2": 0.6371
     },
     "Makassar": {
-      "n": 232,
-      "mae_rupiah": 1140609225,
-      "r2": 0.1338
+      "n": 237,
+      "mae_rupiah": 444003719,
+      "r2": 0.6555
     },
     "Malang": {
-      "n": 211,
-      "mae_rupiah": 500085345,
-      "r2": 0.3903
+      "n": 200,
+      "mae_rupiah": 791267616,
+      "r2": 0.3659
     },
     "Manado": {
-      "n": 62,
-      "mae_rupiah": 893101916,
-      "r2": 0.4862
-    },
-    "Maros": {
-      "n": 20,
-      "mae_rupiah": 107132823,
-      "r2": 0.6426
+      "n": 57,
+      "mae_rupiah": 1511789948,
+      "r2": 0.6137
     },
     "Mataram": {
-      "n": 24,
-      "mae_rupiah": 817746509,
-      "r2": 0.5402
+      "n": 23,
+      "mae_rupiah": 319553170,
+      "r2": 0.8958
     },
     "Medan": {
-      "n": 135,
-      "mae_rupiah": 2832323089,
-      "r2": 0.3728
+      "n": 140,
+      "mae_rupiah": 1401334622,
+      "r2": 0.3265
     },
     "Metro": {
-      "n": 8,
-      "mae_rupiah": 555353101,
-      "r2": 0.9381
-    },
-    "Minahasa": {
-      "n": 6,
-      "mae_rupiah": 1883592600,
-      "r2": -0.1459
-    },
-    "Minahasa Utara": {
-      "n": 11,
-      "mae_rupiah": 191321449,
-      "r2": 0.736
+      "n": 15,
+      "mae_rupiah": 846154343,
+      "r2": 0.7782
     },
     "Mojokerto": {
-      "n": 40,
-      "mae_rupiah": 16939414183,
-      "r2": 0.2007
-    },
-    "Nganjuk": {
-      "n": 23,
-      "mae_rupiah": 588421231,
-      "r2": 0.415
+      "n": 36,
+      "mae_rupiah": 947463564,
+      "r2": 0.4659
     },
     "Nusa Tenggara Barat": {
-      "n": 8,
-      "mae_rupiah": 336640477,
-      "r2": 0.8213
+      "n": 7,
+      "mae_rupiah": 430389223,
+      "r2": 0.5939
     },
     "Nusa Tenggara Timur": {
-      "n": 13,
-      "mae_rupiah": 520943004,
-      "r2": -0.0827
+      "n": 5,
+      "mae_rupiah": 2164403763,
+      "r2": -11.4059
     },
     "Padang": {
-      "n": 52,
-      "mae_rupiah": 412516126,
-      "r2": 0.8837
+      "n": 41,
+      "mae_rupiah": 315716938,
+      "r2": 0.48
     },
     "Palangkaraya": {
-      "n": 8,
-      "mae_rupiah": 41366403,
-      "r2": -1.6855
+      "n": 9,
+      "mae_rupiah": 79571124,
+      "r2": 0.8089
     },
     "Palembang": {
-      "n": 201,
-      "mae_rupiah": 269394017,
-      "r2": 0.7169
+      "n": 202,
+      "mae_rupiah": 483770598,
+      "r2": 0.5108
     },
     "Palopo": {
-      "n": 6,
-      "mae_rupiah": 149766216,
-      "r2": -0.4167
+      "n": 8,
+      "mae_rupiah": 197181106,
+      "r2": 0.9008
     },
     "Palu": {
-      "n": 9,
-      "mae_rupiah": 347144668,
-      "r2": 0.7882
-    },
-    "Pandeglang": {
-      "n": 12,
-      "mae_rupiah": 1186438414,
-      "r2": -1.8919
+      "n": 13,
+      "mae_rupiah": 313356501,
+      "r2": 0.8535
     },
     "Pangkal Pinang": {
-      "n": 27,
-      "mae_rupiah": 1025808799,
-      "r2": 0.7169
-    },
-    "Pare Pare": {
-      "n": 5,
-      "mae_rupiah": 218512605,
-      "r2": -16.2664
+      "n": 25,
+      "mae_rupiah": 1056476416,
+      "r2": 0.6991
     },
     "Pasuruan": {
-      "n": 49,
-      "mae_rupiah": 314402277,
-      "r2": 0.6323
-    },
-    "Pati": {
-      "n": 30,
-      "mae_rupiah": 422664403,
-      "r2": 0.6039
+      "n": 43,
+      "mae_rupiah": 1396715952,
+      "r2": -1.4947
     },
     "Pekalongan": {
-      "n": 38,
-      "mae_rupiah": 465239708,
-      "r2": 0.6881
+      "n": 48,
+      "mae_rupiah": 281028458,
+      "r2": 0.9621
     },
     "Pekanbaru": {
-      "n": 84,
-      "mae_rupiah": 386242570,
-      "r2": 0.7893
-    },
-    "Pemalang": {
-      "n": 11,
-      "mae_rupiah": 969947444,
-      "r2": -0.6576
+      "n": 66,
+      "mae_rupiah": 603833720,
+      "r2": 0.2452
     },
     "Pematang Siantar": {
-      "n": 6,
-      "mae_rupiah": 320447867,
-      "r2": 0.0555
-    },
-    "Pesawaran": {
-      "n": 6,
-      "mae_rupiah": 2310331581,
-      "r2": -0.6994
-    },
-    "Ponorogo": {
-      "n": 6,
-      "mae_rupiah": 1100582278,
-      "r2": 0.9226
+      "n": 7,
+      "mae_rupiah": 105937652,
+      "r2": 0.9708
     },
     "Pontianak": {
-      "n": 53,
-      "mae_rupiah": 779853995,
-      "r2": 0.5894
+      "n": 44,
+      "mae_rupiah": 1096612815,
+      "r2": 0.6534
     },
     "Probolinggo": {
-      "n": 20,
-      "mae_rupiah": 3110262418,
-      "r2": 0.8421
-    },
-    "Purbalingga": {
-      "n": 16,
-      "mae_rupiah": 137236123,
-      "r2": 0.8766
-    },
-    "Purwakarta": {
       "n": 21,
-      "mae_rupiah": 632192227,
-      "r2": 0.8522
-    },
-    "Purworejo": {
-      "n": 9,
-      "mae_rupiah": 285848971,
-      "r2": 0.7555
+      "mae_rupiah": 1443673341,
+      "r2": 0.947
     },
     "Riau": {
-      "n": 5,
-      "mae_rupiah": 123178510,
-      "r2": 0.97
+      "n": 9,
+      "mae_rupiah": 327050565,
+      "r2": 0.8758
     },
     "Salatiga": {
-      "n": 51,
-      "mae_rupiah": 989847459,
-      "r2": 0.7161
+      "n": 44,
+      "mae_rupiah": 1585496358,
+      "r2": 0.4774
     },
     "Samarinda": {
-      "n": 59,
-      "mae_rupiah": 645192307,
-      "r2": 0.8247
+      "n": 66,
+      "mae_rupiah": 725903295,
+      "r2": 0.5884
     },
     "Semarang": {
-      "n": 311,
-      "mae_rupiah": 36564127084,
-      "r2": -0.0029
+      "n": 335,
+      "mae_rupiah": 441330817,
+      "r2": 0.6479
     },
     "Serang": {
-      "n": 261,
-      "mae_rupiah": 306975928,
-      "r2": 0.6074
-    },
-    "Sidoarjo": {
-      "n": 70,
-      "mae_rupiah": 378613013,
-      "r2": 0.5255
+      "n": 249,
+      "mae_rupiah": 341959009,
+      "r2": 0.5508
     },
     "Singkawang": {
-      "n": 15,
-      "mae_rupiah": 105563044,
-      "r2": -0.69
-    },
-    "Situbondo": {
-      "n": 6,
-      "mae_rupiah": 559166715,
-      "r2": 0.6198
-    },
-    "Sleman": {
-      "n": 8,
-      "mae_rupiah": 304199110,
-      "r2": 0.9139
+      "n": 16,
+      "mae_rupiah": 171670788,
+      "r2": 0.95
     },
     "Solo": {
-      "n": 11,
-      "mae_rupiah": 780477899,
-      "r2": 0.8447
-    },
-    "Solok": {
-      "n": 5,
-      "mae_rupiah": 166397492,
-      "r2": 0.7939
-    },
-    "Sragen": {
-      "n": 28,
-      "mae_rupiah": 525466834,
-      "r2": 0.2988
-    },
-    "Subang": {
-      "n": 31,
-      "mae_rupiah": 1657629926,
-      "r2": 0.4309
+      "n": 9,
+      "mae_rupiah": 505655589,
+      "r2": 0.9652
     },
     "Sukabumi": {
-      "n": 60,
-      "mae_rupiah": 926969711,
-      "r2": 0.3937
-    },
-    "Sukoharjo": {
-      "n": 45,
-      "mae_rupiah": 319597076,
-      "r2": 0.8004
+      "n": 75,
+      "mae_rupiah": 1145211707,
+      "r2": 0.3827
     },
     "Sulawesi Selatan": {
       "n": 7,
-      "mae_rupiah": 291440645,
-      "r2": 0.9276
+      "mae_rupiah": 467891726,
+      "r2": 0.8813
+    },
+    "Sulawesi Tenggara": {
+      "n": 7,
+      "mae_rupiah": 425127989,
+      "r2": 0.9746
     },
     "Sulawesi Utara": {
-      "n": 11,
-      "mae_rupiah": 1212429509,
-      "r2": 0.7228
+      "n": 8,
+      "mae_rupiah": 480085069,
+      "r2": 0.7394
     },
     "Sumatera Barat": {
-      "n": 8,
-      "mae_rupiah": 176542491,
-      "r2": 0.9129
+      "n": 10,
+      "mae_rupiah": 716462156,
+      "r2": 0.9744
     },
     "Sumatera Selatan": {
-      "n": 5,
-      "mae_rupiah": 922024882,
-      "r2": 0.5252
+      "n": 7,
+      "mae_rupiah": 4695861468,
+      "r2": 0.2024
     },
     "Sumatera Utara": {
-      "n": 8,
-      "mae_rupiah": 211091098,
-      "r2": -0.5793
-    },
-    "Sumedang": {
-      "n": 33,
-      "mae_rupiah": 954633326,
-      "r2": 0.881
+      "n": 10,
+      "mae_rupiah": 275829324,
+      "r2": 0.877
     },
     "Surabaya": {
-      "n": 398,
-      "mae_rupiah": 1161784361,
-      "r2": 0.7146
+      "n": 392,
+      "mae_rupiah": 1236751220,
+      "r2": 0.7197
     },
     "Surakarta": {
-      "n": 55,
-      "mae_rupiah": 1731754142,
-      "r2": 0.6228
-    },
-    "Tabanan": {
-      "n": 54,
-      "mae_rupiah": 3713949823,
-      "r2": 0.377
+      "n": 57,
+      "mae_rupiah": 2675680806,
+      "r2": 0.5636
     },
     "Tangerang": {
-      "n": 291,
-      "mae_rupiah": 6209791947,
-      "r2": -0.003
+      "n": 302,
+      "mae_rupiah": 462516036,
+      "r2": 0.667
     },
     "Tangerang Selatan": {
-      "n": 373,
-      "mae_rupiah": 469638346,
-      "r2": 0.5136
-    },
-    "Tanggamus": {
-      "n": 6,
-      "mae_rupiah": 986880771,
-      "r2": -0.196
+      "n": 387,
+      "mae_rupiah": 423735936,
+      "r2": 0.5625
     },
     "Tanjung Pinang": {
-      "n": 41,
-      "mae_rupiah": 327357538,
-      "r2": 0.2971
+      "n": 42,
+      "mae_rupiah": 164974139,
+      "r2": 0.7836
     },
     "Tarakan": {
       "n": 7,
-      "mae_rupiah": 759444020,
-      "r2": 0.9456
+      "mae_rupiah": 286296201,
+      "r2": 0.9909
     },
     "Tasikmalaya": {
-      "n": 63,
-      "mae_rupiah": 431338199,
-      "r2": 0.3217
+      "n": 49,
+      "mae_rupiah": 475590615,
+      "r2": 0.6206
     },
     "Tebing Tinggi": {
-      "n": 6,
-      "mae_rupiah": 367449472,
-      "r2": 0.5883
+      "n": 5,
+      "mae_rupiah": 263892224,
+      "r2": 0.9057
     },
     "Tegal": {
-      "n": 51,
-      "mae_rupiah": 791836527,
-      "r2": 0.7901
-    },
-    "Temanggung": {
-      "n": 6,
-      "mae_rupiah": 2225585579,
-      "r2": 0.2676
+      "n": 53,
+      "mae_rupiah": 1075373722,
+      "r2": 0.5482
     },
     "Tomohon": {
-      "n": 8,
-      "mae_rupiah": 1338077617,
-      "r2": 0.6613
-    },
-    "Tuban": {
       "n": 9,
-      "mae_rupiah": 2272832967,
-      "r2": 0.4217
-    },
-    "Tulungagung": {
-      "n": 15,
-      "mae_rupiah": 1083656450,
-      "r2": 0.2763
-    },
-    "Wonosobo": {
-      "n": 7,
-      "mae_rupiah": 4181437295,
-      "r2": -7.8582
+      "mae_rupiah": 457774484,
+      "r2": 0.9671
     },
     "Yogyakarta": {
-      "n": 67,
-      "mae_rupiah": 3174801487,
-      "r2": 0.3392
+      "n": 65,
+      "mae_rupiah": 1896826807,
+      "r2": 0.1898
     }
   },
   "classification_kategori": {
-    "accuracy": 0.8647,
-    "precision": 0.8647,
-    "recall": 0.8647,
-    "f1": 0.8647,
+    "accuracy": 0.8663,
+    "precision": 0.8663,
+    "recall": 0.8663,
+    "f1": 0.8663,
     "confusion_matrix": [
       [
-        5748,
-        873
+        5687,
+        855
       ],
       [
-        877,
-        5432
+        869,
+        5486
       ]
     ],
     "labels": [

@@ -86,10 +86,10 @@ class DisclaimerScreen extends StatelessWidget {
             iconColor: const Color(0xFFF59E0B),
             title: 'Tentang Model Prediksi',
             content:
-                'RumahPoint menggunakan algoritma Random Forest yang dilatih dengan 64.650 data '
+                'RumahPoint menggunakan algoritma Random Forest yang dilatih dengan 64.483 data '
                 'properti dari 403 kabupaten/kota di Indonesia. Model ini memiliki nilai R² (koefisien determinasi) '
-                'sebesar 0,49 — artinya sekitar 49% variasi harga dapat dijelaskan oleh model. '
-                'Sisa 51% dipengaruhi faktor yang belum tercakup dalam dataset seperti kondisi fisik '
+                'sebesar 0,514, artinya sekitar 51% variasi harga dapat dijelaskan oleh model. '
+                'Sisa 49% dipengaruhi faktor yang belum tercakup dalam dataset seperti kondisi fisik '
                 'bangunan, akses jalan, dan faktor lokal spesifik. '
                 'Angka tersebut rata-rata seluruh wilayah: pada kabupaten/kota yang data latihnya masih sedikit, '
                 'galat estimasi membesar dan aplikasi menandainya dengan peringatan.',

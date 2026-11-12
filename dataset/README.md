@@ -19,10 +19,15 @@
 | sumber | cakupan | baris di union | asal | catatan lisensi |
 |--------|---------|----------------|------|-----------------|
 | uas-properti/Jabodetabek | 6 kota | 1.530 | GitHub `d1041251013-lab/uas-properti` → `dataset_properti.csv` | cek lisensi repo |
-| rumah123/Surabaya (lama) + rumah123/<Kota> (baru) | **331 kab/kota selesai** | ±5.400 | scraping sendiri via `raw_sources/scrape_rumah123.py` + `batch_scrape_rumah123.py` — sitemap SRP resmi + JSON `__srp_seo_rescue` + PDP, comply robots `User-agent: *`, delay≥4s, tanpa API/ajax | data listing publik; **kepatuhan ToS didiskusikan tim+dosen (Rute C, Okt 2026)** |
+| rumah123/Surabaya (lama) + rumah123/<Kota> (baru) | **331 kab/kota selesai** | **8.824** | scraping sendiri via `raw_sources/scrape_rumah123.py` + `batch_scrape_rumah123.py` — sitemap SRP resmi + JSON `__srp_seo_rescue` + PDP, comply robots `User-agent: *`, delay≥4s, tanpa API/ajax | data listing publik; **kepatuhan ToS didiskusikan tim+dosen (Rute C, Okt 2026)** |
 | ColectDataRumah/Bekasi | Bekasi | 200 | GitHub `HaafizHhamda/ColectDataRumah` (`rumah_bekasi.csv`) | data scrape; cek ToS/lisensi |
 | 99.co/<Kota> | **214 kota** (habis — keran indeks SEO habis; `raw_sources/99co_*.csv`) | 14.352 | scraping sendiri via `raw_sources/batch_scrape_99co.py` — halaman SEO `/id/jual/rumah/...`, comply robots, delay≥2,5s. **Harga = ask price listing** | sama, Rute C disetujui Okt 2026 |
-| FLUS/komersil | 425 kab/kota nasional | 39.464 | Kaggle `zororaka/indonesia-affordable-housing` → `raw_sources/kaggle_flus_housing.csv` (25 MB) — harga proyek developer (baru). **Hanya `subsidy_status=komersil` yang masuk latih**; subsidi dipakai arsitektur JSON acuan (belum dibangun) | **CC0 Public Domain** (bebas pakai & atribusi tidak wajib, tetap dicantumkan) |
+| FLUS/komersil | 425 kab/kota nasional | **39.423** | Kaggle `zororaka/indonesia-affordable-housing` → `raw_sources/kaggle_flus_housing.csv` (25 MB) — harga proyek developer (baru). **Hanya `subsidy_status=komersil` yang masuk latih**; subsidi dipakai arsitektur JSON acuan (belum dibangun) | **CC0 Public Domain** (bebas pakai & atribusi tidak wajib, tetap dicantumkan) |
+| Pinhome/<Kota> | **18 kota** (`raw_sources/pinhome_*.csv`; daftar selesai di `pinhome_batch_done.txt`) | **321** | berkas mentah hasil pengambilan dari portal Pinhome — **metode pengambilan belum tercatat di dokumen ini** | data listing publik; **lisensi/ToS belum dicatat — wajib dilengkapi** |
+
+**Total union: 64.650 baris dari 6 sumber** (dihitung ulang dari `dataset/properti_multi_kota.csv`, 29 Okt 2026).
+Koreksi 29 Okt: baris rumah123 sebelumnya ditulis ±5.400 (angka lama sebelum batch tuntas), FLUS 39.464,
+dan **Pinhome (321 baris) belum ada di tabel sama sekali**.
 
 Catatan: data rumah123/99.co merupakan hasil scraping listing publik — **verifikasi lisensi & kepatuhan ToS** sebelum dipakai lebih luas; untuk PBL sebagai dataset latih internal. Sitemap rumah123 memuat entri non-Indonesia (Singapore, Australia, Malaysia, UAE, dst.) — difilter via `NON_ID` di `build_union.py`.
 
@@ -44,8 +49,10 @@ form) dan `cloud_ml/app.py` (`cukup_data` + `peringatan` di `/predict`). Angka p
 **sumber yang sama untuk form dan API**, supaya tidak ada wilayah yang aman di form tapi warned dari server.
 Tingkat ketiga (`n<25` vs `25–99`) sudah diputuskan bentuknya tapi belum dikirim ke UI.
 
-Distribusi saat ini (64.650 baris / 595 nama lokasi mentah): **403** entitas `wilayah.json` terpetakan
-→ **118** n≥100 · 73 di 25–99 · 212 di bawah 25; **112** entitas belum punya satu baris pun.
+Distribusi saat ini (setelah reseed 12 Nov 2026: 64.483 baris latih / 595 nama lokasi mentah yang
+dipetakan ke 446 kota kanonik): **403** entitas `wilayah.json` terpetakan → **118** n≥100 (tidak
+berubah dari sebelum normalisasi) · 73 di 25–99 · 212 di bawah 25; **112** entitas belum punya satu
+baris pun.
 Periksa-cakupan entitas 514: `dataset/cakupan_514.csv` — isinya **515 baris = 399 berdata + 116 bertanda NOL**
 (dibuat `audit_cakupan.py` **sebelum** batch rumah123 susulan, dan masih memakai batas tier lama — karena itu 116 NOL di file itu, angka hari ini 112).
 
@@ -54,11 +61,12 @@ Nama di luar daftar induk 514 kabupaten/kota hasil pemeriksaan cakupan (`audit_c
 - **Lorong 1 — peta-ulang ke induk** (`REMAP` di `build_union.py`; setingkat kecamatan/desa, induk tunggal terverifikasi manual): Purwokerto→Kab. Banyumas, Cikarang→Kab. Bekasi, Ambarawa→Kab. Semarang, Anyer→Kab. Serang, Purwodadi→Kab. Grobogan, Cikampek→Kab. Karawang, Nusa Lembongan & Semarapura→Kab. Klungkung, Anambas→Kab. Kepulauan Anambas; "Others" dibuang. Nama baru hasil scrape menyusul ditambah ke tabel ini.
 - **Lorong 2 — area propinsi** (Bali, Lampung, Aceh, Kepulauan Bangka Belitung, Dki Jakarta, DIY, dst. — **27 nama / 940 baris** hasil `python ml/build_wilayah.py`, yaitu nama yang cocok dengan 34 nama provinsi di `mobile/assets/data/wilayah.json`): TIDAK dipetak (tak ada satu induk), tetap ikut melatih model global sebagai kategori area, tetapi tidak masuk daftar pilihan kota di gawai/`cities` administratif. Jadi laporan generator "nama tidak ada di daftar 515" itu **bukan bug** — itu Lorong 2. Yang perlu dibaca dari laporan itu cuma nama yang *bukan* provinsi: **7 nama / 58 baris** (Daerah Istimewa Yogyakarta 45, Pasir 5, Madura 3, Kabupaten Pahuwato 2, Pangkajene 1, Papua Selatan 1, Kabupaten Mamuju Utara 1). Catatan: **Madura ada di daftar ini**, bukan di Lorong 2, walaupun namanya terdengar seperti area propinsi — karena penanda Lorong 2 adalah nama provinsi yang persis ada di asset, dan Madura bukan provinsi (ia masuk wilayah Jawa Timur). Kalau nanti diputuskan "area semi-provinsi" ikut Lorong 2, penandanya yang harus diperluas, bukan datanya.
 - **Ejaan ganda dalam wilayah yang sama** (temuan 21 Okt, belum ada lorongnya — **ini yang paling merusak angka**): kolom `lokasi` menyimpan `"Sidoarjo"` **dan** `"Kabupaten Sidoarjo"`, `"Karawang"` **dan** `"Kabupaten Karawang"`, `"Banyuasin"` **dan** `"Kabupaten Banyuasin"`, bahkan ejaan rusak `"Kota Baru"` **dan** `"Kabupaten Kotabaru"` serta `"Kota Waringin Barat"` **dan** `"Kabupaten Kotawaringin Barat"`. Nama telanjang tidak bisa ditentukan kota atau kabupaten hanya dari namanya, jadi generator menjahitnya ke **satu** entitas (kota dicoba lebih dulu, baru kabupaten) dan **menjumlahkan** barisnya. Terukur 22 Okt — dicetak oleh `python ml/build_wilayah.py --cek`, bagian bawah laporannya: **158 dari 403** entitas begitu (tak ada yang >2 ejaan), menampung **21.169 baris = ±33 % dataset**. Yang penting: `ml/train.py` meng-encode nama **mentah**, jadi dua ejaan itu tetap **dua kategori OneHot terpisah** di model — penjumlahan hanya terjadi di laporan. **15 dari 118 bendera `aman` lolos garis 100 semata karena dijumlahkan** (Kab. Cilacap 146 gabungan, kategori terbesarnya 77). Perbaikan yang benar di hulu (`database/seed.py`): menormalkan ejaan **tidak menambah satu baris pun** tapi langsung menyatukan dukungan kategori — tidak boleh ditambal di hilir. Sekalian cek arah peta untuk **26 inti nama** yang punya Kota *dan* Kabupaten (Bekasi, Bogor, Bandung, Tangerang, …) lewat kolom `sumber`/URL asal, bukan lewat namanya.
+  **Status 12 Nov 2026: sudah diperbaiki di hulu.** `database/seed.py` memetakan tiap baris ke `city_id` dengan aturan berbasis aset (nama mentah bila ada di aset, `"Kabupaten " + nama` bila ada, selain itu nama mentah), dan `ml/train.py` membaca nama kanonik lewat join `cities`. `Sidoarjo` + `Kabupaten Sidoarjo` kini satu kategori (2.315 baris). Sisa: **9 entitas aset** yang ejaan asetnya sendiri tidak baku masih menerima dua nama model; **1 di antaranya** (Banyu Asin, 117 gabungan, kategori terbesar 78) lolos garis 100 hanya karena penjumlahan. Sesuai keputusan tim, sisa itu **dibiarkan dan dicatat** di `web/static/dokumentasi/dokumentasi.json` (bagian keterbatasan), bukan ditambal lagi di hilir.
 
 ## Status cakupan
 - 99.co: **selesai 214/214** indeks. rumah123: **selesai 331/331** (log `raw_sources/rumah123_batch.log`). Rantai ulang (union+REMAP→seed→train→audit) dijalankan 16 Okt.
-- Tabel `cities` DB memuat 581 lokasi + `provinsi` (migrasi `006_all_cities.sql`). Kolom `lokasi` di `properti` kini berisi **595 nama** (64.650 baris) — lebih banyak dari 572 pada tahap REMAP awal karena batch susulan; **27 nama** di antaranya area setingkat provinsi (Lorong 2, sengaja tidak dipetakan) dan **7 nama** (58 baris) masih belum terpetakan, sisanya terpetakan ke **403** kabupaten/kota.
-- Konsekuensi metrik "apa adanya": R² RF 0,828→**0,4915**, akurasi 0,933→**0,8647** — lihat `ml/metrics.json`; dibuka ke user lewat `cukup_data` + peringatan (bagian "Pengungkapan kualitas data" di atas), bukan lewat memangkas kota.
+- Tabel `cities` DB memuat 758 lokasi (572 aktif + 186 alias) + `provinsi` (migrasi `006_all_cities.sql`, `007_missing_cities.sql`). Kolom `lokasi` di `properti` masih berisi **595 nama mentah** (64.483 baris setelah 167 baris mustahil dibuang saat seed); `city_id` memetakannya ke **446 kota kanonik**, **27 nama** di antaranya area setingkat provinsi (Lorong 2, sengaja tidak dipetakan), **7 nama** (58 baris) masih belum terpetakan, sisanya terpetakan ke **403** kabupaten/kota.
+- Konsekuensi metrik "apa adanya" (reseed + latih ulang 12 Nov 2026): R² RF 0,828→**0,5142**, akurasi 0,933→**0,8663** — lihat `ml/metrics.json`; dibuka ke user lewat `cukup_data` + peringatan (bagian "Pengungkapan kualitas data" di atas), bukan lewat memangkas kota.
 
 ## Aset non-data (bukan bahan latih, tapi ikut repo)
 - `mobile/assets/data/batas.json` (±2,1 MB) — poligon batas ±515 kabupaten/kota, dipakai form mobile
@@ -68,8 +76,8 @@ Nama di luar daftar induk 514 kabupaten/kota hasil pemeriksaan cakupan (`audit_c
   `tools/build_batas.js` menulis "ODCL" — dua-duanya menuntut atribusi, tapi tidak bisa dipakai
   sambil ditebak. Pembangkitnya `tools/build_batas.js` (simplifikasi poligon) +
   `tools/fix_pusat.js` (perbaikan titik pusat kabupaten yang dobel dengan kotanya).
-  **Kedua skrip itu sampai 22 Okt masih belum ter-commit** (`?? tools/`), padahal aset hasilnya sudah
-  masuk repo dan ikut terkemas di APK — lihat `docs/BACKLOG.md` §1.
+  **Kedua skrip itu sempat tertinggal di disk sampai 22 Okt**; sejak commit 12 Nov 2026 keduanya
+  sudah masuk repo, jadi aset `batas.json` kini bisa dibangun ulang.
 
 ## Cara membangun ulang
 ```

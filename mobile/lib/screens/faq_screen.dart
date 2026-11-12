@@ -7,14 +7,14 @@ class FaqScreen extends StatelessWidget {
     (
       q: 'Bagaimana cara kerja prediksi harga di RumahPoint?',
       a:
-          'RumahPoint menggunakan model Machine Learning (Random Forest) yang dilatih dengan 64.650 data properti dari 403 kabupaten/kota di Indonesia. '
-              'Anda cukup mengisi data seperti luas tanah, luas bangunan, jumlah kamar, dan lokasi — sistem kami akan memberikan estimasi harga beserta kategori Murah/Mahal secara otomatis.',
+          'RumahPoint menggunakan model Machine Learning (Random Forest) yang dilatih dengan 64.483 data properti dari 403 kabupaten/kota di Indonesia. '
+              'Anda cukup mengisi data seperti luas tanah, luas bangunan, jumlah kamar, dan lokasi, lalu sistem akan memberikan estimasi harga beserta kategori Murah/Mahal secara otomatis.',
     ),
     (
       q: 'Seberapa akurat hasil prediksi harga properti?',
       a:
-          'Pada model terkini, akurasi regresi R² sebesar 0,49 dan akurasi klasifikasi 86,5%. '
-              'Angka tersebut adalah rata-rata di seluruh wilayah: akurasi per kabupaten/kota berbeda-beda, dan pada wilayah yang data latihnya masih sedikit estimasi bisa meleset lebih jauh — aplikasi memberi peringatan bila wilayah Anda termasuk itu. '
+          'Pada model terkini, R² regresi sebesar 0,514 dan akurasi klasifikasi 86,6%. '
+              'Angka tersebut adalah rata-rata di seluruh wilayah: akurasi per kabupaten/kota berbeda-beda, dan pada wilayah yang data latihnya masih sedikit estimasi bisa meleset lebih jauh; aplikasi memberi peringatan bila wilayah Anda termasuk itu. '
               'Hasil prediksi bersifat estimasi dan tidak menggantikan penilaian profesional dari Appraisal atau KJPP. '
               'Gunakan hasil ini sebagai referensi awal sebelum melakukan survei lapangan.',
     ),
