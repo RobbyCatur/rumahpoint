@@ -42,66 +42,29 @@ class OnboardingScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 40),
+                const SizedBox(height: 30),
                 Text(
-                  'Selamat datang di\nRumahPoint',
+                  'Selamat datang di RumahPoint',
                   style: theme.textTheme.displaySmall?.copyWith(
                     color: tone.text,
-                    fontWeight: FontWeight.w800,
+                    fontWeight: FontWeight.w700,
                     height: 1.08,
                   ),
                 ),
                 const SizedBox(height: 16),
                 Text(
-                  'Kenali nilai wajar properti di Indonesia dengan lebih mudah, cepat, dan berbasis data.',
+                  'Prediksi harga properti dengan mudah dan berbasis data.',
                   style: theme.textTheme.titleMedium?.copyWith(
                     color: tone.textSoft,
                     height: 1.45,
                   ),
                 ),
-                const SizedBox(height: 28),
-                Container(
-                  padding: const EdgeInsets.all(20),
-                  decoration: BoxDecoration(
-                    color: tone.tintBg,
-                    borderRadius: BorderRadius.circular(24),
-                    border: Border.all(color: tone.tintBorder),
-                  ),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.all(12),
-                        decoration: BoxDecoration(
-                          color: AppColors.amber,
-                          borderRadius: BorderRadius.circular(16),
-                        ),
-                        child: Icon(
-                          Icons.insights_rounded,
-                          color: tone.onAccent,
-                          size: 28,
-                        ),
-                      ),
-                      const SizedBox(width: 14),
-                      Expanded(
-                        child: Text(
-                          'RumahPoint membantu memperkirakan harga rumah dan memahami kategorinya sebelum kamu mengambil keputusan.',
-                          style: theme.textTheme.bodyMedium?.copyWith(
-                            color: tone.tintText,
-                            height: 1.45,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(height: 28),
+                const SizedBox(height: 20),
                 Text(
-                  'Apa yang bisa kamu lakukan?',
+                  'Fitur RumahPoint',
                   style: theme.textTheme.titleLarge?.copyWith(
                     color: tone.text,
-                    fontWeight: FontWeight.w800,
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
                 const SizedBox(height: 14),
@@ -109,21 +72,21 @@ class OnboardingScreen extends StatelessWidget {
                   icon: Icons.calculate_rounded,
                   title: 'Prediksi harga properti',
                   description:
-                      'Masukkan detail rumah dan dapatkan estimasi harga dalam hitungan detik.',
+                      'Dapatkan estimasi harga dalam hitungan detik.',
                 ),
                 const SizedBox(height: 12),
                 const _FeatureTile(
                   icon: Icons.location_city_rounded,
                   title: 'Berbasis data berbagai kota',
                   description:
-                      'Gunakan referensi data properti dari beberapa kota di Indonesia.',
+                      'Gunakan data properti dari berbagai kota.',
                 ),
                 const SizedBox(height: 12),
                 const _FeatureTile(
                   icon: Icons.history_rounded,
                   title: 'Simpan riwayat prediksi',
                   description:
-                      'Pantau kembali hasil prediksi yang pernah kamu buat kapan saja.',
+                      'Lihat kembali prediksi kapan saja.',
                 ),
                 const SizedBox(height: 32),
                 FilledButton(
@@ -132,7 +95,7 @@ class OnboardingScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 12),
                 Text(
-                  'Buat akun atau masuk untuk mulai menggunakan RumahPoint.',
+                  'Masuk atau buat akun untuk mulai.',
                   textAlign: TextAlign.center,
                   style: theme.textTheme.bodySmall?.copyWith(
                     color: tone.textMuted,
@@ -183,7 +146,7 @@ class _FeatureTile extends StatelessWidget {
                   title,
                   style: theme.textTheme.titleSmall?.copyWith(
                     color: tone.text,
-                    fontWeight: FontWeight.w800,
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
                 const SizedBox(height: 4),

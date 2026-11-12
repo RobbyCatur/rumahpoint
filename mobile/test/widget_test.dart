@@ -23,7 +23,7 @@ void main() {
     await tester.pumpWidget(const ProviderScope(child: RumahPointApp()));
     await tester.pumpAndSettle();
 
-    expect(find.text('Selamat datang di\nRumahPoint'), findsOneWidget);
+    expect(find.text('Selamat datang di RumahPoint'), findsOneWidget);
     expect(find.text('Prediksi harga properti'), findsOneWidget);
     expect(find.text('Mulai Sekarang'), findsOneWidget);
 
