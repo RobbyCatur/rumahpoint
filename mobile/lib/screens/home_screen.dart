@@ -246,11 +246,33 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                     ),
                     if (state.error != null) ...[
                       const SizedBox(height: 16),
-                      Text(
-                        'Gagal memprediksi. Pastikan server cloud aktif.',
-                        style: TextStyle(
-                          color: tone.error,
-                          fontSize: 13,
+                      Container(
+                        padding: const EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          color: tone.negativeBg,
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(color: tone.negative),
+                        ),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Icon(
+                              Icons.error_outline_rounded,
+                              size: 18,
+                              color: tone.negative,
+                            ),
+                            const SizedBox(width: 8),
+                            Expanded(
+                              child: Text(
+                                state.error!,
+                                style: TextStyle(
+                                  color: tone.negative,
+                                  fontSize: 12.5,
+                                  height: 1.35,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ],

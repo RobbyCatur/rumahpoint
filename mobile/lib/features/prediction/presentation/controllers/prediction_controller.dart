@@ -55,7 +55,8 @@ class PredictionController extends StateNotifier<PredictionState> {
     if (result.failure != null || result.prediction == null) {
       state = state.copyWith(
         loading: false,
-        error: result.failure?.message ?? 'Gagal memprediksi.',
+        error: result.failure?.message ??
+            'Prediksi belum berhasil. Coba lagi ya.',
       );
       return;
     }
