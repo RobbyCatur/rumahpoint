@@ -8,8 +8,10 @@ Prediksi dihitung **langsung oleh layanan cloud ML** (mobile → cloud). Semua y
 
 **Sudah berjalan & teruji**
 - Prediksi mobile → cloud: `POST /predict` (regresi + klasifikasi + rentang estimasi)
-- Dataset union (berawal 7 kota, kini **64.650 baris** di 403 kabupaten/kota) + seed DB + training (R² **0,49**, akurasi kategori **86,5%**)
+- Dataset union (berawal 7 kota, kini **64.650 baris CSV / 64.483 dilatih**) di 403 kabupaten/kota + seed DB + training (R² **0,514**, akurasi kategori **86,6%**)
 - Web CRUD dataset properti (Flask + SQLite) + `GET /api/properti`
+- Halaman **dokumentasi model** di web (`/dokumentasi`, read-only: alasan pemilihan Random Forest +
+  perbandingan model lain, jejak praproses, visualisasi) — arahan dosen 29 Okt 2026
 - Peringatan cakupan data: garis **n≥100** (2 tingkat — aman / peringatan satu kalimat), bendera
   `didukung` di form dibangun dari model lewat `python ml/build_wilayah.py` → **118** dari 515
   kabupaten/kota berstatus aman. Sudah diverifikasi silang: `/predict` dan form sepakat di 515/515 entitas
@@ -34,7 +36,7 @@ Admin (web) --CRUD dataset + statistik--> Backend Web --> SQLite --train.py--> m
 | Path | Isi |
 |------|-----|
 | `dataset/` | Dataset union multi-kota + skrip build + sumber mentah (atribusi di `dataset/README.md`) |
-| `database/` | `seed.py` → `properti.db` (SQLite, kategori per-sentile per-kota) |
+| `database/` | `seed.py` → `properti.db` (SQLite, kategori dari median harga per lokasi) |
 | `ml/` | `train.py`, hasil metrik `metrics.json` |
 | `cloud_ml/` | `app.py` (:8081) + model terlatih (`model/*.joblib`, `meta.json`) |
 | `web/` | `app.py` (:8080) CRUD dataset properti |
@@ -122,10 +124,10 @@ sumber yang sama dengan bendera `didukung` di form, jadi keduanya tidak boleh be
 
 ## Model & dataset
 
-- **Cakupan**: 595 nama lokasi di data latih → 403 kabupaten/kota resmi (64.650 baris). Dari 595 itu, **27 nama (±940 baris)** adalah area setingkat provinsi yang sengaja tidak dipetakan ke pilihan user ("Lorong 2", lihat `dataset/README.md`), dan **7 nama (58 baris)** memang belum terpetakan. **158 entitas** menampung dua ejaan sekaligus (`Sidoarjo` + `Kabupaten Sidoarjo`) — laporan menjumlahkan barisnya, tetapi `train.py` memakai nama mentah sehingga keduanya tetap **dua kategori terpisah di model**: **15 dari 118** wilayah "aman" lolos garis 100 hanya karena dijumlahkan (Kab. Cilacap 146 gabungan, kategori terbesar 77). Menormalkan ejaan di `database/seed.py` **tidak butuh data baru**, tapi butuh reseed + training ulang — belum dikerjakan. Daftar awal dulu 7 kota: Bekasi, Bogor, Depok, Jakarta Selatan, Jakarta Utara, Surabaya, Tangerang
-- **Regresi** RandomForest: R² **0,49**, MAE ≈ Rp 1,83 miliar (metrik per-kota di `ml/metrics.json`). Bentuk galat sebenarnya, terukur di 12.930 baris uji: **setengah prediksi meleset ≤1,18×**, 3 dari 4 ≤1,48×, 9 dari 10 ≤2,06×, dan 4,45 % baris meleset >3× (ekor dari belasan baris harga rusak di DB). MAE rupiah sengaja tidak dipakai sebagai janji — besarnya 2,5× median harga (Rp 739 juta), dan **dua pertiganya bukan selisih khas** melainkan 36 baris mustahil di set uji; pada baris wajar MAE-nya **Rp 578 juta**. Setelah 22 Okt `train.py` menyaring 167 baris tidak masuk akal (`harga > Rp 100 jt/m²` atau `luas_m2 < 10`), yang melatih model **64.483** baris — `metrics.json` belum di-generate ulang, jadi angka kepala di baris pertama masih angka 20 Okt
-- **Klasifikasi**: akurasi **86,5%** (label diturunkan per-sentile per-kota; kelas di data uji hampir seimbang 6.621 vs 6.309, jadi angka ini bukan hasil menebak mayoritas)
-- Rentang `rentang_bawah`/`rentang_atas` di `/predict` masih **hardcode ±25 %** dan baru menutupi **62 %** harga asli di data uji — pelebarannya masih menunggu keputusan tim (`docs/DISKUSI-PERINGATAN-CAKUPAN-DATA.md` §11.5)
+- **Cakupan**: 64.483 baris latih dari 595 ejaan lokasi, dipetakan ke **446 kota kanonik** (403 kabupaten/kota aset). Dari 595 itu, **27 nama (±940 baris)** adalah area setingkat provinsi yang sengaja tidak dipetakan ke pilihan user ("Lorong 2", lihat `dataset/README.md`), dan **7 nama (58 baris)** belum terpetakan. Sejak reseed 12 Nov 2026 `database/seed.py` menyatukan ejaan (`Sidoarjo` + `Kabupaten Sidoarjo` jadi satu kategori) dan `train.py` membaca nama kanonik lewat `city_id`. Sisa: **9 entitas aset** masih menerima dua nama model karena ejaan aset sendiri tidak baku; **1 di antaranya** (Banyu Asin, 117 gabungan, kategori terbesar 78) lolos garis 100 hanya karena penjumlahan. Dicatat di `dokumentasi.json`. Daftar awal dulu 7 kota: Bekasi, Bogor, Depok, Jakarta Selatan, Jakarta Utara, Surabaya, Tangerang
+- **Regresi** RandomForest: R² **0,5142**, MAE ≈ **Rp 626 juta** (log10 MAE 0,1548; metrik per-kota di `ml/metrics.json`). Bentuk galat sebenarnya, terukur di 12.897 baris uji bersih: **setengah prediksi meleset ≤1,18×**, 3 dari 4 ≤1,47×, 9 dari 10 ≤2,08×, dan 4,19 % baris meleset >3×. MAE rupiah kini tidak lagi dirusak baris harga rusak: seed sudah membuang 167 baris mustahil (`harga > Rp 100 jt/m²` atau `luas_m2 < 10`) sebelum split, dan `metrics.json` di-generate ulang 12 Nov 2026
+- **Klasifikasi**: akurasi **86,63%** (label diturunkan dari median harga per kota kanonik; kelas di data uji hampir seimbang 6.542 vs 6.355, jadi angka ini bukan hasil menebak mayoritas)
+- Rentang `rentang_bawah`/`rentang_atas` di `/predict` masih **hardcode ±25 %** dan baru menutupi **62,15 %** harga asli di data uji — pelebarannya masih menunggu keputusan tim (`docs/DISKUSI-PERINGATAN-CAKUPAN-DATA.md` §11.5)
 - Peringatan cakupan: wilayah dengan **< 100 baris** data latih diberi peringatan di form & layar hasil; benderanya dibangun ulang oleh `python ml/build_wilayah.py` tiap model dilatih
 - Alasan garis 100 dan bukti kurva belajarnya: `docs/DISKUSI-PERINGATAN-CAKUPAN-DATA.md`
 - Preprocessing: harga `log10`, parsing angka dari teks ("68.0 m2"), normalisasi nama kota, imputasi median `luas_bangunan`
