@@ -100,14 +100,15 @@ void main() {
 
     expect(find.text('Jakarta Selatan, DKI Jakarta'), findsOneWidget);
     expect(find.text('Rp 1,52 Miliar'), findsOneWidget);
-    expect(find.text('Semua (1)'), findsOneWidget);
+    expect(find.text('1 hasil'), findsOneWidget);
+    expect(find.text('Filter'), findsOneWidget);
     expect(find.text('12 Sep 2025'), findsOneWidget);
     // Badge kategori & header bulan.
     expect(find.byIcon(Icons.trending_up_rounded), findsOneWidget);
     expect(find.text('September 2025'), findsOneWidget);
   });
 
-  testWidgets('HistoryScreen mengelompokkan per bulan dan filter bulan',
+  testWidgets('HistoryScreen mengelompokkan per bulan dan filter kategori',
       (tester) async {
     final murahLama = Prediction(
       luasM2: 60,
@@ -142,20 +143,39 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    // Dua grup bulan + chip filter bulan tampil.
+    // Dua grup bulan tampil, badge Murah pakai ikon turun.
     expect(find.text('September 2025'), findsOneWidget);
     expect(find.text('Agustus 2025'), findsOneWidget);
-    expect(find.text('Semua bulan'), findsOneWidget);
-    expect(find.text('Sep 2025'), findsOneWidget);
-    // Badge Murah pakai ikon turun.
+    expect(find.text('2 hasil'), findsOneWidget);
     expect(find.byIcon(Icons.trending_down_rounded), findsOneWidget);
 
-    // Filter ke Agustus 2025: hanya item Bekasi yang tampil.
-    await tester.tap(find.text('Agu 2025'));
+    // Filter kategori Murah: hanya item Bekasi yang tampil.
+    await tester.tap(find.text('Filter'));
     await tester.pumpAndSettle();
+    expect(find.text('Filter Riwayat'), findsOneWidget);
+
+    await tester.tap(find.widgetWithText(ChoiceChip, 'Murah'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Terapkan'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Filter (1)'), findsOneWidget);
     expect(find.text('Bekasi, Jawa Barat'), findsOneWidget);
     expect(find.text('Jakarta Selatan, DKI Jakarta'), findsNothing);
     expect(find.text('September 2025'), findsNothing);
+    expect(find.text('Agustus 2025'), findsOneWidget);
+
+    // Atur ulang mengembalikan semua riwayat.
+    await tester.tap(find.text('Filter (1)'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Atur ulang'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Terapkan'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Filter'), findsOneWidget);
+    expect(find.text('2 hasil'), findsOneWidget);
+    expect(find.text('September 2025'), findsOneWidget);
     expect(find.text('Agustus 2025'), findsOneWidget);
   });
 }
