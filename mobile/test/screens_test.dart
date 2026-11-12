@@ -8,6 +8,11 @@ import 'package:rumahpoint/features/prediction/domain/repositories/prediction_re
 import 'package:rumahpoint/features/prediction/domain/usecases/get_prediction_history.dart';
 import 'package:rumahpoint/features/prediction/presentation/controllers/prediction_controller.dart';
 import 'package:rumahpoint/features/prediction/presentation/providers/prediction_providers.dart';
+import 'package:rumahpoint/features/user/domain/entities/user.dart';
+import 'package:rumahpoint/features/user/domain/repositories/user_repository.dart';
+import 'package:rumahpoint/features/user/presentation/providers/user_providers.dart';
+import 'package:rumahpoint/features/user/presentation/screens/personal_info_screen.dart';
+import 'package:rumahpoint/features/user/presentation/screens/profile_screen.dart';
 import 'package:rumahpoint/screens/history_screen.dart';
 import 'package:rumahpoint/screens/result_screen.dart';
 
@@ -68,6 +73,20 @@ class _FakeController extends PredictionController {
       : super(_FakeRepository(), GetPredictionHistory(_FakeRepository())) {
     state = seed;
   }
+}
+
+class _FakeUserRepository implements UserRepository {
+  @override
+  Future<({User? user, Failure? failure})> getProfile() async => (
+        user: const User(
+          nama: 'Budi Santoso',
+          email: 'budi@rumahpoint.id',
+        ),
+        failure: null,
+      );
+
+  @override
+  Future<Failure?> logout() async => null;
 }
 
 Widget _wrap(Widget child) {
@@ -157,5 +176,40 @@ void main() {
     expect(find.text('Jakarta Selatan, DKI Jakarta'), findsNothing);
     expect(find.text('September 2025'), findsNothing);
     expect(find.text('Agustus 2025'), findsOneWidget);
+  });
+
+  testWidgets(
+      'ProfileScreen: Card User statis (tidak navigasi) dan menu Informasi Pribadi & Sandi membuka PersonalInfoScreen',
+      (tester) async {
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: [
+          userRepositoryProvider.overrideWithValue(_FakeUserRepository()),
+        ],
+        child: const MaterialApp(home: ProfileScreen()),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('Budi Santoso'), findsOneWidget);
+    expect(find.text('budi@rumahpoint.id'), findsOneWidget);
+
+    // Mengetuk nama maupun email pada Card User tidak membuka PersonalInfoScreen.
+    await tester.tap(find.text('Budi Santoso'));
+    await tester.pumpAndSettle();
+    expect(find.byType(PersonalInfoScreen), findsNothing);
+    expect(find.byType(ProfileScreen), findsOneWidget);
+
+    await tester.tap(find.text('budi@rumahpoint.id'));
+    await tester.pumpAndSettle();
+    expect(find.byType(PersonalInfoScreen), findsNothing);
+    expect(find.byType(ProfileScreen), findsOneWidget);
+
+    // Mengetuk menu 'Informasi Pribadi & Sandi' membuka PersonalInfoScreen.
+    await tester.ensureVisible(find.text('Informasi Pribadi & Sandi'));
+    await tester.tap(find.text('Informasi Pribadi & Sandi'));
+    await tester.pumpAndSettle();
+    expect(find.byType(PersonalInfoScreen), findsOneWidget);
+    expect(find.text('Ringkasan Informasi'), findsOneWidget);
   });
 }

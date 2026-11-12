@@ -88,15 +88,9 @@ class ProfileScreen extends ConsumerWidget {
                 children: [
                   const SizedBox(height: 16),
 
-                  // Card Profil — bisa diklik untuk ke Informasi Pribadi
-                  GestureDetector(
-                    onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const PersonalInfoScreen(),
-                      ),
-                    ),
-                    child: Container(
+                  // Card Profil — header identitas statis (navigasi
+                  // ke PersonalInfoScreen hanya lewat menu di bawah).
+                  Container(
                       padding: const EdgeInsets.all(20),
                       decoration: BoxDecoration(
                         color: cardColor,
@@ -151,24 +145,19 @@ class ProfileScreen extends ConsumerWidget {
                               ],
                             ),
                           ),
-                          Icon(
-                            Icons.chevron_right,
-                            color: subtitleColor,
-                            size: 22,
-                          ),
                         ],
                       ),
-                    ),
                   ),
 
                   const SizedBox(height: 24),
 
                   // Daftar Menu
-                  Container(
-                    decoration: BoxDecoration(
-                      color: cardColor,
+                  Material(
+                    color: cardColor,
+                    clipBehavior: Clip.antiAlias,
+                    shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: borderColor),
+                      side: BorderSide(color: borderColor),
                     ),
                     child: Column(
                       children: [
