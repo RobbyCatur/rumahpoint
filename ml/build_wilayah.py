@@ -166,9 +166,9 @@ def main():
             rincian = ", ".join(f"{nm} ({city_tiers[nm]['n']})" for nm in nama_list)
             print(f"  {ent:<30} <- {rincian}")
 
-        # train.py meng-encode nama MENTAH dari DB, jadi dua ejaan untuk wilayah yang sama tetap
-        # dua kategori terpisah di model. Penjumlahan di atas hanya untuk mencocokkan nama asset.
-        # Wilayah yang lolos AMAN_MIN semata karena dijumlahkan perlu dilaporkan, bukan disembunyikan.
+        # train.py meng-encode nama kanonik lewat city_id, jadi blok ini hanya berbunyi
+        # bila masih ada dua nama yang memetakan ke satu entitas asset. Wilayah yang lolos
+        # AMAN_MIN semata karena dijumlahkan perlu dilaporkan, bukan disembunyikan.
         hanya_gabung = [
             ent for ent, nama_list in gabung.items()
             if jumlah[ent] >= AMAN_MIN
@@ -195,8 +195,8 @@ def main():
         encoding="utf-8",
     )
     # Peta jumlah baris per nama entitas asset. Dibaca cloud_ml/app.py supaya API dan
-    # bendera di form memakai angka yang sama — nama yang dikirim mobile adalah nama
-    # asset, sedangkan meta.json memakai nama mentah dari DB ("Banyu Asin" vs "Banyuasin").
+    # bendera di form memakai angka yang sama. Sejak reseed, meta.json memakai nama
+    # kanonik yang sama dengan asset; cocokkan() tetap menangani ejaan lama bila ada.
     CAKUPAN_PATH.write_text(
         json.dumps(dict(sorted(jumlah.items(), key=lambda kv: -kv[1])), ensure_ascii=False),
         encoding="utf-8",

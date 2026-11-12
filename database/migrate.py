@@ -94,20 +94,15 @@ def verify(db_path):
             errors.append(f"{n_null} baris properti punya city_id NULL")
         bad = con.execute(
             "SELECT COUNT(*) c FROM properti p JOIN cities c ON c.id=p.city_id "
-            "WHERE c.nama <> p.lokasi").fetchone()["c"]
+            "WHERE c.status <> 'aktif'").fetchone()["c"]
         if bad:
-            errors.append(f"{bad} baris: city_id menunjuk kota dengan nama <> lokasi")
-        orphans = con.execute(
-            "SELECT COUNT(*) c FROM properti WHERE lokasi NOT IN "
-            "(SELECT nama FROM cities)").fetchone()["c"]
-        if orphans:
-            errors.append(f"{orphans} baris: lokasi tidak ada di cities")
+            errors.append(f"{bad} baris: city_id menunjuk kota berstatus alias/nonaktif")
         fk = con.execute("PRAGMA foreign_key_check").fetchall()
         if fk:
             errors.append(f"foreign_key_check: {len(fk)} pelanggaran")
         per_city = con.execute(
             "SELECT c.nama, COUNT(*) n FROM properti p JOIN cities c ON c.id=p.city_id "
-            "GROUP BY c.nama ORDER BY n DESC").fetchall()
+            "GROUP BY c.nama ORDER BY n DESC LIMIT 15").fetchall()
         print("[verify] sebaran per kota:")
         for r in per_city:
             print(f"    {r['nama']:18s} {r['n']:4d}")
