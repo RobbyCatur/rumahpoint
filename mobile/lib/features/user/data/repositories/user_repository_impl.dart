@@ -1,4 +1,5 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../../core/failures.dart';
 import '../../domain/entities/user.dart';
@@ -18,9 +19,33 @@ class UserRepositoryImpl implements UserRepository {
     try {
       // Simulasi delay jaringan; nanti diganti panggilan API backend.
       await Future.delayed(const Duration(seconds: 1));
-      return (user: UserModel.dummy(), failure: null);
+      final prefs = await SharedPreferences.getInstance();
+      final avatarBase64 = prefs.getString('rp_profile_photo');
+      return (
+        user: UserModel(
+          nama: 'Customer 1',
+          email: 'customer1@gmail.com',
+          avatarBase64: avatarBase64,
+        ),
+        failure: null,
+      );
     } catch (e) {
       return (user: null, failure: LocalFailure('Gagal memuat profil: $e'));
+    }
+  }
+
+  @override
+  Future<Failure?> updateProfilePhoto(String? avatarBase64) async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      if (avatarBase64 == null) {
+        await prefs.remove('rp_profile_photo');
+      } else {
+        await prefs.setString('rp_profile_photo', avatarBase64);
+      }
+      return null;
+    } catch (e) {
+      return LocalFailure('Gagal menyimpan foto profil: $e');
     }
   }
 

@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
+import '../../../../core/failures.dart';
 import '../../data/repositories/user_repository_impl.dart';
 import '../../domain/entities/user.dart';
 import '../../domain/repositories/user_repository.dart';
@@ -36,6 +37,23 @@ class UserNotifier extends StateNotifier<AsyncValue<User?>> {
   Future<void> logout() async {
     await _repository.logout();
     state = const AsyncValue.data(null);
+  }
+
+  Future<Failure?> updateProfilePhoto(String? avatarBase64) async {
+    final failure = await _repository.updateProfilePhoto(avatarBase64);
+    if (failure != null) return failure;
+
+    final user = state.value;
+    if (user != null) {
+      state = AsyncValue.data(
+        User(
+          nama: user.nama,
+          email: user.email,
+          avatarBase64: avatarBase64,
+        ),
+      );
+    }
+    return null;
   }
 }
 

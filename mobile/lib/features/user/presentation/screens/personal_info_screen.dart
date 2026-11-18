@@ -1,5 +1,8 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../providers/user_providers.dart';
 
@@ -21,6 +24,7 @@ class _PersonalInfoScreenState extends ConsumerState<PersonalInfoScreen> {
   bool _obscureOld = true;
   bool _obscureNew = true;
   bool _obscureConfirm = true;
+  bool _isPickingPhoto = false;
 
   @override
   void initState() {
@@ -50,12 +54,65 @@ class _PersonalInfoScreenState extends ConsumerState<PersonalInfoScreen> {
     }
   }
 
+  Future<void> _changeProfilePhoto() async {
+    if (_isPickingPhoto) return;
+    final source = await showModalBottomSheet<ImageSource>(
+      context: context,
+      builder: (context) => SafeArea(
+        child: Wrap(
+          children: [
+            ListTile(
+              leading: const Icon(Icons.photo_library_outlined),
+              title: const Text('Pilih dari galeri'),
+              onTap: () => Navigator.pop(context, ImageSource.gallery),
+            ),
+            ListTile(
+              leading: const Icon(Icons.camera_alt_outlined),
+              title: const Text('Ambil foto dengan kamera'),
+              onTap: () => Navigator.pop(context, ImageSource.camera),
+            ),
+          ],
+        ),
+      ),
+    );
+    if (source == null || !mounted) return;
+
+    setState(() => _isPickingPhoto = true);
+    try {
+      final picked = await ImagePicker().pickImage(
+        source: source,
+        imageQuality: 85,
+        maxWidth: 800,
+      );
+      if (picked == null || !mounted) return;
+      final encoded = base64Encode(await picked.readAsBytes());
+      final failure =
+          await ref.read(userProvider.notifier).updateProfilePhoto(encoded);
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            failure?.message ?? 'Foto profil berhasil diperbarui.',
+          ),
+        ),
+      );
+    } catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Gagal memilih foto profil: $e')),
+      );
+    } finally {
+      if (mounted) setState(() => _isPickingPhoto = false);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final userState = ref.watch(userProvider);
     final user = userState.value;
     final userName = user?.nama ?? 'Customer 1';
     final userEmail = user?.email ?? 'customer1@gmail.com';
+    final profileImage = _profileImage(user?.avatarBase64);
 
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final backgroundColor =
@@ -96,6 +153,51 @@ class _PersonalInfoScreenState extends ConsumerState<PersonalInfoScreen> {
           padding: const EdgeInsets.all(24.0),
           children: [
             // ── Section 1: Ringkasan Informasi (Read-only) ────────
+            Center(
+              child: GestureDetector(
+                onTap: _changeProfilePhoto,
+                child: Stack(
+                  children: [
+                    CircleAvatar(
+                      radius: 48,
+                      backgroundColor:
+                          const Color(0xFFF59E0B).withValues(alpha: 0.18),
+                      backgroundImage: profileImage,
+                      child: profileImage == null
+                          ? const Icon(
+                              Icons.person,
+                              color: Color(0xFFF59E0B),
+                              size: 48,
+                            )
+                          : null,
+                    ),
+                    Positioned(
+                      right: 0,
+                      bottom: 0,
+                      child: CircleAvatar(
+                        radius: 16,
+                        backgroundColor: const Color(0xFFF59E0B),
+                        child: Icon(
+                          _isPickingPhoto
+                              ? Icons.hourglass_top
+                              : Icons.camera_alt_outlined,
+                          color: const Color(0xFF1F1300),
+                          size: 17,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(height: 12),
+            Center(
+              child: Text(
+                'Ketuk foto untuk mengganti foto profil',
+                style: TextStyle(fontSize: 12, color: subtitleColor),
+              ),
+            ),
+            const SizedBox(height: 28),
             Text(
               'Ringkasan Informasi',
               style: TextStyle(
@@ -405,6 +507,15 @@ class _PersonalInfoScreenState extends ConsumerState<PersonalInfoScreen> {
         ),
       ),
     );
+  }
+
+  ImageProvider<Object>? _profileImage(String? avatarBase64) {
+    if (avatarBase64 == null) return null;
+    try {
+      return MemoryImage(base64Decode(avatarBase64));
+    } catch (_) {
+      return null;
+    }
   }
 
   Widget _buildField({
