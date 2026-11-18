@@ -1,8 +1,11 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../tutorial/presentation/tutorial_picker.dart';
+import '../../domain/entities/user.dart';
 import '../providers/user_providers.dart';
 import 'settings_screen.dart';
 import 'personal_info_screen.dart';
@@ -110,16 +113,7 @@ class ProfileScreen extends ConsumerWidget {
                               color: const Color(0xFFF59E0B),
                               borderRadius: BorderRadius.circular(16),
                             ),
-                            child: Center(
-                              child: Text(
-                                _getInitials(user.nama),
-                                style: const TextStyle(
-                                  color: Colors.black87,
-                                  fontSize: 22,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
+                            child: _buildProfileAvatar(user),
                           ),
                           const SizedBox(width: 16),
                           Expanded(
@@ -280,6 +274,35 @@ class ProfileScreen extends ConsumerWidget {
       }
     }
     return initials;
+  }
+
+  Widget _buildProfileAvatar(User user) {
+    final avatarBase64 = user.avatarBase64;
+    if (avatarBase64 != null) {
+      try {
+        return ClipRRect(
+          borderRadius: BorderRadius.circular(16),
+          child: Image.memory(
+            base64Decode(avatarBase64),
+            width: 64,
+            height: 64,
+            fit: BoxFit.cover,
+          ),
+        );
+      } catch (_) {
+        // Foto lokal yang korup ditampilkan sebagai inisial.
+      }
+    }
+    return Center(
+      child: Text(
+        _getInitials(user.nama),
+        style: const TextStyle(
+          color: Colors.black87,
+          fontSize: 22,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    );
   }
 
   Widget _buildMenuItem({
