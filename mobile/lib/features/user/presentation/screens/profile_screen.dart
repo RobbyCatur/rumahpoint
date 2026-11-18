@@ -6,7 +6,6 @@ import '../../../tutorial/presentation/tutorial_picker.dart';
 import '../providers/user_providers.dart';
 import 'settings_screen.dart';
 import 'personal_info_screen.dart';
-import 'region_preference_screen.dart';
 import 'help_regulation_screen.dart';
 
 class ProfileScreen extends ConsumerWidget {
@@ -175,17 +174,6 @@ class ProfileScreen extends ConsumerWidget {
                         _buildMenuDivider(context),
                         _buildMenuItem(
                           context: context,
-                          icon: Icons.location_on_outlined,
-                          iconColor: Colors.blue,
-                          title: 'Preferensi Wilayah',
-                          onTap: () => _navigateToSettings(
-                            context,
-                            'Preferensi Wilayah',
-                          ),
-                        ),
-                        _buildMenuDivider(context),
-                        _buildMenuItem(
-                          context: context,
                           icon: Icons.tips_and_updates_outlined,
                           iconColor: const Color(0xFFF59E0B),
                           title: 'Panduan Aplikasi',
@@ -272,8 +260,6 @@ class ProfileScreen extends ConsumerWidget {
 
     if (title == 'Informasi Pribadi & Sandi') {
       destination = const PersonalInfoScreen();
-    } else if (title == 'Preferensi Wilayah') {
-      destination = const RegionPreferenceScreen();
     } else {
       destination = const HelpRegulationScreen();
     }
