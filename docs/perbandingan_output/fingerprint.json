@@ -1,0 +1,3915 @@
+{
+  "created_at": "2026-11-17T15:48:57.614703+00:00",
+  "dataset_file": "/opt/rumahpoint/dataset/properti_multi_kota.csv",
+  "asset_file": "/opt/rumahpoint/mobile/assets/data/wilayah.json",
+  "raw_file_sha256": "34375406a6d72b21bad55e5784caddc931a85bb20c999414d3fdd6b2f5774d18",
+  "raw_rows": 64650,
+  "clean_rows": 64228,
+  "clean_sha256": "2ccf5c8dc6fd5d4101b40b576455f5b3d0e0545f15ac691deb92a3954b4d9eaf",
+  "split": {
+    "seed": 42,
+    "test_size": 0.2,
+    "n_train": 51382,
+    "n_test": 12846,
+    "train_sha256": "cfe3defcae087f44fa6a7189a319ef258f4138318a7532b315bf80a85dc9990e",
+    "test_sha256": "718f7f914fe83904e4899da30d2fc6b7a06e249431befe26985f93e43efe7aef",
+    "train_index_sha256": "ebee329b862fed33028dfe3556ae9c4084da8b6073d8202796a5f5dacff381f9",
+    "test_index_sha256": "15913fb67e01d547fabf766e42da843a27764d4626566bef9b77513160a09aca"
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "n_train": 41105,
+      "n_test": 10277,
+      "train_index_sha256": "79db17fe20017f4369f39caf9f2fec172e818d68e5c92bdd481d3be1e51eacf7",
+      "test_index_sha256": "f298c1b2ee29f320d674c00a96af6e48ce0dff211e66a5d6798761cf3ae938d4"
+    },
+    {
+      "fold": 1,
+      "n_train": 41105,
+      "n_test": 10277,
+      "train_index_sha256": "f08e07b61995d39a29fc75ea75c5011905e001250c7a56b56116ad9ca75690b8",
+      "test_index_sha256": "c177e4c57ee746c9d021815cecfbc4e8128469d08d1617f086033940cee7efe6"
+    },
+    {
+      "fold": 2,
+      "n_train": 41106,
+      "n_test": 10276,
+      "train_index_sha256": "de9629a0825697647584ad900a84531b011f1a506658c16a822331b424800437",
+      "test_index_sha256": "7c6dfcd5824b61717f80eeddde5371bb4c93adb3a21beddf20741479178c025e"
+    },
+    {
+      "fold": 3,
+      "n_train": 41106,
+      "n_test": 10276,
+      "train_index_sha256": "2852c85df6afae6b390a824b453c2ef6e84de54fdc1e5d4d436b76724618f555",
+      "test_index_sha256": "9956fdc032bc252aeb7d0ecac5531626bac860dee609478a49110408ee8b19cd"
+    },
+    {
+      "fold": 4,
+      "n_train": 41106,
+      "n_test": 10276,
+      "train_index_sha256": "5355f93bd52e9d9761400cdbbd3e7191ed23978924585b8b5def2405722cbdec",
+      "test_index_sha256": "a0b04506e601150298462828e0306e977fd83ad22063aa0ebd10d9663b7c51dc"
+    }
+  ],
+  "features": {
+    "regression": [
+      "luas_m2",
+      "luas_bangunan",
+      "jumlah_kamar",
+      "jumlah_kamar_mandi",
+      "lokasi"
+    ],
+    "age_proof": [
+      "luas_m2",
+      "luas_bangunan",
+      "jumlah_kamar",
+      "jumlah_kamar_mandi",
+      "lokasi",
+      "usia_bangunan_norm"
+    ]
+  },
+  "columns": [
+    "sumber",
+    "lokasi",
+    "luas_m2",
+    "luas_bangunan",
+    "jumlah_kamar",
+    "jumlah_kamar_mandi",
+    "usia_bangunan",
+    "harga",
+    "usia_bangunan_norm",
+    "lokasi_mentah",
+    "log_harga",
+    "kategori_harga",
+    "label_klasifikasi"
+  ],
+  "category_counts": {
+    "Mahal": 32690,
+    "Murah": 31538
+  },
+  "missing": {
+    "luas_m2": 0,
+    "luas_bangunan": 1707,
+    "jumlah_kamar": 414,
+    "jumlah_kamar_mandi": 417,
+    "usia_bangunan": 59443,
+    "usia_bangunan_norm": 59489,
+    "harga": 0
+  },
+  "cleaning": {
+    "raw_rows": 64650,
+    "drop_lokasi_kosong": 0,
+    "drop_harga_tidak_valid": 0,
+    "drop_luas_tidak_valid": 0,
+    "drop_harga_placeholder": 245,
+    "drop_harga_terlalu_besar": 14,
+    "drop_luas_tanah_kecil": 39,
+    "drop_luas_tanah_besar": 0,
+    "drop_harga_per_m2": 124,
+    "usia_tahun_ke_umur": 3070,
+    "usia_nilai_mustahil_nan": 46,
+    "usia_kosong": 59443,
+    "drop_lokasi_kanonik_kosong": 0,
+    "contoh_pemetaan": [
+      {
+        "lokasi_mentah": "Sidoarjo",
+        "lokasi": "Kabupaten Sidoarjo",
+        "baris": 320
+      },
+      {
+        "lokasi_mentah": "Klaten",
+        "lokasi": "Kabupaten Klaten",
+        "baris": 297
+      },
+      {
+        "lokasi_mentah": "Tabanan",
+        "lokasi": "Kabupaten Tabanan",
+        "baris": 297
+      },
+      {
+        "lokasi_mentah": "Badung",
+        "lokasi": "Kabupaten Badung",
+        "baris": 293
+      },
+      {
+        "lokasi_mentah": "Sukoharjo",
+        "lokasi": "Kabupaten Sukoharjo",
+        "baris": 222
+      },
+      {
+        "lokasi_mentah": "Bandung Barat",
+        "lokasi": "Kabupaten Bandung Barat",
+        "baris": 212
+      },
+      {
+        "lokasi_mentah": "Boyolali",
+        "lokasi": "Kabupaten Boyolali",
+        "baris": 203
+      },
+      {
+        "lokasi_mentah": "Gresik",
+        "lokasi": "Kabupaten Gresik",
+        "baris": 196
+      },
+      {
+        "lokasi_mentah": "Cianjur",
+        "lokasi": "Kabupaten Cianjur",
+        "baris": 194
+      },
+      {
+        "lokasi_mentah": "Sumedang",
+        "lokasi": "Kabupaten Sumedang",
+        "baris": 181
+      },
+      {
+        "lokasi_mentah": "Buleleng",
+        "lokasi": "Kabupaten Buleleng",
+        "baris": 180
+      },
+      {
+        "lokasi_mentah": "Deli Serdang",
+        "lokasi": "Kabupaten Deli Serdang",
+        "baris": 171
+      },
+      {
+        "lokasi_mentah": "Karawang",
+        "lokasi": "Kabupaten Karawang",
+        "baris": 170
+      },
+      {
+        "lokasi_mentah": "Gowa",
+        "lokasi": "Kabupaten Gowa",
+        "baris": 155
+      },
+      {
+        "lokasi_mentah": "Garut",
+        "lokasi": "Kabupaten Garut",
+        "baris": 150
+      },
+      {
+        "lokasi_mentah": "Lampung Selatan",
+        "lokasi": "Kabupaten Lampung Selatan",
+        "baris": 135
+      },
+      {
+        "lokasi_mentah": "Purwakarta",
+        "lokasi": "Kabupaten Purwakarta",
+        "baris": 135
+      },
+      {
+        "lokasi_mentah": "Maros",
+        "lokasi": "Kabupaten Maros",
+        "baris": 122
+      },
+      {
+        "lokasi_mentah": "Subang",
+        "lokasi": "Kabupaten Subang",
+        "baris": 121
+      },
+      {
+        "lokasi_mentah": "Kuningan",
+        "lokasi": "Kabupaten Kuningan",
+        "baris": 115
+      },
+      {
+        "lokasi_mentah": "Pati",
+        "lokasi": "Kabupaten Pati",
+        "baris": 115
+      },
+      {
+        "lokasi_mentah": "Sragen",
+        "lokasi": "Kabupaten Sragen",
+        "baris": 110
+      },
+      {
+        "lokasi_mentah": "Kubu Raya",
+        "lokasi": "Kabupaten Kubu Raya",
+        "baris": 108
+      },
+      {
+        "lokasi_mentah": "Majalengka",
+        "lokasi": "Kabupaten Majalengka",
+        "baris": 108
+      },
+      {
+        "lokasi_mentah": "Nganjuk",
+        "lokasi": "Kabupaten Nganjuk",
+        "baris": 108
+      }
+    ],
+    "lokasi_mentah_unik": 593,
+    "lokasi_kanonik_unik": 445,
+    "lokasi_baris_dipetakan": 7787,
+    "lokasi_tidak_ada_di_aset": [
+      "Aceh",
+      "Bali",
+      "Banjarbaru",
+      "Banten",
+      "Banyuasin",
+      "Bau Bau",
+      "Daerah Istimewa Yogyakarta",
+      "Dki Jakarta",
+      "Dumai",
+      "Gunung Kidul",
+      "Gunung Sitoli",
+      "Jawa Barat",
+      "Kabupaten Banyuasin",
+      "Kabupaten Batanghari",
+      "Kabupaten Kepulauan Anambas",
+      "Kabupaten Labuhanbatu",
+      "Kabupaten Labuhanbatu Selatan",
+      "Kabupaten Mamuju Utara",
+      "Kabupaten Pahuwato",
+      "Kabupaten Pangkajene Kepulauan",
+      "Kabupaten Siak",
+      "Kalimantan Barat",
+      "Kalimantan Selatan",
+      "Kalimantan Tengah",
+      "Kalimantan Timur",
+      "Kalimantan Utara",
+      "Kepulauan Bangka Belitung",
+      "Kepulauan Riau",
+      "Kota Baru",
+      "Kota Waringin Barat",
+      "Kota Waringin Timur",
+      "Lampung",
+      "Lubuk Linggau",
+      "Madura",
+      "Maluku",
+      "Nusa Tenggara Barat",
+      "Nusa Tenggara Timur",
+      "Palangkaraya",
+      "Pangkajene",
+      "Papua",
+      "Papua Barat",
+      "Papua Selatan",
+      "Pare Pare",
+      "Pasir",
+      "Pematangsiantar",
+      "Riau",
+      "Sawahlunto",
+      "Siak",
+      "Sulawesi Barat",
+      "Sulawesi Selatan",
+      "Sulawesi Tengah",
+      "Sulawesi Tenggara",
+      "Sulawesi Utara",
+      "Sumatera Barat",
+      "Sumatera Selatan",
+      "Sumatera Utara",
+      "Tulang Bawang"
+    ],
+    "kota_dengan_satu_baris": 47,
+    "kategori": {
+      "Mahal": 32690,
+      "Murah": 31538
+    },
+    "sumber": {
+      "FLUS/komersil": 39120,
+      "rumah123/Surabaya": 1995,
+      "uas-properti/Jabodetabek": 1528,
+      "99.co/Bekasi": 400,
+      "99.co/Bogor": 400,
+      "99.co/Tangerang": 399,
+      "99.co/Medan": 374,
+      "99.co/Malang": 364,
+      "99.co/Bandar Lampung": 329,
+      "99.co/Cirebon": 312,
+      "99.co/Sidoarjo": 275,
+      "99.co/Serang": 270,
+      "99.co/Palembang": 262,
+      "99.co/Bandung": 250,
+      "99.co/Denpasar": 250,
+      "99.co/Jakarta Barat": 250,
+      "99.co/Jakarta Utara": 250,
+      "99.co/Klaten": 250,
+      "99.co/Semarang": 250,
+      "99.co/Tabanan": 250,
+      "99.co/Tangerang Selatan": 250,
+      "99.co/Yogyakarta": 250,
+      "99.co/Badung": 249,
+      "99.co/Batam": 249,
+      "99.co/Jakarta Selatan": 249,
+      "99.co/Jakarta Pusat": 238,
+      "99.co/Sukabumi": 233,
+      "99.co/Balikpapan": 225,
+      "99.co/Surakarta": 218,
+      "99.co/Depok": 213,
+      "99.co/Jakarta Timur": 212,
+      "99.co/Pekanbaru": 202,
+      "99.co/Makassar": 201,
+      "ColectDataRumah/Bekasi": 200,
+      "99.co/Tegal": 185,
+      "99.co/Sukoharjo": 175,
+      "99.co/Kediri": 172,
+      "99.co/Karawang": 170,
+      "99.co/Bandung Barat": 166,
+      "99.co/Pasuruan": 166,
+      "99.co/Boyolali": 153,
+      "99.co/Gresik": 150,
+      "99.co/Magelang": 150,
+      "99.co/Cianjur": 145,
+      "99.co/Cilegon": 144,
+      "99.co/Pontianak": 133,
+      "99.co/Sumedang": 133,
+      "99.co/Buleleng": 132,
+      "99.co/Mojokerto": 127,
+      "99.co/Samarinda": 126,
+      "99.co/Deli Serdang": 123,
+      "99.co/Tasikmalaya": 115,
+      "99.co/Manado": 111,
+      "99.co/Salatiga": 109,
+      "99.co/Gowa": 107,
+      "99.co/Garut": 102,
+      "99.co/Kupang": 94,
+      "99.co/Kendal": 93,
+      "99.co/Cimahi": 87,
+      "99.co/Lampung Selatan": 85,
+      "99.co/Purwakarta": 85,
+      "99.co/Madiun": 84,
+      "99.co/Jombang": 77,
+      "99.co/Maros": 72,
+      "99.co/Subang": 72,
+      "99.co/Jember": 70,
+      "99.co/Pekalongan": 70,
+      "99.co/Blitar": 66,
+      "99.co/Padang": 66,
+      "99.co/Kuningan": 65,
+      "99.co/Pati": 65,
+      "99.co/Kubu Raya": 63,
+      "99.co/Sragen": 60,
+      "99.co/Batu": 58,
+      "99.co/Majalengka": 58,
+      "99.co/Nganjuk": 58,
+      "99.co/Tanjung Pinang": 57,
+      "99.co/Lombok Barat": 55,
+      "99.co/Tulungagung": 55,
+      "99.co/Pangkal Pinang": 52,
+      "rumah123/Banyuwangi": 50,
+      "rumah123/Batu": 50,
+      "rumah123/Blitar": 50,
+      "rumah123/Boyolali": 50,
+      "rumah123/Brebes": 50,
+      "rumah123/Cilacap": 50,
+      "rumah123/Cilegon": 50,
+      "rumah123/Demak": 50,
+      "rumah123/Gunung Kidul": 50,
+      "rumah123/Jakarta Barat": 50,
+      "rumah123/Kuningan": 50,
+      "rumah123/Kupang": 50,
+      "rumah123/Lampung Selatan": 50,
+      "rumah123/Lombok Barat": 50,
+      "rumah123/Madiun": 50,
+      "rumah123/Magetan": 50,
+      "rumah123/Majalengka": 50,
+      "rumah123/Manado": 50,
+      "rumah123/Maros": 50,
+      "rumah123/Mataram": 50,
+      "rumah123/Nganjuk": 50,
+      "rumah123/Padang": 50,
+      "rumah123/Pangkal Pinang": 50,
+      "rumah123/Pati": 50,
+      "rumah123/Purwakarta": 50,
+      "rumah123/Purwokerto": 50,
+      "rumah123/Sragen": 50,
+      "rumah123/Sumatera Barat": 50,
+      "rumah123/Tanjung Pinang": 50,
+      "rumah123/Tulungagung": 50,
+      "rumah123/Bandar Lampung": 49,
+      "rumah123/Banyumas": 49,
+      "rumah123/Cianjur": 49,
+      "rumah123/Kalimantan Selatan": 49,
+      "rumah123/Karanganyar": 49,
+      "rumah123/Karangasem": 49,
+      "rumah123/Kepulauan Bangka Belitung": 49,
+      "rumah123/Kulon Progo": 49,
+      "rumah123/Lebak": 49,
+      "rumah123/Medan": 49,
+      "rumah123/Mojokerto": 49,
+      "rumah123/Pontianak": 49,
+      "rumah123/Subang": 49,
+      "rumah123/Sukabumi": 49,
+      "rumah123/Sulawesi Utara": 49,
+      "rumah123/Surakarta": 49,
+      "rumah123/Tasikmalaya": 49,
+      "rumah123/Tegal": 49,
+      "rumah123/Buleleng": 48,
+      "rumah123/Ciamis": 48,
+      "rumah123/Cimahi": 48,
+      "rumah123/Cirebon": 48,
+      "rumah123/Deli Serdang": 48,
+      "rumah123/Garut": 48,
+      "rumah123/Gianyar": 48,
+      "rumah123/Gowa": 48,
+      "rumah123/Jakarta Pusat": 48,
+      "rumah123/Jambi": 48,
+      "rumah123/Kepulauan Riau": 48,
+      "rumah123/Lampung": 48,
+      "rumah123/Magelang": 48,
+      "rumah123/Pasuruan": 48,
+      "rumah123/Pekanbaru": 48,
+      "rumah123/Samarinda": 48,
+      "rumah123/Sumedang": 48,
+      "99.co/Lebak": 47,
+      "rumah123/Banjarmasin": 47,
+      "rumah123/Jakarta Utara": 47,
+      "rumah123/Klaten": 47,
+      "rumah123/Nusa Tenggara Timur": 47,
+      "rumah123/Riau": 47,
+      "rumah123/Serang": 47,
+      "rumah123/Sukoharjo": 47,
+      "rumah123/Tabanan": 47,
+      "rumah123/Bandung Barat": 46,
+      "rumah123/Bantul": 46,
+      "rumah123/Batam": 46,
+      "rumah123/Gresik": 46,
+      "rumah123/Jakarta Timur": 46,
+      "rumah123/Malang": 46,
+      "rumah123/Nusa Tenggara Barat": 46,
+      "rumah123/Semarang": 46,
+      "rumah123/Solo": 46,
+      "rumah123/Sumatera Utara": 46,
+      "rumah123/Bali": 45,
+      "rumah123/Banjar Baru": 45,
+      "rumah123/Daerah Istimewa Yogyakarta": 45,
+      "rumah123/Denpasar": 45,
+      "rumah123/Kalimantan Timur": 45,
+      "rumah123/Kubu Raya": 45,
+      "rumah123/Sidoarjo": 45,
+      "rumah123/Tangerang Selatan": 45,
+      "rumah123/Yogyakarta": 45,
+      "rumah123/Badung": 44,
+      "rumah123/Depok": 44,
+      "rumah123/Pekalongan": 44,
+      "rumah123/Sleman": 44,
+      "rumah123/Tangerang": 44,
+      "rumah123/Bandung": 43,
+      "rumah123/Banten": 43,
+      "rumah123/Dki Jakarta": 43,
+      "rumah123/Sumatera Selatan": 43,
+      "99.co/Mataram": 42,
+      "rumah123/Bekasi": 42,
+      "rumah123/Bogor": 42,
+      "rumah123/Jakarta Selatan": 42,
+      "rumah123/Palembang": 42,
+      "rumah123/Purbalingga": 42,
+      "rumah123/Sulawesi Selatan": 42,
+      "rumah123/Cikarang": 41,
+      "99.co/Ciamis": 40,
+      "99.co/Demak": 40,
+      "rumah123/Balikpapan": 40,
+      "rumah123/Kalimantan Barat": 40,
+      "rumah123/Banyuasin": 39,
+      "rumah123/Makassar": 39,
+      "rumah123/Bengkulu": 35,
+      "rumah123/Pandeglang": 35,
+      "rumah123/Probolinggo": 35,
+      "99.co/Bondowoso": 33,
+      "99.co/Metro": 33,
+      "rumah123/Temanggung": 32,
+      "99.co/Brebes": 31,
+      "99.co/Purbalingga": 30,
+      "99.co/Temanggung": 30,
+      "rumah123/Aceh": 30,
+      "99.co/Probolinggo": 29,
+      "rumah123/Kendari": 29,
+      "rumah123/Purworejo": 29,
+      "99.co/Banjarmasin": 27,
+      "99.co/Cilacap": 27,
+      "99.co/Jepara": 27,
+      "rumah123/Jawa Barat": 27,
+      "99.co/Pandeglang": 26,
+      "rumah123/Indramayu": 26,
+      "rumah123/Sulawesi Tenggara": 26,
+      "rumah123/Wonogiri": 26,
+      "99.co/Grobogan": 25,
+      "99.co/Indramayu": 25,
+      "rumah123/Lamongan": 25,
+      "rumah123/Muaro Jambi": 25,
+      "rumah123/Tuban": 25,
+      "Pinhome/Bontang": 25,
+      "Pinhome/Aceh Barat Daya": 25,
+      "Pinhome/Aceh Selatan": 25,
+      "Pinhome/Halmahera Timur": 25,
+      "99.co/Bojonegoro": 24,
+      "99.co/Purworejo": 24,
+      "99.co/Tuban": 24,
+      "99.co/Wonogiri": 24,
+      "rumah123/Bangkalan": 24,
+      "rumah123/Batang": 24,
+      "rumah123/Bojonegoro": 24,
+      "rumah123/Metro": 24,
+      "Pinhome/Aceh Timur": 24,
+      "99.co/Batang": 23,
+      "99.co/Magetan": 23,
+      "99.co/Pemalang": 23,
+      "99.co/Singkawang": 23,
+      "Pinhome/Aceh Tengah": 23,
+      "99.co/Pesawaran": 22,
+      "rumah123/Lampung Tengah": 22,
+      "rumah123/Singkawang": 22,
+      "Pinhome/Kepahiang": 22,
+      "99.co/Bangkalan": 21,
+      "99.co/Kampar": 21,
+      "rumah123/Blora": 21,
+      "rumah123/Kalimantan Tengah": 21,
+      "99.co/Lampung Timur": 20,
+      "99.co/Ponorogo": 20,
+      "rumah123/Banjar": 20,
+      "rumah123/Kota Waringin Timur": 20,
+      "rumah123/Pesawaran": 20,
+      "Pinhome/Buton Selatan": 20,
+      "99.co/Lampung Tengah": 19,
+      "rumah123/Ambarawa": 19,
+      "rumah123/Binjai": 19,
+      "rumah123/Minahasa": 19,
+      "rumah123/Papua": 19,
+      "Pinhome/Bangka Barat": 19,
+      "99.co/Banjar Baru": 18,
+      "99.co/Lamongan": 18,
+      "rumah123/Bangka": 18,
+      "rumah123/Pemalang": 18,
+      "99.co/Blora": 17,
+      "99.co/Minahasa Utara": 17,
+      "rumah123/Bangka Tengah": 17,
+      "rumah123/Minahasa Utara": 17,
+      "rumah123/Ngawi": 17,
+      "Pinhome/Siak": 17,
+      "rumah123/Anyer": 16,
+      "99.co/Jembrana": 15,
+      "rumah123/Salatiga": 15,
+      "Pinhome/Mandailing Natal": 15,
+      "99.co/Biak Numfor": 14,
+      "99.co/Pematang Siantar": 14,
+      "99.co/Tanggamus": 14,
+      "rumah123/Bangli": 14,
+      "rumah123/Bitung": 14,
+      "rumah123/Klungkung": 14,
+      "rumah123/Lampung Timur": 14,
+      "rumah123/Tomohon": 14,
+      "99.co/Binjai": 13,
+      "99.co/Kebumen": 13,
+      "99.co/Rembang": 13,
+      "99.co/Situbondo": 13,
+      "rumah123/Bondowoso": 13,
+      "rumah123/Jayapura": 13,
+      "rumah123/Pinrang": 13,
+      "Pinhome/Seram Bagian Timur": 13,
+      "99.co/Bangka Tengah": 12,
+      "99.co/Bangli": 12,
+      "99.co/Jayapura": 12,
+      "99.co/Klungkung": 12,
+      "99.co/Tomohon": 12,
+      "99.co/Wonosobo": 12,
+      "rumah123/Banjarnegara": 12,
+      "rumah123/Grobogan": 12,
+      "rumah123/Lombok Tengah": 12,
+      "rumah123/Lumajang": 12,
+      "rumah123/Pringsewu": 12,
+      "rumah123/Rembang": 12,
+      "rumah123/Tarakan": 12,
+      "Pinhome/Kepulauan Meranti": 12,
+      "99.co/Bangka": 11,
+      "99.co/Minahasa": 11,
+      "99.co/Ngawi": 11,
+      "99.co/Palopo": 11,
+      "rumah123/Gorontalo": 11,
+      "rumah123/Manggarai Barat": 11,
+      "rumah123/Palu": 11,
+      "rumah123/Serdang Bedagai": 11,
+      "rumah123/Tanggamus": 11,
+      "rumah123/Wonosobo": 11,
+      "Pinhome/Balangan": 11,
+      "Pinhome/Nagan Raya": 11,
+      "Pinhome/Rokan Hilir": 11,
+      "99.co/Belitung": 10,
+      "99.co/Kendari": 10,
+      "99.co/Lombok Tengah": 10,
+      "99.co/Palu": 10,
+      "rumah123/Belitung": 10,
+      "rumah123/Biak Numfor": 10,
+      "rumah123/Kalimantan Utara": 10,
+      "rumah123/Ponorogo": 10,
+      "rumah123/Purwodadi": 10,
+      "rumah123/Situbondo": 10,
+      "rumah123/Sulawesi Tengah": 10,
+      "Pinhome/Alor": 10,
+      "Pinhome/Nias Selatan": 10,
+      "99.co/Bintan": 9,
+      "99.co/Bitung": 9,
+      "99.co/Manggarai Barat": 9,
+      "rumah123/Bintan": 9,
+      "rumah123/Cikampek": 9,
+      "rumah123/Lombok Utara": 9,
+      "rumah123/Rejang Lebong": 9,
+      "rumah123/Tulang Bawang": 9,
+      "99.co/Lombok Utara": 8,
+      "99.co/Pamekasan": 8,
+      "99.co/Pringsewu": 8,
+      "rumah123/Kebumen": 8,
+      "rumah123/Ogan Ilir": 8,
+      "rumah123/Papua Barat": 8,
+      "rumah123/Takalar": 8,
+      "99.co/Lampung Utara": 7,
+      "99.co/Lumajang": 7,
+      "99.co/Takalar": 7,
+      "rumah123/Kediri": 7,
+      "rumah123/Kutai Kartanegara": 7,
+      "rumah123/Muara Enim": 7,
+      "rumah123/Palangkaraya": 7,
+      "rumah123/Pamekasan": 7,
+      "rumah123/Pare Pare": 7,
+      "rumah123/Pematang Siantar": 7,
+      "rumah123/Solok": 7,
+      "rumah123/Tebing Tinggi": 7,
+      "99.co/Banjarnegara": 6,
+      "99.co/Lampung Barat": 6,
+      "rumah123/Aceh Besar": 6,
+      "rumah123/Banda Aceh": 6,
+      "rumah123/Bone": 6,
+      "rumah123/Lampung Barat": 6,
+      "rumah123/Lampung Utara": 6,
+      "rumah123/Pangandaran": 6,
+      "99.co/Aceh Besar": 5,
+      "99.co/Pangandaran": 5,
+      "99.co/Solok": 5,
+      "99.co/Trenggalek": 5,
+      "rumah123/Asahan": 5,
+      "rumah123/Bengkulu Tengah": 5,
+      "rumah123/Bukittinggi": 5,
+      "rumah123/Palopo": 5,
+      "rumah123/Pasir": 5,
+      "99.co/Muna": 4,
+      "99.co/Ogan Ilir": 4,
+      "99.co/Sambas": 4,
+      "99.co/Serdang Bedagai": 4,
+      "99.co/Tarakan": 4,
+      "99.co/Tebing Tinggi": 4,
+      "rumah123/Bengkalis": 4,
+      "rumah123/Kota Waringin Barat": 4,
+      "rumah123/Langkat": 4,
+      "rumah123/Lombok Timur": 4,
+      "rumah123/Muna": 4,
+      "rumah123/Penajam Paser Utara": 4,
+      "rumah123/Prabumulih": 4,
+      "rumah123/Simalungun": 4,
+      "99.co/Ambon": 3,
+      "99.co/Barru": 3,
+      "99.co/Bukittinggi": 3,
+      "99.co/Bulukumba": 3,
+      "99.co/Kutai Kartanegara": 3,
+      "99.co/Langkat": 3,
+      "99.co/Langsa": 3,
+      "99.co/Luwu": 3,
+      "99.co/Muara Enim": 3,
+      "99.co/Ogan Komering Ulu": 3,
+      "99.co/Pinrang": 3,
+      "99.co/Prabumulih": 3,
+      "99.co/Simalungun": 3,
+      "rumah123/Ambon": 3,
+      "rumah123/Barru": 3,
+      "rumah123/Bengkulu Utara": 3,
+      "rumah123/Bulukumba": 3,
+      "rumah123/Dumai": 3,
+      "rumah123/Konawe Selatan": 3,
+      "rumah123/Luwu": 3,
+      "rumah123/Madura": 3,
+      "rumah123/Mamuju": 3,
+      "rumah123/Nusa Lembongan": 3,
+      "rumah123/Pacitan": 3,
+      "rumah123/Sambas": 3,
+      "rumah123/Semarapura": 3,
+      "rumah123/Sulawesi Barat": 3,
+      "rumah123/Tanah Bumbu": 3,
+      "rumah123/Tanah Laut": 3,
+      "99.co/Asahan": 2,
+      "99.co/Belu": 2,
+      "99.co/Berau": 2,
+      "99.co/Bolaang Mongondow": 2,
+      "99.co/Dumai": 2,
+      "99.co/Enrekang": 2,
+      "99.co/Kapuas Hulu": 2,
+      "99.co/Konawe Selatan": 2,
+      "99.co/Kutai Barat": 2,
+      "99.co/Lombok Timur": 2,
+      "99.co/Mamuju": 2,
+      "99.co/Mempawah": 2,
+      "99.co/Tanah Datar": 2,
+      "99.co/Tapanuli Tengah": 2,
+      "rumah123/Belu": 2,
+      "rumah123/Berau": 2,
+      "rumah123/Bolaang Mongondow": 2,
+      "rumah123/Kutai Barat": 2,
+      "rumah123/Langsa": 2,
+      "rumah123/Lhokseumawe": 2,
+      "rumah123/Lubuk Linggau": 2,
+      "rumah123/Maluku": 2,
+      "rumah123/Mempawah": 2,
+      "rumah123/Ogan Komering Ulu": 2,
+      "rumah123/Seluma": 2,
+      "rumah123/Sidenreng Rappang": 2,
+      "rumah123/Sigi": 2,
+      "rumah123/Sikka": 2,
+      "rumah123/Tanah Datar": 2,
+      "rumah123/Trenggalek": 2,
+      "99.co/Aceh Barat": 1,
+      "99.co/Agam": 1,
+      "99.co/Banda Aceh": 1,
+      "99.co/Bangka Selatan": 1,
+      "99.co/Banjar": 1,
+      "99.co/Hulu Sungai Utara": 1,
+      "99.co/Karimun": 1,
+      "99.co/Karo": 1,
+      "99.co/Ketapang": 1,
+      "99.co/Konawe": 1,
+      "99.co/Kota Baru": 1,
+      "99.co/Kutai Timur": 1,
+      "99.co/Labuhan Batu": 1,
+      "99.co/Lhokseumawe": 1,
+      "99.co/Merauke": 1,
+      "99.co/Minahasa Selatan": 1,
+      "99.co/Minahasa Tenggara": 1,
+      "99.co/Pacitan": 1,
+      "99.co/Padang Pariaman": 1,
+      "99.co/Pagar Alam": 1,
+      "99.co/Pelalawan": 1,
+      "99.co/Penajam Paser Utara": 1,
+      "99.co/Rokan Hulu": 1,
+      "99.co/Sabang": 1,
+      "99.co/Sanggau": 1,
+      "99.co/Sikka": 1,
+      "99.co/Sintang": 1,
+      "99.co/Sumba Barat Daya": 1,
+      "99.co/Sumba Timur": 1,
+      "99.co/Tana Toraja": 1,
+      "99.co/Tanah Bumbu": 1,
+      "99.co/Tapanuli Utara": 1,
+      "rumah123/Agam": 1,
+      "rumah123/Anambas": 1,
+      "rumah123/Banggai Laut": 1,
+      "rumah123/Bangka Selatan": 1,
+      "rumah123/Bone Bolango": 1,
+      "rumah123/Gunung Sitoli": 1,
+      "rumah123/Kapuas": 1,
+      "rumah123/Kepulauan Mentawai": 1,
+      "rumah123/Ketapang": 1,
+      "rumah123/Kota Baru": 1,
+      "rumah123/Kutai Timur": 1,
+      "rumah123/Lahat": 1,
+      "rumah123/Merauke": 1,
+      "rumah123/Mesuji": 1,
+      "rumah123/Mimika": 1,
+      "rumah123/Minahasa Selatan": 1,
+      "rumah123/Minahasa Tenggara": 1,
+      "rumah123/Musi Rawas": 1,
+      "rumah123/Nabire": 1,
+      "rumah123/Padang Pariaman": 1,
+      "rumah123/Pagar Alam": 1,
+      "rumah123/Pangkajene": 1,
+      "rumah123/Papua Selatan": 1,
+      "rumah123/Rokan Hulu": 1,
+      "rumah123/Sabang": 1,
+      "rumah123/Sarolangun": 1,
+      "rumah123/Sintang": 1,
+      "rumah123/Sorong": 1,
+      "rumah123/Sumba Barat Daya": 1,
+      "rumah123/Sumba Timur": 1,
+      "rumah123/Sumbawa": 1,
+      "rumah123/Sumenep": 1
+    },
+    "baris_identik": 7144,
+    "median_luas_bangunan": 64.0,
+    "median_usia_bangunan_norm": 9.0,
+    "missing_setelah": {
+      "luas_m2": 0,
+      "luas_bangunan": 1707,
+      "jumlah_kamar": 414,
+      "jumlah_kamar_mandi": 417,
+      "usia_bangunan": 59443,
+      "usia_bangunan_norm": 59489,
+      "harga": 0
+    },
+    "usia_per_sumber": [
+      {
+        "sumber": "FLUS/komersil",
+        "baris": 39120,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Surabaya",
+        "baris": 1995,
+        "usia_ada": 931,
+        "usia_persen": 46.67
+      },
+      {
+        "sumber": "uas-properti/Jabodetabek",
+        "baris": 1528,
+        "usia_ada": 1490,
+        "usia_persen": 97.51
+      },
+      {
+        "sumber": "99.co/Bogor",
+        "baris": 400,
+        "usia_ada": 64,
+        "usia_persen": 16.0
+      },
+      {
+        "sumber": "99.co/Bekasi",
+        "baris": 400,
+        "usia_ada": 61,
+        "usia_persen": 15.25
+      },
+      {
+        "sumber": "99.co/Tangerang",
+        "baris": 399,
+        "usia_ada": 68,
+        "usia_persen": 17.04
+      },
+      {
+        "sumber": "99.co/Medan",
+        "baris": 374,
+        "usia_ada": 43,
+        "usia_persen": 11.5
+      },
+      {
+        "sumber": "99.co/Malang",
+        "baris": 364,
+        "usia_ada": 96,
+        "usia_persen": 26.37
+      },
+      {
+        "sumber": "99.co/Bandar Lampung",
+        "baris": 329,
+        "usia_ada": 21,
+        "usia_persen": 6.38
+      },
+      {
+        "sumber": "99.co/Cirebon",
+        "baris": 312,
+        "usia_ada": 48,
+        "usia_persen": 15.38
+      },
+      {
+        "sumber": "99.co/Sidoarjo",
+        "baris": 275,
+        "usia_ada": 34,
+        "usia_persen": 12.36
+      },
+      {
+        "sumber": "99.co/Serang",
+        "baris": 270,
+        "usia_ada": 53,
+        "usia_persen": 19.63
+      },
+      {
+        "sumber": "99.co/Palembang",
+        "baris": 262,
+        "usia_ada": 26,
+        "usia_persen": 9.92
+      },
+      {
+        "sumber": "99.co/Denpasar",
+        "baris": 250,
+        "usia_ada": 22,
+        "usia_persen": 8.8
+      },
+      {
+        "sumber": "99.co/Jakarta Utara",
+        "baris": 250,
+        "usia_ada": 30,
+        "usia_persen": 12.0
+      },
+      {
+        "sumber": "99.co/Klaten",
+        "baris": 250,
+        "usia_ada": 17,
+        "usia_persen": 6.8
+      },
+      {
+        "sumber": "99.co/Jakarta Barat",
+        "baris": 250,
+        "usia_ada": 42,
+        "usia_persen": 16.8
+      },
+      {
+        "sumber": "99.co/Bandung",
+        "baris": 250,
+        "usia_ada": 36,
+        "usia_persen": 14.4
+      },
+      {
+        "sumber": "99.co/Yogyakarta",
+        "baris": 250,
+        "usia_ada": 46,
+        "usia_persen": 18.4
+      },
+      {
+        "sumber": "99.co/Tangerang Selatan",
+        "baris": 250,
+        "usia_ada": 44,
+        "usia_persen": 17.6
+      },
+      {
+        "sumber": "99.co/Tabanan",
+        "baris": 250,
+        "usia_ada": 44,
+        "usia_persen": 17.6
+      },
+      {
+        "sumber": "99.co/Semarang",
+        "baris": 250,
+        "usia_ada": 24,
+        "usia_persen": 9.6
+      },
+      {
+        "sumber": "99.co/Badung",
+        "baris": 249,
+        "usia_ada": 56,
+        "usia_persen": 22.49
+      },
+      {
+        "sumber": "99.co/Batam",
+        "baris": 249,
+        "usia_ada": 22,
+        "usia_persen": 8.84
+      },
+      {
+        "sumber": "99.co/Jakarta Selatan",
+        "baris": 249,
+        "usia_ada": 38,
+        "usia_persen": 15.26
+      },
+      {
+        "sumber": "99.co/Jakarta Pusat",
+        "baris": 238,
+        "usia_ada": 38,
+        "usia_persen": 15.97
+      },
+      {
+        "sumber": "99.co/Sukabumi",
+        "baris": 233,
+        "usia_ada": 71,
+        "usia_persen": 30.47
+      },
+      {
+        "sumber": "99.co/Balikpapan",
+        "baris": 225,
+        "usia_ada": 25,
+        "usia_persen": 11.11
+      },
+      {
+        "sumber": "99.co/Surakarta",
+        "baris": 218,
+        "usia_ada": 63,
+        "usia_persen": 28.9
+      },
+      {
+        "sumber": "99.co/Depok",
+        "baris": 213,
+        "usia_ada": 57,
+        "usia_persen": 26.76
+      },
+      {
+        "sumber": "99.co/Jakarta Timur",
+        "baris": 212,
+        "usia_ada": 22,
+        "usia_persen": 10.38
+      },
+      {
+        "sumber": "99.co/Pekanbaru",
+        "baris": 202,
+        "usia_ada": 16,
+        "usia_persen": 7.92
+      },
+      {
+        "sumber": "99.co/Makassar",
+        "baris": 201,
+        "usia_ada": 45,
+        "usia_persen": 22.39
+      },
+      {
+        "sumber": "ColectDataRumah/Bekasi",
+        "baris": 200,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Tegal",
+        "baris": 185,
+        "usia_ada": 43,
+        "usia_persen": 23.24
+      },
+      {
+        "sumber": "99.co/Sukoharjo",
+        "baris": 175,
+        "usia_ada": 24,
+        "usia_persen": 13.71
+      },
+      {
+        "sumber": "99.co/Kediri",
+        "baris": 172,
+        "usia_ada": 5,
+        "usia_persen": 2.91
+      },
+      {
+        "sumber": "99.co/Karawang",
+        "baris": 170,
+        "usia_ada": 34,
+        "usia_persen": 20.0
+      },
+      {
+        "sumber": "99.co/Pasuruan",
+        "baris": 166,
+        "usia_ada": 24,
+        "usia_persen": 14.46
+      },
+      {
+        "sumber": "99.co/Bandung Barat",
+        "baris": 166,
+        "usia_ada": 27,
+        "usia_persen": 16.27
+      },
+      {
+        "sumber": "99.co/Boyolali",
+        "baris": 153,
+        "usia_ada": 25,
+        "usia_persen": 16.34
+      },
+      {
+        "sumber": "99.co/Magelang",
+        "baris": 150,
+        "usia_ada": 11,
+        "usia_persen": 7.33
+      },
+      {
+        "sumber": "99.co/Gresik",
+        "baris": 150,
+        "usia_ada": 22,
+        "usia_persen": 14.67
+      },
+      {
+        "sumber": "99.co/Cianjur",
+        "baris": 145,
+        "usia_ada": 46,
+        "usia_persen": 31.72
+      },
+      {
+        "sumber": "99.co/Cilegon",
+        "baris": 144,
+        "usia_ada": 12,
+        "usia_persen": 8.33
+      },
+      {
+        "sumber": "99.co/Sumedang",
+        "baris": 133,
+        "usia_ada": 28,
+        "usia_persen": 21.05
+      },
+      {
+        "sumber": "99.co/Pontianak",
+        "baris": 133,
+        "usia_ada": 12,
+        "usia_persen": 9.02
+      },
+      {
+        "sumber": "99.co/Buleleng",
+        "baris": 132,
+        "usia_ada": 23,
+        "usia_persen": 17.42
+      },
+      {
+        "sumber": "99.co/Mojokerto",
+        "baris": 127,
+        "usia_ada": 29,
+        "usia_persen": 22.83
+      },
+      {
+        "sumber": "99.co/Samarinda",
+        "baris": 126,
+        "usia_ada": 49,
+        "usia_persen": 38.89
+      },
+      {
+        "sumber": "99.co/Deli Serdang",
+        "baris": 123,
+        "usia_ada": 12,
+        "usia_persen": 9.76
+      },
+      {
+        "sumber": "99.co/Tasikmalaya",
+        "baris": 115,
+        "usia_ada": 50,
+        "usia_persen": 43.48
+      },
+      {
+        "sumber": "99.co/Manado",
+        "baris": 111,
+        "usia_ada": 29,
+        "usia_persen": 26.13
+      },
+      {
+        "sumber": "99.co/Salatiga",
+        "baris": 109,
+        "usia_ada": 16,
+        "usia_persen": 14.68
+      },
+      {
+        "sumber": "99.co/Gowa",
+        "baris": 107,
+        "usia_ada": 39,
+        "usia_persen": 36.45
+      },
+      {
+        "sumber": "99.co/Garut",
+        "baris": 102,
+        "usia_ada": 17,
+        "usia_persen": 16.67
+      },
+      {
+        "sumber": "99.co/Kupang",
+        "baris": 94,
+        "usia_ada": 1,
+        "usia_persen": 1.06
+      },
+      {
+        "sumber": "99.co/Kendal",
+        "baris": 93,
+        "usia_ada": 40,
+        "usia_persen": 43.01
+      },
+      {
+        "sumber": "99.co/Cimahi",
+        "baris": 87,
+        "usia_ada": 20,
+        "usia_persen": 22.99
+      },
+      {
+        "sumber": "99.co/Lampung Selatan",
+        "baris": 85,
+        "usia_ada": 3,
+        "usia_persen": 3.53
+      },
+      {
+        "sumber": "99.co/Purwakarta",
+        "baris": 85,
+        "usia_ada": 16,
+        "usia_persen": 18.82
+      },
+      {
+        "sumber": "99.co/Madiun",
+        "baris": 84,
+        "usia_ada": 19,
+        "usia_persen": 22.62
+      },
+      {
+        "sumber": "99.co/Jombang",
+        "baris": 77,
+        "usia_ada": 2,
+        "usia_persen": 2.6
+      },
+      {
+        "sumber": "99.co/Subang",
+        "baris": 72,
+        "usia_ada": 18,
+        "usia_persen": 25.0
+      },
+      {
+        "sumber": "99.co/Maros",
+        "baris": 72,
+        "usia_ada": 8,
+        "usia_persen": 11.11
+      },
+      {
+        "sumber": "99.co/Jember",
+        "baris": 70,
+        "usia_ada": 11,
+        "usia_persen": 15.71
+      },
+      {
+        "sumber": "99.co/Pekalongan",
+        "baris": 70,
+        "usia_ada": 12,
+        "usia_persen": 17.14
+      },
+      {
+        "sumber": "99.co/Padang",
+        "baris": 66,
+        "usia_ada": 9,
+        "usia_persen": 13.64
+      },
+      {
+        "sumber": "99.co/Blitar",
+        "baris": 66,
+        "usia_ada": 6,
+        "usia_persen": 9.09
+      },
+      {
+        "sumber": "99.co/Kuningan",
+        "baris": 65,
+        "usia_ada": 15,
+        "usia_persen": 23.08
+      },
+      {
+        "sumber": "99.co/Pati",
+        "baris": 65,
+        "usia_ada": 6,
+        "usia_persen": 9.23
+      },
+      {
+        "sumber": "99.co/Kubu Raya",
+        "baris": 63,
+        "usia_ada": 3,
+        "usia_persen": 4.76
+      },
+      {
+        "sumber": "99.co/Sragen",
+        "baris": 60,
+        "usia_ada": 9,
+        "usia_persen": 15.0
+      },
+      {
+        "sumber": "99.co/Majalengka",
+        "baris": 58,
+        "usia_ada": 8,
+        "usia_persen": 13.79
+      },
+      {
+        "sumber": "99.co/Batu",
+        "baris": 58,
+        "usia_ada": 21,
+        "usia_persen": 36.21
+      },
+      {
+        "sumber": "99.co/Nganjuk",
+        "baris": 58,
+        "usia_ada": 5,
+        "usia_persen": 8.62
+      },
+      {
+        "sumber": "99.co/Tanjung Pinang",
+        "baris": 57,
+        "usia_ada": 3,
+        "usia_persen": 5.26
+      },
+      {
+        "sumber": "99.co/Tulungagung",
+        "baris": 55,
+        "usia_ada": 5,
+        "usia_persen": 9.09
+      },
+      {
+        "sumber": "99.co/Lombok Barat",
+        "baris": 55,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Pangkal Pinang",
+        "baris": 52,
+        "usia_ada": 24,
+        "usia_persen": 46.15
+      },
+      {
+        "sumber": "rumah123/Madiun",
+        "baris": 50,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Lombok Barat",
+        "baris": 50,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Kuningan",
+        "baris": 50,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Kupang",
+        "baris": 50,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Magetan",
+        "baris": 50,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Blitar",
+        "baris": 50,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Jakarta Barat",
+        "baris": 50,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Banyuwangi",
+        "baris": 50,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Gunung Kidul",
+        "baris": 50,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Tanjung Pinang",
+        "baris": 50,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Tulungagung",
+        "baris": 50,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Sumatera Barat",
+        "baris": 50,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Mataram",
+        "baris": 50,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Lampung Selatan",
+        "baris": 50,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Maros",
+        "baris": 50,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Manado",
+        "baris": 50,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Majalengka",
+        "baris": 50,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Purwokerto",
+        "baris": 50,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Padang",
+        "baris": 50,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Nganjuk",
+        "baris": 50,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Pati",
+        "baris": 50,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Demak",
+        "baris": 50,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Pangkal Pinang",
+        "baris": 50,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Purwakarta",
+        "baris": 50,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Sragen",
+        "baris": 50,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Batu",
+        "baris": 50,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Cilegon",
+        "baris": 50,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Cilacap",
+        "baris": 50,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Brebes",
+        "baris": 50,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Boyolali",
+        "baris": 50,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Cianjur",
+        "baris": 49,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Tegal",
+        "baris": 49,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Tasikmalaya",
+        "baris": 49,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Sukabumi",
+        "baris": 49,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Subang",
+        "baris": 49,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Mojokerto",
+        "baris": 49,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Pontianak",
+        "baris": 49,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Surakarta",
+        "baris": 49,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Kulon Progo",
+        "baris": 49,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Lebak",
+        "baris": 49,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Karangasem",
+        "baris": 49,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Karanganyar",
+        "baris": 49,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Kepulauan Bangka Belitung",
+        "baris": 49,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Medan",
+        "baris": 49,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Kalimantan Selatan",
+        "baris": 49,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Banyumas",
+        "baris": 49,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Bandar Lampung",
+        "baris": 49,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Sulawesi Utara",
+        "baris": 49,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Jambi",
+        "baris": 48,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Deli Serdang",
+        "baris": 48,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Pekanbaru",
+        "baris": 48,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Pasuruan",
+        "baris": 48,
+        "usia_ada": 1,
+        "usia_persen": 2.08
+      },
+      {
+        "sumber": "rumah123/Gianyar",
+        "baris": 48,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Cimahi",
+        "baris": 48,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Cirebon",
+        "baris": 48,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Garut",
+        "baris": 48,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Gowa",
+        "baris": 48,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Lampung",
+        "baris": 48,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Sumedang",
+        "baris": 48,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Magelang",
+        "baris": 48,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Ciamis",
+        "baris": 48,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Buleleng",
+        "baris": 48,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Samarinda",
+        "baris": 48,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Jakarta Pusat",
+        "baris": 48,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Kepulauan Riau",
+        "baris": 48,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Tabanan",
+        "baris": 47,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Klaten",
+        "baris": 47,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Sukoharjo",
+        "baris": 47,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Jakarta Utara",
+        "baris": 47,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Banjarmasin",
+        "baris": 47,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Riau",
+        "baris": 47,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Nusa Tenggara Timur",
+        "baris": 47,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Serang",
+        "baris": 47,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Lebak",
+        "baris": 47,
+        "usia_ada": 8,
+        "usia_persen": 17.02
+      },
+      {
+        "sumber": "rumah123/Sumatera Utara",
+        "baris": 46,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Bandung Barat",
+        "baris": 46,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Jakarta Timur",
+        "baris": 46,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Malang",
+        "baris": 46,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Solo",
+        "baris": 46,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Semarang",
+        "baris": 46,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Bantul",
+        "baris": 46,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Batam",
+        "baris": 46,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Gresik",
+        "baris": 46,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Nusa Tenggara Barat",
+        "baris": 46,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Sidoarjo",
+        "baris": 45,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Daerah Istimewa Yogyakarta",
+        "baris": 45,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Kubu Raya",
+        "baris": 45,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Tangerang Selatan",
+        "baris": 45,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Denpasar",
+        "baris": 45,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Banjar Baru",
+        "baris": 45,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Yogyakarta",
+        "baris": 45,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Bali",
+        "baris": 45,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Kalimantan Timur",
+        "baris": 45,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Depok",
+        "baris": 44,
+        "usia_ada": 1,
+        "usia_persen": 2.27
+      },
+      {
+        "sumber": "rumah123/Sleman",
+        "baris": 44,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Badung",
+        "baris": 44,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Tangerang",
+        "baris": 44,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Pekalongan",
+        "baris": 44,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Bandung",
+        "baris": 43,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Sumatera Selatan",
+        "baris": 43,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Dki Jakarta",
+        "baris": 43,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Banten",
+        "baris": 43,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Palembang",
+        "baris": 42,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Bekasi",
+        "baris": 42,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Purbalingga",
+        "baris": 42,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Mataram",
+        "baris": 42,
+        "usia_ada": 5,
+        "usia_persen": 11.9
+      },
+      {
+        "sumber": "rumah123/Sulawesi Selatan",
+        "baris": 42,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Bogor",
+        "baris": 42,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Jakarta Selatan",
+        "baris": 42,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Cikarang",
+        "baris": 41,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Kalimantan Barat",
+        "baris": 40,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Balikpapan",
+        "baris": 40,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Demak",
+        "baris": 40,
+        "usia_ada": 4,
+        "usia_persen": 10.0
+      },
+      {
+        "sumber": "99.co/Ciamis",
+        "baris": 40,
+        "usia_ada": 11,
+        "usia_persen": 27.5
+      },
+      {
+        "sumber": "rumah123/Banyuasin",
+        "baris": 39,
+        "usia_ada": 2,
+        "usia_persen": 5.13
+      },
+      {
+        "sumber": "rumah123/Makassar",
+        "baris": 39,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Probolinggo",
+        "baris": 35,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Pandeglang",
+        "baris": 35,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Bengkulu",
+        "baris": 35,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Bondowoso",
+        "baris": 33,
+        "usia_ada": 24,
+        "usia_persen": 72.73
+      },
+      {
+        "sumber": "99.co/Metro",
+        "baris": 33,
+        "usia_ada": 2,
+        "usia_persen": 6.06
+      },
+      {
+        "sumber": "rumah123/Temanggung",
+        "baris": 32,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Brebes",
+        "baris": 31,
+        "usia_ada": 13,
+        "usia_persen": 41.94
+      },
+      {
+        "sumber": "99.co/Purbalingga",
+        "baris": 30,
+        "usia_ada": 6,
+        "usia_persen": 20.0
+      },
+      {
+        "sumber": "rumah123/Aceh",
+        "baris": 30,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Temanggung",
+        "baris": 30,
+        "usia_ada": 7,
+        "usia_persen": 23.33
+      },
+      {
+        "sumber": "rumah123/Kendari",
+        "baris": 29,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Probolinggo",
+        "baris": 29,
+        "usia_ada": 2,
+        "usia_persen": 6.9
+      },
+      {
+        "sumber": "rumah123/Purworejo",
+        "baris": 29,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Jawa Barat",
+        "baris": 27,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Jepara",
+        "baris": 27,
+        "usia_ada": 4,
+        "usia_persen": 14.81
+      },
+      {
+        "sumber": "99.co/Cilacap",
+        "baris": 27,
+        "usia_ada": 4,
+        "usia_persen": 14.81
+      },
+      {
+        "sumber": "99.co/Banjarmasin",
+        "baris": 27,
+        "usia_ada": 5,
+        "usia_persen": 18.52
+      },
+      {
+        "sumber": "rumah123/Wonogiri",
+        "baris": 26,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Pandeglang",
+        "baris": 26,
+        "usia_ada": 3,
+        "usia_persen": 11.54
+      },
+      {
+        "sumber": "rumah123/Sulawesi Tenggara",
+        "baris": 26,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Indramayu",
+        "baris": 26,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Indramayu",
+        "baris": 25,
+        "usia_ada": 5,
+        "usia_persen": 20.0
+      },
+      {
+        "sumber": "Pinhome/Aceh Barat Daya",
+        "baris": 25,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Muaro Jambi",
+        "baris": 25,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Grobogan",
+        "baris": 25,
+        "usia_ada": 2,
+        "usia_persen": 8.0
+      },
+      {
+        "sumber": "rumah123/Tuban",
+        "baris": 25,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "Pinhome/Aceh Selatan",
+        "baris": 25,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "Pinhome/Halmahera Timur",
+        "baris": 25,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "Pinhome/Bontang",
+        "baris": 25,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Lamongan",
+        "baris": 25,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Bangkalan",
+        "baris": 24,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Metro",
+        "baris": 24,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Bojonegoro",
+        "baris": 24,
+        "usia_ada": 1,
+        "usia_persen": 4.17
+      },
+      {
+        "sumber": "rumah123/Batang",
+        "baris": 24,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Bojonegoro",
+        "baris": 24,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "Pinhome/Aceh Timur",
+        "baris": 24,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Tuban",
+        "baris": 24,
+        "usia_ada": 4,
+        "usia_persen": 16.67
+      },
+      {
+        "sumber": "99.co/Purworejo",
+        "baris": 24,
+        "usia_ada": 5,
+        "usia_persen": 20.83
+      },
+      {
+        "sumber": "99.co/Wonogiri",
+        "baris": 24,
+        "usia_ada": 3,
+        "usia_persen": 12.5
+      },
+      {
+        "sumber": "99.co/Magetan",
+        "baris": 23,
+        "usia_ada": 8,
+        "usia_persen": 34.78
+      },
+      {
+        "sumber": "99.co/Singkawang",
+        "baris": 23,
+        "usia_ada": 3,
+        "usia_persen": 13.04
+      },
+      {
+        "sumber": "99.co/Batang",
+        "baris": 23,
+        "usia_ada": 3,
+        "usia_persen": 13.04
+      },
+      {
+        "sumber": "Pinhome/Aceh Tengah",
+        "baris": 23,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Pemalang",
+        "baris": 23,
+        "usia_ada": 7,
+        "usia_persen": 30.43
+      },
+      {
+        "sumber": "Pinhome/Kepahiang",
+        "baris": 22,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Pesawaran",
+        "baris": 22,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Singkawang",
+        "baris": 22,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Lampung Tengah",
+        "baris": 22,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Blora",
+        "baris": 21,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Kampar",
+        "baris": 21,
+        "usia_ada": 4,
+        "usia_persen": 19.05
+      },
+      {
+        "sumber": "rumah123/Kalimantan Tengah",
+        "baris": 21,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Bangkalan",
+        "baris": 21,
+        "usia_ada": 2,
+        "usia_persen": 9.52
+      },
+      {
+        "sumber": "rumah123/Pesawaran",
+        "baris": 20,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Lampung Timur",
+        "baris": 20,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Kota Waringin Timur",
+        "baris": 20,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Ponorogo",
+        "baris": 20,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "Pinhome/Buton Selatan",
+        "baris": 20,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Banjar",
+        "baris": 20,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Ambarawa",
+        "baris": 19,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "Pinhome/Bangka Barat",
+        "baris": 19,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Binjai",
+        "baris": 19,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Lampung Tengah",
+        "baris": 19,
+        "usia_ada": 1,
+        "usia_persen": 5.26
+      },
+      {
+        "sumber": "rumah123/Papua",
+        "baris": 19,
+        "usia_ada": 1,
+        "usia_persen": 5.26
+      },
+      {
+        "sumber": "rumah123/Minahasa",
+        "baris": 19,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Pemalang",
+        "baris": 18,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Banjar Baru",
+        "baris": 18,
+        "usia_ada": 4,
+        "usia_persen": 22.22
+      },
+      {
+        "sumber": "rumah123/Bangka",
+        "baris": 18,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Lamongan",
+        "baris": 18,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Minahasa Utara",
+        "baris": 17,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Minahasa Utara",
+        "baris": 17,
+        "usia_ada": 6,
+        "usia_persen": 35.29
+      },
+      {
+        "sumber": "rumah123/Ngawi",
+        "baris": 17,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Bangka Tengah",
+        "baris": 17,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "Pinhome/Siak",
+        "baris": 17,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Blora",
+        "baris": 17,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Anyer",
+        "baris": 16,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "Pinhome/Mandailing Natal",
+        "baris": 15,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Jembrana",
+        "baris": 15,
+        "usia_ada": 7,
+        "usia_persen": 46.67
+      },
+      {
+        "sumber": "rumah123/Salatiga",
+        "baris": 15,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Biak Numfor",
+        "baris": 14,
+        "usia_ada": 2,
+        "usia_persen": 14.29
+      },
+      {
+        "sumber": "rumah123/Bitung",
+        "baris": 14,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Pematang Siantar",
+        "baris": 14,
+        "usia_ada": 2,
+        "usia_persen": 14.29
+      },
+      {
+        "sumber": "rumah123/Klungkung",
+        "baris": 14,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Lampung Timur",
+        "baris": 14,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Bangli",
+        "baris": 14,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Tomohon",
+        "baris": 14,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Tanggamus",
+        "baris": 14,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Pinrang",
+        "baris": 13,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Binjai",
+        "baris": 13,
+        "usia_ada": 1,
+        "usia_persen": 7.69
+      },
+      {
+        "sumber": "99.co/Rembang",
+        "baris": 13,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "Pinhome/Seram Bagian Timur",
+        "baris": 13,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Jayapura",
+        "baris": 13,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Bondowoso",
+        "baris": 13,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Situbondo",
+        "baris": 13,
+        "usia_ada": 6,
+        "usia_persen": 46.15
+      },
+      {
+        "sumber": "99.co/Kebumen",
+        "baris": 13,
+        "usia_ada": 4,
+        "usia_persen": 30.77
+      },
+      {
+        "sumber": "99.co/Tomohon",
+        "baris": 12,
+        "usia_ada": 5,
+        "usia_persen": 41.67
+      },
+      {
+        "sumber": "rumah123/Banjarnegara",
+        "baris": 12,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Grobogan",
+        "baris": 12,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Tarakan",
+        "baris": 12,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Bangli",
+        "baris": 12,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Bangka Tengah",
+        "baris": 12,
+        "usia_ada": 6,
+        "usia_persen": 50.0
+      },
+      {
+        "sumber": "rumah123/Lombok Tengah",
+        "baris": 12,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Lumajang",
+        "baris": 12,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "Pinhome/Kepulauan Meranti",
+        "baris": 12,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Wonosobo",
+        "baris": 12,
+        "usia_ada": 2,
+        "usia_persen": 16.67
+      },
+      {
+        "sumber": "rumah123/Rembang",
+        "baris": 12,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Pringsewu",
+        "baris": 12,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Klungkung",
+        "baris": 12,
+        "usia_ada": 3,
+        "usia_persen": 25.0
+      },
+      {
+        "sumber": "99.co/Jayapura",
+        "baris": 12,
+        "usia_ada": 1,
+        "usia_persen": 8.33
+      },
+      {
+        "sumber": "99.co/Bangka",
+        "baris": 11,
+        "usia_ada": 2,
+        "usia_persen": 18.18
+      },
+      {
+        "sumber": "rumah123/Tanggamus",
+        "baris": 11,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Gorontalo",
+        "baris": 11,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "Pinhome/Nagan Raya",
+        "baris": 11,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "Pinhome/Rokan Hilir",
+        "baris": 11,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "Pinhome/Balangan",
+        "baris": 11,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Manggarai Barat",
+        "baris": 11,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Palu",
+        "baris": 11,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Wonosobo",
+        "baris": 11,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Serdang Bedagai",
+        "baris": 11,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Ngawi",
+        "baris": 11,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Palopo",
+        "baris": 11,
+        "usia_ada": 1,
+        "usia_persen": 9.09
+      },
+      {
+        "sumber": "99.co/Minahasa",
+        "baris": 11,
+        "usia_ada": 2,
+        "usia_persen": 18.18
+      },
+      {
+        "sumber": "Pinhome/Nias Selatan",
+        "baris": 10,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "Pinhome/Alor",
+        "baris": 10,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Lombok Tengah",
+        "baris": 10,
+        "usia_ada": 2,
+        "usia_persen": 20.0
+      },
+      {
+        "sumber": "99.co/Palu",
+        "baris": 10,
+        "usia_ada": 2,
+        "usia_persen": 20.0
+      },
+      {
+        "sumber": "99.co/Kendari",
+        "baris": 10,
+        "usia_ada": 4,
+        "usia_persen": 40.0
+      },
+      {
+        "sumber": "rumah123/Ponorogo",
+        "baris": 10,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Belitung",
+        "baris": 10,
+        "usia_ada": 2,
+        "usia_persen": 20.0
+      },
+      {
+        "sumber": "rumah123/Sulawesi Tengah",
+        "baris": 10,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Situbondo",
+        "baris": 10,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Purwodadi",
+        "baris": 10,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Belitung",
+        "baris": 10,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Biak Numfor",
+        "baris": 10,
+        "usia_ada": 1,
+        "usia_persen": 10.0
+      },
+      {
+        "sumber": "rumah123/Kalimantan Utara",
+        "baris": 10,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Lombok Utara",
+        "baris": 9,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Rejang Lebong",
+        "baris": 9,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Bintan",
+        "baris": 9,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Tulang Bawang",
+        "baris": 9,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Manggarai Barat",
+        "baris": 9,
+        "usia_ada": 4,
+        "usia_persen": 44.44
+      },
+      {
+        "sumber": "rumah123/Cikampek",
+        "baris": 9,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Bintan",
+        "baris": 9,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Bitung",
+        "baris": 9,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Lombok Utara",
+        "baris": 8,
+        "usia_ada": 5,
+        "usia_persen": 62.5
+      },
+      {
+        "sumber": "rumah123/Papua Barat",
+        "baris": 8,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Ogan Ilir",
+        "baris": 8,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Pamekasan",
+        "baris": 8,
+        "usia_ada": 3,
+        "usia_persen": 37.5
+      },
+      {
+        "sumber": "99.co/Pringsewu",
+        "baris": 8,
+        "usia_ada": 1,
+        "usia_persen": 12.5
+      },
+      {
+        "sumber": "rumah123/Kebumen",
+        "baris": 8,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Takalar",
+        "baris": 8,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Kediri",
+        "baris": 7,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Takalar",
+        "baris": 7,
+        "usia_ada": 1,
+        "usia_persen": 14.29
+      },
+      {
+        "sumber": "rumah123/Solok",
+        "baris": 7,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Pare Pare",
+        "baris": 7,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Kutai Kartanegara",
+        "baris": 7,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Tebing Tinggi",
+        "baris": 7,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Pamekasan",
+        "baris": 7,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Muara Enim",
+        "baris": 7,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Lumajang",
+        "baris": 7,
+        "usia_ada": 4,
+        "usia_persen": 57.14
+      },
+      {
+        "sumber": "rumah123/Palangkaraya",
+        "baris": 7,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Lampung Utara",
+        "baris": 7,
+        "usia_ada": 1,
+        "usia_persen": 14.29
+      },
+      {
+        "sumber": "rumah123/Pematang Siantar",
+        "baris": 7,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Lampung Utara",
+        "baris": 6,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Lampung Barat",
+        "baris": 6,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Bone",
+        "baris": 6,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Banjarnegara",
+        "baris": 6,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Banda Aceh",
+        "baris": 6,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Aceh Besar",
+        "baris": 6,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Pangandaran",
+        "baris": 6,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Lampung Barat",
+        "baris": 6,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Asahan",
+        "baris": 5,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Solok",
+        "baris": 5,
+        "usia_ada": 1,
+        "usia_persen": 20.0
+      },
+      {
+        "sumber": "rumah123/Pasir",
+        "baris": 5,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Aceh Besar",
+        "baris": 5,
+        "usia_ada": 1,
+        "usia_persen": 20.0
+      },
+      {
+        "sumber": "99.co/Pangandaran",
+        "baris": 5,
+        "usia_ada": 2,
+        "usia_persen": 40.0
+      },
+      {
+        "sumber": "rumah123/Palopo",
+        "baris": 5,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Trenggalek",
+        "baris": 5,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Bukittinggi",
+        "baris": 5,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Bengkulu Tengah",
+        "baris": 5,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Muna",
+        "baris": 4,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Serdang Bedagai",
+        "baris": 4,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Tarakan",
+        "baris": 4,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Bengkalis",
+        "baris": 4,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Kota Waringin Barat",
+        "baris": 4,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Sambas",
+        "baris": 4,
+        "usia_ada": 1,
+        "usia_persen": 25.0
+      },
+      {
+        "sumber": "rumah123/Langkat",
+        "baris": 4,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Lombok Timur",
+        "baris": 4,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Tebing Tinggi",
+        "baris": 4,
+        "usia_ada": 1,
+        "usia_persen": 25.0
+      },
+      {
+        "sumber": "rumah123/Penajam Paser Utara",
+        "baris": 4,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Prabumulih",
+        "baris": 4,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Muna",
+        "baris": 4,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Simalungun",
+        "baris": 4,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Ogan Ilir",
+        "baris": 4,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Langkat",
+        "baris": 3,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Kutai Kartanegara",
+        "baris": 3,
+        "usia_ada": 1,
+        "usia_persen": 33.33
+      },
+      {
+        "sumber": "99.co/Barru",
+        "baris": 3,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Tanah Laut",
+        "baris": 3,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Barru",
+        "baris": 3,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Konawe Selatan",
+        "baris": 3,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Simalungun",
+        "baris": 3,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Bengkulu Utara",
+        "baris": 3,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Bulukumba",
+        "baris": 3,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Dumai",
+        "baris": 3,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Ambon",
+        "baris": 3,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Pacitan",
+        "baris": 3,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Ogan Komering Ulu",
+        "baris": 3,
+        "usia_ada": 1,
+        "usia_persen": 33.33
+      },
+      {
+        "sumber": "99.co/Muara Enim",
+        "baris": 3,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Nusa Lembongan",
+        "baris": 3,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Langsa",
+        "baris": 3,
+        "usia_ada": 2,
+        "usia_persen": 66.67
+      },
+      {
+        "sumber": "99.co/Bukittinggi",
+        "baris": 3,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Sambas",
+        "baris": 3,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Semarapura",
+        "baris": 3,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Bulukumba",
+        "baris": 3,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Sulawesi Barat",
+        "baris": 3,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Mamuju",
+        "baris": 3,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Pinrang",
+        "baris": 3,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Prabumulih",
+        "baris": 3,
+        "usia_ada": 1,
+        "usia_persen": 33.33
+      },
+      {
+        "sumber": "rumah123/Madura",
+        "baris": 3,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Luwu",
+        "baris": 3,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Luwu",
+        "baris": 3,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Ambon",
+        "baris": 3,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Tanah Bumbu",
+        "baris": 3,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Berau",
+        "baris": 2,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Belu",
+        "baris": 2,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Trenggalek",
+        "baris": 2,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Asahan",
+        "baris": 2,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Dumai",
+        "baris": 2,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Bolaang Mongondow",
+        "baris": 2,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Kutai Barat",
+        "baris": 2,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Kapuas Hulu",
+        "baris": 2,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Enrekang",
+        "baris": 2,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Sidenreng Rappang",
+        "baris": 2,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Sikka",
+        "baris": 2,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Sigi",
+        "baris": 2,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Seluma",
+        "baris": 2,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Konawe Selatan",
+        "baris": 2,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Lombok Timur",
+        "baris": 2,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Mempawah",
+        "baris": 2,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Ogan Komering Ulu",
+        "baris": 2,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Lubuk Linggau",
+        "baris": 2,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Maluku",
+        "baris": 2,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Mempawah",
+        "baris": 2,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Mamuju",
+        "baris": 2,
+        "usia_ada": 2,
+        "usia_persen": 100.0
+      },
+      {
+        "sumber": "99.co/Tapanuli Tengah",
+        "baris": 2,
+        "usia_ada": 1,
+        "usia_persen": 50.0
+      },
+      {
+        "sumber": "rumah123/Berau",
+        "baris": 2,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Belu",
+        "baris": 2,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Bolaang Mongondow",
+        "baris": 2,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Tanah Datar",
+        "baris": 2,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Tanah Datar",
+        "baris": 2,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Kutai Barat",
+        "baris": 2,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Lhokseumawe",
+        "baris": 2,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Langsa",
+        "baris": 2,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Sikka",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Sintang",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Lahat",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Sanggau",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Kutai Timur",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Sumba Barat Daya",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Tanah Bumbu",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Tana Toraja",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Tapanuli Utara",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Kepulauan Mentawai",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Ketapang",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Kota Baru",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Sumba Timur",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Anambas",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Agam",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Kapuas",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Gunung Sitoli",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Banggai Laut",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Bangka Selatan",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Bone Bolango",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Banjar",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Bangka Selatan",
+        "baris": 1,
+        "usia_ada": 1,
+        "usia_persen": 100.0
+      },
+      {
+        "sumber": "99.co/Banda Aceh",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Mesuji",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Merauke",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Sabang",
+        "baris": 1,
+        "usia_ada": 1,
+        "usia_persen": 100.0
+      },
+      {
+        "sumber": "99.co/Rokan Hulu",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Penajam Paser Utara",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Minahasa Tenggara",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Pelalawan",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Musi Rawas",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Nabire",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Merauke",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Minahasa Tenggara",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Minahasa Selatan",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Papua Selatan",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Padang Pariaman",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Pagar Alam",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Pangkajene",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Mimika",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Padang Pariaman",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Pagar Alam",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Minahasa Selatan",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Pacitan",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Sarolangun",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Kutai Timur",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Labuhan Batu",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Lhokseumawe",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Hulu Sungai Utara",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Kota Baru",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Ketapang",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Konawe",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Karo",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Sabang",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Rokan Hulu",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Karimun",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Sintang",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Sorong",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Sumba Timur",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Sumba Barat Daya",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Sumenep",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "rumah123/Sumbawa",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Agam",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      },
+      {
+        "sumber": "99.co/Aceh Barat",
+        "baris": 1,
+        "usia_ada": 0,
+        "usia_persen": 0.0
+      }
+    ],
+    "clean_rows": 64228,
+    "drop_total": 422
+  },
+  "environment": {
+    "python": "3.12.3",
+    "platform": "Linux-7.0.14-28-pve-x86_64-with-glibc2.39",
+    "sklearn": "1.9.0",
+    "pandas": "3.0.5",
+    "numpy": "2.5.2",
+    "joblib": "1.6.0",
+    "xgboost": "3.4.1"
+  },
+  "note": "Label Mahal/Murah memakai median harga per kota pada seluruh data bersih, mengikuti database/seed.py. Label tidak dipakai sebagai fitur."
+}

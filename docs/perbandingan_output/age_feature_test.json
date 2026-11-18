@@ -1,0 +1,100 @@
+{
+  "created_at": "2026-11-17T17:15:08.849407+00:00",
+  "criteria": {
+    "min_delta_r2_holdout": 0.01,
+    "min_delta_r2_cv": 0.005,
+    "mae_holdout_harus_turun": true,
+    "catatan": "Usia dipertahankan hanya jika ketiga syarat terpenuhi. Ambang ini ditetapkan sebelum eksperimen karena usia kosong pada sebagian besar baris dan satuannya bercampur; peningkatan kecil tidak sepadan dengan risikonya."
+  },
+  "missing_usia_pct": 92.54997820265305,
+  "missing_usia_norm_pct": 92.62159805692221,
+  "median_usia_norm": 9.0,
+  "results": {
+    "tanpa_usia": {
+      "holdout": {
+        "model": "Random Forest (tanpa_usia)",
+        "task": "regresi",
+        "n_train": 51382,
+        "n_test": 12846,
+        "fit_seconds": 203.352,
+        "predict_seconds": 4.283,
+        "model_size_mb": null,
+        "mae_rupiah": 581266918.0355752,
+        "rmse_rupiah": 2974447350.0962806,
+        "r2_log10": 0.8133702581733138,
+        "r2_rupiah": 0.5566947869490317,
+        "mape_pct": 83.88226203573275,
+        "mae_log10": 0.12190849423614748
+      },
+      "cv": {
+        "model": "Random Forest (tanpa_usia)",
+        "task": "regresi",
+        "n_folds": 5,
+        "n_train": 51382,
+        "fit_seconds_mean": 166.3802,
+        "fit_seconds_std": 20.72546952327015,
+        "predict_seconds_mean": 2.5362,
+        "predict_seconds_std": 0.3576665486175636,
+        "mae_rupiah_mean": 631521340.1309754,
+        "mae_rupiah_std": 15836990.948421007,
+        "rmse_rupiah_mean": 3440092343.6601944,
+        "rmse_rupiah_std": 566002886.0460429,
+        "r2_log10_mean": 0.8152687064646603,
+        "r2_log10_std": 0.007072952213407175,
+        "r2_rupiah_mean": 0.5720515869798563,
+        "r2_rupiah_std": 0.05966855541316706,
+        "mape_pct_mean": 87.70960310560312,
+        "mape_pct_std": 29.604484952430944,
+        "mae_log10_mean": 0.12538843211894632,
+        "mae_log10_std": 0.001577828912222201
+      }
+    },
+    "dengan_usia": {
+      "holdout": {
+        "model": "Random Forest (dengan_usia)",
+        "task": "regresi",
+        "n_train": 51382,
+        "n_test": 12846,
+        "fit_seconds": 231.182,
+        "predict_seconds": 3.383,
+        "model_size_mb": null,
+        "mae_rupiah": 583170875.3230472,
+        "rmse_rupiah": 2978175939.803162,
+        "r2_log10": 0.8133582022865176,
+        "r2_rupiah": 0.5555826884311145,
+        "mape_pct": 84.14652963943648,
+        "mae_log10": 0.12171067050564847
+      },
+      "cv": {
+        "model": "Random Forest (dengan_usia)",
+        "task": "regresi",
+        "n_folds": 5,
+        "n_train": 51382,
+        "fit_seconds_mean": 204.8056,
+        "fit_seconds_std": 15.191615340048603,
+        "predict_seconds_mean": 2.1682,
+        "predict_seconds_std": 0.29309479695143,
+        "mae_rupiah_mean": 634606654.341669,
+        "mae_rupiah_std": 16155519.43948622,
+        "rmse_rupiah_mean": 3456401885.553266,
+        "rmse_rupiah_std": 558349381.414693,
+        "r2_log10_mean": 0.8153099851786292,
+        "r2_log10_std": 0.007153301178842107,
+        "r2_rupiah_mean": 0.5678031097611416,
+        "r2_rupiah_std": 0.058707909369408305,
+        "mape_pct_mean": 90.5941865790862,
+        "mape_pct_std": 33.71597670424026,
+        "mae_log10_mean": 0.12521505552805287,
+        "mae_log10_std": 0.0014316821532301255
+      }
+    }
+  },
+  "delta": {
+    "r2_holdout": -1.2055886796202842e-05,
+    "r2_cv": 4.127871396886196e-05,
+    "mae_rupiah_holdout": 1903957.2874720097,
+    "mae_rupiah_cv": 3085314.210693598
+  },
+  "keputusan": "dibuang",
+  "alasan": "Minimal satu ambang tidak terpenuhi; usia tidak dipakai sebagai fitur utama."
+}
