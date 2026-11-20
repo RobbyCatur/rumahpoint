@@ -1,7 +1,6 @@
 ppt
 .agents
 .qoder
-docs/
 web/.secret_key
 __pycache__/
 *.pyc
